@@ -15,3 +15,18 @@ efficient for encoding and decoding within different languages.
 
 app = Flask(__name__)
 
+
+@app.route('/')
+def index():
+    """
+    Route decorator allows users to view all the food genres held within the
+    mongodb database collection. Users can then proceed to view and create
+    recipes.
+    """
+    return render_template('index.html')
+
+if __name__ == "__main__":
+    app.run(host=os.environ.get('IP', "0.0.0.0"),
+    port=int(os.environ.get('PORT', "5000")),
+    debug=True)
+    
