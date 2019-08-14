@@ -13,3 +13,5 @@ BSON extends the JSON model to provide additional data types, ordered fields, an
 efficient for encoding and decoding within different languages.
 """
 
+app = Flask(__name__)
+
