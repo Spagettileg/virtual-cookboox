@@ -5,6 +5,17 @@
 
 /* Navbar */
 
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.nav-item {
+ margin-left: 20px;
+ float: right;
+ }
+
 /* Images */
 
 /* Containers */
@@ -12,6 +23,10 @@
 /* Block Dividers */
 
 /* Buttons */
+
+.btn-add-recipe {
+    background-color: blue;
+}
 
 /* Social Media */
 
