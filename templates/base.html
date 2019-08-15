@@ -19,19 +19,18 @@
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" />
     
     <!-- Favicon -->
-    <link href="{{ url_for('static', filename='static/img/dining.png') }}" rel="shortcut icon" type="image/png">
+    <link href="{{ url_for('static', filename='img/dining.png') }}" rel="shortcut icon" type="image/png">
     
   
 </head>
 <body>
     
     <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand bg-secondary text-uppercase fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand bg-secondary text-uppercase fixed-top">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="{{ url_for('index') }}">Virtual Cookbook</a>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a class="btn btn-sm btn-link btn-link:hover" href="add-recipe.html">Add Recipe</a></li>
-      </ul>
+      <a class="navbar-brand js-scroll-trigger navbar-left" href="{{ url_for('index') }}">Virtual Cookbook</a>
+      <a class="nav navbar-nav nav-item navbar-right btn btn-sm btn-link btn-link:hover btn-add-recipe" href="add-recipe.html">Add Recipe</a>
+      
     </div>
   </nav>
     
