@@ -45,9 +45,27 @@
 /* Buttons */
 
 .btn-add-recipe {
-    background-color: blue;
     padding-top: 16px 0px 0px 16px;
     margin-top: 0.7rem;
+    background-color: #61892F; /*Pea Green*/
+    border-color: #61892F; /*Pea Green*/
+    color: #fff; /*White*/
+    font-weight: 500;
+}
+
+.btn-add-recipe:hover { /* add recipe button changes colour when hovered & clicked */
+    background-color: #86C232;
+    /*lime green*/
+    border-color: #86C232;
+    color: #000;
+    /*Black*/
+    transition: all 0.15s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    /*Opera*/
+    -moz-transition: all 0.5s ease-in-out;
+    /*Windows*/
+    -webkit-transition: all 0.5s ease-in-out;
+    /*Apple*/
 }
 
 /* Social Media */
