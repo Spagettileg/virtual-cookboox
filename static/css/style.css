@@ -26,8 +26,17 @@
 
 .btn-add-recipe {
     background-color: blue;
+    padding-top: 16px 0px 0px 16px;
+    margin-top: 0.7rem;
 }
 
 /* Social Media */
 
 /* Media Queries */
+
+@media (min-width: 768px) {
+    /*tablet - Centres the button position*/
+    .btn-add-recipe {
+        margin-top: 1rem;
+    }
+}
