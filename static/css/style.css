@@ -97,9 +97,10 @@
 }
 
 .social-links-footer li a i {
-    width: 30px;
-    height: 30px;
+    width: 2rem;
+    height: 2rem;
     padding: 12px 0;
+    margin: 0.3rem;
     border-radius: 50%;
     /*Enables creation of circle where width & height of same value*/
     font-size: 13px;
