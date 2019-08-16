@@ -1,7 +1,27 @@
 
 /* Special Padding / Margin / Text */
 
-/* Colours */
+/* Colours - 'Gorgeous Contrast' palette taken from visme.co */
+
+.bg-color-pea-green {
+    background-color: #61892F;
+}
+
+.bg-color-lime-green {
+    background-color: #86C232;
+}
+
+.bg-color-dark-slate {
+    background-color: #222629;
+}
+
+.bg-color-charcoal {
+    background-color: #474B4F;
+}
+
+.bg-color-cloud-grey {
+    background-color: #6B6E70;
+}
 
 /* Navbar */
 
