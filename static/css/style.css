@@ -77,6 +77,68 @@
 
 /* Social Media */
 
+/* To include styling for social media fonts > font awesome */
+
+.bg-color-social-container {
+    background-color: #000;
+    min-height: 20px;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.social-links-footer p {
+    color: #e6e6e6;
+    /*Light Grey*/
+}
+
+.social-links-footer li {
+    color: #e6e6e6;
+    /*Light Grey*/
+}
+
+.social-links-footer li a i {
+    width: 30px;
+    height: 30px;
+    padding: 12px 0;
+    border-radius: 50%;
+    /*Enables creation of circle where width & height of same value*/
+    font-size: 13px;
+    /*Enables icon to sit within border*/
+    line-height: 7px;
+    text-align: center;
+    color: #000;
+    border-color: #000;
+    /*Black*/
+    background: #e6e6e6;
+    /*Light Grey*/
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    /*Opera*/
+    -moz-transition: all 0.5s ease-in-out;
+    /*Windows*/
+    -webkit-transition: all 0.5s ease-in-out;
+    /*Apple*/
+}
+
+.fa-github:hover {
+    background: #6e5494;
+    /*GitHub Purple*/
+    color: #fff;
+}
+
+.fa-linkedin:hover {
+    background: #0077B5;
+    /*LinkedIn Blue*/
+    color: #fff;
+}
+
+/* Footer */
+
+.author-cred img {
+    /* link provided by www.jigsaw.w3.org not working, however, they confirmed css code is flawless */
+    cursor: none;
+}
+
 /* Media Queries */
 
 @media (min-width: 768px) {
