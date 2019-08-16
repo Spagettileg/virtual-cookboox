@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Lato:400,700,400italic,700italic');
 
 /* Special Padding / Margin / Text */
 
@@ -29,6 +30,7 @@
     font-weight: 700;
     font-size: 1.4rem;
     text-transform: uppercase;
+    text-decoration: none;
 }
 
 .nav-item {
@@ -46,11 +48,14 @@
 
 .btn-add-recipe {
     padding-top: 16px 0px 0px 16px;
-    margin-top: 0.7rem;
+    margin-top: 0.2rem;
     background-color: #61892F; /*Pea Green*/
     border-color: #61892F; /*Pea Green*/
     color: #fff; /*White*/
     font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    
 }
 
 .btn-add-recipe:hover { /* add recipe button changes colour when hovered & clicked */
@@ -59,6 +64,7 @@
     border-color: #86C232;
     color: #000;
     /*Black*/
+    text-decoration: none;
     transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     /*Opera*/
@@ -68,6 +74,7 @@
     /*Apple*/
 }
 
+
 /* Social Media */
 
 /* Media Queries */
@@ -75,6 +82,6 @@
 @media (min-width: 768px) {
     /*tablet - Centres the button position*/
     .btn-add-recipe {
-        margin-top: 1rem;
+        margin-top: 0.3rem;
     }
 }
