@@ -44,11 +44,13 @@
  
 .masthead-heading {
     font-size: 2.75rem;
+    font-weight: 700;
     line-height: 2.75rem;
   }
   
 .masthead-subheading {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
+    font-weight: 500;
   }
 
 .footer {
@@ -57,6 +59,19 @@
 }
 
 /* Block Dividers */
+
+.divider-custom { /*Masthead divider*/
+  margin: 1.25rem 0 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider-custom-icon { /*Masthead divider*/
+    color: white;
+    font-size: 1rem;
+}
 
 /* Buttons */
 
