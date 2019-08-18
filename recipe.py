@@ -36,6 +36,27 @@ def index():
 def meat():
     return render_template("meat.html", page_title="Meat Recipes", tasks=mongo.db.tasks.find({"_id": "Meat"}))
 
+@app.route('/get_poultry', methods=['GET'])
+def poultry():
+    return render_template("poultry.html", page_title="Poultry Recipes", tasks=mongo.db.tasks.find({"_id": "Poultry"}))
+    
+@app.route('/get_fish', methods=['GET'])
+def fish():
+    return render_template("fish.html", page_title="Fish Recipes", tasks=mongo.db.tasks.find({"_id": "Fish"}))
+    
+@app.route('/get_veg', methods=['GET'])
+def veg():
+    return render_template("veg.html", page_title="Vegetable Recipes", tasks=mongo.db.tasks.find({"_id": "Vegetables"}))
+    
+@app.route('/get_grains', methods=['GET'])
+def grains():
+    return render_template("grains.html", page_title="Grains Recipes", tasks=mongo.db.tasks.find({"_id": "Grains"}))
+    
+@app.route('/get_pasta', methods=['GET'])
+def pasta():
+    return render_template("pasta.html", page_title="Pasta Recipes", tasks=mongo.db.tasks.find({"_id": "Pasta"}))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP', "0.0.0.0"),
     port=int(os.environ.get('PORT', "5000")),
