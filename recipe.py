@@ -32,6 +32,10 @@ def index():
     """
     return render_template('index.html')
 
+@app.route('/get_meat', methods=['GET'])
+def meat():
+    return render_template("meat.html", page_title="Meat Recipes", tasks=mongo.db.tasks.find({"_id": "Meat"}))
+
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP', "0.0.0.0"),
     port=int(os.environ.get('PORT', "5000")),
