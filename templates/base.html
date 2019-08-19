@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     
      <!-- Materialize CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
     <!-- Bootstrap CSS -->
@@ -24,13 +23,13 @@
     
   
 </head>
-<body id="page-top">
+<body>
     
     <!-- Navigation Bar -->
   <nav class="navbar navbar-expand bg-color-dark-slate text-uppercase fixed-top">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger navbar-left" href="{{ url_for('index') }}">Virtual Cookbook</a>
-      <a class="waves-effect waves-light btn-small btn-add-recipe" href="add-recipe.html">Add Recipe</a>
+      <a class="btn-large btn-add-recipe" href="add-recipe.html"> Add Recipe </a>
     </div>
   </nav>
   
@@ -46,7 +45,7 @@
       <div class="divider-custom">
         <div class="row"></div>
         <div class="divider-custom-icon">
-          <i class="medium material-icons nav-icon">local_dining</i>
+          <i class="fa fa-star"></i>
         </div>
         <div class="row"></div>
       </div>
@@ -58,7 +57,7 @@
   </header>
   
   <!-- Main Content -->
-  <div class="container">
+  <div class="main-container">
 
     {% block content %} {% endblock %}
 
@@ -80,10 +79,10 @@
         <!-- Footer Social Icons -->
         <div class="col-xs-12 col-lg-4 text-center">
           <h4 class="text-uppercase text-center">Stay Connected</h4>
-          <ul class="social-links-footer">
-                    <li><a href="https://github.com/Spagettileg" target="_blank"><i class="fab fa-github fa-github"></i></a><span> GitHub  </span></li>
-                    <li><a href="https://www.linkedin.com/in/paul-friel-a0821b43/" target="_blank"><i class="fab fa-linkedin fa-linkedin"></i></a><span> LinkedIn  </span></li>
-          </ul>
+          <div class="social-links-footer">
+              <a href="https://github.com/Spagettileg" target="_blank"><i class="fab fa-github fa-github"></i></a><span> GitHub  </span>
+              <a href="https://www.linkedin.com/in/paul-friel-a0821b43/" target="_blank"><i class="fab fa-linkedin fa-linkedin"></i></a><span> LinkedIn  </span>
+          </div>
         </div>
 
         <!-- Footer About Text -->
@@ -108,17 +107,10 @@
     </div>
   </footer>
   
-  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-  <div class="scroll-to-top d-lg-none position-fixed ">
-    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-      <i class="fa fa-chevron-up"></i>
-    </a>
-  </div>
     
     <!-- JS Libraries -->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     
 </body>
