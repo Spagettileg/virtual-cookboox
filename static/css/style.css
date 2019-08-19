@@ -2,6 +2,12 @@
 
 /* Special Padding / Margin / Text */
 
+
+
+h3 {
+    text-align: center;
+}
+
 /* Colours - 'Gorgeous Contrast' palette taken from visme.co */
 
 .bg-color-pea-green {
@@ -64,6 +70,19 @@
     text-transform: uppercase; 
     color: #61892F;
   }
+  
+.portfolio-item {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    text-align: center;
+    color: white;
+    max-width: 20rem;
+    margin-bottom: 30px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    
+    }
 
 .footer {
     padding-top: 1.5rem;
@@ -92,7 +111,7 @@
 }
 
 .block-divider-portfolio {
-    width: 50rem;
+    width: 8rem;
     height: 0.1rem;
     border: 0;
     background-color: #61892F;
@@ -103,12 +122,16 @@
 .btn-add-recipe {
     padding-top: 16px 0px 0px 16px;
     margin-top: 0.2rem;
+    margin: 0.2rem;
+    border-radius: 10%;
     background-color: #61892F; /*Pea Green*/
     border-color: #61892F; /*Pea Green*/
     color: #fff; /*White*/
     font-weight: 500;
     font-size: 1rem;
     text-decoration: none;
+    width: 100px;
+    text-align: center;
     
 }
 
@@ -160,12 +183,12 @@
     /*Light Grey*/
 }
 
-.social-links-footer li {
+.social-links-footer a {
     color: #e6e6e6;
     /*Light Grey*/
 }
 
-.social-links-footer li a i {
+.social-links-footer a i {
     width: 2rem;
     height: 2rem;
     padding: 12px 0;
