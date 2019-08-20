@@ -1,21 +1,18 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
-        <h2>{{ page_title }}</h2>
+<h2>{{ page_title }}</h2>
 
-        {% for task in tasks %}
-        
-        <div class="col-md-6 col-lg-4">
-            <div class="card-deck d-flex align-items-center justify-content-center" style="width:300px">
-              <img class="card-img-top" src="{{ task.recipe_image }}" alt="Card image">
-                  <div class="card-body">
-                    <h4 class="card-title">{{ task.recipe_name }}</h4>
-                        <p class="card-text">{{ task.brief_description }}</p>
-                            <a href="{{ url_for('task', tasks_id=task._id) }}" class="btn btn-primary">Recipe Detail</a>
-                  </div> 
-            </div>
+{% for task in tasks %}
+
+<div class="col-md-6 col-lg-4">
+    <div class="card-deck d-flex align-items-center justify-content-center" style="width:300px">
+        <img class="card-img-top" src="{{ task.recipe_image }}" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">{{ task.recipe_name }}</h4>
+            <p class="card-text">{{ task.brief_description }}</p>
+            <a href="{{ url_for('task', tasks_id=task._id) }}" class="btn btn-primary">Recipe Detail</a>
         </div>
-        
-        {% endfor %}
+    </div>
+</div>
 
-{% endblock %}
+{% endfor %} {% endblock %}
