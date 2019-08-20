@@ -2,7 +2,12 @@
 
 /* Special Padding / Margin / Text */
 
-
+.row {
+    margin-left: 0;
+    /*helps remove unecessary white space on right vertical*/
+    margin-right: 0;
+    /*as above*/
+}
 
 h3 {
     text-align: center;
@@ -108,13 +113,6 @@ h3 {
 .divider-custom-icon-portfolio { /*Masthead divider*/
     color: #61892F;
     font-size: 2rem;
-}
-
-.block-divider-portfolio {
-    width: 8rem;
-    height: 0.1rem;
-    border: 0;
-    background-color: #61892F;
 }
 
 /* Buttons */
