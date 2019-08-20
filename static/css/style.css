@@ -2,12 +2,7 @@
 
 /* Special Padding / Margin / Text */
 
-.row {
-    margin-left: 0;
-    /*helps remove unecessary white space on right vertical*/
-    margin-right: 0;
-    /*as above*/
-}
+
 
 h3 {
     text-align: center;
