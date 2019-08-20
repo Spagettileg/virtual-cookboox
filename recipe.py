@@ -34,7 +34,14 @@ def index():
 
 @app.route('/get_meat', methods=['GET'])
 def meat():
-    return render_template("meat.html", page_title="Meat Recipes", tasks=mongo.db.tasks.find({"_id": "Meat"}))
+    page_limit = 6  # Logic for pagination
+    current_page = int(request.args.get('current_page', 1))
+    total = mongo.db.recipe.count()
+    pages = range(1, int(math.ceil(total / page_limit)) + 1)
+    tasks = mongo.db.tasks.find().sort('_id', pymongo.ASCENDING).skip(
+        (current_page - 1)*page_limit).limit(page_limit)
+        
+    return render_template("meat.html", task=tasks, current_page=current_page, pages=pages, page_title="Meat Recipes", tasks=mongo.db.tasks.find({"category_name": "Meat"}))
 
 @app.route('/get_poultry', methods=['GET'])
 def poultry():
