@@ -61,6 +61,8 @@ h3 {
 .masthead {
   padding-top: calc(6rem + 74px);
   padding-bottom: 6rem;
+  background-repeat: no-repeat;
+  background-size: cover;   
 }
  
 .masthead-heading {
