@@ -56,6 +56,15 @@ def grains():
 def pasta():
     return render_template("pasta.html", page_title="Pasta Recipes", tasks=mongo.db.tasks.find({"_id": "Pasta"}))
 
+@app.route('/get_task/<tasks_id>', methods=['GET', 'POST'])
+def task(tasks_id):
+    """
+    Route for viewing a single recipe in detail.
+    """
+    a_recipe = mongo.db.tasks.find_one({"_id": ObjectId(tasks_id)})
+
+    return render_template('recipe.html', task=task, tasks=a_recipe, title=a_recipe['recipe_name'])
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP', "0.0.0.0"),
