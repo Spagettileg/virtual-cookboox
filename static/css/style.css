@@ -82,9 +82,14 @@ h3 {
   }
   
 .page-section-about {
+    padding-bottom: 2rem; 
     background-color: #86C232;
 }
-  
+
+.about-title {
+    color: #61892F;
+}
+
 .portfolio-item {
     cursor: pointer;
     position: relative;
