@@ -81,6 +81,10 @@ h3 {
     color: #61892F;
   }
   
+.page-section-about {
+    background-color: #86C232;
+}
+  
 .portfolio-item {
     cursor: pointer;
     position: relative;
