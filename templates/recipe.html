@@ -1,56 +1,56 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>{{ task.page_title }}</h2>
+    <h2>{{ tasks.page_title }}</h2>
     
 <!-- Page Layout -->
 <main class="recipe-container">
     <div class="row">
         <div class="col m5 recipe-image-container">
-            <img class="img-fluid" src="{{ task.recipe_image }}">
+            <img class="img-fluid" src="{{ tasks.recipe_image }}">
         </div>
         
         <div class="col m7">
-            <h3>{{ task.recipe_name }}</h3>
+            <h3>{{ tasks.recipe_name }}</h3>
             <div>
-                <p class="section recipe-description">{{ task.brief_description }}</p>
+                <p class="section recipe-description">{{ tasks.brief_description }}</p>
             </div>
         </div>
          <div class="divider"></div>
             <div class="row section recipe-icons">
                 <div class="col-md-4 food-icons">
                     <div><i class="divider-custom-icon-recipe fas fa-user"></i></div>
-                    <p class="clear">{{ task.author_name }}</p>
+                    <p class="clear">{{ tasks.author_name }}</p>
                 </div>
                 <div class="col-md-4 food-icons">
                     <div><i class="divider-custom-icon-recipe fas fa-graduation-cap"></i></div>
-                    <p class="clear">{{ task.complexity }}</p>
+                    <p class="clear">{{ tasks.complexity }}</p>
                 </div>
                 <div class="col-md-4 food-icons">
                     <div><i class="divider-custom-icon-recipe fas fa-weight"></i></div>
-                    <p class="clear">{{ task.calories }}</p>
+                    <p class="clear">{{ tasks.calories }}</p>
                 </div>
                 <div class="col-md-4 food-icons">
                     <div><i class="divider-custom-icon-recipe far fa-clock"></i></div>
-                    <p class="clear">{{ task.prep_time_mins }}</p>
+                    <p class="clear">{{ tasks.prep_time_mins }}</p>
                 </div>
                 <div class="col-md-4 food-icons">
                     <div><i class="divider-custom-icon-recipe far fa-clock"></i></div>
-                    <p class="clear">{{ task.cook_time_mins }}</p>
+                    <p class="clear">{{ tasks.cook_time_mins }}</p>
                 </div>
                 <div class="col-md-4 food-icons">
                     <div><i class="divider-custom-icon-recipe fas fa-users"></i></div>
-                    <p class="clear">{{ task.servings }}</p>
+                    <p class="clear">{{ tasks.servings }}</p>
                 </div>
             </div>
             <div class="divider"></div>
             <div class="container col s12">
                 <h4 class="left-align ingredients-section">Ingredients</h4>
-                <p class="section recipe-ingredients" style="white-space: pre-wrap;">{{ task.ingredients }}</p>
+                <p class="section recipe-ingredients" style="white-space: pre-wrap;">{{ tasks.ingredients }}</p>
             </div>
             <div class="divider"></div>
             <div class="container col s12">
                 <h4 class="left-align instructions-section">Instructions</h4>
-                <p class="section recipe-instructions" style="white-space: pre-wrap;">{{ task.instructions }}</p>
+                <p class="section recipe-instructions" style="white-space: pre-wrap;">{{ tasks.instructions }}</p>
             </div>
         
     </div>
