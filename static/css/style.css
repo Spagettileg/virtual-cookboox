@@ -138,7 +138,12 @@ h3 {
     font-size: 2rem;
 }
 
-.divider-custom-icon-portfolio { /*Masthead divider*/
+.divider-custom-icon-portfolio { /*Portfolio divider*/
+    color: #61892F;
+    font-size: 2rem;
+}
+
+.divider-custom-icon-recipe { /*Recipe divider*/
     color: #61892F;
     font-size: 2rem;
 }
