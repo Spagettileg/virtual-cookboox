@@ -15,6 +15,36 @@
                 <p class="section recipe-description">{{ task.brief_description }}</p>
             </div>
         </div>
+         <div class="divider"></div>
+            <div class="row section recipe-icons">
+                <div class="col s4 col m12 food-icons">
+                    <div><i class="medium material-icons recipe-icon">person</i></div>
+                    <p class="clear">{{ task.author_name }}</p>
+                </div>
+                <div class="col s4 col m12 food-icons">
+                    <div><i class="medium material-icons recipe-icon">school</i></div>
+                    <p class="clear">{{ task.complexity }}</p>
+                </div>
+                <div class="col s4 col m12 food-icons">
+                    <div><i class="medium material-icons recipe-icon">whatshot</i></div>
+                    <p class="clear">{{ task.calories }} Calories per serving</p>
+                </div>
+                <div class="col s4 col m12 food-icons">
+                    <div><i class="medium material-icons recipe-icon">timer</i></div>
+                    <p class="clear">{{ task.prep_time_mins }} Prep in Mins</p>
+                </div>
+                <div class="col s4 col m12 food-icons">
+                    <div><i class="medium material-icons recipe-icon">timer</i></div>
+                    <p class="clear">{{ task.cook_time_mins }} Cook in Mins</p>
+                </div>
+                <div class="col s4 col m12 food-icons">
+                    <div><i class="medium material-icons recipe-icon">local_dining</i></div>
+                    <p class="clear">Serves {{ task.servings }}</p>
+                </div>
+            </div>
+            <div class="divider"></div>
+            
+        
         
         
         
