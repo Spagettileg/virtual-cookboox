@@ -9,7 +9,7 @@
     /*as above*/
 }
 
-h3 {
+h2, h3 {
     text-align: center;
 }
 
@@ -167,6 +167,36 @@ h3 {
 }
 
 .btn-add-recipe:hover { /* add recipe button changes colour when hovered & clicked */
+    background-color: #86C232;
+    /*lime green*/
+    border-color: #86C232;
+    color: #000;
+    /*Black*/
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    /*Opera*/
+    -moz-transition: all 0.5s ease-in-out;
+    /*Windows*/
+    -webkit-transition: all 0.5s ease-in-out;
+    /*Apple*/
+}
+
+.btn-recipe-detail {
+    padding: 0.4rem;
+    margin: 0.4rem;
+    border-radius: 10%;
+    background-color: #61892F; /*Pea Green*/
+    border-color: #61892F; /*Pea Green*/
+    color: #fff; /*White*/
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    width: 100px;
+    text-align: center;
+}
+
+.btn-recipe-detail:hover { /* add recipe button changes colour when hovered & clicked */
     background-color: #86C232;
     /*lime green*/
     border-color: #86C232;
