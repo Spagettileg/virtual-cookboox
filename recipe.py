@@ -32,24 +32,7 @@ def index():
     """
     return render_template('index.html')
 
-@app.route("/detail")
-def detail():
-    data = []
-    with open("data/recipe.json", "r") as json_data:
-        data = json.load(json_data)
-    return render_template("detail.html", page_title="Recipes", recipe=data)
-    
-@app.route("/about/<category_name>")
-def about_category(category_name):
-    category = {}
-    
-    with open("data/recipe.json", "r") as json_data:
-        data = json.load(json_data)
-        for obj in data:
-            if obj["category_name"] == category_name: # Matching url object to member name. 
-                category = obj
-                
-    return render_template("head.html", category=category) # Return to render the detail captured via member.html file
+
     
 @app.route('/get_meat', methods=['GET'])
 def meat():
