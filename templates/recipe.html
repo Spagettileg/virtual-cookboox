@@ -12,10 +12,11 @@
         <div class="col-md-7">
             <h3>{{ tasks.recipe_name }}</h3>
             <div>
-                <p class="section recipe-description">{{ tasks.brief_description }}</p>
+                <p class="recipe-description">{{ tasks.brief_description }}</p>
             </div>
         </div>
-         <div class="divider"></div>
+        
+         <hr class="divider-recipe-detail"></hr>
          <div class="container">
             <div class="row recipe-icons">
                 <div class="col-6 col-sm-6 col-md-2 food-icons">
@@ -44,12 +45,13 @@
                 </div>
             </div>
         </div>
-            <div class="divider"></div>
+            <hr class="divider-recipe-detail"></hr
+            <br>
             <div class="container col-xs-12">
                 <h4 class="left-align ingredients-section">Ingredients</h4>
                 <p class="section recipe-ingredients" style="white-space: pre-wrap;">{{ tasks.ingredients }}</p>
             </div>
-            <div class="divider"></div>
+            <hr class="divider-recipe-detail"></hr>
             <div class="container col-xs-12">
                 <h4 class="left-align instructions-section">Instructions</h4>
                 <p class="section recipe-instructions" style="white-space: pre-wrap;">{{ tasks.instructions }}</p>
