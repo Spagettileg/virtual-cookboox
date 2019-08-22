@@ -314,14 +314,6 @@ h2, h3 {
     }
 }
 
-@media screen and (max-width: 768px) { /*tablet - resize recipe image*/
-    .recipe-image-container img {
-        height: auto;
-        max-width: 250px;
-
-    }
-}
-
 @media screen and (max-width: 1200px) { /*desktop - resize recipe image*/
     .recipe-image-container img {
         height: auto;
