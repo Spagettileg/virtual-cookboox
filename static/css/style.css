@@ -117,6 +117,18 @@ h2, h3 {
     color: #61892F;
 }
 
+.portfolio-item img {
+    padding-top: 0.5rem;
+}
+
+.recipe-container {
+    padding-top: 1rem;
+}
+
+.recipe-icons { /* Creates space between recipe brief description and set of 6 food icons*/
+    padding-top: 1.5rem;
+}
+
 .footer {
     padding-top: 1.5rem;
     padding-bottom: 0.5rem;
