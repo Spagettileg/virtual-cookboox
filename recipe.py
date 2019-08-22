@@ -72,7 +72,7 @@ def task(tasks_id):
     """
     a_recipe = mongo.db.tasks.find_one({"_id": ObjectId(tasks_id)})
 
-    return render_template('recipe.html', task=task, tasks=a_recipe, title=a_recipe['recipe_name'], page_title="Recipe Detail")
+    return render_template('recipe.html', task=task, tasks=a_recipe, title=a_recipe['recipe_name'])
 
 
 if __name__ == "__main__":
