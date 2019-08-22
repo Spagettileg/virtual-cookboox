@@ -106,8 +106,8 @@ h2, h3 {
     color: white;
     max-width: 20rem;
     margin-bottom: 30px;
-    border-radius: 0.5rem;
     overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
 .portfolio-item a {
@@ -127,6 +127,10 @@ h2, h3 {
 
 .recipe-icons { /* Creates space between recipe brief description and set of 6 food icons*/
     padding-top: 1.5rem;
+}
+
+.food-icons {
+    background-position: center;
 }
 
 .footer {
