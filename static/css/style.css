@@ -122,6 +122,10 @@ h2, h3 {
     padding-top: 0.5rem;
 }
 
+.recipe-description {
+    padding-bottom: 1rem;
+}
+
 .recipe-container {
     padding-top: 1rem;
 }
@@ -160,9 +164,16 @@ h2, h3 {
     font-size: 2rem;
 }
 
-.divider-custom-icon-recipe { /*Recipe divider*/
+.divider-custom-icon-recipe { /*Recipe detail icon format & divider*/
     color: #61892F;
     font-size: 2rem;
+}
+
+.divider-recipe-detail { /*Recipe detail segregation with line breaks*/ 
+    width: 6rem;
+    height: 2px;
+    border: 0;
+    background-color: #61892F;
 }
 
 /* Buttons */
