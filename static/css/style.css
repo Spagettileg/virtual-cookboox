@@ -314,3 +314,27 @@ h2, h3 {
     }
 }
 
+@media screen and (max-width: 768px) { /*tablet - resize recipe image*/
+    .recipe-image-container img {
+        height: auto;
+        max-width: 150px;
+
+    }
+}
+
+@media screen and (max-width: 1200px) { /*desktop - resize recipe image*/
+    .recipe-image-container img {
+        height: auto;
+        max-width: 300px;
+
+    }
+}
+
+@media screen and (min-width: 1201px) { /*extra large devices - resize recipe image*/
+    .recipe-image-container img {
+        height: auto;
+        max-width: 300px;
+
+    }
+}
+
