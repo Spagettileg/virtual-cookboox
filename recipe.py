@@ -47,23 +47,58 @@ def meat():
 
 @app.route('/get_poultry', methods=['GET'])
 def poultry():
-    return render_template("poultry.html", page_title="Poultry Recipes", tasks=mongo.db.tasks.find({"_id": "Poultry"}))
+    page_limit = 6  # Logic for pagination
+    current_page = int(request.args.get('current_page', 1))
+    total = mongo.db.recipe.count()
+    pages = range(1, int(math.ceil(total / page_limit)) + 1)
+    tasks = mongo.db.tasks.find().sort('_id', pymongo.ASCENDING).skip(
+        (current_page - 1)*page_limit).limit(page_limit)
+        
+    return render_template("poultry.html", task=tasks, current_page=current_page, pages=pages, page_title="Poultry Recipes", tasks=mongo.db.tasks.find({"category_name": "Poultry"}))
     
 @app.route('/get_fish', methods=['GET'])
 def fish():
-    return render_template("fish.html", page_title="Fish Recipes", tasks=mongo.db.tasks.find({"_id": "Fish"}))
+    page_limit = 6  # Logic for pagination
+    current_page = int(request.args.get('current_page', 1))
+    total = mongo.db.recipe.count()
+    pages = range(1, int(math.ceil(total / page_limit)) + 1)
+    tasks = mongo.db.tasks.find().sort('_id', pymongo.ASCENDING).skip(
+        (current_page - 1)*page_limit).limit(page_limit)
+        
+    return render_template("fish.html", task=tasks, current_page=current_page, pages=pages, page_title="Fish Recipes", tasks=mongo.db.tasks.find({"category_name": "Fish"}))
     
 @app.route('/get_veg', methods=['GET'])
 def veg():
-    return render_template("veg.html", page_title="Vegetable Recipes", tasks=mongo.db.tasks.find({"_id": "Vegetables"}))
+    page_limit = 6  # Logic for pagination
+    current_page = int(request.args.get('current_page', 1))
+    total = mongo.db.recipe.count()
+    pages = range(1, int(math.ceil(total / page_limit)) + 1)
+    tasks = mongo.db.tasks.find().sort('_id', pymongo.ASCENDING).skip(
+        (current_page - 1)*page_limit).limit(page_limit)
+        
+    return render_template("veg.html", task=tasks, current_page=current_page, pages=pages, page_title="Vegetable Recipes", tasks=mongo.db.tasks.find({"category_name": "Vegetables"}))
     
 @app.route('/get_grains', methods=['GET'])
 def grains():
-    return render_template("grains.html", page_title="Grains Recipes", tasks=mongo.db.tasks.find({"_id": "Grains"}))
+    page_limit = 6  # Logic for pagination
+    current_page = int(request.args.get('current_page', 1))
+    total = mongo.db.recipe.count()
+    pages = range(1, int(math.ceil(total / page_limit)) + 1)
+    tasks = mongo.db.tasks.find().sort('_id', pymongo.ASCENDING).skip(
+        (current_page - 1)*page_limit).limit(page_limit)
+        
+    return render_template("grains.html", task=tasks, current_page=current_page, pages=pages, page_title="Grains Recipes", tasks=mongo.db.tasks.find({"category_name": "Grains"}))
     
 @app.route('/get_pasta', methods=['GET'])
 def pasta():
-    return render_template("pasta.html", page_title="Pasta Recipes", tasks=mongo.db.tasks.find({"_id": "Pasta"}))
+    page_limit = 6  # Logic for pagination
+    current_page = int(request.args.get('current_page', 1))
+    total = mongo.db.recipe.count()
+    pages = range(1, int(math.ceil(total / page_limit)) + 1)
+    tasks = mongo.db.tasks.find().sort('_id', pymongo.ASCENDING).skip(
+        (current_page - 1)*page_limit).limit(page_limit)
+        
+    return render_template("pasta.html", task=tasks, current_page=current_page, pages=pages, page_title="Pasta Recipes", tasks=mongo.db.tasks.find({"category_name": "Pasta"}))
 
 @app.route('/get_task/<tasks_id>', methods=['GET', 'POST'])
 def task(tasks_id):
