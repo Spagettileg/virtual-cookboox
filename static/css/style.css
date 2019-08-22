@@ -92,6 +92,7 @@ h2, h3 {
     padding-bottom: 2rem; 
     width: 100%;
     background-color: #86C232;
+    border-radius: 0.5rem;
 }
 
 .about-title {
