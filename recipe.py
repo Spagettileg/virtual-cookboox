@@ -108,6 +108,21 @@ def task(tasks_id):
     a_recipe = mongo.db.tasks.find_one({"_id": ObjectId(tasks_id)})
 
     return render_template('recipe.html', task=task, tasks=a_recipe, title=a_recipe['recipe_name'])
+    
+@app.route('/get_tasks')
+def get_tasks():
+    return render_template("tasks.html", tasks=mongo.db.tasks.find())
+    
+@app.route('/add_task')
+def add_tasks():
+    return render_template('addrecipe.html', page_title="Add New Recipe",
+    categories=mongo.db.categories.find()) # Allows task categories in MongoDB to connect with addtask.html file
+    
+@app.route('/insert_tasks', methods=['POST'])
+def insert_tasks():
+    tasks = mongo.db.tasks # This is the tasks collection 
+    tasks.insert_one(request.form.to_dict()) # when submitting info to URI, its submmited in form of a request object
+    return redirect(url_for('get_tasks')) # We then grab the request object, show me the form & convert form to dict for Mongo to understand.
 
 
 if __name__ == "__main__":
