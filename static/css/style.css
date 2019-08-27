@@ -293,12 +293,12 @@ textarea { /*Text area space for Add Recipe brief description, ingredients & ins
   transition: .4s;
 }
 
-input:checked + .slider {
-  background-color: #2196F3;
+input:checked + .slider { 
+  background-color: #86C232;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #86C232;
 }
 
 input:checked + .slider:before {
