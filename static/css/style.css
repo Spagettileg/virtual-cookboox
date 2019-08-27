@@ -19,8 +19,18 @@ h2, h3 {
     background-color: white;
 }
 
-textarea { /*Text area space for Add Recipe brief description, ingredients & instrutions*/
+textarea { /*Text area space for Add Recipe brief description, ingredients & instructions*/
     width: 100%;
+}
+
+.col-container {
+    display: flex; /* Make the container element behave like a table */
+    width: 100%; /* Set full-width to expand the whole page */
+}
+
+.table-cell {
+    flex: 1; /* Make elements inside the container behave like table cells */
+    padding: 1rem;
 }
 
 /* Colours - 'Gorgeous Contrast' palette taken from visme.co */
