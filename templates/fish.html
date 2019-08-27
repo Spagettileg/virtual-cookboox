@@ -14,7 +14,8 @@
                 <div class="card-body">
                     <h4 class="card-title">{{ task.recipe_name }}</h4>
                     <p class="card-text">{{ task.brief_description }}</p>
-                    <a href="{{ url_for('task', tasks_id=task._id) }}" class="btn-large btn-recipe-detail">Recipe Detail</a>
+                    <div class="spacer"></div>
+                    <a href="{{ url_for('task', tasks_id=task._id) }}" class="btn-medium btn-recipe-detail bottomleft">Detail</a>
                 </div>
             </div>
         </div>
