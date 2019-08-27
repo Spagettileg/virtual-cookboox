@@ -13,7 +13,7 @@
                   <option value="{{cat.category_name}}">{{cat.category_name}}</option>
               {% endfor %}
             </select>
-                <label>Food Genre</label>
+                <label><strong>Food Genre</strong></label>
             </div>
             <div class="container">
             <hr class="divider-addrecipe">
@@ -22,32 +22,32 @@
             <div class="input-field col-sm-12 col-md-6">
                 <i class="fas fa-edit"></i>
                 <input id="recipe_name" name="recipe_name" type="text" class="validate">
-                <label for="icon_name">Recipe Name</label>
+                <label for="icon_name"><strong>Recipe Name</strong></label>
             </div>
             <div class="input-field col-sm-12 col-md-6">
                 <i class="fas fa-user"></i>
                 <input id="author_name" name="author_name" type="text" class="validate">
-                <label for="icon_author">Author Name</label>
+                <label for="icon_author"><strong>Author Name</strong></label>
             </div>
             <div class="input-field col-sm-12 col-md-6">
                 <i class="far fa-clock"></i>
                 <input id="prep_time_mins" name="prep_time_mins" type="number" class="validate">
-                <label for="icon_prep">Preparation Time (mins)</label>
+                <label for="icon_prep"><strong>Preparation Time</strong> (mins)</label>
             </div>
             <div class="input-field col-sm-12 col-md-6">
                 <i class="far fa-clock"></i>
                 <input id="cook_time_mins" name="cook_time_mins" type="number" class="validate">
-                <label for="icon_cook">Cooking Time (mins)</label>
+                <label for="icon_cook"><strong>Cooking Time</strong> (mins)</label>
             </div>
             <div class="input-field col-sm-12 col-md-6">
                 <i class="fas fa-graduation-cap"></i>
                 <input id="complexity" name="complexity" type="text" class="validate">
-                <label for="icon_complexity">Complexity (Easy/Challenge)</label>
+                <label for="icon_complexity"><strong>Complexity</strong> (Easy/Challenge)</label>
             </div>
             <div class="input-field col-sm-12 col-md-6">
                 <i class="fas fa-users"></i>
                 <input id="servings" name="servings" type="number" class="validate">
-                <label for="icon_servings">Servings (based on recipe)</label>
+                <label for="icon_servings"><strong>Servings</strong> (based on recipe)</label>
             </div>
             </div>
             <div class="container">
@@ -56,35 +56,42 @@
             <div class="input-field col-sm-12">
                 <i class="far fa-file-alt"></i>
                 <textarea name="brief_description" id="brief_description" class="textarea" /></textarea>
-                <label for="icon_brief_description">Brief Description</label>
+                <label for="icon_brief_description"><strong>Brief Description</strong></label>
             </div>
+            <div class="spacer"></div>
             <div class="input-field col-sm-12">
                 <i class="fas fa-weight"></i>
                 <input id="calories" name="calories" type="number" class="validate">
-                <label for="icon_calories">Calories</label>
+                <label for="icon_calories"><strong>Calories</strong></label>
             </div>
+            <div class="spacer"></div>
             <div class="input-field col-sm-12">
                 <i class="far fa-file-alt"></i>
                 <textarea name="ingredients" id="ingredients" class="textarea" /></textarea>
-                <label for="icon_ingredients">Ingredients</label>
+                <label for="icon_ingredients"><strong>Ingredients</strong></label>
+            </div>
+            <div class="container">
+            <hr class="divider-addrecipe">
             </div>
             <div class="input-field col-sm-12">
                 <i class="far fa-file-alt"></i>
                 <textarea name="instructions" id="instructions" class="textarea" /></textarea>
-                <label for="icon_instructions">Instructions</label>
+                <label for="icon_instructions"><strong>Instructions</strong></label>
+            </div>
+            <div class="container">
+            <hr class="divider-addrecipe">
             </div>
             <div class="input-field col-sm-12">
                 <i class="far fa-file-image"></i>
                 <input id="recipe_image" name="recipe_image" type="text" class="validate">
-                <label for="icon_image">Recipe Image (url / web address)</label>
+                <label for="icon_image"><strong>Recipe Image</strong> (url / web address)</label>
             </div>
         </div>
-        
+            <div class="spacer"></div>
         <div class="row">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Add Recipe
-                <i class="fas fa-upload"></i>
-             </button>
+            <button class="btn-large btn-confirm-recipe" type="submit" name="action">Confirm</button>
         </div>
+        <div class="spacer"></div>
     </form>
 
 
