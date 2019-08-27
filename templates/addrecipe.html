@@ -3,15 +3,15 @@
 <h2>{{ page_title }}</h2>
 
 <div Class="row">
-    <form> action="{{ url_for('insert_tasks') }}" method="POST" class="col-sm-12">
+    <form action="{{ url_for('insert_tasks') }}" method="POST" class="col-sm-12">
         <div class="row">
             <div class="input-field col-sm-12">
-                <i class="">fas fa-edit</i>
+                <i class="fas fa-edit"></i>
                 <input id="icon_prefix" type="text" class="validate">
                 <label for="icon_prefix">Recipe Name</label>
             </div>
             <div class="input-field col-sm-12">
-                <i class="">far fa-file-alt</i>
+                <i class="far fa-file-alt"></i>
                 <textarea name="brief_description" id="brief_description" class="textarea" /></textarea>
                 <label for="icon_brief_description">Brief Description</label>
             </div>
