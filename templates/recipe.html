@@ -1,23 +1,22 @@
-{% extends 'base.html' %}
-{% block content %}
-    
-    
+{% extends 'base.html' %} {% block content %}
+
+
 <!-- Page Layout -->
 <main class="recipe-container">
     <div class="row">
         <div class="col-md-5 recipe-image-container d-flex align-items-center justify-content-center">
             <img class="img-fluid" src="{{ tasks.recipe_image }}">
         </div>
-        
+
         <div class="col-md-7">
             <h3>{{ tasks.recipe_name }}</h3>
             <div class="row">
                 <p class="recipe-description">{{ tasks.brief_description }}</p>
             </div>
         </div>
-        
-         <hr class="divider-recipe-detail"></hr>
-         <div class="container">
+
+        <hr class="divider-recipe-detail"></hr>
+        <div class="container">
             <div class="row recipe-icons">
                 <div class="col-6 col-sm-6 col-md-2 food-icons">
                     <div><i class="divider-custom-icon-recipe fas fa-user"></i></div>
@@ -45,19 +44,27 @@
                 </div>
             </div>
         </div>
-            <hr class="divider-recipe-detail"></hr
-            <br>
-            <div class="container col-xs-12">
-                <h4 class="left-align ingredients-section">Ingredients</h4>
-                <p class="section recipe-ingredients" style="white-space: pre-wrap;">{{ tasks.ingredients }}</p>
-            </div>
-            <hr class="divider-recipe-detail"></hr>
-            <div class="container col-xs-12">
-                <h4 class="left-align instructions-section">Instructions</h4>
-                <p class="section recipe-instructions" style="white-space: pre-wrap;">{{ tasks.instructions }}</p>
-            </div>
-            <div class="spacer"></div>
-        
+        <hr class="divider-recipe-detail"></hr <br>
+        <div class="container col-xs-12">
+            <h4 class="left-align ingredients-section">Ingredients</h4>
+            <p class="section recipe-ingredients" style="white-space: pre-wrap;">{{ tasks.ingredients }}</p>
+        </div>
+        <hr class="divider-recipe-detail"></hr>
+        <div class="container col-xs-12">
+            <h4 class="left-align instructions-section">Instructions</h4>
+            <p class="section recipe-instructions" style="white-space: pre-wrap;">{{ tasks.instructions }}</p>
+        </div>
+        <div class="spacer"></div>
+        <div class="container col-xs-12">
+            <h4 class="left-align">Favourite?</h4>
+        <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+        </label>
+        </div>
+        <div class="spacer"></div>
+
+
     </div>
 </main>
 {% endblock %}
