@@ -25,8 +25,8 @@ textarea { /*Text area space for Add Recipe brief description, ingredients & ins
 
 .bottomleft { /*Position of the recipe detail button positioned to bottom left*/
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    bottom: 0.6rem;
+    left: 0.6rem;
 }
 
 /* Colours - 'Gorgeous Contrast' palette taken from visme.co */
