@@ -6,16 +6,6 @@
     <form action="{{ url_for('insert_tasks') }}" method="POST" class="col-sm-12">
         <div class="row">
             <div class="input-field col-sm-12">
-                <i class="fas fa-edit"></i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix">Recipe Name</label>
-            </div>
-            <div class="input-field col-sm-12">
-                <i class="far fa-file-alt"></i>
-                <textarea name="brief_description" id="brief_description" class="textarea" /></textarea>
-                <label for="icon_brief_description">Brief Description</label>
-            </div>
-            <div class="input-field col-sm-12">
                 <i class="fas fa-tags"></i>
                 <select id="category" name="category_name">
               <option value="" disabled selected>Choose Category</option>
@@ -26,34 +16,44 @@
                 <label>Food Genre</label>
             </div>
             <div class="input-field col-sm-12">
+                <i class="fas fa-edit"></i>
+                <input id="recipe_name" name="recipe_name" type="text" class="validate">
+                <label for="icon_name">Recipe Name</label>
+            </div>
+            <div class="input-field col-sm-12">
                 <i class="fas fa-user"></i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix">Author Name</label>
+                <input id="author_name" name="author_name" type="text" class="validate">
+                <label for="icon_author">Author Name</label>
+            </div>
+            <div class="input-field col-sm-12">
+                <i class="far fa-clock"></i>
+                <input id="prep_time_mins" name="prep_time_mins" type="number" class="validate">
+                <label for="icon_prep">Preparation Time (mins)</label>
+            </div>
+            <div class="input-field col-sm-12">
+                <i class="far fa-clock"></i>
+                <input id="cook_time_mins" name="cook_time_mins" type="number" class="validate">
+                <label for="icon_cook">Cooking Time (mins)</label>
             </div>
             <div class="input-field col-sm-12">
                 <i class="fas fa-graduation-cap"></i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix">Complexity (Easy or Challenge)</label>
-            </div>
-            <div class="input-field col-sm-12">
-                <i class="fas fa-weight"></i>
-                <input id="icon_prefix" type="number" class="validate">
-                <label for="icon_prefix">Calories</label>
-            </div>
-            <div class="input-field col-sm-12">
-                <i class="far fa-clock"></i>
-                <input id="icon_prefix" type="number" class="validate">
-                <label for="icon_prefix">Preparation Time (mins)</label>
-            </div>
-            <div class="input-field col-sm-12">
-                <i class="far fa-clock"></i>
-                <input id="icon_prefix" type="number" class="validate">
-                <label for="icon_prefix">Cooking Time (mins)</label>
+                <input id="complexity" name="complexity" type="text" class="validate">
+                <label for="icon_complexity">Complexity (Easy or Challenge)</label>
             </div>
             <div class="input-field col-sm-12">
                 <i class="fas fa-users"></i>
-                <input id="icon_prefix" type="number" class="validate">
-                <label for="icon_prefix">Servings</label>
+                <input id="servings" name="servings" type="number" class="validate">
+                <label for="icon_servings">Servings</label>
+            </div>
+            <div class="input-field col-sm-12">
+                <i class="far fa-file-alt"></i>
+                <textarea name="brief_description" id="brief_description" class="textarea" /></textarea>
+                <label for="icon_brief_description">Brief Description</label>
+            </div>
+            <div class="input-field col-sm-12">
+                <i class="fas fa-weight"></i>
+                <input id="calories" name="calories" type="number" class="validate">
+                <label for="icon_calories">Calories</label>
             </div>
             <div class="input-field col-sm-12">
                 <i class="far fa-file-alt"></i>
@@ -65,9 +65,11 @@
                 <textarea name="instructions" id="instructions" class="textarea" /></textarea>
                 <label for="icon_instructions">Instructions</label>
             </div>
-            
-            
-            
+            <div class="input-field col-sm-12">
+                <i class="far fa-file-image"></i>
+                <input id="recipe_image" name="recipe_image" type="text" class="validate">
+                <label for="icon_image">Recipe Image (url / web address)</label>
+            </div>
         </div>
         
         <div class="row">
