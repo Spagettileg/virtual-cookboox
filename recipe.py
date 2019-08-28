@@ -124,6 +124,14 @@ def insert_tasks():
     tasks.insert_one(request.form.to_dict()) # when submitting info to URI, its submmited in form of a request object
     return redirect(url_for('get_tasks')) # We then grab the request object, show me the form & convert form to dict for Mongo to understand.
 
+@app.route('/edit_task/<task_id>')
+def edit_task(task_id):
+    tasks = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+    # Find a particular task, parameter passed is 'id', looking for a match to 'id' in MongoDB, then wrapped for editing purposes.  
+    all_categories = mongo.db.categories.find() # Reuse much of the layout in 'add_tasks' function, but with pre-populated fields.
+    return render_template('editrecipe.html', task=tasks, categories=all_categories)
+    
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP', "0.0.0.0"),
