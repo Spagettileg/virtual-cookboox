@@ -107,7 +107,7 @@ def task(tasks_id):
     """
     a_recipe = mongo.db.tasks.find_one({"_id": ObjectId(tasks_id)})
 
-    return render_template('recipe.html', task=task, tasks=a_recipe, title=a_recipe['recipe_name'])
+    return render_template('recipe.html', task=a_recipe, title=a_recipe['recipe_name'])
     
 @app.route('/get_tasks')
 def get_tasks():
