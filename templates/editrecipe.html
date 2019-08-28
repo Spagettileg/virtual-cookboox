@@ -25,32 +25,32 @@
             <div class="row">
             <div class="input-field col-sm-12 col-md-6">
                 <i class="fas fa-edit"></i>
-                <input id="recipe_name" name="recipe_name" type="text" class="validate">
+                <input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{tasks.recipe_name}}">
                 <label for="icon_name"><strong>Recipe Name</strong></label>
             </div>
             <div class="input-field col-sm-12 col-md-6">
                 <i class="fas fa-user"></i>
-                <input id="author_name" name="author_name" type="text" class="validate">
+                <input id="author_name" name="author_name" type="text" class="validate" value="{{tasks.author_name}}">
                 <label for="icon_author"><strong>Author Name</strong></label>
             </div>
             <div class="input-field col-sm-12 col-md-6">
                 <i class="far fa-clock"></i>
-                <input id="prep_time_mins" name="prep_time_mins" type="number" class="validate">
+                <input id="prep_time_mins" name="prep_time_mins" type="number" class="validate" value="{{tasks.prep_time_mins}}">
                 <label for="icon_prep"><strong>Preparation Time</strong> (mins)</label>
             </div>
             <div class="input-field col-sm-12 col-md-6">
                 <i class="far fa-clock"></i>
-                <input id="cook_time_mins" name="cook_time_mins" type="number" class="validate">
+                <input id="cook_time_mins" name="cook_time_mins" type="number" class="validate" value="{{tasks.cook_time_mins}}">
                 <label for="icon_cook"><strong>Cooking Time</strong> (mins)</label>
             </div>
             <div class="input-field col-sm-12 col-md-6">
                 <i class="fas fa-graduation-cap"></i>
-                <input id="complexity" name="complexity" type="text" class="validate">
+                <input id="complexity" name="complexity" type="text" class="validate" value="{{tasks.complexity}}">
                 <label for="icon_complexity"><strong>Complexity</strong> (Easy/Challenge)</label>
             </div>
             <div class="input-field col-sm-12 col-md-6">
                 <i class="fas fa-users"></i>
-                <input id="servings" name="servings" type="number" class="validate">
+                <input id="servings" name="servings" type="number" class="validate" value="{{tasks.servings}}">
                 <label for="icon_servings"><strong>Servings</strong> (based on recipe)</label>
             </div>
             </div>
@@ -59,19 +59,19 @@
             </div>
             <div class="input-field col-sm-12">
                 <i class="far fa-file-alt"></i>
-                <textarea name="brief_description" id="brief_description" class="textarea" /></textarea>
+                <textarea name="brief_description" id="brief_description" class="textarea" / value="{{tasks.brief_description}}"></textarea>
                 <label for="icon_brief_description"><strong>Brief Description</strong></label>
             </div>
             <div class="spacer"></div>
             <div class="input-field col-sm-12">
                 <i class="fas fa-weight"></i>
-                <input id="calories" name="calories" type="number" class="validate">
+                <input id="calories" name="calories" type="number" class="validate" value="{{tasks.calories}}">
                 <label for="icon_calories"><strong>Calories</strong></label>
             </div>
             <div class="spacer"></div>
             <div class="input-field col-sm-12">
                 <i class="far fa-file-alt"></i>
-                <textarea name="ingredients" id="ingredients" class="textarea" /></textarea>
+                <textarea name="ingredients" id="ingredients" class="textarea" / value="{{tasks.ingredients}}"></textarea>
                 <label for="icon_ingredients"><strong>Ingredients</strong></label>
             </div>
             <div class="container">
@@ -79,7 +79,7 @@
             </div>
             <div class="input-field col-sm-12">
                 <i class="far fa-file-alt"></i>
-                <textarea name="instructions" id="instructions" class="textarea" /></textarea>
+                <textarea name="instructions" id="instructions" class="textarea" / value="{{tasks.instructions}}"></textarea>
                 <label for="icon_instructions"><strong>Instructions</strong></label>
             </div>
             <div class="container">
@@ -87,11 +87,25 @@
             </div>
             <div class="input-field col-sm-12">
                 <i class="far fa-file-image"></i>
-                <input id="recipe_image" name="recipe_image" type="text" class="validate">
+                <input id="recipe_image" name="recipe_image" type="text" class="validate" value="{{tasks.recipe_image}}">
                 <label for="icon_image"><strong>Recipe Image</strong> (url / web address)</label>
             </div>
         </div>
             <div class="spacer"></div>
+        <div class="row">
+            <div class="switch">
+                <label>
+                    {% if task.is_urgent %}
+                          <input id="is_urgent" name="is_urgent" type="checkbox" checked>
+                    {% else %}
+                         <input id="is_urgent" name="is_urgent" type="checkbox">
+                    {% endif%}
+                  <span class="lever"></span>
+                  Is Urgent
+                </label>
+            </div>
+        </div>
+        <div class="spacer"></div>
         <div class="row">
             <button class="btn-large btn-confirm-recipe" type="submit" name="action">Confirm</button>
         </div>
