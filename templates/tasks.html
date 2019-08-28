@@ -1,19 +1,24 @@
 {% extends 'base.html'%} {% block content %}
 <div class="row">
-    
+   
         {% for task in tasks %}
         
             <div class="row">
-                <div class="task_header col-sm-9">
-                    <strong>{{task.recipe_name}}</strong>
+                <div class="col s3">
+                    <i class="fas fa-angle-right"></i>
+                    <a href="{{url_for('delete_task', task_id=task._id)}}" class="btn-large btn-confirm-recipe">Delete</a>
+                    <a href="{{url_for('edit_task', task_id=task._id)}}" class="btn-large btn-confirm-recipe">Edit</a>
+                    
+                </div>
+                <div class=" task_header col s9">
+                    <strong>{{tasks.recipe_name}}</strong> 
                 </div>
             </div>
             <div class="row">
-                <span>{{task.brief_description}}</span>
+                <span>
+                {{tasks.brief_description}} 
+            </span>
             </div>
-       
         {% endfor %}
-
-    
 </div>
 {% endblock %}
