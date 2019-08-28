@@ -252,6 +252,66 @@ textarea { /*Text area space for Add Recipe brief description, ingredients & ins
     /*Apple*/
 }
 
+.btn-edit-recipe {
+    padding: 0.2rem;
+    margin: 0.2rem;
+    border-radius: 10%;
+    background-color: #FFC107; /*Amber Warning*/
+    border-color: #FFC107; /*Amber Warning*/
+    color: #222629; /*Dark Slate*/
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-decoration: none;
+    width: 7rem;
+    text-align: center;
+}
+
+.btn-edit-recipe:hover { /* edit recipe button change colour when hovered & clicked */
+    background-color: #86C232;
+    /*lime green*/
+    border-color: #86C232;
+    color: #000;
+    /*Black*/
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    /*Opera*/
+    -moz-transition: all 0.5s ease-in-out;
+    /*Windows*/
+    -webkit-transition: all 0.5s ease-in-out;
+    /*Apple*/
+}
+
+.btn-delete-recipe {
+    padding: 0.2rem;
+    margin: 0.2rem;
+    border-radius: 10%;
+    background-color: #DC3545; /*Red Danger*/
+    border-color: #DC3545; /*Red Danger*/
+    color: #fafafa; /*Off white*/
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-decoration: none;
+    width: 7rem;
+    text-align: center;
+}
+
+.btn-delete-recipe:hover { /* delete recipe button change colour when hovered & clicked */
+    background-color: #86C232;
+    /*lime green*/
+    border-color: #86C232;
+    color: #000;
+    /*Black*/
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    /*Opera*/
+    -moz-transition: all 0.5s ease-in-out;
+    /*Windows*/
+    -webkit-transition: all 0.5s ease-in-out;
+    /*Apple*/
+}
+
 .switch { /*Switch function allows the user to confirm their favourite recipe*/
   position: relative;
   display: inline-block;
