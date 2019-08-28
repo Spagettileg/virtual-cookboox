@@ -131,7 +131,26 @@ def edit_task(task_id):
     all_categories = mongo.db.categories.find() # Reuse much of the layout in 'add_tasks' function, but with pre-populated fields.
     return render_template('editrecipe.html', task=tasks, categories=all_categories)
     
-
+@app.route('/update_task/<task_id>', methods=['POST'])
+def update_task(task_id):
+    tasks = mongo.db.tasks # Access to the tasks collection in mongo.db
+    tasks.update({'_id': ObjectId(task_id)},
+    {
+        'category_name':request.form.get('category_name'),
+        'recipe_name':request.form.get('recipe_name'),
+        'author_name':request.form.get('author_name'),
+        'prep_time_mins':request.form.get('prep_time_mins'),
+        'cook_time_mins':request.form.get('cook_time_mins'),
+        'complexity':request.form.get('complexity'),
+        'favourite':request.form.get('favourite'),
+        'servings':request.form.get('servings'),
+        'brief_description':request.form.get('brief_description'),
+        'calories':request.form.get('calories'),
+        'ingredients':request.form.get('ingredients'),
+        'instructions':request.form.get('instructions'),
+        'recipe_image':request.form.get('recipe_image')
+    })
+    return redirect(url_for('get_tasks'))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP', "0.0.0.0"),
