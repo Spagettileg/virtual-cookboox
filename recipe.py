@@ -151,6 +151,11 @@ def update_task(task_id):
         'recipe_image':request.form.get('recipe_image')
     })
     return redirect(url_for('get_tasks'))
+    
+@app.route('/delete_task/<task_id>')
+def delete_task(task_id):
+    mongo.db.tasks.remove({'_id': ObjectId(task_id)}) # We access the tasks collection & call to remove selected task. 
+    return redirect(url_for('get_tasks'))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP', "0.0.0.0"),
