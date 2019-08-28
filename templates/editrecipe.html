@@ -3,14 +3,18 @@
 <h2>{{ page_title }}</h2>
 
 <div Class="row divider-custom-icon-addrecipe">
-    <form action="{{ url_for('insert_tasks') }}" method="POST" class="col-sm-12">
+    <form action="{{ url_for('update_tasks') }}" method="POST" class="col-sm-12">
         <div class="row">
             <div class="input-field col-sm-12">
                 <i class="fas fa-tags"></i>
                 <select id="category" name="category_name">
               <option value="" disabled selected>Choose Category</option>
               {% for cat in categories %}
+                  {% if cat.category_name == task.category_name%}
+                  <option value="{{cat.category_name}}" selected >{{cat.category_name}}</option>
+                  {% else %}
                   <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                  {% endif %}
               {% endfor %}
             </select>
                 <label><strong>Food Genre</strong></label>
