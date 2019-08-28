@@ -55,12 +55,20 @@
             <p class="section recipe-instructions" style="white-space: pre-wrap;">{{ tasks.instructions }}</p>
         </div>
         <div class="spacer"></div>
-        <div class="container col-xs-12">
-            <h4 class="left-align">Favourite?</h4>
+        
+        <div class="container">
+        <h4 class="left-align">Favourite?</h4>
         <label class="switch">
-              <input type="checkbox" checked>
-              <span class="slider round"></span>
-        </label>
+               <input type="checkbox" checked>
+                 <span class="slider round"></span>
+            </label>
+        <div class="spacer"></div>
+        <div class="container">
+            <div class="row">
+                <a href="{{url_for('edit_task', task_id=task._id)}}" class="btn-medium btn-edit-recipe">Edit</a>
+                <a href="{{url_for('delete_task', task_id=task._id)}}" class="btn-medium btn-delete-recipe">Delete</a>
+            </div>
+        </div>
         </div>
         <div class="spacer"></div>
 
