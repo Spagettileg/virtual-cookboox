@@ -142,7 +142,7 @@ def update_task(task_id):
         'prep_time_mins':request.form.get('prep_time_mins'),
         'cook_time_mins':request.form.get('cook_time_mins'),
         'complexity':request.form.get('complexity'),
-        'favourite':request.form.get('favourite'),
+        'favourite': 'favourite' in request.form,
         'servings':request.form.get('servings'),
         'brief_description':request.form.get('brief_description'),
         'calories':request.form.get('calories'),
