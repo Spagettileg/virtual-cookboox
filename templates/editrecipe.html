@@ -3,7 +3,7 @@
 <h2>{{ page_title }}</h2>
 
 <div Class="row divider-custom-icon-addrecipe">
-    <form action="{{ url_for('update_tasks') }}" method="POST" class="col-sm-12">
+    <form action="{{ url_for('update_task', task_id=task._id) }}" method="POST" class="col-sm-12">
         <div class="row">
             <div class="input-field col-sm-12">
                 <i class="fas fa-tags"></i>
