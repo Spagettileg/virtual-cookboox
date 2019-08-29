@@ -126,10 +126,10 @@ def insert_tasks():
 
 @app.route('/edit_task/<task_id>')
 def edit_task(task_id):
-    tasks = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+    task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
     # Find a particular task, parameter passed is 'id', looking for a match to 'id' in MongoDB, then wrapped for editing purposes.  
     all_categories = mongo.db.categories.find() # Reuse much of the layout in 'add_tasks' function, but with pre-populated fields.
-    return render_template('editrecipe.html', task=tasks, categories=all_categories)
+    return render_template('editrecipe.html', task=task, categories=all_categories)
     
 @app.route('/update_task/<task_id>', methods=['POST'])
 def update_task(task_id):
