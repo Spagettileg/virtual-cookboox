@@ -186,7 +186,7 @@ textarea { /*Text area space for Add Recipe brief description, ingredients & ins
     background-color: #61892F;
 }
 
-/* Buttons & Switches */
+/* Buttons & Checkboxes */
 
 .btn-add-recipe,
 .btn-confirm-recipe {
@@ -310,6 +310,61 @@ textarea { /*Text area space for Add Recipe brief description, ingredients & ins
     /*Windows*/
     -webkit-transition: all 0.5s ease-in-out;
     /*Apple*/
+}
+
+.checkbox-list__item {
+  position: relative;
+  padding: 10px 0;
+  display: block;
+  cursor: pointer;
+  margin: 0 0 0 34px;
+  border-bottom: 1px solid #b4bcc2;
+}
+.checkbox-list__item:last-of-type {
+  border-bottom: 0;
+}
+
+.checkbox-list__check {
+  width: 24px;
+  height: 26px;
+  border: 3px solid #b4bcc2;
+  position: absolute;
+  left: -34px;
+  top: 50%;
+  margin-top: -12px;
+  transition: border .3s ease;
+  -webkit-transition: border .3s ease;
+    -moz-transition: border .3s ease;
+    -ms-transition: border .3s ease;
+    -o-transition: border .3s ease;
+  border-radius: 5px;
+}
+.checkbox-list__check:before {
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 22px;
+  top: -2px;
+  left: 0px;
+  padding-left: 2px;
+  background-color: transparent;
+  transition: background-color .3s ease;
+  -webkit-transition: background-color .3s ease;
+    -moz-transition: background-color .3s ease;
+    -ms-transition: background-color .3s ease;
+    -o-transition: background-color .3s ease;
+  content: '\2713';
+  font-family: initial;
+  font-size: 19px;
+  color: white;
+}
+
+input[type="checkbox"]:checked ~ .checkbox-list__check {
+  border-color: #5bc0de;
+}
+
+input[type="checkbox"]:checked ~ .checkbox-list__check:before {
+  background-color: #5bc0de;
 }
 
 /* Social Media */
