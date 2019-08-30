@@ -325,11 +325,11 @@ textarea { /*Text area space for Add Recipe brief description, ingredients & ins
 }
 
 .checkbox-list__check {
-  width: 24px;
-  height: 26px;
+  width: 1.5rem; 
+  height: 1.6rem; 
   border: 3px solid #61892F;
   position: absolute;
-  left: -34px;
+  left: -34px; /*-34px*/
   top: 50%;
   margin-top: -12px;
   transition: border .3s ease;
@@ -342,8 +342,8 @@ textarea { /*Text area space for Add Recipe brief description, ingredients & ins
 .checkbox-list__check:before {
   position: absolute;
   display: block;
-  width: 18px;
-  height: 22px;
+  width: 1.125rem; 
+  height: 1.375rem; 
   top: -2px;
   left: 0px;
   padding-left: 2px;
@@ -353,9 +353,9 @@ textarea { /*Text area space for Add Recipe brief description, ingredients & ins
     -moz-transition: background-color .3s ease;
     -ms-transition: background-color .3s ease;
     -o-transition: background-color .3s ease;
-  content: '\2713';
+  content: '\2713'; /*Tick in the box*/
   font-family: initial;
-  font-size: 19px;
+  font-size: 1.1875rem; 
   color: white;
 }
 
