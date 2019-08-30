@@ -312,13 +312,13 @@ textarea { /*Text area space for Add Recipe brief description, ingredients & ins
     /*Apple*/
 }
 
-.checkbox-list__item {
+.checkbox-list__item { /*Checkbox supports user favourite recipe selection*/
   position: relative;
-  padding: 10px 0;
+  padding: 15px 0;
   display: block;
   cursor: pointer;
-  margin: 0 0 0 34px;
-  border-bottom: 1px solid #b4bcc2;
+  margin: 0 0 0 38px;
+  border-bottom: 1px solid #61892F;
 }
 .checkbox-list__item:last-of-type {
   border-bottom: 0;
@@ -327,7 +327,7 @@ textarea { /*Text area space for Add Recipe brief description, ingredients & ins
 .checkbox-list__check {
   width: 24px;
   height: 26px;
-  border: 3px solid #b4bcc2;
+  border: 3px solid #61892F;
   position: absolute;
   left: -34px;
   top: 50%;
@@ -359,12 +359,12 @@ textarea { /*Text area space for Add Recipe brief description, ingredients & ins
   color: white;
 }
 
-input[type="checkbox"]:checked ~ .checkbox-list__check {
-  border-color: #5bc0de;
+input[type="checkbox"]:checked ~ .checkbox-list__check { /*Checkbox chnages to lime green once clicked by the user*/
+  border-color: #86C232;
 }
 
 input[type="checkbox"]:checked ~ .checkbox-list__check:before {
-  background-color: #5bc0de;
+  background-color: #86C232;
 }
 
 /* Social Media */
