@@ -176,6 +176,9 @@ textarea { /*Text area space for Add Recipe brief description, ingredients & ins
     color: #61892F;
     font-size: 2rem;
     padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .divider-recipe-detail,
