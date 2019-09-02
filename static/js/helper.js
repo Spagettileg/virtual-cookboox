@@ -22,3 +22,6 @@ container.className += "active";
 var l = areas.length;while (l--) {
  makeExpandingArea(areas[l]);
 }
+
+
+
