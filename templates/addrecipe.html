@@ -22,32 +22,32 @@
             <div class="input-field col-sm-12 col-md-6">
                 <i class="fas fa-edit"></i>
                 <label for="icon_name"><strong>Recipe Name</strong></label>
-                <input id="recipe_name" name="recipe_name" type="text" class="validate">
+                <input id="recipe_name" name="recipe_name" type="text" class="validate" required>
             </div>
             <div class="input-field col-sm-12 col-md-6">
                 <i class="fas fa-user"></i>
                 <label for="icon_author"><strong>Author Name</strong></label>
-                <input id="author_name" name="author_name" type="text" class="validate">
+                <input id="author_name" name="author_name" type="text" class="validate" required>
             </div>
             <div class="input-field col-sm-12 col-md-6">
                 <i class="far fa-clock"></i>
                 <label for="icon_prep"><strong>Preparation Time</strong> (mins)</label>
-                <input id="prep_time_mins" name="prep_time_mins" type="number" class="validate">
+                <input id="prep_time_mins" name="prep_time_mins" type="number" class="validate" required>
             </div>
             <div class="input-field col-sm-12 col-md-6">
                 <i class="far fa-clock"></i>
                 <label for="icon_cook"><strong>Cooking Time</strong> (mins)</label>
-                <input id="cook_time_mins" name="cook_time_mins" type="number" class="validate">
+                <input id="cook_time_mins" name="cook_time_mins" type="number" class="validate" required>
             </div>
             <div class="input-field col-sm-12 col-md-6">
                 <i class="fas fa-graduation-cap"></i>
                 <label for="icon_complexity"><strong>Complexity</strong> (Easy/Challenge)</label>
-                <input id="complexity" name="complexity" type="text" class="validate">
+                <input id="complexity" name="complexity" type="text" class="validate" required>
             </div>
             <div class="input-field col-sm-12 col-md-6">
                 <i class="fas fa-users"></i>
                 <label for="icon_servings"><strong>Servings</strong> (based on recipe)</label>
-                <input id="servings" name="servings" type="number" class="validate">
+                <input id="servings" name="servings" type="number" class="validate" required>
             </div>
             </div>
             <div class="container">
@@ -58,14 +58,14 @@
                 <label for="icon_brief_description"><strong>Brief Description</strong></label>
                 <div class="expandingArea">
                   <pre><span></span><br></pre>
-                      <textarea name="brief_description" id="brief_description" class="textarea" /></textarea>
+                      <textarea name="brief_description" id="brief_description" class="textarea" required></textarea>
                 </div>
             </div>
             <div class="spacer"></div>
             <div class="input-field col-sm-12">
                 <i class="fas fa-weight"></i>
                 <label for="icon_calories"><strong>Calories</strong></label>
-                <input id="calories" name="calories" type="number" class="validate">
+                <input id="calories" name="calories" type="number" class="validate" required>
             </div>
             <div class="spacer"></div>
             <div class="input-field col-sm-12">
@@ -73,7 +73,7 @@
                 <label for="icon_ingredients"><strong>Ingredients</strong></label>
                 <div class="expandingArea">
                   <pre><span></span><br></pre>
-                      <textarea name="ingredients" id="ingredients" class="textarea" /></textarea>
+                      <textarea name="ingredients" id="ingredients" class="textarea" required></textarea>
                 </div>
             </div>
             <div class="container">
@@ -84,7 +84,7 @@
                 <label for="icon_instructions"><strong>Instructions</strong></label>
                 <div class="expandingArea">
                   <pre><span></span><br></pre>
-                      <textarea name="instructions" id="instructions" class="textarea" /></textarea>
+                      <textarea name="instructions" id="instructions" class="textarea" required></textarea>
                 </div>
             </div>
             <div class="container">
@@ -93,7 +93,7 @@
             <div class="input-field col-sm-12">
                 <i class="far fa-file-image"></i>
                 <label for="icon_image"><strong>Recipe Image</strong> (url / web address)</label>
-                <input id="recipe_image" name="recipe_image" type="text" class="validate">
+                <input id="recipe_image" name="recipe_image" type="text" class="validate" required>
             </div>
         </div>
             <div class="spacer"></div>
