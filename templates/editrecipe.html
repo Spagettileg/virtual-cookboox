@@ -3,7 +3,7 @@
 <h2>{{ page_title }}</h2>
 
 <div Class="row divider-custom-icon-addrecipe">
-    <form action="{{ url_for('update_task', task_id=task._id) }}" method="POST" class="col-sm-12">
+    <form action="{{ url_for('update_task', task_id=task._id) }}" method="POST" class="col-sm-12" novalidate>
         <div class="row">
             <div class="input-field col-sm-12">
                 <i class="fas fa-tags"></i>
@@ -62,7 +62,7 @@
                 <label for="icon_brief_description"><strong>Brief Description</strong></label>
                 <div class="expandingArea">
                   <pre><span></span><br></pre>
-                      <textarea name="brief_description" id="brief_description" class="textarea" />{{task.brief_description}}</textarea>
+                      <textarea name="brief_description" id="brief_description" class="textarea" >{{task.brief_description}}</textarea>
                 </div>
             </div>
             <div class="spacer"></div>
@@ -77,7 +77,7 @@
                 <label for="icon_ingredients"><strong>Ingredients</strong></label>
                 <div class="expandingArea">
                   <pre><span></span><br></pre>
-                      <textarea name="ingredients" id="ingredients" class="textarea" />{{task.ingredients}}</textarea>
+                      <textarea name="ingredients" id="ingredients" class="textarea" >{{task.ingredients}}</textarea>
                 </div>
             </div>
             <div class="container">
@@ -88,7 +88,7 @@
                 <label for="icon_instructions"><strong>Instructions</strong></label>
                 <div class="expandingArea">
                   <pre><span></span><br></pre>
-                      <textarea name="instructions" id="instructions" class="textarea" />{{task.instructions}}</textarea>
+                      <textarea name="instructions" id="instructions" class="textarea" >{{task.instructions}}</textarea>
                 </div>
             </div>
             <div class="container">
