@@ -25,6 +25,11 @@ h2, h3 {
     left: 0.6rem;
 }
 
+input {
+    text-align: center;
+    font: 400 15px/18px montserrat, lato, sans-serif;
+}
+
 /* Colours - 'Gorgeous Contrast' palette taken from visme.co */
 
 .bg-color-pea-green {
