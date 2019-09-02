@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Lato:400,700,400italic,700italic');
+@import url('https://fonts.googleapis.com/css?family=montserrat:400,700|lato:400,700,400italic,700italic');
 
 /* Special Padding / Margin / Text */
 
@@ -193,6 +193,7 @@ h2, h3 {
 /*Textarea Resize*/
 /*Resize brief description, ingredients & instructions textareas*/
 
+textarea, 
 pre {
   margin: 0;
   padding: 0;
@@ -210,7 +211,7 @@ pre {
 .expandingArea > pre {
   padding: 5px;
   background: transparent;
-  font: 400 13px/16px helvetica, arial, sans-serif;
+  font: 400 15px/18px montserrat, lato, sans-serif;
   /* Make the text soft-wrap */
   white-space: pre-wrap;
   word-wrap: break-word;
