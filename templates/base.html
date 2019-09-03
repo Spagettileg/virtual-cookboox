@@ -26,6 +26,8 @@
   <nav class="navbar navbar-expand bg-color-dark-slate text-uppercase fixed-top">
     <div class="container">
       <a class="navbar-brand navbar-left" href="{{ url_for('index') }}">Virtual Cookbook</a>
+      <label class="navbar-count-all">Recipes {{count_tasks|count()}} </label>
+      <label class="navbar-count-all">Favourites {{count_favourite|count()}} </label>
       <a class="btn-large btn-add-recipe" href="{{ url_for('add_tasks') }}"> Add Recipe </a> 
     </div>
   </nav>
