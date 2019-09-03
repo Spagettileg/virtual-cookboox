@@ -114,7 +114,7 @@ def update_task(task_id):
         'instructions':request.form.get('instructions'),
         'recipe_image':request.form.get('recipe_image')
     })
-    return redirect(url_for('get_tasks'))
+    return redirect(url_for('task', tasks_id=task_id))
     
 @app.route('/delete_task/<task_id>')
 def delete_task(task_id):
