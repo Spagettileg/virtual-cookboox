@@ -86,7 +86,7 @@ def add_tasks():
 def insert_tasks():
     tasks = mongo.db.tasks # This is the tasks collection 
     tasks.insert_one(request.form.to_dict()) # when submitting info to URI, its submmited in form of a request object
-    return redirect(url_for('get_tasks')) # We then grab the request object, show me the form & convert form to dict for Mongo to understand.
+    return redirect(url_for('index')) # We then grab the request object, show me the form & convert form to dict for Mongo to understand.
 
 @app.route('/edit_task/<task_id>')
 def edit_task(task_id):
