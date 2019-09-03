@@ -25,7 +25,7 @@ h2, h3 {
     left: 0.6rem;
 }
 
-input {
+input { /*Format the input boxes appearing in both edit and add recipe*/
     text-align: center;
     font: 400 15px/18px montserrat, lato, sans-serif;
 }
@@ -503,6 +503,19 @@ input[type="checkbox"]:checked ~ .checkbox-list__check:before {
 }
 
 /* Media Queries */
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  html {
+    /*Orientation lock for tablet view to offset Bootstrap 4 configuration*/  
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+}
 
 @media (min-width: 768px) {
     /*tablet - Centres the button position*/
