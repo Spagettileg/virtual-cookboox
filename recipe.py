@@ -126,12 +126,14 @@ def count_tasks(task_id):
     """Function to increment task counter"""
     mongo.db.tasks.count(
         {'_id': ObjectId(task_id)},
-        {'$inc': {'count_tasks': 1}})
+        {'$inc': {'count_tasks'}})
     return redirect(url_for('index', task_id=task_id))
+
     
-@app.route('/count_favourite')
-def count_favourite():
-    return render_template("base.html", tasks=mongo.db.tasks.count({'favourite' : 'true'}))
+@app.route('/favourite_count')
+def favourite_count():
+    favourite_count = mongo.db.tasks.find({'favourite' : True}).count()
+    return render_template("base.html")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP', "0.0.0.0"),
