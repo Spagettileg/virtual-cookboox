@@ -121,13 +121,17 @@ def delete_task(task_id):
     mongo.db.tasks.remove({'_id': ObjectId(task_id)}) # We access the tasks collection & call to remove selected task. 
     return redirect(url_for('index'))
     
-@app.route('/count_tasks')
-def count_tasks():
-    return render_template("base.html", tasks=mongo.db.tasks.find()).count();
+@app.route('/count_tasks/<task_id>')
+def count_tasks(task_id):
+    """Function to increment task counter"""
+    mongo.db.tasks.count(
+        {'_id': ObjectId(task_id)},
+        {'$inc': {'count_tasks': 1}})
+    return redirect(url_for('index', task_id=task_id))
     
 @app.route('/count_favourite')
 def count_favourite():
-    return render_template("base.html", tasks=mongo.db.tasks.find({'favourite' : 'true'})).count();
+    return render_template("base.html", tasks=mongo.db.tasks.count({'favourite' : 'true'}))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP', "0.0.0.0"),
