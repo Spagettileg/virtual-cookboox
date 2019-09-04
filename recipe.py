@@ -26,15 +26,20 @@ mongo = PyMongo(app)
 @app.route('/')
 def index():
     """
+    Route decorator allows users to register to website.
+    """
+    return render_template('index.html')
+
+@app.route('/portfolio')
+def portfolio():
+    """
     Route decorator allows users to view all the food genres held within the
     mongodb database collection. Users can then proceed to view and create
     recipes.
     """
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite' : True}).count()
-    return render_template('index.html', count_tasks=count_tasks, favourite_count=favourite_count)
-
-
+    return render_template('portfolio.html', count_tasks=count_tasks, favourite_count=favourite_count)
     
 @app.route('/get_meat', methods=['GET'])
 def meat():
@@ -100,7 +105,7 @@ def add_tasks():
 def insert_tasks():
     tasks = mongo.db.tasks # This is the tasks collection 
     tasks.insert_one(request.form.to_dict()) # when submitting info to URI, its submmited in form of a request object
-    return redirect(url_for('index')) # We then grab the request object, show me the form & convert form to dict for Mongo to understand.
+    return redirect(url_for('portfolio')) # We then grab the request object, show me the form & convert form to dict for Mongo to understand.
 
 @app.route('/edit_task/<task_id>')
 def edit_task(task_id):
@@ -135,17 +140,17 @@ def update_task(task_id):
 @app.route('/delete_task/<task_id>')
 def delete_task(task_id):
     mongo.db.tasks.remove({'_id': ObjectId(task_id)}) # We access the tasks collection & call to remove selected task. 
-    return redirect(url_for('index'))
+    return redirect(url_for('portfolio'))
 
 @app.route('/count_tasks')
 def count_tasks():
     count_tasks = mongo.db.tasks.find().count()
-    return render_template("index.html", count_tasks=count_tasks)
+    return render_template("portfolio.html", count_tasks=count_tasks)
     
 @app.route('/favourite_count')
 def favourite_count():
     favourite_count = mongo.db.tasks.find({'favourite' : True}).count()
-    return render_template("index.html", favourite_count=favourite_count)
+    return render_template("portfolio.html", favourite_count=favourite_count)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP', "0.0.0.0"),
