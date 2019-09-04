@@ -1,0 +1,111 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="row">
+  
+  <!-- Portfolio Section -->
+  
+    <div class="page-section portfolio">
+
+      <!-- Portfolio Section Heading -->
+      <h2 class="page-section-heading text-center text-uppercase">Portfolio</h2>
+
+      <!-- Icon Divider -->
+      <div class="divider-custom">
+        <div class="row"></div>
+        <div class="divider-custom-icon-portfolio">
+          <i class="fa fa-star"></i>
+        </div>
+        <div class="row"></div>
+      </div>
+
+      <!-- Portfolio Grid Items -->
+      <div class="row">
+
+        <!-- Portfolio Item 1 -->
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="portfolio-item mx-auto">
+            <div class="d-flex align-items-center justify-content-center h-100 w-100"></div>
+            <a href="{{ url_for('meat') }}">Meat<img class="img-fluid" src="{{ url_for('static', filename='img/meat.jpg') }}" alt="Meat"></a>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 2 -->
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="portfolio-item mx-auto">
+            <div class="d-flex align-items-center justify-content-center h-100 w-100"></div>
+            <a href="{{ url_for('poultry') }}">Poultry<img class="img-fluid" src="{{ url_for('static', filename='img/poultry.jpg') }}" alt="Poultry"></a>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 3 -->
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="portfolio-item mx-auto">
+            <div class="d-flex align-items-center justify-content-center h-100 w-100"></div>
+            <a href="{{ url_for('fish') }}">Fish<img class="img-fluid" src="{{ url_for('static', filename='img/fish.jpg') }}" alt="Fish"></a>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 4 -->
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="portfolio-item mx-auto">
+            <div class="d-flex align-items-center justify-content-center h-100 w-100"></div>
+            <a href="{{ url_for('veg') }}">Vegetables<img class="img-fluid" src="{{ url_for('static', filename='img/veg.jpg') }}" alt="Vegetables"></a>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 5 -->
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="portfolio-item mx-auto">
+            <div class="d-flex align-items-center justify-content-center h-100 w-100"></div>
+            <a href="{{ url_for('grains') }}">Grains<img class="img-fluid" src="{{ url_for('static', filename='img/grains.jpg') }}" alt="Grains"></a>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 6 -->
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="portfolio-item mx-auto">
+            <div class="d-flex align-items-center justify-content-center h-100 w-100"></div>
+            <a href="{{ url_for('pasta') }}">Pasta<img class="img-fluid" src="{{ url_for('static', filename='img/pasta.jpg') }}" alt="Pasta"></a>
+          </div>
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+ 
+  
+  <!-- About Section -->
+ 
+    <div class="page-section page-section-about mb-0">
+      
+      <!-- About Heading -->
+      <h2 class="about-title text-center text-uppercase">Why Virtual Cookbook?</h2>
+      
+      <!-- Icon Divider -->
+      <div class="divider-custom">
+        <div class="row"></div>
+        <div class="divider-custom-icon-portfolio">
+          <i class="fa fa-star"></i>
+        </div>
+        <div class="row"></div>
+      </div>
+      
+      <!-- About Content -->
+      <div class="row">
+        <div class="col-lg-3 ml-auto">
+          <p class="lead">Virtual Cookbook has been designed for people of all cooking capabilities to help produce delicious and wholesome meals. This application provides quick and intuitive access to recipes borne out of selected food genres.</p>
+        </div>
+        <div class="col-lg-3 mc-auto">
+          <p class="lead">If you are struggling for time to cook, notice on preparation and cooking time is made clear. Diet conscious consumers can view the calories per serving numbers to help plan for the right recipe.</p>
+        </div>
+        <div class="col-lg-3 mr-auto">
+          <p class="lead">Finally, you can add new recipes to this application by simply clicking on 'Add Recipe' at the top of the screen. Favourite recipes can be recorded, existing recipes can be edited and unwanted recipes can be deleted. All at the users fingertips. </p>
+        </div>
+      </div>
+    </div>
+    
+      <div class="container spacer"></div>
+  
+</div>
+{% endblock %}
