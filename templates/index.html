@@ -2,110 +2,130 @@
 
 <div class="row">
   
-  <!-- Portfolio Section -->
+  <!-- User Register Section -->
   
-    <div class="page-section portfolio">
+    <form id="regForm" action="">
 
-      <!-- Portfolio Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase">Portfolio</h2>
+<h1>Register:</h1>
 
-      <!-- Icon Divider -->
-      <div class="divider-custom">
-        <div class="row"></div>
-        <div class="divider-custom-icon-portfolio">
-          <i class="fa fa-star"></i>
-        </div>
-        <div class="row"></div>
-      </div>
-
-      <!-- Portfolio Grid Items -->
-      <div class="row">
-
-        <!-- Portfolio Item 1 -->
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="portfolio-item mx-auto">
-            <div class="d-flex align-items-center justify-content-center h-100 w-100"></div>
-            <a href="{{ url_for('meat') }}">Meat<img class="img-fluid" src="{{ url_for('static', filename='img/meat.jpg') }}" alt="Meat"></a>
-          </div>
-        </div>
-
-        <!-- Portfolio Item 2 -->
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="portfolio-item mx-auto">
-            <div class="d-flex align-items-center justify-content-center h-100 w-100"></div>
-            <a href="{{ url_for('poultry') }}">Poultry<img class="img-fluid" src="{{ url_for('static', filename='img/poultry.jpg') }}" alt="Poultry"></a>
-          </div>
-        </div>
-
-        <!-- Portfolio Item 3 -->
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="portfolio-item mx-auto">
-            <div class="d-flex align-items-center justify-content-center h-100 w-100"></div>
-            <a href="{{ url_for('fish') }}">Fish<img class="img-fluid" src="{{ url_for('static', filename='img/fish.jpg') }}" alt="Fish"></a>
-          </div>
-        </div>
-
-        <!-- Portfolio Item 4 -->
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="portfolio-item mx-auto">
-            <div class="d-flex align-items-center justify-content-center h-100 w-100"></div>
-            <a href="{{ url_for('veg') }}">Vegetables<img class="img-fluid" src="{{ url_for('static', filename='img/veg.jpg') }}" alt="Vegetables"></a>
-          </div>
-        </div>
-
-        <!-- Portfolio Item 5 -->
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="portfolio-item mx-auto">
-            <div class="d-flex align-items-center justify-content-center h-100 w-100"></div>
-            <a href="{{ url_for('grains') }}">Grains<img class="img-fluid" src="{{ url_for('static', filename='img/grains.jpg') }}" alt="Grains"></a>
-          </div>
-        </div>
-
-        <!-- Portfolio Item 6 -->
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="portfolio-item mx-auto">
-            <div class="d-flex align-items-center justify-content-center h-100 w-100"></div>
-            <a href="{{ url_for('pasta') }}">Pasta<img class="img-fluid" src="{{ url_for('static', filename='img/pasta.jpg') }}" alt="Pasta"></a>
-          </div>
-        </div>
-
-      </div>
-      <!-- /.row -->
-
-    </div>
- 
-  
-  <!-- About Section -->
- 
-    <div class="page-section page-section-about mb-0">
-      
-      <!-- About Heading -->
-      <h2 class="about-title text-center text-uppercase">Why Virtual Cookbook?</h2>
-      
-      <!-- Icon Divider -->
-      <div class="divider-custom">
-        <div class="row"></div>
-        <div class="divider-custom-icon-portfolio">
-          <i class="fa fa-star"></i>
-        </div>
-        <div class="row"></div>
-      </div>
-      
-      <!-- About Content -->
-      <div class="row">
-        <div class="col-lg-3 ml-auto">
-          <p class="lead">Virtual Cookbook has been designed for people of all cooking capabilities to help produce delicious and wholesome meals. This application provides quick and intuitive access to recipes borne out of selected food genres.</p>
-        </div>
-        <div class="col-lg-3 mc-auto">
-          <p class="lead">If you are struggling for time to cook, notice on preparation and cooking time is made clear. Diet conscious consumers can view the calories per serving numbers to help plan for the right recipe.</p>
-        </div>
-        <div class="col-lg-3 mr-auto">
-          <p class="lead">Finally, you can add new recipes to this application by simply clicking on 'Add Recipe' at the top of the screen. Favourite recipes can be recorded, existing recipes can be edited and unwanted recipes can be deleted. All at the users fingertips. </p>
-        </div>
-      </div>
-    </div>
-    
-      <div class="container spacer"></div>
-  
+<!-- One "tab" for each step in the form: -->
+<div class="tab">Name:
+  <p><input placeholder="First name..." oninput="this.className = ''"></p>
+  <p><input placeholder="Last name..." oninput="this.className = ''"></p>
 </div>
+
+<div class="tab">Contact Info:
+  <p><input placeholder="E-mail..." oninput="this.className = ''"></p>
+  <p><input placeholder="Phone..." oninput="this.className = ''"></p>
+</div>
+
+<div class="tab">Birthday:
+  <p><input placeholder="dd" oninput="this.className = ''"></p>
+  <p><input placeholder="mm" oninput="this.className = ''"></p>
+  <p><input placeholder="yyyy" oninput="this.className = ''"></p>
+</div>
+
+<div class="tab">Login Info:
+  <p><input placeholder="Username..." oninput="this.className = ''"></p>
+  <p><input placeholder="Password..." oninput="this.className = ''"></p>
+</div>
+
+<div style="overflow:auto;">
+  <div style="float:right;">
+    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+  </div>
+</div>
+
+<!-- Circles which indicates the steps of the form: -->
+<div style="text-align:center;margin-top:40px;">
+  <span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+  <span class="step"></span>
+</div>
+
+</form>
+</div>  
+  
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<!--User Registration-->
+
+<script type="text/javascript">
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+function showTab(n) {
+  // This function will display the specified tab of the form ...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  // ... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Submit";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+  // ... and run a function that displays the correct step indicator:
+  fixStepIndicator(n);
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form... :
+  if (currentTab >= x.length) {
+    //...the form gets submitted:
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false:
+      valid = false;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class to the current step:
+  x[n].className += " active";
+}
+
+</script>
+
 {% endblock %}
