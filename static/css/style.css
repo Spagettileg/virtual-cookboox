@@ -529,6 +529,13 @@ input[type="checkbox"]:checked ~ .checkbox-list__check:before {
   }
 }
 
+@media (max-width: 767px) {
+    /*Mobile - Hides the recipe count & favourite count*/
+    label[class="navbar-count-all"] {
+        display:none;
+    }
+}
+
 @media (min-width: 768px) {
     /*tablet - Centres the button position*/
     .btn-add-recipe {
