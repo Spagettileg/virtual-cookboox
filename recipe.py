@@ -30,56 +30,70 @@ def index():
     mongodb database collection. Users can then proceed to view and create
     recipes.
     """
-    return render_template('index.html')
+    count_tasks = mongo.db.tasks.find().count()
+    favourite_count = mongo.db.tasks.find({'favourite' : True}).count()
+    return render_template('index.html', count_tasks=count_tasks, favourite_count=favourite_count)
 
 
     
 @app.route('/get_meat', methods=['GET'])
 def meat():
-        
-    return render_template("meat.html", page_title="Meat Recipes", tasks=mongo.db.tasks.find({"category_name": "Meat"}))
+    count_tasks = mongo.db.tasks.find().count()
+    favourite_count = mongo.db.tasks.find({'favourite' : True}).count()
+    return render_template("meat.html", count_tasks=count_tasks, favourite_count=favourite_count, page_title="Meat Recipes", tasks=mongo.db.tasks.find({"category_name": "Meat"}))
 
 @app.route('/get_poultry', methods=['GET'])
 def poultry():
-        
-    return render_template("poultry.html", page_title="Poultry Recipes", tasks=mongo.db.tasks.find({"category_name": "Poultry"}))
+    count_tasks = mongo.db.tasks.find().count()
+    favourite_count = mongo.db.tasks.find({'favourite' : True}).count()    
+    return render_template("poultry.html", count_tasks=count_tasks, favourite_count=favourite_count, page_title="Poultry Recipes", tasks=mongo.db.tasks.find({"category_name": "Poultry"}))
     
 @app.route('/get_fish', methods=['GET'])
 def fish():
-    
-    return render_template("fish.html", page_title="Fish Recipes", tasks=mongo.db.tasks.find({"category_name": "Fish"}))
+    count_tasks = mongo.db.tasks.find().count()
+    favourite_count = mongo.db.tasks.find({'favourite' : True}).count()
+    return render_template("fish.html", count_tasks=count_tasks, favourite_count=favourite_count, page_title="Fish Recipes", tasks=mongo.db.tasks.find({"category_name": "Fish"}))
     
 @app.route('/get_veg', methods=['GET'])
 def veg():
-    
-    return render_template("veg.html", page_title="Vegetable Recipes", tasks=mongo.db.tasks.find({"category_name": "Vegetables"}))
+    count_tasks = mongo.db.tasks.find().count()
+    favourite_count = mongo.db.tasks.find({'favourite' : True}).count()
+    return render_template("veg.html", count_tasks=count_tasks, favourite_count=favourite_count, page_title="Vegetable Recipes", tasks=mongo.db.tasks.find({"category_name": "Vegetables"}))
     
 @app.route('/get_grains', methods=['GET'])
 def grains():
-    
-    return render_template("grains.html", page_title="Grains Recipes", tasks=mongo.db.tasks.find({"category_name": "Grains"}))
+    count_tasks = mongo.db.tasks.find().count()
+    favourite_count = mongo.db.tasks.find({'favourite' : True}).count()
+    return render_template("grains.html", count_tasks=count_tasks, favourite_count=favourite_count, page_title="Grains Recipes", tasks=mongo.db.tasks.find({"category_name": "Grains"}))
     
 @app.route('/get_pasta', methods=['GET'])
 def pasta():
-    
-    return render_template("pasta.html", page_title="Pasta Recipes", tasks=mongo.db.tasks.find({"category_name": "Pasta"}))
+    count_tasks = mongo.db.tasks.find().count()
+    favourite_count = mongo.db.tasks.find({'favourite' : True}).count()
+    return render_template("pasta.html", count_tasks=count_tasks, favourite_count=favourite_count, page_title="Pasta Recipes", tasks=mongo.db.tasks.find({"category_name": "Pasta"}))
 
 @app.route('/get_task/<tasks_id>', methods=['GET', 'POST'])
 def task(tasks_id):
+    count_tasks = mongo.db.tasks.find().count()
+    favourite_count = mongo.db.tasks.find({'favourite' : True}).count()
     """
     Route for viewing a single recipe in detail.
     """
     a_recipe = mongo.db.tasks.find_one({"_id": ObjectId(tasks_id)})
 
-    return render_template('recipe.html', task=a_recipe, title=a_recipe['recipe_name'])
+    return render_template('recipe.html', count_tasks=count_tasks, favourite_count=favourite_count, task=a_recipe, title=a_recipe['recipe_name'])
     
 @app.route('/get_tasks')
 def get_tasks():
-    return render_template("tasks.html", tasks=mongo.db.tasks.find())
+    count_tasks = mongo.db.tasks.find().count()
+    favourite_count = mongo.db.tasks.find({'favourite' : True}).count()
+    return render_template("tasks.html", count_tasks=count_tasks, favourite_count=favourite_count, tasks=mongo.db.tasks.find())
     
 @app.route('/add_task')
 def add_tasks():
-    return render_template('addrecipe.html', page_title="Add New Recipe",
+    count_tasks = mongo.db.tasks.find().count()
+    favourite_count = mongo.db.tasks.find({'favourite' : True}).count()
+    return render_template('addrecipe.html', count_tasks=count_tasks, favourite_count=favourite_count, page_title="Add New Recipe",
     categories=mongo.db.categories.find()) # Allows task categories in MongoDB to connect with addtask.html file
     
 @app.route('/insert_tasks', methods=['POST'])
@@ -90,10 +104,12 @@ def insert_tasks():
 
 @app.route('/edit_task/<task_id>')
 def edit_task(task_id):
+    count_tasks = mongo.db.tasks.find().count()
+    favourite_count = mongo.db.tasks.find({'favourite' : True}).count()
     task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
     # Find a particular task, parameter passed is 'id', looking for a match to 'id' in MongoDB, then wrapped for editing purposes.  
     all_categories = mongo.db.categories.find() # Reuse much of the layout in 'add_tasks' function, but with pre-populated fields.
-    return render_template('editrecipe.html', page_title="Edit Recipe", task=task, categories=all_categories)
+    return render_template('editrecipe.html', count_tasks=count_tasks, favourite_count=favourite_count, page_title="Edit Recipe", task=task, categories=all_categories)
     
 @app.route('/update_task/<task_id>', methods=['POST'])
 def update_task(task_id):
@@ -120,20 +136,16 @@ def update_task(task_id):
 def delete_task(task_id):
     mongo.db.tasks.remove({'_id': ObjectId(task_id)}) # We access the tasks collection & call to remove selected task. 
     return redirect(url_for('index'))
-    
-@app.route('/count_tasks/<task_id>')
-def count_tasks(task_id):
-    """Function to increment task counter"""
-    mongo.db.tasks.count(
-        {'_id': ObjectId(task_id)},
-        {'$inc': {'count_tasks'}})
-    return redirect(url_for('index', task_id=task_id))
 
+@app.route('/count_tasks')
+def count_tasks():
+    count_tasks = mongo.db.tasks.find().count()
+    return render_template("index.html", count_tasks=count_tasks)
     
 @app.route('/favourite_count')
 def favourite_count():
     favourite_count = mongo.db.tasks.find({'favourite' : True}).count()
-    return render_template("base.html")
+    return render_template("index.html", favourite_count=favourite_count)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP', "0.0.0.0"),
