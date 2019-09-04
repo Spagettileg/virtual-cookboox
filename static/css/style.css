@@ -74,6 +74,7 @@ input { /*Format the input boxes appearing in both edit and add recipe*/
     font-weight: 700;
     font-size: 1.4rem;
     text-decoration: none;
+    cursor: none;
     color: #474B4F;
 }
 
