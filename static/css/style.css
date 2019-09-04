@@ -66,6 +66,15 @@ input { /*Format the input boxes appearing in both edit and add recipe*/
     color: #86C232;
 }
 
+.navbar-count-all {
+    padding: 10px;
+    margin: 10px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: #474B4F;
+}
+
 /* Images */
 
 /* Containers */
