@@ -82,11 +82,13 @@ input { /*Format the input boxes appearing in both edit and add recipe*/
 
 /* Style the form */
 #regForm {
-  background-color: #ffffff;
+  background-color: #fff;
   margin: 100px auto;
   padding: 40px;
   width: 70%;
   min-width: 300px;
+  border: 1px solid #222629;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
 /* Style the input fields */
@@ -149,6 +151,11 @@ input.invalid {
     font-size: 1.4rem;
     font-weight: 500;
   }
+  
+.register { /*Reduces whitespace between header & footer*/ 
+    margin-top: -40px;
+    margin-bottom: -40px;
+}
   
 .page-section { /*Styling for front page portfolio*/
   padding-top: 3rem;
