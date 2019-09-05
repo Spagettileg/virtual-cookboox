@@ -225,6 +225,34 @@ input.invalid {
     background-color: #474B4F;
 }
 
+/*404 Error formatting*/
+
+.error-container { 
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  overflow: hidden;
+}
+  
+.error-intro {
+  text-align: center;
+  color: #222629; /*Dark Slate*/
+}
+
+.error-sub-intro {
+  text-align: center;
+  color: #474B4F; /*Charcoal*/
+}
+
+.error-txt {
+  text-align: center;
+  color: #000; /*Black*/
+}
+  
+.error-link {
+  text-decoration: underline;
+}
+
 /* Block Dividers */
 
 .divider-custom { /*Masthead divider*/
