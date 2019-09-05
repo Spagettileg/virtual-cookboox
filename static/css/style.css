@@ -341,7 +341,6 @@ pre {
     text-decoration: none;
     width: 100px;
     text-align: center;
-    
 }
 
 .btn-add-recipe:hover,
@@ -361,7 +360,8 @@ pre {
     /*Apple*/
 }
 
-.btn-recipe-detail {
+.btn-recipe-detail,
+.btn-register {
     padding: 0.2rem;
     margin: 0.2rem;
     border-radius: 10%;
@@ -375,7 +375,8 @@ pre {
     text-align: center;
 }
 
-.btn-recipe-detail:hover { /* add recipe button changes colour when hovered & clicked */
+.btn-recipe-detail:hover,
+.btn-register:hover { /* add recipe button changes colour when hovered & clicked */
     background-color: #86C232;
     /*lime green*/
     border-color: #86C232;
@@ -478,6 +479,7 @@ pre {
     -o-transition: border .3s ease;
   border-radius: 5px;
 }
+
 .checkbox-list__check:before {
   position: absolute;
   display: block;
