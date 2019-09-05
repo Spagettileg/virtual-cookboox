@@ -5,7 +5,7 @@
 <div Class="row divider-custom-icon-addrecipe">
     <form action="{{ url_for('update_task', task_id=task._id) }}" method="POST" class="col-sm-12" novalidate>
         <div class="row">
-            <div class="input-field col-sm-12">
+            <div class="input-field col-sm-12 col-md-6">
                 <i class="fas fa-tags"></i>
                 <label><strong>Food Genre</strong></label>
                 <select id="category" name="category_name">
@@ -19,6 +19,15 @@
               {% endfor %}
             </select>
             </div>
+            <div class="input-field col-sm-12 col-md-6">
+                    <i class="fas fa-graduation-cap"></i>
+                    <label for="icon_complexity"><strong>Complexity</strong> (cooking skills)</label>
+                    <select id="complexity" name="complexity" value="{{task.complexity}}">
+                        <option value="Easy">Easy</option>
+                        <option value="Challenge">Challenge</option>
+                    </select>
+            </div>
+            <div class="spacer"></div>    
             <div class="container">
                 <hr class="divider-addrecipe">
             </div>
@@ -44,12 +53,9 @@
                     <input id="cook_time_mins" name="cook_time_mins" type="number" class="validate" value="{{task.cook_time_mins}}">
                 </div>
                 <div class="input-field col-sm-12 col-md-6">
-                    <i class="fas fa-graduation-cap"></i>
-                    <label for="icon_complexity"><strong>Complexity</strong> (cooking skills)</label>
-                    <select id="complexity" name="complexity" value="{{task.complexity}}">
-                        <option value="Easy">Easy</option>
-                        <option value="Challenge">Challenge</option>
-                    </select>
+                <i class="fas fa-weight"></i>
+                <label for="icon_calories"><strong>Calories</strong></label>
+                <input id="calories" name="calories" type="number" class="validate" value="{{task.calories}}">
                 </div>
                 <div class="input-field col-sm-12 col-md-6">
                     <i class="fas fa-users"></i>
@@ -57,6 +63,7 @@
                     <input id="servings" name="servings" type="number" class="validate" value="{{task.servings}}">
                 </div>
             </div>
+            <div class="spacer"></div>
             <div class="container">
                 <hr class="divider-addrecipe">
             </div>
@@ -69,11 +76,7 @@
                 </div>
             </div>
             <div class="spacer"></div>
-            <div class="input-field col-sm-12">
-                <i class="fas fa-weight"></i>
-                <label for="icon_calories"><strong>Calories</strong></label>
-                <input id="calories" name="calories" type="number" class="validate" value="{{task.calories}}">
-            </div>
+            
             <div class="spacer"></div>
             <div class="input-field col-sm-12">
                 <i class="far fa-file-alt"></i>
@@ -83,9 +86,6 @@
                     <textarea name="ingredients" id="ingredients" class="textarea">{{task.ingredients}}</textarea>
                 </div>
             </div>
-            <div class="container">
-                <hr class="divider-addrecipe">
-            </div>
             <div class="input-field col-sm-12">
                 <i class="far fa-file-alt"></i>
                 <label for="icon_instructions"><strong>Instructions</strong></label>
@@ -93,9 +93,6 @@
                     <pre><span></span><br></pre>
                     <textarea name="instructions" id="instructions" class="textarea">{{task.instructions}}</textarea>
                 </div>
-            </div>
-            <div class="container">
-                <hr class="divider-addrecipe">
             </div>
             <div class="input-field col-sm-12">
                 <i class="far fa-file-image"></i>
