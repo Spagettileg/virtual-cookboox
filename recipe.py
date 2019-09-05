@@ -29,6 +29,13 @@ def index():
     Route decorator allows users to register to website.
     """
     return render_template('index.html')
+    
+@app.route('/contact')
+def contact():
+    """
+    Route decorator allows user to navigate to dedicated contact page.
+    """
+    return render_template('contact.html')
 
 @app.route('/portfolio')
 def portfolio():
