@@ -20,24 +20,24 @@
 
 <!-- One "tab" for each step in the form: -->
 <div class="tab"><strong>Name:</strong>
-  <p><input type="text" placeholder="First name..." oninput="this.className = ''"></p>
-  <p><input type="text" placeholder="Last name..." oninput="this.className = ''"></p>
+  <p><input type="text" maxlength="40" placeholder="First name..." oninput="this.className = ''"></p>
+  <p><input type="text" maxlength="40" placeholder="Last name..." oninput="this.className = ''"></p>
 </div>
 
 <div class="tab"><strong>Contact Info:</strong>
-  <p><input type="text" name="email" placeholder="E-mail 'someone@org.com'..." oninput="this.className = ''"></p>
+  <p><input type="email" name="email" placeholder="E-mail 'someone@org.com'..." oninput="this.className = ''"></p>
   <p><input type="tel" placeholder="Phone 'xxxxx xxxxxx'..." oninput="this.className = ''"></p>
 </div>
 
 <div class="tab"><strong>Birthday:</strong>
-  <p><input type="number" placeholder="dd" oninput="this.className = ''"></p>
-  <p><input type="number" placeholder="mm" oninput="this.className = ''"></p>
-  <p><input type="number" placeholder="yyyy" oninput="this.className = ''"></p>
+  <p><input type="number" min"1" max="31" placeholder="dd" oninput="this.className = ''"></p>
+  <p><input type="number" min="1" max="12" placeholder="mm" oninput="this.className = ''"></p>
+  <p><input type="number" min="1900" max="2020" placeholder="yyyy" oninput="this.className = ''"></p>
 </div>
 
 <div class="tab"><strong>Login Info:</strong>
   <p><input type="text" placeholder="Username..." oninput="this.className = ''"></p>
-  <p><input type="password" placeholder="Password..." oninput="this.className = ''"></p>
+  <p><input type="password" maxlength="8" placeholder="Password... (max 8 characters)" oninput="this.className = ''"></p>
 </div>
 
 <div style="overflow:auto;">
