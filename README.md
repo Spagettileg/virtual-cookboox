@@ -60,11 +60,23 @@ This site was tested across multiple browsers (Chrome, Safari, Internet Explorer
 
 ### Code Validation
 
-Code       | Url Link               | Filename    | Outcome | Comments
------------|------------------------|-------------|---------|---------
-HTML5      |https://validator.w3.org|base.html    |Pass     |Style attribute for background-image used = ok. Jinja templating language used = ok
-HTML5      |https://validator.w3.org|index.html   |Pass     |Jinja templating language used = ok        
-HTML5      |https://validator.w3.org|register.html|Pass     |Style attribute for background-image used = ok. Jinja templating language used = ok
+Code       | Url Link               | Filename      | Outcome | Comments
+-----------|------------------------|---------------|---------|---------
+HTML5      |https://validator.w3.org|base.html      |Pass     |Style attribute for background-image used = ok. Jinja templating language used = ok
+HTML5      |https://validator.w3.org|index.html     |Pass     |Jinja templating language used = ok        
+HTML5      |https://validator.w3.org|register.html  |Pass     |Style attribute for background-image used = ok. Jinja templating language used = ok
+HTML5      |https://validator.w3.org|meat.html      |Pass     |Jinja templating language used = ok
+HTML5      |https://validator.w3.org|poultry.html   |Pass     |Jinja templating language used = ok
+HTML5      |https://validator.w3.org|fish.html      |Pass     |Jinja templating language used = ok
+HTML5      |https://validator.w3.org|veg.html       |Pass     |Jinja templating language used = ok
+HTML5      |https://validator.w3.org|grains.html    |Pass     |Jinja templating language used = ok
+HTML5      |https://validator.w3.org|pasta.html     |Pass     |Jinja templating language used = ok
+HTML5      |https://validator.w3.org|tasks.html     |Pass     |Jinja templating language used = ok
+HTML5      |https://validator.w3.org|recipe.html    |Pass     |<HR> stray end tag reported,but all ok. Jinja templating language used = ok
+HTML5      |https://validator.w3.org|portfolio.html |Pass     |Jinja templating language used = ok
+HTML5      |https://validator.w3.org|addrecipe.html |Pass     |Option value empty on dropdown = ok. Jinja templating language used = ok  
+HTML5      |https://validator.w3.org|editrecipe.html|
+HTML5      |https://validator.w3.org|404.html       |
 CSS3       |
 Javascript |
 Python3    |
