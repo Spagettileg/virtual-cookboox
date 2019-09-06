@@ -75,7 +75,7 @@ HTML5      |https://validator.w3.org|tasks.html     |Pass     |Jinja templating 
 HTML5      |https://validator.w3.org|recipe.html    |Pass     |<HR> stray end tag reported,but all ok. Jinja templating language used = ok
 HTML5      |https://validator.w3.org|portfolio.html |Pass     |Jinja templating language used = ok
 HTML5      |https://validator.w3.org|addrecipe.html |Pass     |Option value empty on dropdown = ok. Jinja templating language used = ok  
-HTML5      |https://validator.w3.org|editrecipe.html|
+HTML5      |https://validator.w3.org|editrecipe.html|Pass     |Jinja templating language used = ok
 HTML5      |https://validator.w3.org|404.html       |
 CSS3       |
 Javascript |
