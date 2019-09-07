@@ -86,6 +86,16 @@ Python3    |http://pep8online.com              |recipe.py      |Pass     |All co
 
 ## Browser Compatability
 
+The following browsers were used in testing the Virtual Cookbook application. Internet Explorer was out of scope for testing due to obsolete capability
+
+platform | version
+---------|--------
+Chrome   |76.0.3809.132
+Edge     |44.18362.267.0
+Firefox  |67.0.3
+Safari   |12.4.1
+Opera    |63.0.3368.71
+
 ## Deployment
 This site is hosted using GitHub pages, deployed directly from the master branch. The deployed site will update automatically upon new commits to the master branch. In order for the site to deploy correctly on GitHub pages, the landing page must be named `index.html`.
 
