@@ -97,10 +97,45 @@ Safari   |12.4.1
 Opera    |63.0.3368.71
 
 ## Deployment
-This site is hosted using GitHub pages, deployed directly from the master branch. The deployed site will update automatically upon new commits to the master branch. In order for the site to deploy correctly on GitHub pages, the landing page must be named `index.html`.
 
-To run locally, you can clone this repository directly into the editor of your choice by pasting `git clone https://github.com/hschafer2017/HSCHAFER-Portfolio.git` into your terminal. To cut ties with this GitHub repository, type `git remote rm origin` into the terminal.
+### Deployment to Heroku
+The site has been formally deployed to [Heroku](https://pbf-third-milestone-project.herokuapp.com/) and the latest version of my application can be found here. The following steps were taken in order to deploy:
 
+#### AWS Cloud 9 IDE
+- I created a secret_key within .bashrc and heroku so I could still run the project from my own IDE and the security of the password be preserved
+- MongoDB Atlas, upon creation of a cluster & database, created a connection string to be copied into both .bashrc and heroku
+- Flask debugging turned off by setting debug=False
+- Requirements.txt file created with the command `sudo pip3 freeze --local > requirements.txt`. This is essential
+- Procfile created withthe command `echo web: python app.py > Procfile`
+- Push all my latest production ready code to GitHub ready for deployment via Heroku's GitHub function where you can deploy from GitHub the production ready app
+
+#### Heroku
+- From the Heroku dashboard I created a new app, using the name cheers-drinksdb and set the region to Europe
+- In the settings tab I clicked reveal config vars and entered the required environment variables, which in this case were:
+    - Key = IP, Value = 0.0.0.0
+    - Key = PORT, Value = 5000
+    - Key = SECRET, Value = ************
+    - Key = MONGO_URI, Value = mongodb+srv:\\root:passwordatmyfirstcluster-52qvv.mongodb.net/virtual_cookbook?retryWrites=true&w=majority
+    - On the deploy tab, in the Deployment method section I chose deploy from AWS Cloud 9 IDE via command `git push heroku master`
+
+#### Local Deployment
+##### Via GitHub
+- Manually download the application locally to your machine and then upload to your preferred IDE
+- Install the projects requirements.txt using `pip3 install -r requirements.txt`
+- A few environment variables need to be updated before you can run the app:
+    - `app.secret_key = os.getenv("SECRET")` 
+    - `app.config["MONGO_URI"] = os.getenv("MONGO_URI")`
+    - `app.config["MONGO_DBNAME"] = "virtual_cookbook"`
+- Once the above steps are complete you can try run the application using `python3 recipe.py`
+
+##### Via the CLI
+- Clone my repo via Git using the following command `https://github.com/Spagettileg/pbf-third-milestone-project.git`
+- Install the projects requirements.txt using `pip3 install -r requirements.txt`
+- A few environment variables need to be updated before you can run the app:
+    - `app.secret_key = os.getenv("SECRET")` 
+    - `app.config["MONGO_URI"] = os.getenv("MONGO_URI")`
+    - `app.config["MONGO_DBNAME"] = "virtual_cookbook"`
+- Once the above steps are complete you can try run the application using `python3 recipe.py` 
 
 ## Credits
 
