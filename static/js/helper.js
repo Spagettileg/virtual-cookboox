@@ -16,7 +16,7 @@ function makeExpandingArea(container) {
    span.innerText = area.value;
  }
  
-// Enable extra CSS
+// Enable extra CSS for Textarea
 container.className += "active";
 }var areas = document.querySelectorAll('.expandingArea');
 var l = areas.length;while (l--) {
