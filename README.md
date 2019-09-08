@@ -54,7 +54,7 @@ Finally, the 'Virtual Cookbook' navbar brand is configured to move the user back
 
 ## Design, including Schema
 ### Schema
-
+My [schema](https://github.com/Spagettileg/pbf-third-milestone-project/blob/master/plans/schema/Schema%20Plan%20v1.pdf) was developed through de-engineering of the 'User Stories' to then produce a conceptual design model. This model then formed the foundation to the project data requirements and ultimately the build of a database and the rules governing the use of the data. The schema design has evolved during the course of the project as better information and knowledge of database technology improved.
 
 ### Application Framework
 
