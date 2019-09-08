@@ -42,13 +42,15 @@ Finally, the 'Virtual Cookbook' navbar brand is configured to move the user back
 ## Wireframes
 
 ## User Stories
-> I need an app that provides quick and intuitive access to recipes across the globe
+> I need an app that provides quick and intuitive access to recipes across the globe [READ]
 
-> I don’t have much time for cooking in the week, so I need to understand time taken to cook quality meals
+> I don’t have much time for cooking in the week, so I need to understand time taken to cook quality meals [READ]
 
-> Some of my friends are worried about calory content in their food. I need to understand calory content per recipe serving
+> Some of my friends are worried about calory content in their food. I need to understand calory content per recipe serving {READ]
 
-> I'd like to upload new recipes and contribute to existing recipes, to share my love and passion for good, wholesome eating
+> I'd like to upload new recipes and contribute to existing recipes, to share my love and passion for good, wholesome eating [CREATE & UPDATE]
+
+> I want to remove unwanted recipes from my collection [DELETE]
 
 ## Design, including Schema
 
