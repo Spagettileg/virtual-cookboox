@@ -12,7 +12,27 @@ Finally, you can add new recipes to this application by simply clicking on 'Add 
 A live demo can be found [here](https://pbf-third-milestone-project.herokuapp.com/).
 
 ## Navigate to detail
-***TBC***
+[UXD Considerations](#uxd-considerations) || [User](#user) | [Virtual Cookbook](#virtual-cookbook) 
+
+[Wireframes](#wireframes) || [User Stories](#user-stories) 
+
+[Design](#design) || [Schema](#schema) | [Application Framework](#application-framework) | [Database](#database) | [CSS Frameowrk](#css-framework) | [Colour Palette](#colour-palette) | [Typography](#typography) | [Icon Graphics](#icon-graphics)
+
+[Database & Source Data](#database-&-source-data)
+
+[Technologies Applied](#technologies-applied) || [Languages](#languages) | [Libraries](#libraries) | [Tools](#tools) | [Hosting](#hosting)
+
+[Virtual Cookbook Summary Functions](#virtual-cookbook-summary-functions) ||
+
+[Features](#features) || [Features Left to Implement](#features-left-to-implement)
+
+[Testing](#testing) || [Introduction](#introduction) | [Code Validation](#code-validation) | [Responsiveness & Rendering](#responsiveness--rendering) 
+
+[Browser Compatibility](#browser-compatibility) 
+
+[Deployment](#deployment) || [Deployment To Heroku](#deployment-to-heroku) | [Local Deployment](#local-deployment)
+
+[Credits](#credits) || [Content](#content) | [Media](#media) | [Acknowledgements](#acknowledgements)
 
 ## UXD Considerations
 ### Ambition
@@ -53,7 +73,7 @@ Finally, the 'Virtual Cookbook' navbar brand is configured to move the user back
 
 > I want to remove unwanted recipes from my collection [DELETE]
 
-## Design, including Schema
+## Design
 ### Schema
 My [schema](https://github.com/Spagettileg/pbf-third-milestone-project/blob/master/plans/schema/Schema%20Plan%20v1.pdf) was developed through de-engineering of the User Stories to then produce a conceptual design model. This model then formed the foundation to the project data requirements and ultimately the build of a database and the rules governing the use of the data. The schema design has evolved during the course of the project as better information and knowledge of database technology improved.
 
@@ -129,7 +149,7 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 ### Hosting
 •	[Heroku](https://heroku.com) is used to host the deployed application - 'virtual cookbook'
 
-## Virtual Cookbook - Summary Functions
+## Virtual Cookbook Summary Functions
 
 ## Features
 
