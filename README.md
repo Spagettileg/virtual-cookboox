@@ -40,6 +40,7 @@ Finally, the 'Virtual Cookbook' navbar brand is configured to move the user back
 - Nest stage generation is to move on from a personal recipe application to enterprise scale where professional kitchens and learning institutions leverage the power of code in the cloud to access quality recipes to create industry best practice and blue print models for recipe innovation.  
 
 ## Wireframes
+***TBC***
 
 ## User Stories
 > I need an app that provides quick and intuitive access to recipes across the globe [READ]
@@ -54,34 +55,79 @@ Finally, the 'Virtual Cookbook' navbar brand is configured to move the user back
 
 ## Design, including Schema
 ### Schema
-My [schema](https://github.com/Spagettileg/pbf-third-milestone-project/blob/master/plans/schema/Schema%20Plan%20v1.pdf) was developed through de-engineering of the 'User Stories' to then produce a conceptual design model. This model then formed the foundation to the project data requirements and ultimately the build of a database and the rules governing the use of the data. The schema design has evolved during the course of the project as better information and knowledge of database technology improved.
+My [schema](https://github.com/Spagettileg/pbf-third-milestone-project/blob/master/plans/schema/Schema%20Plan%20v1.pdf) was developed through de-engineering of the User Stories to then produce a conceptual design model. This model then formed the foundation to the project data requirements and ultimately the build of a database and the rules governing the use of the data. The schema design has evolved during the course of the project as better information and knowledge of database technology improved.
 
 ### Application Framework
+Flask application framework was a prerequisite in the design of this project, according to the project brief.
 
 ### Database
+MongoDB Atlas NoSQL database was used for this project. Key reason supporting my selection was the database was highly scalable and stores data is non-relational format. The data collections format is very well conditioned to support JSON files via the 'Key':'Value' structure and was a good fit to house my recipe raw data. The same data can be easily stored across multiple servers in the cloud.
+
+The database consists of the following collections:
+1. Categories - Meat, Poultry, Fish, Vegetables, Grains & Pasta
+2. Tasks - List of key value pairs that are consistent per recipe record
 
 ### CSS Framework
+Bootstrap 4 was the chosen framework for styling my project. I used the bootstrap grid extensively to support responsiveness on mobile, tablet and desktop devices. Materializecss had featured as part of my earlier work in this project, but I lost valuable developer time with code conflicting with Bootstrap 4. The latter was dropped with Bootstrap 4 given sole exclusivity rights to the formatting of my project. 
 
 ### Colour Palette
+Colours used in this project were sourced from [Gorgeous Contrast](https://visme.co/blog/website-color-schemes/) palette in visme.com. Essentially, various shades of green and black worked well with the multiple array of colours that were present in the food recipe imagery.
 
 ### Typography
+Monserrat & Lato fonts were used throughout this project. H1 header was used in the home page to announce Virtual Cookbook brand to the user. Thereafter, H2 & H3 was used for sub-heading narrative, with H6 being used user information guide purposes to understand the function of both edit recipe & delete recipe buttons.
+
+Font-weight of 500 & 700 was used to help draw attention to the user for both branding and instruction too.
 
 ### Icon Graphics
+Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primarily in the design of the recipe detail page, including edit and add recipe pages too.
+
+- authors name = `fas fa-user`
+- complexity = `fas fa-graduation-cap`
+- preparation time - `far fa-clock`
+- cooking time - `far fa-clock`
+- calories - `fas fa-weight`
+- servings - `fas fa-users`
 
 ## Database & Source Data
+[BBC Good Food Guide](https://www.bbcgoodfood.com/recipes) was the source of the raw project data. I manually keyed the raw data into MongoDB database via Virtual Cookbook Tasks collection, adopting the key valuie pair approach. Both `MONGO_URI` and `MONGO_DBNAME` database were configured in the flask application and the import of PyMongo library enabled the injection of cloud server data into the Flask application. 
 
 ## Technologies Applied
-
 ### Languages
-1. HTML
-2. CSS
-3. Bootstrap (3.3.7)
+•	[HTML5](https://html.spec.whatwg.org/multipage/) used as the markup language
+
+•	[CSS3](https://www.w3.org/Style/CSS/) used to style the HTML
+
+•	[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) used mostly for DOM manipulation
+
+•	[Python3](https://www.python.org/) used to run the backend application
 
 ### Libraries
+•	[Font Awesome](https://fontawesome.com/) v5.8.2 to provide the icon set
+
+•	[Google Fonts](https://fonts.google.com/) provided the fonts used throughout the project
+
+•	[jQuery](https://jquery.com/) is used to manipulate the DOM, for example buttons, and showing / hiding elements
+
+•	[Flask](https://flask.palletsprojects.com/en/1.1.x/) v1.0.2 is the micro web framework that runs the application
+
+•	[PyMongo](https://flask-pymongo.readthedocs.io/en/latest/) 2.3.0 was used to enable the python application to access the Mongo database
+
+•	[Jinja](https://jinja.palletsprojects.com/en/2.10.x/) v2.10.1 is the default templating language for flask and is used to display data from the python application in the frontend html pages
+
 
 ### Tools
+•	[AWS Cloud9](https://aws.amazon.com/cloud9/) a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser.
+
+•	[MongoDB Atlas](https://www.mongodb.com/cloud/atlas) global cloud database service for modern applications providing availability, scalability, and compliance with the most demanding data security and privacy standards.
+
+•	[Git](https://git-scm.com/) is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+
+•	[GitHub](https://github.com/) is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+
+•	[Balsamiq](https://balsamiq.com/) is a small graphical tool to sketch out user interfaces, for websites and web / desktop / mobile applications and used to visualise my project through mock-up design.
 
 ### Hosting
+•	[Heroku](https://heroku.com) is used to host the deployed application - 'virtual cookbook'
 
 ## Virtual Cookbook - Summary Functions
 
