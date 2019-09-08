@@ -53,10 +53,22 @@ Finally, the 'Virtual Cookbook' navbar brand is configured to move the user back
 > I want to remove unwanted recipes from my collection [DELETE]
 
 ## Design, including Schema
+### Schema
+
+
+### Application Framework
+
+### Database
+
+### CSS Framework
+
+### Colour Palette
+
+### Typography
+
+### Icon Graphics
 
 ## Database & Source Data
-
-## Virtual Cookbook - Summary Functions
 
 ## Technologies Applied
 
@@ -70,6 +82,8 @@ Finally, the 'Virtual Cookbook' navbar brand is configured to move the user back
 ### Tools
 
 ### Hosting
+
+## Virtual Cookbook - Summary Functions
 
 ## Features
 
