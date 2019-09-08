@@ -18,7 +18,7 @@ A live demo can be found [here](https://pbf-third-milestone-project.herokuapp.co
 
 [Design](#design) || [Schema](#schema) | [Application Framework](#application-framework) | [Database](#database) | [CSS Frameowrk](#css-framework) | [Colour Palette](#colour-palette) | [Typography](#typography) | [Icon Graphics](#icon-graphics)
 
-[Database & Source Data](#database-&-source-data)
+[Database inc Source Data](#database-inc-source-data)
 
 [Technologies Applied](#technologies-applied) || [Languages](#languages) | [Libraries](#libraries) | [Tools](#tools) | [Hosting](#hosting)
 
@@ -108,7 +108,7 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 - calories - `fas fa-weight`
 - servings - `fas fa-users`
 
-## Database & Source Data
+## Database inc Source Data
 [BBC Good Food Guide](https://www.bbcgoodfood.com/recipes) was the source of the raw project data. I manually keyed the raw data into MongoDB database via Virtual Cookbook Tasks collection, adopting the key valuie pair approach. Both `MONGO_URI` and `MONGO_DBNAME` database were configured in the flask application and the import of PyMongo library enabled the injection of cloud server data into the Flask application. 
 
 ## Technologies Applied
