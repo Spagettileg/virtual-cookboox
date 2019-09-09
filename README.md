@@ -155,7 +155,20 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 
 ### Features Left to Implement
 
-`Puddings & Deserts recipes....`
+- The registration process can be further improved by leveraging the current Javascript code to improve data entry governance. For exmaple;
+    - Firstname & last name to beging with a capital letter
+    - Email structure to recognise HTTPS/, @gmail, @yahoo, etc
+    - Telephone numbers to be recognised with international prefixes for both landline and mobile telephony devices
+    - Passwords to be unique. auto-generated and include special characters. Also include a password reset capability  
+     
+- Breakfasts, Hors D'oeuvre's, Starters and Desert recipes to be included for a future release
+- Deleted recipes to be reversed by the user, in the event human error was responsible for the original recipe deletion 
+- A dedicated favourite recipes page that allows the user to view collectively and in detail
+- Additional food genres that relate to cuisine by location. The list is will be quite extensive and could be developed by creating a new 'key value' field, per record held in cloud database. For example;
+    - Chinese
+    - Italian
+    - Indian
+    - Mexican
 
 ## Testing
 
