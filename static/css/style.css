@@ -9,12 +9,12 @@
     /*as above*/
 }
 
-h2, h3 {
+h2, h3 { /*Page section header and detailed recipe name header formattng*/
     text-align: center;
     padding-top: 1rem;
 }
 
-.spacer {
+.spacer { /*Padding extensively used in creating add & edit recipe data update pages*/
     padding: 0.5rem;
     background-color: white;
 }
@@ -54,7 +54,7 @@ input { /*Format the input boxes appearing in both edit and add recipe*/
 
 /* Navbar */
 
-.navbar-brand {
+.navbar-brand { /*Virtual Cookbook*/
     font-weight: 700;
     font-size: 1.4rem;
     text-transform: uppercase;
@@ -66,7 +66,7 @@ input { /*Format the input boxes appearing in both edit and add recipe*/
     color: #86C232;
 }
 
-.navbar-count-all {
+.navbar-count-all { /*Recipe count & Favourite count formatted to blend into navbar colour scheme*/
     padding: 0.3rem;
     margin: 0.2rem;
     border: 2px solid #474B4F;
@@ -83,20 +83,20 @@ input { /*Format the input boxes appearing in both edit and add recipe*/
 /* Style the form */
 #regForm {
   background-color: #fff;
-  margin: 100px auto;
-  padding: 40px;
+  margin: 6.25rem auto;
+  padding: 2.5rem;
   width: 70%;
-  min-width: 300px;
+  min-width: 18.75rem;
   border: 1px solid #222629;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
 /* Style the input fields */
 input {
-  padding: 10px;
+  padding: 0.625rem;
   width: 100%;
-  font-size: 17px;
-  font-family: Raleway;
+  font-size: 1.1rem;
+  font-family: monserrat;
   border: 1px solid #aaaaaa;
 }
 
@@ -112,8 +112,8 @@ input.invalid {
 
 /* Make circles that indicate the steps of the form: */
 .step {
-  height: 15px;
-  width: 15px;
+  height: 1rem;
+  width: 1rem;
   margin: 0 2px;
   background-color: #bbbbbb;
   border: none; 
@@ -129,12 +129,12 @@ input.invalid {
 
 /* Mark the steps that are finished and valid: */
 .step.finish {
-  background-color: #4CAF50;
+  background-color: #86C232;
 }
 
 /* Containers */
 
-.masthead {
+.masthead { /*Homepage food graphic*/
   padding-top: calc(6rem + 74px);
   padding-bottom: 6rem;
   background-repeat: no-repeat;
@@ -176,18 +176,18 @@ input.invalid {
     border-radius: 0.5rem;
 }
 
-.about-title {
+.about-title { /*Applies to home page = 'Why Virtual Cookbook?'*/ 
     color: #61892F;
 }
 
-.portfolio-item {
+.portfolio-item { /*Food genre image formatting*/
     cursor: pointer;
     position: relative;
     display: block;
     text-align: center;
     color: white;
     max-width: 20rem;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
     overflow: hidden;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
 }
@@ -215,7 +215,7 @@ input.invalid {
     padding-top: 1.5rem;
 }
 
-.food-icons {
+.food-icons { /*Icons sourced from Font Awesome 5*/
     background-position: center;
 }
 
@@ -311,7 +311,7 @@ pre {
 
 .expandingArea > textarea,
 .expandingArea > pre {
-  padding: 5px;
+  padding: 0.3125rem;
   background: transparent;
   font: 400 15px/18px montserrat, lato, sans-serif;
   /* Make the text soft-wrap */
@@ -330,7 +330,7 @@ pre {
           box-sizing: border-box;
   width: 100%;
   /* This height is used when JS is disabled */
-  height: 100px;
+  height: 6.25rem;
 }
 
 .expandingArea.active > textarea {
@@ -355,8 +355,8 @@ pre {
 
 /* Buttons & Checkboxes */
 
-.btn-add-recipe,
-.btn-confirm-recipe {
+.btn-add-recipe, /*Add recipe button found in top right of navbar*/
+.btn-confirm-recipe { /*Confirm recipe button found at bottom of edit recipe page*/
     margin-top: 0.2rem;
     margin: 0.2rem;
     border-radius: 10%;
@@ -366,7 +366,7 @@ pre {
     font-weight: 500;
     font-size: 1rem;
     text-decoration: none;
-    width: 100px;
+    width: 6.25rem;
     text-align: center;
 }
 
@@ -387,8 +387,8 @@ pre {
     /*Apple*/
 }
 
-.btn-recipe-detail,
-.btn-register {
+.btn-recipe-detail, /*Recipe detail button found in pages headed 'Meat Recipes', 'Poutltry Recipes', etc*/
+.btn-register { /*Previous, Next & Submit buttons found in index.html in support of User Registration process*/
     padding: 0.2rem;
     margin: 0.2rem;
     border-radius: 10%;
@@ -398,7 +398,7 @@ pre {
     font-weight: 500;
     font-size: 1rem;
     text-decoration: none;
-    width: 100px;
+    width: 6.25rem;
     text-align: center;
 }
 
@@ -419,7 +419,7 @@ pre {
     /*Apple*/
 }
 
-.btn-edit-recipe {
+.btn-edit-recipe { /*Edit recipe button found at the bottom of the recipe detail page - recipe.html*/
     padding: 0.2rem;
     margin: 0.2rem;
     border-radius: 10%;
@@ -449,7 +449,7 @@ pre {
     /*Apple*/
 }
 
-.btn-delete-recipe {
+.btn-delete-recipe { /*Delete recipe button found at the bottom of the recipe detail page - recipe.html*/
     padding: 0.2rem;
     margin: 0.2rem;
     border-radius: 10%;
@@ -496,15 +496,15 @@ pre {
   height: 1.6rem; 
   border: 3px solid #61892F;
   position: absolute;
-  left: -34px; /*-34px*/
+  left: -2.125rem; 
   top: 50%;
-  margin-top: -12px;
+  margin-top: -0.75rem;
   transition: border .3s ease;
   -webkit-transition: border .3s ease;
     -moz-transition: border .3s ease;
     -ms-transition: border .3s ease;
     -o-transition: border .3s ease;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
 }
 
 .checkbox-list__check:before {
@@ -539,19 +539,7 @@ input[type="checkbox"]:checked ~ .checkbox-list__check:before {
 
 /* To include styling for social media fonts > font awesome */
 
-.bg-color-social-container {
-    background-color: #000;
-    min-height: 20px;
-    margin: 0;
-    padding-top: 10px;
-}
-
-.social-links-footer p {
-    color: #e6e6e6;
-    /*Light Grey*/
-}
-
-.social-links-footer a {
+.social-links-footer a { /*Anchor tags for both GitHub & LinkedIn background shading grey*/
     color: #e6e6e6;
     /*Light Grey*/
 }
@@ -559,13 +547,13 @@ input[type="checkbox"]:checked ~ .checkbox-list__check:before {
 .social-links-footer a i {
     width: 2rem;
     height: 2rem;
-    padding: 12px 0;
+    padding: 0.75rem 0;
     margin: 0.3rem;
     border-radius: 50%;
     /*Enables creation of circle where width & height of same value*/
-    font-size: 13px;
+    font-size: 0.8125rem;
     /*Enables icon to sit within border*/
-    line-height: 7px;
+    line-height: 0.4375rem;
     text-align: center;
     color: #000;
     border-color: #000;
@@ -581,13 +569,13 @@ input[type="checkbox"]:checked ~ .checkbox-list__check:before {
     /*Apple*/
 }
 
-.fa-github:hover {
+.fa-github:hover { /*User will see Github icon change to purple when cursor is hovered*/
     background: #6e5494;
     /*GitHub Purple*/
     color: #fff;
 }
 
-.fa-linkedin:hover {
+.fa-linkedin:hover { /*User will see LinkedIn icon change to blue when cursor is hovered*/
     background: #0077B5;
     /*LinkedIn Blue*/
     color: #fff;
@@ -600,7 +588,7 @@ input[type="checkbox"]:checked ~ .checkbox-list__check:before {
     cursor: none;
 }
 
-.footer-contact a {
+.footer-contact a { /*Styling of contact the website author section*/
     color: #86C232;
     text-decoration: none;
     font-weight: 500;
@@ -638,7 +626,7 @@ input[type="checkbox"]:checked ~ .checkbox-list__check:before {
 @media screen and (max-width: 1200px) { /*desktop - resize recipe image*/
     .recipe-image-container img {
         height: auto;
-        max-width: 300px;
+        max-width: 18.75rem;
 
     }
 }
@@ -646,7 +634,7 @@ input[type="checkbox"]:checked ~ .checkbox-list__check:before {
 @media screen and (min-width: 1201px) { /*extra large devices - resize recipe image*/
     .recipe-image-container img {
         height: auto;
-        max-width: 300px;
+        max-width: 18.75rem;
 
     }
 }
