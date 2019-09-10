@@ -26,7 +26,7 @@ A live demo can be found [here](https://pbf-third-milestone-project.herokuapp.co
 
 [Features](#features) || [Features Left to Implement](#features-left-to-implement)
 
-[Testing](#testing) || [Introduction](#introduction) | [Code Validation](#code-validation) | [Responsiveness & Rendering](#responsiveness--rendering) 
+[Testing](#testing) || [Introduction](#introduction) | [Systems Based Testing](#systems-based-testing) | [Manual Testing](#manual-testing) | [Code Validation](#code-validation) | [Responsiveness & Rendering](#responsiveness--rendering) 
 
 [Browser Compatibility](#browser-compatibility) 
 
@@ -152,6 +152,57 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 ## Virtual Cookbook Summary Functions
 
 ## Features
+### Feature 1 - Headline title bar with reset data button
+
+•	Headline bar informs signposts user to the dashboard and when clicked, the user will return to the top of the dashboard. In addition, a reset button is available for the user to click to return all data & charts to their default values
+
+•	For ease of navigation, the headline bar is fixed at the dashboard top to help the user quickly find the rest button or automatically move to the top, whilst scrolling through to the bottom  
+
+### Feature 2 - Introduction
+
+•	Information to the user that provides a basic instruction on how to use the dashboard, brief background on data used and a link to source of original data sample via www.kaggle.com 
+
+### Feature 3 - Filter by student
+
+•	Single student exam performance can be reviewed by clicking on the ID code that appears in a dropdown box. Student ID range from 1 to 1000. Their respective exam performance can then be viewed in the array of graphical analysis
+
+### Feature 4 - Filter by gender
+
+•	Total student population contained within data sample can be viewed via a female / male lens. A dropdown box has been designed to create a filter on gender type, together with a total gender count. Furthermore, the user will receive an instant percentage split on gender activity, on both unfiltered and filtered data analysis    
+
+### Feature 5 - Composite line graph 
+
+•	Math, reading and writing exam results for 1,000 students appear in the form of a line graph. This chart can be viewed in multiple dimensions, depending on how the user has configured dropdown boxes and data filters. By hovering the cursor over the legend, the user will receive a bespoke view of a single subject. Furthermore, the user can hover over the data plot to understand an individual student exam score 
+
+### Feature 6 - Scatter chart x3 
+
+•	3 scatter plot charts have been designed to initiate regression analysis of all exam subjects. Combinations include math vs reading, reading vs writing & math vs writing. Again, these charts can be viewed in multiple dimensions, depending on how the user has configured dropdown boxes and data filters. The user will certainly get a quick and clear view of how the exam subjects correlate with each other 
+
+### Feature 7 - Bar chart x2 
+
+•	Ethnicity origin and the distribution over 5 groups’ is the focus of the 1st bar chart. The view of the chart can be altered by either clicking on a selected bar(s) &/or the user can configure the bar chart through work completed to configure other dropdown boxes and data filters
+
+•	Parents educational background distributed over 6 levels of academia is the focus of the 2nd bar chart. The same functionality exists, as with 1st bar chart. The user can look to create some interesting data configurations to see if either ethnicity &/or students parental education has any bearing upon the students’ exam results  
+
+### Feature 8 - Pie chart x2 
+
+•	Lunch funding is the focus of the 1st pie chart. The influence of a standard lunch allowance or reduced/free lunch allowance can be evaluated by either clicking on a selected pie section(s) &/or the user can configure the pie chart through work completed to configure other dropdown boxes and data filters
+
+•	Student preparation for their exams is the focus of the 2nd pie chart. The options are binary, either the student did or did not prepare for their exams. The same functionality exists, as with 1st pie chart. The user can look to create further interesting data configurations to see if either lunch funding &/or students exam preparation has any bearing upon the students’ exam results  
+
+### Feature 9 - Collapse / re-open articles 
+
+•	All articles can collapse and re-open, by clicking a blue chevron icon positioned at the top right corner of each article. The chevron becomes inverted upon collapse of the article 
+
+•	Valuable screen space is freed up by closing articles that may not feature in a given data analysis configuration
+
+### Feature 10 - Footer 
+
+•	Provides a social media link to LinkedIn and a link to my GitHub page. Fonts (glythicons) secured from bootstrap / font awesome. The links are wired to the website designers’ respective social media sites. A .hover pseudo class has been used to provide a background colour change (white to corporate colour code) and font colour change too.   
+
+### Feature 11 - 404 alert page
+
+•	Provides a friendly sign post for the user in the event an incorrect link has been clicked and the user has the option to click back into a correct link
 
 ### Features Left to Implement
 
@@ -173,6 +224,274 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 ## Testing
 
 ### Introduction
+A combination of system based and manual testing processes was applied to this project to ensure the UXD was upheld. To make sure the data was correctly loaded, images would be successfully rendered and dynamic links would accurately support the user to navigate through this application.
+
+The software has been thoroughly tested in many ways. JavaScript and its associated functions have all undergone extensive manual testing. JS hint was used to help validate the Javascript code.
+
+Werkzeug library import has helped identity logic errors when trying to get Flask application, Python & MongoDB database to all correctly interact. 
+
+Manual testing has been based upon a walkthrough of key process steps the User will experience. This is coupled with process alignment to CRUD (Create, Read, Update & Delete).   
+
+All possible user actions were mimicked to put the tester in the shoes of the user. 
+
+### Systems Based Testing
+- Mongo Shell was used to test the cloud database link to the Flask application. The virtual cookbook recipe database holds 41 recipes at present, with each recipe containing numerous key value pairings. 
+- Current keys, per record, as follows: (the values doe vary by record due to the differing nature of the food recipe)
+    - `category_name`, `recipe_name`, `author_name`, `prep_time_mins`, `cook_time_mins`, `complexity`, `favourite`, `servings`, `brief_description`, `calories`, `ingredients`, `instructions` and `recipe_image`.
+
+- Outcome of tests run in Mongo Shell:
+
+Mongo Shell Query                                           | Response (count) | Comments
+------------------------------------------------------------|------------------|---------
+`db.tasks.count();`                                         |        41        | Total number of records
+`db.tasks.find({'favourite' : false}).count();`             |        31        | Number non-favourite recipes 
+`db.tasks.find({'favourite' : true}).count();`              |        10        | Number of favourite recipes
+`db.tasks.find({'author_name' : "BBC Good Food"}).count();` |        14        | Number of recipes authored by BBC Good Food
+`db.tasks.find({'category_name' : "Fish"}).count();`        |         8        | Number of Fish based recipes
+
+- Flask Application testing for connection to web-browser:
+ 
+```
+import os
+from flask import Flask
+app = Flask(__name__)
+@app.route('/')  # Route decorator & default test
+def hello():
+    return 'Hello World'
+    
+if __name__ == '__main__':
+    app.run(host=os.environ.get('IP'),
+    port=int(os.environ.get('PORT')),
+    debug=True)
+
+```
+- Outcome in Bash Ubuntu (Flask testing):
+
+```
+ubuntu:~environment $ python3 app.py
+    *Serving Flask app "app" (lazyloading)
+    *Envioronment: production
+     WARNING: This is a development server. Do not use it in a production deployment.
+     Use a production WSGI server instead.
+    *Debug mode: on
+    *Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+    *Restarting with stat
+    *Debugger is active
+    *Debugger PIN: xxx-xxx-xxx
+
+```
+- Outcome in web browser (Flask testing passed):
+
+```
+Hello World
+
+```
+
+### Manual Testing
+##### Registration Testing
+###### •	Name (index.html)
+1.	Key url address in web browser
+2.	Click in 'first name' field (placeholder text helps the user with data entry)
+3.	Key in first name (max character length = 40)
+4.	Click in 'last name' field (placeholder text helps the user with data entry)
+5.	Key in last name (max character length = 40)
+6.	Click 'Next' button to proceed to next screen
+7.	If empty fields exist when clicking 'Next', then user will get error message with request to complete missing data
+
+###### •	Contact Info
+1.	Circle dot at bottom of screen changes to green. Ok to proceed
+2.	Click 'Previous' button if user wants to update either first or last name
+3.	Click in 'email' field (placeholder text helps the user with data entry)
+4.	Key in email address
+5.	Click in 'Phone' field (placeholder text helps the user with data entry)
+6.	Key in phone number in the suggetsed xxxxx xxxxxx format
+7.	Click 'Next' button to proceed to next screen
+8.	If empty fields exist when clicking 'Next', then user will get error message with request to complete missing data
+	
+###### •	Birthday
+1.	Circle dot at bottom of screen changes to green. Ok to proceed
+2.	Click 'Previous' button if user wants to update either Contact Info or back again to first or last name
+3.  Click in 'dd' field (placeholder text helps the user with data entry)
+4.	Key in dd or day (Min value = 1, Max value = 31)
+5.	Click in 'mm' field (placeholder text helps the user with data entry)
+6.	Key in mm or month (Min value = 1, Max value = 12)
+7.	Click in 'yyyy' field (placeholder text helps the user with data entry)
+8.	Key in yyyy or year (Min value = 1900, Max value = 2020) 
+9.	Click 'Next' button to proceed to next screen
+10.	If empty fields exist when clicking 'Next', then user will get error message with request to complete missing data
+
+###### •	Login Info
+1.	Circle dot at bottom of screen changes to green. Ok to proceed
+2.	Click 'Previous' button if user wants to update either Birthday or back again contact info or to first & last name
+3.  Click in 'Username' field (placeholder text helps the user with data entry)
+4.	Key in username
+5.	Click in 'Password' field (placeholder text helps the user with data entry)
+6.	Key in password (Characters show as an asterix with max 8 characters permitted) 
+7.  Click 'Submit' button to complete bothe the registration & authentication process
+8.	If empty fields exist when clicking 'Submit', then user will get error message with request to complete missing data
+
+##### Recipe Testing
+###### •	Home Page (portfolio.html)
+1.	User should see 6 different food genre recipe cards on the home page
+    - Meat
+    - Poultry
+    - Fish
+    - Vegetables
+    - Grains
+    - Pasta
+2. Click on a food genre recipe card
+
+###### •	Summary Recipe Selection Page (meat.html, poultry.html, fish.html, veg.html, grains.html & pasta.html)
+1.	User will be presented with individual recipe cards that fall under the selected food genre
+2.	Each recipe card structure = Image, recipe name, brief description & 'Detail' button
+3.	Hover over the 'Detail' button to see colout change from pea green #61892F to lime green #86C232
+3.	User to click 'Detail' button to proceed to detailed view of the recipe
+
+
+###### •	Detailed Recipe View (recipe.html)
+1.  User will be presented with an individual recipe card containing the following information:
+    - Recipe image
+    - Recipe name
+    - Brief description of the recipe
+    - Icon graphic & authors name
+    - Icon graphic & complexity (Easy or Challenge)
+    - Icon graphic & preparation time
+    - Icon graphic & cooking time
+    - Icon graphic & calories
+    - Icon graphic & servings
+    - Full list of Ingredients
+    - Detailed Instructions on how to cook
+2.	Should the recipe content be fine with User, then User can follow next steps, as follows:
+    - Click back page control to revisit summary recipe selection page
+    - Click on the navbar brand logo 'Virtual Cookbook' to return to home page
+    - Leave the application by using normal browser control
+3.	Options to [Edit](#edit-recipes) & [Delete](#delete-recipes) tested in their respective categories 
+
+##### Navigation Testing
+###### •	Navbar tests
+1.	Hover on 'Virtual Cookbook' navbar brand for text to change from pea green #61892F to lime green #86C232  
+2.	Click on ‘Virtual Cookbook’ navbar brand from anywhere within the website
+2.	User will be routed back to home page
+3.	Hover on 'Add Recipe' button for colour to change from pea green #61892F to lime green #86C232
+4.	Click on 'Add Recipe' button to take user to [Add Recipe](#add-recipes) data entry template
+	
+###### •	Homepage portfolio
+1.	Go to home page
+2.	Click on food genre image
+3.	User is passed through to list of recipes, with summary information, that belong to the selected food genre 
+4.	Click navbar brand logo 'Virtual Cookbook' to return to homepage in readiness to select a different food genre
+	
+###### •	Footer links tests
+1.	Go to footer section
+2.	Click social media icons (LinkedIn & GitHub)
+3.	User is passed through to website authors’ actual live pages
+4.	Click on 'contact' link
+5.	User is passed through to website authors' personal linkedin live page
+	
+###### •	Other Buttons / Icon functionality tests
+*Social Media*
+1.	Scroll to footer
+2.	Hover on social media icons
+3.	For LinkedIn, colour change from light grey to LinkedIn corporate colour (blue # 0077B5). Inner icon colour changes from black to white
+4.	For GitHub, colour change from light grey to GitHub corporate colour (purple # 6e5494). Inner icon colour changes from black to white
+5.	Both social media icons contain a fractional timing delay to help user understand icon is active, prior to being clicked 
+
+*Edit Button*
+1.	Navigate to [Recipe detail](#detailed-recipe-view-(recipe.html))page
+2.	Hover on edit button and colour chamge fron yellow to green
+3.	Click on edit button to take user to edit recipe page
+
+*Delete Button*
+1.  Navigate to [Recipe detail](#detailed-recipe-view-(recipe.html)) page
+2.	Hover on delete button and colour chamge fron yellow to red
+3.	Click on delete button to take user to home page, following deletion of recipe
+
+*Favourites Tickbox*
+1.  Navigate to Edit Recipe page &/or Add Recipe page
+2.  Click on 'favourite' tickbox to uncheck = No favourite
+3.  Click on 'favourite' tickbox to check = favourite
+4.  Click 'Confirm' button to complete edit
+5.  User will return back to recipe detail page to view their recipe updates 
+6.  Navbar counter will increase by +1 for favourite and -1 for non-favourite
+7.  Navbar counter will not be less than zero
+
+*Confirm Edit Button*
+1. Navigate to Edit Recipe page
+2. Hover on 'Confirm' button and colour chamge fron yellow to green
+3. Click on 'Confirm' button to complete edit
+4. User will return back to recipe detail page to view their recipe updates 
+
+*Confirm Add Recipe*
+1. Navigate to Add Recipe page
+2. Hover on 'Confirm' button and colour chamge from pea green #61892F to lime green #86C232
+3. Click on 'Confirm' button to complete add
+4. User will return back to home page. New recipe can be viewed upon clicking an appropriate food genre image 
+
+##### Add Recipes
+1. Hover on the 'Add Recipe' button in the navbar to show user the button is active
+2. Click 'Add Recipe' button
+3. User will be presented with a blank recipe template, with placeholder guidance text and required data, containing the following data requests:
+    - Food genre - Dropdown box containing Meat, Poultry, Fish, Vegetables, Grains & Pasta options
+    - Complexity - Dropdown box containing 'Easy' or 'Challenge'
+    - Recipe Name  
+    - Authors name
+    - Preparation time - Numbers only data entry
+    - Cooking time - Numbers only data entry
+    - Calories - Numbers only data entry
+    - Servings - Numbers only data entry
+    - Brief description of the recipe
+    - Full list of Ingredients
+    - Detailed Instructions on how to cook
+    - Recipe image - url web address required from User 
+    - Tickbox for favourite recipe. Tick for yes or no tick for no
+4.  User must complete all data entry fields. Auto message appears to signal missing data entry 
+5.	Click 'Confirm' button for user to formally add their recipe to the application
+6.	User is then routed back to homepage
+7.	New recipe can be viewed by clicking on food genre image relative to the recipe that has been added 
+
+##### Edit Recipes
+1. Navigate to [Recipe detail](#detailed-recipe-view-(recipe.html)) page
+2. Hover on 'Edit' button and colour change fron yellow to green to show the button is active
+3. Click on 'Edit' button to complete edit
+4. User will be presented with a blank recipe template, containing the following recipe data fields:
+    - Food genre - Dropdown box containing Meat, Poultry, Fish, Vegetables, Grains & Pasta options
+    - Complexity - Dropdown box containing 'Easy' or 'Challenge'
+    - Recipe Name  
+    - Authors name
+    - Preparation time - Numbers only data entry
+    - Cooking time - Numbers only data entry
+    - Calories - Numbers only data entry
+    - Servings - Numbers only data entry
+    - Brief description of the recipe
+    - Full list of Ingredients
+    - Detailed Instructions on how to cook
+    - Recipe image - url web address required from User 
+    - Tickbox for favourite recipe. Tick for yes or no tick for no
+6.	Hover cursor over 'Confirm' button and colour change fron yellow to green to show the button is active
+7.	Click 'Confirm' button for user to formally edit their recipe in the application
+7.	User is then routed back to recipe detail page to view their respective changes
+
+##### Delete Recipes
+1. Navigate to [Recipe detail](#detailed-recipe-view-(recipe.html)) page 
+2. Hover on 'Delete' button and colour change fron red to green to show the button is active
+3. Click on 'Delete' button to complete recipe delete
+4. User is then routed back to homepage
+
+##### Recipe Statistics
+*Favourites*
+1.  Navigate to [Edit Recipe](#edit-recipes) page &/or [Add Recipe](#add-recipes) page
+2.  Click on 'favourite' tickbox to uncheck = No favourite
+3.  Click on 'favourite' tickbox to check = favourite
+4.  Click 'Confirm' button to complete edit
+5.  User will return back to recipe detail page to view their recipe updates 
+6.  Navbar counter will increase by +1 for favourite and -1 for non-favourite
+7.  Navbar counter will not be less than zero
+  
+*Recipes*
+1. Complete [adding](#add-recipes) or [deleting](#delete-recipes) of a single recipe
+2. Navbar counter will show +1 for adding recipe
+3. Navbar counter will show -1 for recipe deletion
+4. Navbar counter will not be less than zero
 
 ### Code Validation
 
@@ -199,6 +518,11 @@ Javascript |https://jshint.com/                |helper.js      |Pass     |No err
 Python3    |http://pep8online.com              |recipe.py      |Pass     |All convention errors corrected = ok
 
 ### Responsiveness & Rendering
+Chrome DevTools together with a selection of mobile, table and desktop devices were relied upon through the entire software development cycle. A key objective was to test both the rendering and responsiveness of the software application against multiple screen resolutions and web browser platforms. Any bugs identified were debugged in real time with special observations noted in a [testing matrix control document](https://github.com/Spagettileg/pbf-third-milestone-project/blob/master/tests/User%20Testing_3rd%20Milestone%20Project_vfinal%20draft.xlsx).
+
+The Virtual Cookbook application has been tested by students from the Slack community, together with friends and family members. Feedback on what worked well and what did not was recorded and suitable corrections to the code were keyed.
+
+In the final analysis, this application can be passed as fully responsive across all devices that participated in testing.
 
 ## Browser Compatability
 
@@ -228,10 +552,10 @@ The site has been formally deployed to [Heroku](https://pbf-third-milestone-proj
 #### Heroku
 - From the Heroku dashboard I created a new app, using the name cheers-drinksdb and set the region to Europe
 - In the settings tab I clicked reveal config vars and entered the required environment variables, which in this case were:
-    - Key = IP, Value = 0.0.0.0
-    - Key = PORT, Value = 5000
-    - Key = SECRET, Value = ************
-    - Key = MONGO_URI, Value = mongodb+srv:\\root:passwordatmyfirstcluster-52qvv.mongodb.net/virtual_cookbook?retryWrites=true&w=majority
+    - Key = `IP`: Value = `0.0.0.0`
+    - Key = `PORT`: Value = `5000`
+    - Key = `SECRET`: Value = `************`
+    - Key = `MONGO_URI`: Value = `mongodb+srv:\\root:passwordatmyfirstcluster-52qvv.mongodb.net/virtual_cookbook?retryWrites=true&w=majority`
     - On the deploy tab, in the Deployment method section I chose deploy from AWS Cloud 9 IDE via command `git push heroku master`
 
 #### Local Deployment
