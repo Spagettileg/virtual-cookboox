@@ -280,7 +280,8 @@ Manual testing has been based upon a walkthrough of key process steps the User w
 
 All possible user actions were mimicked to put the tester in the shoes of the user. 
 
-### Systems Based Testing
+### Systems Based Testing 
+- CRUD Operations tested = **READ**
 - Mongo Shell was used to test the cloud database link to the Flask application. The virtual cookbook recipe database holds 41 recipes at present, with each recipe containing numerous key value pairings. 
 - Current keys, per record, as follows: (the values doe vary by record due to the differing nature of the food recipe)
     - `category_name`, `recipe_name`, `author_name`, `prep_time_mins`, `cook_time_mins`, `complexity`, `favourite`, `servings`, `brief_description`, `calories`, `ingredients`, `instructions` and `recipe_image`.
@@ -336,6 +337,7 @@ Hello World
 ### Manual Testing
 ##### Registration Testing
 ###### •	Name (index.html)
+- CRUD Operations tested = **CREATE, READ & UPDATE**
 1.	Key url address in web browser
 2.	Click in 'first name' field (placeholder text helps the user with data entry)
 3.	Key in first name (max character length = 40)
@@ -345,6 +347,7 @@ Hello World
 7.	If empty fields exist when clicking 'Next', then user will get error message with request to complete missing data
 
 ###### •	Contact Info
+- CRUD Operations tested = **CREATE, READ & UPDATE**
 1.	Circle dot at bottom of screen changes to green. Ok to proceed
 2.	Click 'Previous' button if user wants to update either first or last name
 3.	Click in 'email' field (placeholder text helps the user with data entry)
@@ -355,6 +358,7 @@ Hello World
 8.	If empty fields exist when clicking 'Next', then user will get error message with request to complete missing data
 	
 ###### •	Birthday
+- CRUD Operations tested = **CREATE, READ & UPDATE**
 1.	Circle dot at bottom of screen changes to green. Ok to proceed
 2.	Click 'Previous' button if user wants to update either Contact Info or back again to first or last name
 3.  Click in 'dd' field (placeholder text helps the user with data entry)
@@ -367,6 +371,7 @@ Hello World
 10.	If empty fields exist when clicking 'Next', then user will get error message with request to complete missing data
 
 ###### •	Login Info
+- CRUD Operations tested = **CREATE, READ & UPDATE**
 1.	Circle dot at bottom of screen changes to green. Ok to proceed
 2.	Click 'Previous' button if user wants to update either Birthday or back again contact info or to first & last name
 3.  Click in 'Username' field (placeholder text helps the user with data entry)
@@ -378,6 +383,7 @@ Hello World
 
 ##### Recipe Testing
 ###### •	Home Page (portfolio.html)
+- CRUD Operations tested = **READ**
 1.	User should see 6 different food genre recipe cards on the home page
     - Meat
     - Poultry
@@ -388,6 +394,7 @@ Hello World
 2. Click on a food genre recipe card
 
 ###### •	Summary Recipe Selection Page (meat.html, poultry.html, fish.html, veg.html, grains.html & pasta.html)
+- CRUD Operations tested = **READ**
 1.	User will be presented with individual recipe cards that fall under the selected food genre
 2.	Each recipe card structure = Image, recipe name, brief description & 'Detail' button
 3.	Hover over the 'Detail' button to see colout change from pea green #61892F to lime green #86C232
@@ -395,6 +402,7 @@ Hello World
 
 
 ###### •	Detailed Recipe View (recipe.html)
+- CRUD Operations tested = **READ**
 1.  User will be presented with an individual recipe card containing the following information:
     - Recipe image
     - Recipe name
@@ -415,6 +423,7 @@ Hello World
 
 ##### Navigation Testing
 ###### •	Navbar tests
+- CRUD Operations tested = **READ**
 1.	Hover on 'Virtual Cookbook' navbar brand for text to change from pea green #61892F to lime green #86C232  
 2.	Click on ‘Virtual Cookbook’ navbar brand from anywhere within the website
 3.	User will be routed back to home page
@@ -422,12 +431,14 @@ Hello World
 5.	Click on 'Add Recipe' button to take user to [Add Recipe](#add-recipes) data entry template
 	
 ###### •	Homepage portfolio
+- CRUD Operations tested = **READ**
 1.	Go to home page
 2.	Click on food genre image
 3.	User is passed through to list of recipes, with summary information, that belong to the selected food genre 
 4.	Click navbar brand logo 'Virtual Cookbook' to return to homepage in readiness to select a different food genre
 	
 ###### •	Footer links tests
+- CRUD Operations tested = **READ**
 1.	Go to footer section
 2.	Click social media icons (LinkedIn & GitHub)
 3.	User is passed through to website authors’ actual live pages
@@ -436,6 +447,7 @@ Hello World
 	
 ###### •	Other Buttons / Icon functionality tests
 *Social Media*
+- CRUD Operations tested = **READ**
 1.	Scroll to footer
 2.	Hover on social media icons
 3.	For LinkedIn, colour change from light grey to LinkedIn corporate colour (blue # 0077B5). Inner icon colour changes from black to white
@@ -443,16 +455,19 @@ Hello World
 5.	Both social media icons contain a fractional timing delay to help user understand icon is active, prior to being clicked 
 
 *Edit Button*
+- CRUD Operations tested = **READ & UPDATE**
 1.	Navigate to [Recipe detail](#detailed-recipe-view-(recipe.html))page
 2.	Hover on edit button and colour chamge fron yellow to green
 3.	Click on edit button to take user to edit recipe page
 
 *Delete Button*
+- CRUD Operations tested = **READ, UPDATE & DELETE**
 1.  Navigate to [Recipe detail](#detailed-recipe-view-(recipe.html)) page
 2.	Hover on delete button and colour chamge fron yellow to red
 3.	Click on delete button to take user to home page, following deletion of recipe
 
 *Favourites Tickbox*
+- CRUD Operations tested = **CREATE, READ & UPDATE**
 1.  Navigate to Edit Recipe page &/or Add Recipe page
 2.  Click on 'favourite' tickbox to uncheck = No favourite
 3.  Click on 'favourite' tickbox to check = favourite
@@ -462,18 +477,21 @@ Hello World
 7.  Navbar counter will not be less than zero
 
 *Confirm Edit Button*
+- CRUD Operations tested = **READ & UPDATE**
 1. Navigate to Edit Recipe page
 2. Hover on 'Confirm' button and colour chamge fron yellow to green
 3. Click on 'Confirm' button to complete edit
 4. User will return back to recipe detail page to view their recipe updates 
 
 *Confirm Add Recipe*
+- CRUD Operations tested = **READ & UPDATE**
 1. Navigate to Add Recipe page
 2. Hover on 'Confirm' button and colour chamge from pea green #61892F to lime green #86C232
 3. Click on 'Confirm' button to complete add
 4. User will return back to home page. New recipe can be viewed upon clicking an appropriate food genre image 
 
 ##### Add Recipes
+- CRUD Operations tested = **CREATE, READ & UPDATE**
 1. Hover on the 'Add Recipe' button in the navbar to show user the button is active
 2. Click 'Add Recipe' button
 3. User will be presented with a blank recipe template, with placeholder guidance text and required data, containing the following data requests:
@@ -496,6 +514,7 @@ Hello World
 7.	New recipe can be viewed by clicking on food genre image relative to the recipe that has been added 
 
 ##### Edit Recipes
+- CRUD Operations tested = **READ & UPDATE**
 1. Navigate to [Recipe detail](#detailed-recipe-view-(recipe.html)) page
 2. Hover on 'Edit' button and colour change fron yellow to green to show the button is active
 3. Click on 'Edit' button to complete edit
@@ -518,6 +537,7 @@ Hello World
 8.	User is then routed back to recipe detail page to view their respective changes
 
 ##### Delete Recipes
+- CRUD Operations tested = **READ, UPDATE & DELETE**
 1. Navigate to [Recipe detail](#detailed-recipe-view-(recipe.html)) page 
 2. Hover on 'Delete' button and colour change fron red to green to show the button is active
 3. Click on 'Delete' button to complete recipe delete
@@ -525,6 +545,7 @@ Hello World
 
 ##### Recipe Statistics
 *Favourites*
+- CRUD Operations tested = **READ**
 1.  Navigate to [Edit Recipe](#edit-recipes) page &/or [Add Recipe](#add-recipes) page
 2.  Click on 'favourite' tickbox to uncheck = No favourite
 3.  Click on 'favourite' tickbox to check = favourite
@@ -534,6 +555,7 @@ Hello World
 7.  Navbar counter will not be less than zero
   
 *Recipes*
+- CRUD Operations tested = **READ**
 1. Complete [adding](#add-recipes) or [deleting](#delete-recipes) of a single recipe
 2. Navbar counter will show +1 for adding recipe
 3. Navbar counter will show -1 for recipe deletion
