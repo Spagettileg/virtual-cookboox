@@ -60,7 +60,7 @@ Finally, the 'Virtual Cookbook' navbar brand is configured to move the user back
 - Nest stage generation is to move on from a personal recipe application to enterprise scale where professional kitchens and learning institutions leverage the power of code in the cloud to access quality recipes to create industry best practice and blue print models for recipe innovation.  
 
 ## Wireframes
-***TBC***
+My [wireframe mock up design](https://github.com/Spagettileg/pbf-third-milestone-project/tree/master/plans/wireframes) has been developed as a fully responsive application capable of running on mobile, tablet & desktop devices. All mock up material was created in Balsamiq and has been appended as .bmpr file on GitHub. The mock up design has stayed consistent with the original planning. 
 
 ## User Stories
 > I need an app that provides quick and intuitive access to recipes across the globe [READ]
