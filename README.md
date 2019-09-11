@@ -152,55 +152,101 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 ## Virtual Cookbook Summary Functions
 
 ## Features
-### Feature 1 - Headline title bar with reset data button
+### Feature 1 - Registration & Authentication 
 
-•	Headline bar informs signposts user to the dashboard and when clicked, the user will return to the top of the dashboard. In addition, a reset button is available for the user to click to return all data & charts to their default values
+•	User has a mandatory requirement to complete the registration & authentication form when clicking on the sites url address 
 
-•	For ease of navigation, the headline bar is fixed at the dashboard top to help the user quickly find the rest button or automatically move to the top, whilst scrolling through to the bottom  
+•	Data entry requirements include firstname, lastname, email, phone number, birthday, username and password. Where appropriate, data entry governance exists in the form of required attributes meaning all requests for data must be completed prior to access the full Virtual Cookbook website   
 
-### Feature 2 - Introduction
+•	The process to register is controlled by previous, next & submit buttons  
 
-•	Information to the user that provides a basic instruction on how to use the dashboard, brief background on data used and a link to source of original data sample via www.kaggle.com 
+### Feature 2 - Navbar brand logo 
 
-### Feature 3 - Filter by student
+•	Normal html convention rules followed by placing the navbar brand logo 'Virtual Cookbook' in the navbar, at the top left corner. The User has unhindered access to this logo and when clicked, will always return the user to the homepage.  
 
-•	Single student exam performance can be reviewed by clicking on the ID code that appears in a dropdown box. Student ID range from 1 to 1000. Their respective exam performance can then be viewed in the array of graphical analysis
+### Feature 3 - Recipe counter
 
-### Feature 4 - Filter by gender
+•	A read only view created to show a count of all recipes that have been added to the Virtual Cookbook . The cursor has been set to none when the User hovers over the counter
 
-•	Total student population contained within data sample can be viewed via a female / male lens. A dropdown box has been designed to create a filter on gender type, together with a total gender count. Furthermore, the user will receive an instant percentage split on gender activity, on both unfiltered and filtered data analysis    
+•	The counter will be activated by the User should they add a recipe (+1) or delete a recipe (-1). The counter will not fall below zero 
 
-### Feature 5 - Composite line graph 
+### Feature 4 - Favourite recipe counter
 
-•	Math, reading and writing exam results for 1,000 students appear in the form of a line graph. This chart can be viewed in multiple dimensions, depending on how the user has configured dropdown boxes and data filters. By hovering the cursor over the legend, the user will receive a bespoke view of a single subject. Furthermore, the user can hover over the data plot to understand an individual student exam score 
+•	A read only view created to show a count of all favourite recipes that have been added to the Virtual Cookbook The cursor has been set to none when the User hovers over the counter    
 
-### Feature 6 - Scatter chart x3 
+•	The counter will be activated by the User should they elect to tick the 'favourites box' contained in either the 'add recipe' or 'edit recipe' pages. The counter will increment (+1) if the box is ticked or reduce (-1) if the box is unticked. The counter will not fall below zero 
 
-•	3 scatter plot charts have been designed to initiate regression analysis of all exam subjects. Combinations include math vs reading, reading vs writing & math vs writing. Again, these charts can be viewed in multiple dimensions, depending on how the user has configured dropdown boxes and data filters. The user will certainly get a quick and clear view of how the exam subjects correlate with each other 
+### Feature 5 - Add recipe 
 
-### Feature 7 - Bar chart x2 
+•	User can click on 'Add Recipe' button located at top right of the navbar. The navbar is present on all pages in the website, following completion of the registration process  
 
-•	Ethnicity origin and the distribution over 5 groups’ is the focus of the 1st bar chart. The view of the chart can be altered by either clicking on a selected bar(s) &/or the user can configure the bar chart through work completed to configure other dropdown boxes and data filters
+•	Once button has been clicked, the User is presented with a clear and intuitive data entry form with guidance provided by placeholder text &/or dropdown boxes. All input and dropdown are required to be completed, otherwise the User will receive a mandatory warning message to complete. Incomplete recipes cannot be added to Virtual Cookbook 
 
-•	Parents educational background distributed over 6 levels of academia is the focus of the 2nd bar chart. The same functionality exists, as with 1st bar chart. The user can look to create some interesting data configurations to see if either ethnicity &/or students parental education has any bearing upon the students’ exam results  
+•	Information required from the User includes food genre dropdown box, recipe complexity dropdown box, recipe name, author name, recipe preparation time, recipe cooking time, calories per serving, brief description of the recipe, full list of ingredients, detailed instructions on how to cook, url web address for a recipe image & a tickbox for favourite recipes       
 
-### Feature 8 - Pie chart x2 
+•	Once all required recipe information added, the User should click 'Confirm' button. User is then routed back to homepage  
 
-•	Lunch funding is the focus of the 1st pie chart. The influence of a standard lunch allowance or reduced/free lunch allowance can be evaluated by either clicking on a selected pie section(s) &/or the user can configure the pie chart through work completed to configure other dropdown boxes and data filters
+•	New recipe can be viewed by clicking on food genre image relative to the recipe that has been added
 
-•	Student preparation for their exams is the focus of the 2nd pie chart. The options are binary, either the student did or did not prepare for their exams. The same functionality exists, as with 1st pie chart. The user can look to create further interesting data configurations to see if either lunch funding &/or students exam preparation has any bearing upon the students’ exam results  
+### Feature 6 - Overview of Virtual Cookbook 
 
-### Feature 9 - Collapse / re-open articles 
+•	An elevation statement has been created to promote Virtual Cookbook to the User to set out its purpose, value generators, responsive to user stories and reference to key features  
 
-•	All articles can collapse and re-open, by clicking a blue chevron icon positioned at the top right corner of each article. The chevron becomes inverted upon collapse of the article 
+### Feature 7 - Food genre image portal gateway
 
-•	Valuable screen space is freed up by closing articles that may not feature in a given data analysis configuration
+•	Six fully responsive images of different food genres on display for the User. Images of meat, poultry, fish, vegetables, grains & pasta are clickable and will migrate the User to the respective recipe collection  
 
-### Feature 10 - Footer 
+•	To save on any confusion, all images have been name tagged  
 
-•	Provides a social media link to LinkedIn and a link to my GitHub page. Fonts (glythicons) secured from bootstrap / font awesome. The links are wired to the website designers’ respective social media sites. A .hover pseudo class has been used to provide a background colour change (white to corporate colour code) and font colour change too.   
+### Feature 8 - Food genre recipe collection 
 
-### Feature 11 - 404 alert page
+•	A Recipe image, recipe name, brief description and a recipe detail button are displayed in a card style. This structure is then repeated for all recipes 
+
+•	If the User likes a certain recipe after reading the summary information, then they can simply click the 'Detail' button to find out much more information
+
+•	There is every chance the User does not find the recipe they're looking for. In this instance, the User can elect to add a recipe of their own or exit the Virtual Cookbook  
+
+### Feature 9 - Detailed recipe card 
+
+•	User will be presented with an individual recipe card containing a recipe image, recipe name, brief description of the recipe, icon graphic & authors name, icon graphic & complexity (Easy or Challenge), icon graphic & preparation time, icon graphic & cooking time, icon graphic & calories, icon graphic & servings, full list of Ingredients & detailed Instructions on how to cook
+
+•	Should the recipe content be fine with User, then User can follow next steps, as follows:
+
+1.	Click back page control to revisit summary recipe selection page
+2.  Click on the navbar brand logo 'Virtual Cookbook' to return to home page
+3.  Leave the application by using normal browser control
+
+•	User will have access to both [Edit](#edit-recipes) and [Delete](#delete-recipes) recipe material 
+
+### Feature 10 - Edit recipe 
+
+•	User can click on 'Edit Recipe' button located at the bottom of the recipe detail page   
+
+•	Once button has been clicked, the User is presented with all the recipe information in a series of dropdown and input boxes  
+
+•	Information to be updated by the User includes food genre dropdown box, recipe complexity dropdown box, recipe name, author name, recipe preparation time, recipe cooking time, calories per serving, brief description of the recipe, full list of ingredients, detailed instructions on how to cook, url web address for a recipe image & a tickbox for favourite recipes       
+
+•	Once all updated recipe information added, the User should click 'Confirm' button. User is then routed back to the recipe detail page showing an updated view of the recipe  
+
+### Feature 11 - Delete recipe 
+
+•	For unwanted recipes, the User can click on 'Delete Recipe' button located at the bottom of the recipe detail page  
+
+•	Once button has been clicked, the User has committed to complete removal of the recipe record, with no reversal. Thereafter, the User is routed to the homepage  
+
+### Feature 12 - Favourite recipe tickbox 
+
+•	User to navigate to either 'Edit Recipe' or 'Add Recipe' page to mark their given recipe as a favourite. A simple tickbox has been created to record the User actions in both the application and cloud database too. Tick for favourite and untick for non-favourite   
+
+•	Summary favourite count statistics can be viewed in the navbar. The cursor has been set to none as the data is only intended for read only purposes   
+
+### Feature 13 - Footer 
+
+•	Provides a social media link to LinkedIn and a link to my GitHub page. Fonts (icons) secured from bootstrap 4 / font awesome 5. The links are wired to the website designers’ respective social media sites. A .hover pseudo class has been used to provide a background colour change (light grey to corporate colour code) and font colour change too.   
+
+•	Contact link embedded into the conatact section that enables the user to send requests for software development support direct to website authors LinkedIn account 
+
+### Feature 14 - 404 alert page
 
 •	Provides a friendly sign post for the user in the event an incorrect link has been clicked and the user has the option to click back into a correct link
 
@@ -371,9 +417,9 @@ Hello World
 ###### •	Navbar tests
 1.	Hover on 'Virtual Cookbook' navbar brand for text to change from pea green #61892F to lime green #86C232  
 2.	Click on ‘Virtual Cookbook’ navbar brand from anywhere within the website
-2.	User will be routed back to home page
-3.	Hover on 'Add Recipe' button for colour to change from pea green #61892F to lime green #86C232
-4.	Click on 'Add Recipe' button to take user to [Add Recipe](#add-recipes) data entry template
+3.	User will be routed back to home page
+4.	Hover on 'Add Recipe' button for colour to change from pea green #61892F to lime green #86C232
+5.	Click on 'Add Recipe' button to take user to [Add Recipe](#add-recipes) data entry template
 	
 ###### •	Homepage portfolio
 1.	Go to home page
@@ -469,7 +515,7 @@ Hello World
     - Tickbox for favourite recipe. Tick for yes or no tick for no
 6.	Hover cursor over 'Confirm' button and colour change fron yellow to green to show the button is active
 7.	Click 'Confirm' button for user to formally edit their recipe in the application
-7.	User is then routed back to recipe detail page to view their respective changes
+8.	User is then routed back to recipe detail page to view their respective changes
 
 ##### Delete Recipes
 1. Navigate to [Recipe detail](#detailed-recipe-view-(recipe.html)) page 
