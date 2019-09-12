@@ -9,23 +9,28 @@
     /*as above*/
 }
 
-h2, h3 { /*Page section header and detailed recipe name header formattng*/
+h2,
+h3 {
+    /*Page section header and detailed recipe name header formattng*/
     text-align: center;
     padding-top: 1rem;
 }
 
-.spacer { /*Padding extensively used in creating add & edit recipe data update pages*/
+.spacer {
+    /*Padding extensively used in creating add & edit recipe data update pages*/
     padding: 0.5rem;
     background-color: white;
 }
 
-.bottomleft { /*Position of the recipe detail button positioned to bottom left*/
+.bottomleft {
+    /*Position of the recipe detail button positioned to bottom left*/
     position: absolute;
     bottom: 0.6rem;
     left: 0.6rem;
 }
 
-input { /*Format the input boxes appearing in both edit and add recipe*/
+input {
+    /*Format the input boxes appearing in both edit and add recipe*/
     text-align: center;
     font: 400 15px/18px montserrat, lato, sans-serif;
 }
@@ -54,7 +59,8 @@ input { /*Format the input boxes appearing in both edit and add recipe*/
 
 /* Navbar */
 
-.navbar-brand { /*Virtual Cookbook*/
+.navbar-brand {
+    /*Virtual Cookbook*/
     font-weight: 700;
     font-size: 1.4rem;
     text-transform: uppercase;
@@ -66,7 +72,8 @@ input { /*Format the input boxes appearing in both edit and add recipe*/
     color: #86C232;
 }
 
-.navbar-count-all { /*Recipe count & Favourite count formatted to blend into navbar colour scheme*/
+.navbar-count-all {
+    /*Recipe count & Favourite count formatted to blend into navbar colour scheme*/
     padding: 0.3rem;
     margin: 0.2rem;
     border: 2px solid #474B4F;
@@ -81,106 +88,118 @@ input { /*Format the input boxes appearing in both edit and add recipe*/
 /* User Register */
 
 /* Style the form */
+
 #regForm {
-  background-color: #fff;
-  margin: 6.25rem auto;
-  padding: 2.5rem;
-  width: 70%;
-  min-width: 18.75rem;
-  border: 1px solid #222629;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    margin: 6.25rem auto;
+    padding: 2.5rem;
+    width: 70%;
+    min-width: 18.75rem;
+    border: 1px solid #222629;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
 /* Style the input fields */
+
 input {
-  padding: 0.625rem;
-  width: 100%;
-  font-size: 1.1rem;
-  font-family: monserrat;
-  border: 1px solid #aaaaaa;
+    padding: 0.625rem;
+    width: 100%;
+    font-size: 1.1rem;
+    font-family: monserrat;
+    border: 1px solid #aaaaaa;
 }
 
 /* Mark input boxes that gets an error on validation: */
+
 input.invalid {
-  background-color: #ffdddd;
+    background-color: #ffdddd;
 }
 
 /* Hide all steps by default: */
+
 .tab {
-  display: none;
+    display: none;
 }
 
 /* Make circles that indicate the steps of the form: */
+
 .step {
-  height: 1rem;
-  width: 1rem;
-  margin: 0 2px;
-  background-color: #bbbbbb;
-  border: none; 
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
+    height: 1rem;
+    width: 1rem;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
 }
 
 /* Mark the active step: */
+
 .step.active {
-  opacity: 1;
+    opacity: 1;
 }
 
 /* Mark the steps that are finished and valid: */
+
 .step.finish {
-  background-color: #86C232;
+    background-color: #86C232;
 }
 
 /* Containers */
 
-.masthead { /*Homepage food graphic*/
-  padding-top: calc(6rem + 74px);
-  padding-bottom: 6rem;
-  background-repeat: no-repeat;
-  background-size: cover;   
+.masthead {
+    /*Homepage food graphic*/
+    padding-top: calc(6rem + 74px);
+    padding-bottom: 6rem;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
- 
+
 .masthead-heading {
     font-size: 2.75rem;
     font-weight: 700;
     line-height: 2.75rem;
-  }
-  
+}
+
 .masthead-subheading {
     font-size: 1.4rem;
     font-weight: 500;
-  }
-  
-.register { /*Reduces whitespace between header & footer*/ 
+}
+
+.register {
+    /*Reduces whitespace between header & footer*/
     margin-top: -2.5rem;
     margin-bottom: -2.5rem;
 }
-  
-.page-section { /*Styling for front page portfolio*/
-  padding-top: 3rem;
+
+.page-section {
+    /*Styling for front page portfolio*/
+    padding-top: 3rem;
 }
 
 .page-section-heading {
     font-size: 2.25rem;
     line-height: 2rem;
     text-align: center;
-    text-transform: uppercase; 
+    text-transform: uppercase;
     color: #61892F;
-  }
-  
+}
+
 .page-section-about {
-    padding-bottom: 2rem; 
+    padding-bottom: 2rem;
     width: 100%;
     background-color: #86C232;
     border-radius: 0.5rem;
 }
 
-.about-title { /*Applies to home page = 'Why Virtual Cookbook?'*/ 
+.about-title {
+    /*Applies to home page = 'Why Virtual Cookbook?'*/
     color: #61892F;
 }
 
-.portfolio-item { /*Food genre image formatting*/
+.portfolio-item {
+    /*Food genre image formatting*/
     cursor: pointer;
     position: relative;
     display: block;
@@ -211,11 +230,13 @@ input.invalid {
     padding-top: 1rem;
 }
 
-.recipe-icons { /* Creates space between recipe brief description and set of 6 food icons*/
+.recipe-icons {
+    /* Creates space between recipe brief description and set of 6 food icons*/
     padding-top: 1.5rem;
 }
 
-.food-icons { /*Icons sourced from Font Awesome 5*/
+.food-icons {
+    /*Icons sourced from Font Awesome 5*/
     background-position: center;
 }
 
@@ -227,49 +248,57 @@ input.invalid {
 
 /*404 Error formatting*/
 
-.error-container { 
-  display: flex;
-  height: 100vh;
-  align-items: center;
-  overflow: hidden;
+.error-container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    overflow: hidden;
 }
-  
+
 .error-intro {
-  text-align: center;
-  color: #222629; /*Dark Slate*/
+    text-align: center;
+    color: #222629;
+    /*Dark Slate*/
 }
 
 .error-sub-intro {
-  text-align: center;
-  color: #474B4F; /*Charcoal*/
+    text-align: center;
+    color: #474B4F;
+    /*Charcoal*/
 }
 
 .error-txt {
-  text-align: center;
-  color: #000; /*Black*/
+    text-align: center;
+    color: #000;
+    /*Black*/
 }
-  
+
 .error-link {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* Block Dividers */
 
-.divider-custom { /*Masthead divider*/
-  margin: 1.25rem 0 1.5rem;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.divider-custom {
+    /*Masthead divider*/
+    margin: 1.25rem 0 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.divider-custom-icon { /*Masthead divider*/
+.divider-custom-icon {
+    /*Masthead divider*/
     color: white;
     font-size: 2rem;
 }
 
-.divider-custom-icon-portfolio,  /*Portfolio divider*/
-.divider-custom-icon-recipe {    /*Recipe detail icon format & divider*/
+.divider-custom-icon-portfolio,
+/*Portfolio divider*/
+
+.divider-custom-icon-recipe {
+    /*Recipe detail icon format & divider*/
     color: #61892F;
     font-size: 2rem;
     padding: 1.2rem;
@@ -279,90 +308,100 @@ input.invalid {
 }
 
 .divider-recipe-detail,
-.divider-addrecipe { /*Recipe detail & Add recipe segregation with line breaks*/ 
+.divider-addrecipe {
+    /*Recipe detail & Add recipe segregation with line breaks*/
     width: 6rem;
     height: 2px;
     border: 0;
     background-color: #61892F;
 }
 
-.divider-custom-icon-addrecipe i { /*Add recipe icon format*/
+.divider-custom-icon-addrecipe i {
+    /*Add recipe icon format*/
     color: #61892F;
     font-size: 1.75rem;
     padding: 1.2rem;
 }
 
 /*Textarea Resize*/
+
 /*Resize brief description, ingredients & instructions textareas*/
 
-textarea, 
+textarea,
 pre {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  border: 0;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
 }
 
 .expandingArea {
-  position: relative;
-  border: 1px solid #888;
-  background: #fff;
+    position: relative;
+    border: 1px solid #888;
+    background: #fff;
 }
 
-.expandingArea > textarea,
-.expandingArea > pre {
-  padding: 0.3125rem;
-  background: transparent;
-  font: 400 15px/18px montserrat, lato, sans-serif;
-  /* Make the text soft-wrap */
-  white-space: pre-wrap;
-  word-wrap: break-word;
+.expandingArea>textarea,
+.expandingArea>pre {
+    padding: 0.3125rem;
+    background: transparent;
+    font: 400 15px/18px montserrat, lato, sans-serif;
+    /* Make the text soft-wrap */
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
-.expandingArea > textarea {
-  /* The border-box box model is used to allow
+.expandingArea>textarea {
+    /* The border-box box model is used to allow
    * padding whilst still keeping the overall width
    * at exactly that of the containing element.
    */
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-      -ms-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 100%;
-  /* This height is used when JS is disabled */
-  height: 6.25rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    /* This height is used when JS is disabled */
+    height: 6.25rem;
 }
 
-.expandingArea.active > textarea {
-  /* Hide any scrollbars */
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  /* Remove WebKit user-resize widget */
-  resize: none;
+.expandingArea.active>textarea {
+    /* Hide any scrollbars */
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    /* Remove WebKit user-resize widget */
+    resize: none;
 }
 
-.expandingArea > pre {
-  display: none;
+.expandingArea>pre {
+    display: none;
 }
-.expandingArea.active > pre {
-  display: block;
-  /* Hide the text; just using it for sizing */
-  visibility: hidden;
+
+.expandingArea.active>pre {
+    display: block;
+    /* Hide the text; just using it for sizing */
+    visibility: hidden;
 }
 
 /* Buttons & Checkboxes */
 
-.btn-add-recipe, /*Add recipe button found in top right of navbar*/
-.btn-confirm-recipe { /*Confirm recipe button found at bottom of edit recipe page*/
+.btn-add-recipe,
+/*Add recipe button found in top right of navbar*/
+
+.btn-confirm-recipe {
+    /*Confirm recipe button found at bottom of edit recipe page*/
     margin-top: 0.2rem;
     margin: 0.2rem;
     border-radius: 10%;
-    background-color: #61892F; /*Pea Green*/
-    border-color: #61892F; /*Pea Green*/
-    color: #fff; /*White*/
+    background-color: #61892F;
+    /*Pea Green*/
+    border-color: #61892F;
+    /*Pea Green*/
+    color: #fff;
+    /*White*/
     font-weight: 500;
     font-size: 1rem;
     text-decoration: none;
@@ -371,7 +410,8 @@ pre {
 }
 
 .btn-add-recipe:hover,
-.btn-confirm-recipe:hover { /* add & confirm recipe buttons change colour when hovered & clicked */
+.btn-confirm-recipe:hover {
+    /* add & confirm recipe buttons change colour when hovered & clicked */
     background-color: #86C232;
     /*lime green*/
     border-color: #86C232;
@@ -387,14 +427,20 @@ pre {
     /*Apple*/
 }
 
-.btn-recipe-detail, /*Recipe detail button found in pages headed 'Meat Recipes', 'Poutltry Recipes', etc*/
-.btn-register { /*Previous, Next & Submit buttons found in index.html in support of User Registration process*/
+.btn-recipe-detail,
+/*Recipe detail button found in pages headed 'Meat Recipes', 'Poutltry Recipes', etc*/
+
+.btn-register {
+    /*Previous, Next & Submit buttons found in index.html in support of User Registration process*/
     padding: 0.2rem;
     margin: 0.2rem;
     border-radius: 10%;
-    background-color: #61892F; /*Pea Green*/
-    border-color: #61892F; /*Pea Green*/
-    color: #fff; /*White*/
+    background-color: #61892F;
+    /*Pea Green*/
+    border-color: #61892F;
+    /*Pea Green*/
+    color: #fff;
+    /*White*/
     font-weight: 500;
     font-size: 1rem;
     text-decoration: none;
@@ -403,7 +449,8 @@ pre {
 }
 
 .btn-recipe-detail:hover,
-.btn-register:hover { /* add recipe button changes colour when hovered & clicked */
+.btn-register:hover {
+    /* add recipe button changes colour when hovered & clicked */
     background-color: #86C232;
     /*lime green*/
     border-color: #86C232;
@@ -419,13 +466,17 @@ pre {
     /*Apple*/
 }
 
-.btn-edit-recipe { /*Edit recipe button found at the bottom of the recipe detail page - recipe.html*/
+.btn-edit-recipe {
+    /*Edit recipe button found at the bottom of the recipe detail page - recipe.html*/
     padding: 0.2rem;
     margin: 0.2rem;
     border-radius: 10%;
-    background-color: #FFC107; /*Amber Warning*/
-    border-color: #FFC107; /*Amber Warning*/
-    color: #222629; /*Dark Slate*/
+    background-color: #FFC107;
+    /*Amber Warning*/
+    border-color: #FFC107;
+    /*Amber Warning*/
+    color: #222629;
+    /*Dark Slate*/
     font-weight: 500;
     font-size: 1.5rem;
     text-decoration: none;
@@ -433,7 +484,8 @@ pre {
     text-align: center;
 }
 
-.btn-edit-recipe:hover { /* edit recipe button change colour when hovered & clicked */
+.btn-edit-recipe:hover {
+    /* edit recipe button change colour when hovered & clicked */
     background-color: #86C232;
     /*lime green*/
     border-color: #86C232;
@@ -449,13 +501,17 @@ pre {
     /*Apple*/
 }
 
-.btn-delete-recipe { /*Delete recipe button found at the bottom of the recipe detail page - recipe.html*/
+.btn-delete-recipe {
+    /*Delete recipe button found at the bottom of the recipe detail page - recipe.html*/
     padding: 0.2rem;
     margin: 0.2rem;
     border-radius: 10%;
-    background-color: #DC3545; /*Red Danger*/
-    border-color: #DC3545; /*Red Danger*/
-    color: #fafafa; /*Off white*/
+    background-color: #DC3545;
+    /*Red Danger*/
+    border-color: #DC3545;
+    /*Red Danger*/
+    color: #fafafa;
+    /*Off white*/
     font-weight: 500;
     font-size: 1.5rem;
     text-decoration: none;
@@ -463,7 +519,8 @@ pre {
     text-align: center;
 }
 
-.btn-delete-recipe:hover { /* delete recipe button change colour when hovered & clicked */
+.btn-delete-recipe:hover {
+    /* delete recipe button change colour when hovered & clicked */
     background-color: #86C232;
     /*lime green*/
     border-color: #86C232;
@@ -479,67 +536,72 @@ pre {
     /*Apple*/
 }
 
-.checkbox-list__item { /*Checkbox supports user favourite recipe selection*/
-  position: relative;
-  padding: 15px 0;
-  display: block;
-  cursor: pointer;
-  margin: 0 0 0 38px;
-  border-bottom: 1px solid #61892F;
+.checkbox-list__item {
+    /*Checkbox supports user favourite recipe selection*/
+    position: relative;
+    padding: 15px 0;
+    display: block;
+    cursor: pointer;
+    margin: 0 0 0 38px;
+    border-bottom: 1px solid #61892F;
 }
+
 .checkbox-list__item:last-of-type {
-  border-bottom: 0;
+    border-bottom: 0;
 }
 
 .checkbox-list__check {
-  width: 1.5rem; 
-  height: 1.6rem; 
-  border: 3px solid #61892F;
-  position: absolute;
-  left: -2.125rem; 
-  top: 50%;
-  margin-top: -0.75rem;
-  transition: border .3s ease;
-  -webkit-transition: border .3s ease;
+    width: 1.5rem;
+    height: 1.6rem;
+    border: 3px solid #61892F;
+    position: absolute;
+    left: -2.125rem;
+    top: 50%;
+    margin-top: -0.75rem;
+    transition: border .3s ease;
+    -webkit-transition: border .3s ease;
     -moz-transition: border .3s ease;
     -ms-transition: border .3s ease;
     -o-transition: border .3s ease;
-  border-radius: 0.3125rem;
+    border-radius: 0.3125rem;
 }
 
 .checkbox-list__check:before {
-  position: absolute;
-  display: block;
-  width: 1.125rem; 
-  height: 1.375rem; 
-  top: -2px;
-  left: 0px;
-  padding-left: 2px;
-  background-color: transparent;
-  transition: background-color .3s ease;
-  -webkit-transition: background-color .3s ease;
+    position: absolute;
+    display: block;
+    width: 1.125rem;
+    height: 1.375rem;
+    top: -2px;
+    left: 0px;
+    padding-left: 2px;
+    background-color: transparent;
+    transition: background-color .3s ease;
+    -webkit-transition: background-color .3s ease;
     -moz-transition: background-color .3s ease;
     -ms-transition: background-color .3s ease;
     -o-transition: background-color .3s ease;
-  content: '\2713'; /*Tick in the box*/
-  font-family: initial;
-  font-size: 1.1875rem; 
-  color: white;
+    content: '\2713';
+    /*Tick in the box*/
+    font-family: initial;
+    font-size: 1.1875rem;
+    color: white;
 }
 
-input[type="checkbox"]:checked ~ .checkbox-list__check { /*Checkbox chnages to lime green once clicked by the user*/
-  border-color: #86C232;
+input[type="checkbox"]:checked~.checkbox-list__check {
+    /*Checkbox chnages to lime green once clicked by the user*/
+    border-color: #86C232;
 }
 
-input[type="checkbox"]:checked ~ .checkbox-list__check:before {
-  background-color: #86C232;
+input[type="checkbox"]:checked~.checkbox-list__check:before {
+    background-color: #86C232;
 }
 
 /* Social Media */
 
 /* To include styling for social media fonts > font awesome */
 
-.social-links-footer a { /*Anchor tags for both GitHub & LinkedIn background shading grey*/
+.social-links-footer a {
+    /*Anchor tags for both GitHub & LinkedIn background shading grey*/
     color: #e6e6e6;
     /*Light Grey*/
 }
@@ -569,13 +631,15 @@ input[type="checkbox"]:checked ~ .checkbox-list__check:before {
     /*Apple*/
 }
 
-.fa-github:hover { /*User will see Github icon change to purple when cursor is hovered*/
+.fa-github:hover {
+    /*User will see Github icon change to purple when cursor is hovered*/
     background: #6e5494;
     /*GitHub Purple*/
     color: #fff;
 }
 
-.fa-linkedin:hover { /*User will see LinkedIn icon change to blue when cursor is hovered*/
+.fa-linkedin:hover {
+    /*User will see LinkedIn icon change to blue when cursor is hovered*/
     background: #0077B5;
     /*LinkedIn Blue*/
     color: #fff;
@@ -588,7 +652,8 @@ input[type="checkbox"]:checked ~ .checkbox-list__check:before {
     cursor: none;
 }
 
-.footer-contact a { /*Styling of contact the website author section*/
+.footer-contact a {
+    /*Styling of contact the website author section*/
     color: #86C232;
     text-decoration: none;
     font-weight: 500;
@@ -597,22 +662,22 @@ input[type="checkbox"]:checked ~ .checkbox-list__check:before {
 /* Media Queries */
 
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-  html {
-    /*Orientation lock for tablet view to offset Bootstrap 4 configuration*/  
-    transform: rotate(-90deg);
-    transform-origin: left top;
-    width: 100vh;
-    overflow-x: hidden;
-    position: absolute;
-    top: 100%;
-    left: 0;
-  }
+    html {
+        /*Orientation lock for tablet view to offset Bootstrap 4 configuration*/
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        width: 100vh;
+        overflow-x: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
 }
 
 @media (max-width: 767px) {
     /*Mobile - Hides the recipe count & favourite count*/
     label[class="navbar-count-all"] {
-        display:none;
+        display: none;
     }
 }
 
@@ -623,7 +688,8 @@ input[type="checkbox"]:checked ~ .checkbox-list__check:before {
     }
 }
 
-@media screen and (max-width: 1200px) { /*desktop - resize recipe image*/
+@media screen and (max-width: 1200px) {
+    /*desktop - resize recipe image*/
     .recipe-image-container img {
         height: auto;
         max-width: 18.75rem;
@@ -631,11 +697,11 @@ input[type="checkbox"]:checked ~ .checkbox-list__check:before {
     }
 }
 
-@media screen and (min-width: 1201px) { /*extra large devices - resize recipe image*/
+@media screen and (min-width: 1201px) {
+    /*extra large devices - resize recipe image*/
     .recipe-image-container img {
         height: auto;
         max-width: 18.75rem;
 
     }
 }
-
