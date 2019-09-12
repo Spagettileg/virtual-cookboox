@@ -125,7 +125,7 @@ def task(tasks_id):
     """
     Route for viewing a single recipe in detail.
     """
-    a_recipe = mongo.db.tasks.find_one({"_id": ObjectId(tasks_id)})
+    a_recipe = mongo.db.tasks.find_one_or_404({"_id": ObjectId(tasks_id)})
 
     return render_template('recipe.html',
                            count_tasks=count_tasks,
@@ -233,6 +233,14 @@ def favourite_count():
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     return render_template("portfolio.html",
                            favourite_count=favourite_count)
+                           
+
+@app.errorhandler(404)
+def page_not_found(e):
+    """Route for handling 404 errors"""
+    return render_template('404.html',
+                           title="Page Not Found!"), 404
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP', "0.0.0.0"),
