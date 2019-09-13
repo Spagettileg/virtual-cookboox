@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="outer-container bg-img">
+    <a href=" {{ url_for('index') }}"><i class="material-icons close-icon">highlight_off</i></a>
+    <div class="middle-container">
+        <div class="inner-container">
+            <h2 class="title">Login</h2>
+            <form method="POST" action="" class="form-width">
+            {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+            <p class="flashMessage">{{ message }}</p>
+            {% endfor %} {% endif %} {% endwith %}
+            <div class="input-field">
+            {{ form.hidden_tag() }}
+            {{ form.username(size=32, autofocus=true, required=true, placeholder="Enter username") }}
+            </div>
+            <div class="input-field">
+                {{ form.password(size=32, required=true, placeholder="Enter password") }}
+            </div>
+            <div class="section">Not registered? Click <a href="{{ url_for('register') }}">here.</a></div>
+            <button class="btn-large btn-confirm-recipe" type="submit" name="action">Submit<i class="fas fa-greater-than">send</i></button>
+        </form>
+    </div>
+</main>
+{% endblock %}
