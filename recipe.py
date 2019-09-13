@@ -1,10 +1,12 @@
 import os
 import math
 import re
-from flask import Flask, render_template, redirect, request, url_for, flash
+from flask import (Flask, render_template, redirect, request, url_for, flash,
+                   session)
 from flask_pymongo import PyMongo, pymongo  # Flask connect to MongoDB Atlas
 from bson.objectid import ObjectId
-from werkzeug.utils import secure_filename
+from forms import LoginForm, RegistrationForm, RecipeForm
+from werkzeug.security import generate_password_hash, check_password_hash
 """
 MongoDB represents JSON documents in binary-encoded format called
 BSON behind the scenes. BSON extends the JSON model to provide
@@ -25,25 +27,30 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
+@app.route('/')
 def index():
     """
-    Route decorator allows users to register to website.
-    """
-    return render_template('index.html')
-
-
-@app.route('/portfolio')
-def portfolio():
-    """
-    Route decorator allows users to view all the food genres held within the
-    mongodb database collection. Users can then proceed to view and create
+    Route allows users to view all the recipes within the database
+    collection with pagination, logged in users can view profile and create
     recipes.
     """
-    count_tasks = mongo.db.tasks.find().count()
-    favourite_count = mongo.db.tasks.find({'favourite': True}).count()
-    return render_template('portfolio.html',
-                           count_tasks=count_tasks,
-                           favourite_count=favourite_count)
+    page_limit = 6  # Logic for pagination
+    current_page = int(request.args.get('current_page', 1))
+    total = mongo.db.recipe.count()
+    pages = range(1, int(math.ceil(total / page_limit)) + 1)
+    recipes = mongo.db.recipe.find().sort('_id', pymongo.ASCENDING).skip(
+        (current_page - 1)*page_limit).limit(page_limit)
+
+    if 'logged_in' in session:
+        current_user = mongo.db.user.find_one({'name': session[
+            'username'].title()})
+        return render_template('index.html', recipe=recipes,
+                               title='Home', current_page=current_page,
+                               pages=pages, current_user=current_user)
+    else:
+        return render_template('index.html', recipe=recipes,
+                               title='Home', current_page=current_page,
+                               pages=pages)
 
 
 @app.route('/get_meat', methods=['GET'])
@@ -218,20 +225,20 @@ def delete_task(task_id):
     """
     We access the tasks collection & call to remove selected task.
     """
-    return redirect(url_for('portfolio'))
+    return redirect(url_for('index'))
 
 
 @app.route('/count_tasks')
 def count_tasks():
     count_tasks = mongo.db.tasks.find().count()
-    return render_template("portfolio.html",
+    return render_template("index.html",
                            count_tasks=count_tasks)
 
 
 @app.route('/favourite_count')
 def favourite_count():
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
-    return render_template("portfolio.html",
+    return render_template("index.html",
                            favourite_count=favourite_count)
                            
 
@@ -241,6 +248,60 @@ def page_not_found(e):
     return render_template('404.html',
                            title="Page Not Found!"), 404
 
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    """Function for handling the registration of users"""
+    if 'logged_in' in session:  # Check is user already logged in
+        return redirect(url_for('index'))
+
+    form = RegistrationForm()
+    if form.validate_on_submit():
+
+        user = mongo.db.user
+        dup_user = user.find_one({'name': request.form['username'].title()})
+
+        if dup_user is None:
+            hash_pass = generate_password_hash(request.form['password'])
+            user.insert_one({'name': request.form['username'].title(),
+                             'pass': hash_pass})
+            session['username'] = request.form['username']
+            session['logged_in'] = True
+            return redirect(url_for('index'))
+
+        flash('Sorry, username already taken. Please try another.')
+        return redirect(url_for('register'))
+    return render_template('register.html', form=form, title="Register")
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def user_login():
+    """Function for handling the logging in of users"""
+    if 'logged_in' in session:  # Check is already logged in
+        return redirect(url_for('index'))
+
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = mongo.db.user
+        logged_in_user = user.find_one({
+                                'name': request.form['username'].title()})
+
+        if logged_in_user:
+            if check_password_hash(logged_in_user['pass'],
+                                   request.form['password']):
+                session['username'] = request.form['username']
+                session['logged_in'] = True
+                return redirect(url_for('index'))
+            flash('Sorry incorrect password!')
+            return redirect(url_for('user_login'))
+    return render_template('login.html', form=form, title='Login')
+
+
+@app.route('/logout')
+def logout():
+    """Logs the user out and redirects to home"""
+    session.clear()  # End the session
+    return redirect(url_for('index'))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP', "0.0.0.0"),
