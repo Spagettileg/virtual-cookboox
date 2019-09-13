@@ -66,6 +66,13 @@
 
 
   <!-- Footer -->
+  <div class="container">
+            <span class="foot-me">placeholder for user ID</span>
+            {% if 'username' in session %}
+            <span class="foot-user">User: {{ session['username'].title() }}</span>
+            {% else%}
+            {% endif %}
+        </div>
   <footer class="footer text-center text-white">
     <div class="container">
       <div class="row">
