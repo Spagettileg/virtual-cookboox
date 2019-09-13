@@ -27,7 +27,6 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
-@app.route('/')
 def index():
     """
     Route allows users to view all the recipes within the database
@@ -36,19 +35,19 @@ def index():
     """
     page_limit = 6  # Logic for pagination
     current_page = int(request.args.get('current_page', 1))
-    total = mongo.db.recipe.count()
+    total = mongo.db.tasks.count()
     pages = range(1, int(math.ceil(total / page_limit)) + 1)
-    recipes = mongo.db.recipe.find().sort('_id', pymongo.ASCENDING).skip(
+    task = mongo.db.recipe.find().sort('_id', pymongo.ASCENDING).skip(
         (current_page - 1)*page_limit).limit(page_limit)
 
     if 'logged_in' in session:
         current_user = mongo.db.user.find_one({'name': session[
             'username'].title()})
-        return render_template('index.html', recipe=recipes,
+        return render_template('index.html', tasks=task,
                                title='Home', current_page=current_page,
                                pages=pages, current_user=current_user)
     else:
-        return render_template('index.html', recipe=recipes,
+        return render_template('index.html', tasks=task,
                                title='Home', current_page=current_page,
                                pages=pages)
 
