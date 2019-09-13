@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block nav %} {% include 'includes/_navbar.html' %} {% endblock %} {% block content %}
+<!-- Page Layout here -->
+<main class="row">
+    <div class="col s12 m3">
+        <div class="profile-container">
+            <figure>
+                <img class="responsive-img profile-img" src="{{ url_for('static', filename="img/gravatar.png") }}">
+            </figure>
+            <h4 class="heading">Name: {{ current_user['name'] }}</h4>
+            <p class="text">Recipes: {{ count }}</p>
+        </div>
+    </div>
+
+
+    <div class="col s12 m9">
+        <h3 class="heading">Your recipes</h3>
+        {% for r in recipes %}
+        <div class="col s12 m4">
+
+            <div class="card hoverable">
+                <div class="card-image">
+                    <img src="{{ r['recipe_image'] }}">
+                </div>
+                <div class="card-title">
+                    <span>{{ r.recipe_name }}</span>
+                </div>
+                <div class="card-action">
+                    <a href="{{ url_for('recipe', recipe_id=r._id) }}">View Reicpe</a>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+
+        <!-- end of col-9 -->
+    </div>
+    <!-- end of row -->
+</main>
+
+
+
+
+{% endblock %} {% block footer %} {% include 'includes/_footer.html' %} {% endblock %}
