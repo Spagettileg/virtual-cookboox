@@ -1,7 +1,7 @@
-{% extends 'base.html' %} {% block nav %} {% include 'includes/_navbar.html' %} {% endblock %} {% block content %}
+{% extends 'base.html' %} {% block content %}
 <!-- Page Layout here -->
 <main class="row">
-    <div class="col s12 m3">
+    <div class="col-sm-12 col-md-3">
         <div class="profile-container">
             <figure>
                 <img class="responsive-img profile-img" src="{{ url_for('static', filename="img/gravatar.png") }}">
@@ -12,32 +12,31 @@
     </div>
 
 
-    <div class="col s12 m9">
-        <h3 class="heading">Your recipes</h3>
-        {% for r in recipes %}
-        <div class="col s12 m4">
+    <div class="container">
+    <div class="col-sm-12 col-md-9">
+        <h3 class="heading">Your Recipes</h3>
+        {% for task in tasks %}
 
-            <div class="card hoverable">
-                <div class="card-image">
-                    <img src="{{ r['recipe_image'] }}">
-                </div>
-                <div class="card-title">
-                    <span>{{ r.recipe_name }}</span>
-                </div>
-                <div class="card-action">
-                    <a href="{{ url_for('recipe', recipe_id=r._id) }}">View Reicpe</a>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card-deck d-flex align-items-center justify-content-center" style="width:300px">
+                <img class="card-img-top" src="{{ task.recipe_image }}" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">{{ task.recipe_name }}</h4>
+                    <p class="card-text">{{ task.brief_description }}</p>
+                    <div class="spacer"></div>
+                    <a href="{{ url_for('task', tasks_id=task._id) }}" class="btn-medium btn-recipe-detail bottomleft">Detail</a>
                 </div>
             </div>
-
         </div>
+
+
         {% endfor %}
 
         <!-- end of col-9 -->
     </div>
     <!-- end of row -->
+    </div>
 </main>
 
-
-
-
-{% endblock %} {% block footer %} {% include 'includes/_footer.html' %} {% endblock %}
+{% endblock %} 

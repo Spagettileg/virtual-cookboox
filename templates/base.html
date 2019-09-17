@@ -25,14 +25,25 @@
 <body>
 
   <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand bg-color-dark-slate text-uppercase fixed-top">
-    <div class="container">
-      <a class="navbar-brand navbar-left" href="{{ url_for('index') }}">Virtual Cookbook</a>
-      <label class="navbar-count-all">Recipes {{count_tasks}} </label>
-      <label class="navbar-count-all">Favourites {{favourite_count}} </label>
-      <a class="btn-large btn-add-recipe" href="{{ url_for('add_tasks') }}"> Add Recipe </a>
+
+    <nav class="navbar navbar-expand bg-color-dark-slate text-uppercase">
+        <div class="container">
+            <a class="navbar-brand navbar-left" href="{{ url_for('index') }}">Virtual Cookbook</a>
+            <label class="navbar-count-all">Recipes {{count_tasks}} </label>
+              <label class="navbar-count-all">Favourites {{favourite_count}} </label>
+            <ul class="navbar-right hidden-xs">
+                {% if 'username' in session %}
+                <li><a class="my-recipes" href="{{ url_for('profile_page', user_id=current_user._id) }}">My Recipes</a></li>
+                <li><a class="add-recipe" href="{{ url_for('add_tasks') }}">Add recipe</a></li>
+                <li><a class="no-hvr" href="{{ url_for('logout') }}">Logout</a></li>
+                {% else %}
+                <li><a class="no-hvr" href="{{ url_for('user_login') }}">Login</a></li>
+                <li><a class="sign-up" href="{{ url_for('register') }}">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </div>
     </div>
-  </nav>
+    </nav>
 
   <!-- Page Header -->
   <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/food.jpg') }}')">

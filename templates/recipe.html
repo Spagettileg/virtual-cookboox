@@ -1,5 +1,23 @@
 {% extends 'base.html' %} {% block content %}
 
+{% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+<div class="row" id="alert_box">
+    <div class="col-sm-12 col-md-12">
+        <div class="card-alert alert-bg">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="card-content-alert white-text">
+                        <p class="alert">{{ message }}</p>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-2">
+                    <i class="fa fa-times" id="alert_close" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %} {% endif %} {% endwith %}
 
 <!-- Page Layout -->
 <main class="recipe-container">
@@ -56,16 +74,13 @@
         </div>
         <hr class="divider-recipe-detail"></hr>
         <div class="container">
-            <h6 class="left-align">Add favourite &/or want to improve recipe? click 'Edit' to confirm..</h6>
-            <h6 class="left-align">Unwanted recipe? click 'Delete' to confirm..</h6>
-            <div class="spacer"></div>
-            <div class="container">
-                <div class="row">
-                    <a href="{{url_for('edit_task', task_id=task._id)}}" class="btn-medium btn-edit-recipe">Edit</a>
-                    <a href="{{url_for('delete_task', task_id=task._id)}}" class="btn-medium btn-delete-recipe">Delete</a>
-                </div>
+                {% if 'logged_in' in session %} {% if session['username'].title() == task.username.title() %}
+                <span class="restrict-btn center-align"><a href="{{ url_for('edit_task', task_id=task._id) }}" class="btn-medium btn-edit-recipe">Edit Recipe</a></span>
+                <span class="restrict-btn"><a href="{{ url_for('delete_task', task_id=task._id) }}" class="btn-medium btn-delete-recipe">Delete Recipe</a></span>                
+                {% else %}
+                <div></div>
+                {% endif %} {% endif %}
             </div>
-        </div>
         <div class="spacer"></div>
 
 
