@@ -133,64 +133,50 @@ nav ul a:hover {
     text-transform: uppercase;
 }
 
-.sign-up:hover {
+.add-recipe,
+.my-recipes {
+    border-radius: 0.5rem;
+    user-select: none; /*property specifies whether the text of an element can be selected*/
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    box-sizing: content-box;
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    /*Opera*/
+    -moz-transition: all 0.5s ease-in-out;
+    /*Windows*/
+    -webkit-transition: all 0.5s ease-in-out;
+    /*Apple*/
+    font-size: 0.8rem;
+    height: 1.4rem;
+    padding: 0 0.2rem;
+    display: inline-block;
+    text-decoration: none;
+    border: 0px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #61892F; /*Pea Green*/
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+}
+
+
+.sign-up:hover,
+.my-recipes:hover,
+.add-recipe:hover {
     background-color: #86C232; /*Lime Green*/
     text-decoration: none;
     color: #000;
 }
 
-.add-recipe {
-   border-radius: 0.5rem;
-   user-select: none; /*property specifies whether the text of an element can be selected*/
-   -moz-user-select: none;
-   -ms-user-select: none;
-   -webkit-user-select: none;
-   box-sizing: content-box;
-   font-size: 0.875rem;
-   height: 2.99rem;
-   padding: 0 1.125rem;
-   display: inline-block;
-   text-decoration: none;
-   border: 0px;
-   font-weight: 500;
-   color: #fff;
-   background-color: #61892F; /*Pea Green*/ 
-   outline: none;
-   cursor: pointer;
-   position: relative;
-   text-transform: uppercase;
-}
-
-.my-recipes {
-   border-radius: 0.5rem;
-   user-select: none; /*property specifies whether the text of an element can be selected*/
-   -moz-user-select: -moz-none;
-   -ms-user-select: none;
-   -webkit-user-select: none;
-   box-sizing: content-box;
-   font-size: 0.875rem;
-   height: 2.99rem;
-   padding: 0 1.125rem;
-   display: inline-block;
-   text-decoration: none;
-   border: 0px;
-   font-weight: 500;
-   color: #fff;
-   background-color: #61892F; /*Pea Green*/ 
-   outline: none;
-   cursor: pointer;
-   position: relative;
-   text-transform: uppercase;
-}
-
-.my-recipes:hover {
-   background-color: #86C232; /*Lime Green*/
-}
-
 .no-hvr {
     font: 1.4rem;
+    height: 1.4rem;
+    padding: 0 0.2rem;
 }
-
 
 .no-hvr:hover {
    background-color: transparent;
@@ -294,6 +280,16 @@ nav ul a:hover {
 .food-icons {
     /*Icons sourced from Font Awesome 5*/
     background-position: center;
+}
+
+.reg-container,
+.log-container {
+    padding: 0.625rem;
+    margin: 0.625rem;
+    border: 2px solid #61892F;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+    color: #61892F;
 }
 
 .footer {
@@ -703,12 +699,13 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
 
 /* Footer */
 
-.foot-user {
-  float: right;
-}
-
-.foot-me {
-  float: left;
+.session-user {
+  padding: 10px;
+  margin: 10px;
+  color: #222629; /*Dark Slate*/
+  font-weight: 500;
+  border-radius: 0.5rem;
+  border: 2px solid #222629;
 }
 
 .author-cred img {
@@ -742,6 +739,17 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
     /*Mobile - Hides the recipe count & favourite count*/
     label[class="navbar-count-all"] {
         display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    /*Mobile - Add recipe & My Recipes button positions moved in from right side edge*/
+    .add-recipe,
+    .my-recipes {
+        padding: 0 -16px;
+        margin: 0 -16px;
+        font-size: 0.8rem;
+        height: 1.4rem;
     }
 }
 
