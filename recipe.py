@@ -309,19 +309,18 @@ def page_not_found(e):
 
 
 @app.route('/profile/<user_id>')
-def profile_page(user_id):
-    """Route for users to view their profile page"""
+def profile_page(user_id):  # User profile page
     if 'logged_in' not in session:  # Check if its a logged in user
-        flash('Sorry, only logged in users can view the profile page.')
+        flash('Apologies, this profile page viewed by logged in users only.')
         return redirect(url_for('index'))
 
     current_user = mongo.db.user.find_one({"_id": ObjectId(user_id)})
-    recipes = mongo.db.recipe.find({
+    task = mongo.db.tasks.find({
         'username': current_user['name']}).sort('_id', pymongo.ASCENDING)
-    count = mongo.db.recipe.find({'username': current_user['name']}).count()
+    count = mongo.db.tasks.find({'username': current_user['name']}).count()
 
     return render_template('profile.html', current_user=current_user,
-                           recipes=recipes, count=count, title="Profile Page")
+                           tasks=task, count=count, title="Profile Page")
 
 
 @app.route('/register', methods=['GET', 'POST'])
