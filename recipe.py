@@ -37,7 +37,7 @@ def index():
     current_page = int(request.args.get('current_page', 1))
     total = mongo.db.tasks.count()
     pages = range(1, int(math.ceil(total / page_limit)) + 1)
-    task = mongo.db.recipe.find().sort('_id', pymongo.ASCENDING).skip(
+    task = mongo.db.tasks.find().sort('_id', pymongo.ASCENDING).skip(
         (current_page - 1)*page_limit).limit(page_limit)
 
     if 'logged_in' in session:
@@ -132,12 +132,18 @@ def task(tasks_id):
     Route for viewing a single recipe in detail.
     """
     a_recipe = mongo.db.tasks.find_one_or_404({"_id": ObjectId(tasks_id)})
-
-    return render_template('recipe.html',
+    
+    if 'logged_in' in session:
+        current_user = mongo.db.user.find_one({
+            'name': session['username'].title()})
+        return render_template('recipe.html',
                            count_tasks=count_tasks,
                            favourite_count=favourite_count,
-                           task=a_recipe,
+                           task=a_recipe, current_user=current_user,
                            title=a_recipe['recipe_name'])
+    else:
+        return render_template('recipe.html',
+                               task=a_recipe, title=a_recipe['recipe_name'])
 
 
 @app.route('/get_tasks')
@@ -150,91 +156,144 @@ def get_tasks():
                            tasks=mongo.db.tasks.find())
 
 
-@app.route('/add_task')
+@app.route('/add_task', methods=['GET', 'POST'])
 def add_tasks():
+    """
+    Add a new recipe to mongodb database collection
+    """
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     # Allows task categories in MongoDB to connect with addtask.html file
-    return render_template('addrecipe.html',
-                           count_tasks=count_tasks,
-                           favourite_count=favourite_count,
-                           page_title="Add New Recipe",
-                           categories=mongo.db.categories.find())
-
+    if 'logged_in' not in session:  # Check for user logged in
+        flash('Apologies, only logged in users can add recipes.')
+        return redirect(url_for('index'))
+        
+    form = RecipeForm(request.form)  # Initialise the form
+    user = mongo.db.user.find_one({"name": session['username'].title()})
+    
+    if form.validate_on_submit():  # Insert new recipe if form is submitted
+        task = mongo.db.tasks
+        task.insert_one({
+                            'category_name': request.form['category_name'],
+                            'complexity': request.form['complexity'],
+                            'recipe_name': request.form['recipe_name'],
+                            'author_name': request.form['author_name'],
+                            'prep_time_mins': int(request.form['prep_time_mins']),
+                            'cook_time_mins': int(request.form['cook_time_mins']),
+                            'calories': int(request.form['calories']),
+                            'servings': int(request.form['servings']),
+                            'brief_description': request.form['brief_description'],
+                            'ingredients': request.form['ingredients'],
+                            'instructions': request.form['instructions'],
+                            'recipe_image': request.form['recipe_image'],
+                            'favourite': 'favourite' in request.form,
+                            'username': session['username'].title(),
+                            'created_by': {
+                                '_id': user['_id'],
+                                'name': user['name']}})
+        flash('Recipe Added!')
+        return redirect(url_for('index'))
+    return render_template('addrecipe.html', count_tasks=count_tasks,
+                           favourite_count=favourite_count, 
+                           form=form, title="Add New Recipe")
+    
 
 @app.route('/insert_tasks', methods=['POST'])
 def insert_tasks():
     tasks = mongo.db.tasks  # This is the tasks collection
     tasks.insert_one(request.form.to_dict())
     # when submitting info to URI, its submmited in form of a request object
-    return redirect(url_for('portfolio'))
+    return redirect(url_for('index'))
     """
     We then grab the request object, show me the form & convert
     form to dict for Mongo to understand.
     """
 
 
-@app.route('/edit_task/<task_id>')
+@app.route('/edit_task/<task_id>', methods=['GET', 'POST'])
 def edit_task(task_id):
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
-    task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+    if 'logged_in' not in session:  # Check if its a logged in user
+        flash('Apologies, only logged in users can edit recipes.')
+        return redirect(url_for('index'))
+        
+    user = mongo.db.user.find_one({"name": session['username'].title()})
+    task = mongo.db.tasks.find_one_or_404({"_id": ObjectId(task_id)})
+    form = RecipeForm()
     """
     Find a particular task, parameter passed is 'id', looking
     for a match to 'id' in MongoDB, then wrapped for editing
     purposes.
-    """
-    all_categories = mongo.db.categories.find()
-    """
     Reuse much of the layout in 'add_tasks' function,
     but with pre-populated fields.
     """
-    return render_template('editrecipe.html',
-                           count_tasks=count_tasks,
-                           favourite_count=favourite_count,
-                           page_title="Edit Recipe",
-                           task=task,
-                           categories=all_categories)
-
-
-@app.route('/update_task/<task_id>', methods=['POST'])
-def update_task(task_id):
-    tasks = mongo.db.tasks  # Access to the tasks collection in mongo.db
-    tasks.update({'_id': ObjectId(task_id)}, {
-                'category_name': request.form.get('category_name'),
-                'recipe_name': request.form.get('recipe_name'),
-                'author_name': request.form.get('author_name'),
-                'prep_time_mins': request.form.get('prep_time_mins'),
-                'cook_time_mins': request.form.get('cook_time_mins'),
-                'complexity': request.form.get('complexity'),
-                'favourite': 'favourite' in request.form,
-                'servings': request.form.get('servings'),
-                'brief_description': request.form.get('brief_description'),
-                'calories': request.form.get('calories'),
-                'ingredients': request.form.get('ingredients'),
-                'instructions': request.form.get('instructions'),
-                'recipe_image': request.form.get('recipe_image')
-                })
+    if user['name'].title() == task['username'].title():
+        if request.method == 'GET':
+            form = RecipeForm(data=task)
+            return render_template('editrecipe.html', task=task,
+                                   count_tasks=count_tasks,
+                                   favourite_count=favourite_count,
+                                   form=form, title="Edit Recipe")
+        if form.validate_on_submit():
+            tasks = mongo.db.tasks  # Access to the tasks collection in mongo.db  
+            tasks.update_one({
+                '_id': ObjectId(task_id),
+            }, {
+                '$set': {
+                            'category_name': request.form['category_name'],
+                            'complexity': request.form['complexity'],
+                            'recipe_name': request.form['recipe_name'],
+                            'author_name': request.form['author_name'],
+                            'prep_time_mins': int(request.form['prep_time_mins']),
+                            'cook_time_mins': int(request.form['cook_time_mins']),
+                            'calories': int(request.form['calories']),
+                            'servings': int(request.form['servings']),
+                            'brief_description': request.form['brief_description'],
+                            'ingredients': request.form['ingredients'],
+                            'instructions': request.form['instructions'],
+                            'recipe_image': request.form['recipe_image'],
+                            'favourite': 'favourite' in request.form
+                                                           }})
+            flash('Recipe updated.')
+            return redirect(url_for('task', task_id=task_id))
+    flash("Apologies, this is not your recipe to edit!")
     return redirect(url_for('task', tasks_id=task_id))
 
 
 @app.route('/delete_task/<task_id>')
 def delete_task(task_id):
-    mongo.db.tasks.remove({'_id': ObjectId(task_id)})
     """
-    We access the tasks collection & call to remove selected task.
+    We access the tasks collection & call to delete selected task.
     """
-    return redirect(url_for('index'))
+    if session:
+        user = mongo.db.user.find_one({"name": session['username'].title()})
+        task = mongo.db.tasks.find_one_or_404({
+                                                '_id': ObjectId(task_id)})
+    
+        if user['name'].title() == task['username'].title():
+            tasks = mongo.db.tasks
+            tasks.delete_one({
+                '_id': ObjectId(task_id)
+            })
+            flash('Recipe now deleted')
+            return redirect(url_for('index'))
+    
+        flash("Apologies, this is not your recipe to edit!")
+        return redirect(url_for('task', tasks_id=task_id))
+    else:
+        flash('Apologies, logged in users can only view this page')
+        return redirect(url_for('index'))
 
 
-@app.route('/count_tasks')
+@app.route('/count_tasks')  # Enables the total recipe counter
 def count_tasks():
     count_tasks = mongo.db.tasks.find().count()
     return render_template("index.html",
                            count_tasks=count_tasks)
 
 
-@app.route('/favourite_count')
+@app.route('/favourite_count')  # Enables the favourite recipe counter
 def favourite_count():
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     return render_template("index.html",
@@ -242,6 +301,7 @@ def favourite_count():
                            
 
 @app.errorhandler(404)
+# 404 error message supports user when Virtual Cookbook incorrectly renders 
 def page_not_found(e):
     """Route for handling 404 errors"""
     return render_template('404.html',
@@ -268,14 +328,14 @@ def register():
             session['logged_in'] = True
             return redirect(url_for('index'))
 
-        flash('Sorry, username already taken. Please try another.')
+        flash('Apologies, this username already taken. Please try another.')
         return redirect(url_for('register'))
     return render_template('register.html', form=form, title="Register")
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def user_login():
-    """Function for handling the logging in of users"""
+    """Function for User login to Virtual Cookbook"""
     if 'logged_in' in session:  # Check is already logged in
         return redirect(url_for('index'))
 
@@ -291,7 +351,7 @@ def user_login():
                 session['username'] = request.form['username']
                 session['logged_in'] = True
                 return redirect(url_for('index'))
-            flash('Sorry incorrect password!')
+            flash('Apologies, password is incorrect!')
             return redirect(url_for('user_login'))
     return render_template('login.html', form=form, title='Login')
 
