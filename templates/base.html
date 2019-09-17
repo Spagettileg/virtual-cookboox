@@ -31,18 +31,17 @@
             <a class="navbar-brand navbar-left" href="{{ url_for('index') }}">Virtual Cookbook</a>
             <label class="navbar-count-all">Recipes {{count_tasks}} </label>
               <label class="navbar-count-all">Favourites {{favourite_count}} </label>
-            <ul class="navbar-right hidden-xs">
+            <ul class="navbar-right">
                 {% if 'username' in session %}
+                <li><a class="no-hvr" href="{{ url_for('logout') }}">Logout</a></li>
                 <li><a class="my-recipes" href="{{ url_for('profile_page', user_id=current_user._id) }}">My Recipes</a></li>
                 <li><a class="add-recipe" href="{{ url_for('add_tasks') }}">Add recipe</a></li>
-                <li><a class="no-hvr" href="{{ url_for('logout') }}">Logout</a></li>
                 {% else %}
                 <li><a class="no-hvr" href="{{ url_for('user_login') }}">Login</a></li>
                 <li><a class="sign-up" href="{{ url_for('register') }}">Sign Up</a></li>
                 {% endif %}
             </ul>
         </div>
-    </div>
     </nav>
 
   <!-- Page Header -->
@@ -74,16 +73,17 @@
     {% block content %} {% endblock %}
 
   </div>
-
-
-  <!-- Footer -->
-  <div class="container">
-            <span class="foot-me">placeholder for user ID</span>
+  <div class="container d-flex align-items-center justify-content-center">
+    <div class="row">
             {% if 'username' in session %}
-            <span class="foot-user">User: {{ session['username'].title() }}</span>
+            <span class="session-user">Current Logged In User: {{ session['username'].title() }}</span>
             {% else%}
             {% endif %}
-        </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  
   <footer class="footer text-center text-white">
     <div class="container">
       <div class="row">
