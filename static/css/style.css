@@ -72,6 +72,25 @@ input {
     color: #86C232;
 }
 
+navbar {
+    border: 1px solid #222629;
+}
+
+nav ul a {
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+  font-size: 1rem;
+  color: #6a6d75;
+  display: block;
+  padding: 0 0.9375rem;
+  cursor: pointer;
+}
+
+nav ul a:hover {
+   background-color: #474B4F; /*Charcoal Grey*/
+   color: #fff;
+}
+
 .navbar-count-all {
     /*Recipe count & Favourite count formatted to blend into navbar colour scheme*/
     padding: 0.3rem;
@@ -83,6 +102,100 @@ input {
     text-decoration: none;
     cursor: none;
     color: #474B4F;
+}
+
+.sign-up {
+    border-radius: 0.5rem;
+    user-select: none; /*property specifies whether the text of an element can be selected*/
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    box-sizing: content-box;
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    /*Opera*/
+    -moz-transition: all 0.5s ease-in-out;
+    /*Windows*/
+    -webkit-transition: all 0.5s ease-in-out;
+    /*Apple*/
+    font-size: 0.8rem;
+    height: 1.4rem;
+    padding: 0 0.4rem;
+    display: inline-block;
+    text-decoration: none;
+    border: 0px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #61892F; /*Pea Green*/
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.sign-up:hover {
+    background-color: #86C232; /*Lime Green*/
+    text-decoration: none;
+    color: #000;
+}
+
+.add-recipe {
+   border-radius: 0.5rem;
+   user-select: none; /*property specifies whether the text of an element can be selected*/
+   -moz-user-select: none;
+   -ms-user-select: none;
+   -webkit-user-select: none;
+   box-sizing: content-box;
+   font-size: 0.875rem;
+   height: 2.99rem;
+   padding: 0 1.125rem;
+   display: inline-block;
+   text-decoration: none;
+   border: 0px;
+   font-weight: 500;
+   color: #fff;
+   background-color: #61892F; /*Pea Green*/ 
+   outline: none;
+   cursor: pointer;
+   position: relative;
+   text-transform: uppercase;
+}
+
+.my-recipes {
+   border-radius: 0.5rem;
+   user-select: none; /*property specifies whether the text of an element can be selected*/
+   -moz-user-select: -moz-none;
+   -ms-user-select: none;
+   -webkit-user-select: none;
+   box-sizing: content-box;
+   font-size: 0.875rem;
+   height: 2.99rem;
+   padding: 0 1.125rem;
+   display: inline-block;
+   text-decoration: none;
+   border: 0px;
+   font-weight: 500;
+   color: #fff;
+   background-color: #61892F; /*Pea Green*/ 
+   outline: none;
+   cursor: pointer;
+   position: relative;
+   text-transform: uppercase;
+}
+
+.my-recipes:hover {
+   background-color: #86C232; /*Lime Green*/
+}
+
+.no-hvr {
+    font: 1.4rem;
+}
+
+
+.no-hvr:hover {
+   background-color: transparent;
+   color: #61892F; /*Pea Green*/
+   text-decoration: none;
 }
 
 /* Containers */
