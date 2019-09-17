@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<main class="outer-container bg-img">
-    <a href=" {{ url_for('index') }}"><i class="fas fa-times"></i></a>
+<main class="log-container bg-img">
+    <a href=" {{ url_for('index') }}"><i class="fas fa-times float-right"></i></a>
     <div class="middle-container">
         <div class="inner-container">
             <h2 class="title">Login</h2>
@@ -10,16 +10,17 @@
             {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
             <p class="flashMessage">{{ message }}</p>
             {% endfor %} {% endif %} {% endwith %}
-            <div class="input-field">
+            <div class="input-field d-flex align-items-center justify-content-center">
             {{ form.hidden_tag() }}
-            {{ form.username(size=40, autofocus=true, required=true, placeholder="Enter Username") }}
+            {{ form.username(size=30, autofocus=true, required=true, placeholder="Enter Username") }}
             </div>
-            <div class="input-field">
-                {{ form.password(size=40, required=true, placeholder="Enter Password") }}
+            <div class="input-field d-flex align-items-center justify-content-center">
+                {{ form.password(size=30, required=true, placeholder="Enter Password") }}
             </div>
             <div class="section">Not registered? Click <a href="{{ url_for('register') }}">here.</a></div>
-            <button class="btn-large btn-confirm-recipe" type="submit" name="action">Submit<i class="fas fa-greater-than">send</i></button>
+            <button class="btn-large btn-confirm-recipe" type="submit" name="action">Submit  <i class="fas fa-greater-than"></i></button>
         </form>
+    </div>
     </div>
 </main>
 {% endblock %}
