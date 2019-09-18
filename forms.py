@@ -34,8 +34,8 @@ class RegistrationForm(FlaskForm):
 class RecipeForm(FlaskForm):
     category_name = StringField('category_name', validators=[DataRequired()])
     complexity = StringField('complexity', validators=[DataRequired()])
-    recipe_name = TextAreaField('recipe_name', validators=[DataRequired()])
-    author_name = TextAreaField('author_name', validators=[DataRequired()])
+    recipe_name = StringField('recipe_name', validators=[DataRequired()])
+    author_name = StringField('author_name', validators=[DataRequired()])
     prep_time_mins = IntegerField('prep_time_mins', validators=[DataRequired()])
     cook_time_mins = IntegerField('cook_time_mins', validators=[DataRequired()])
     calories = IntegerField('calories', validators=[DataRequired()])
