@@ -667,6 +667,11 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
     background-color: #86C232;
 }
 
+.cross {
+    font-size: 1.5rem;
+    color: #86C232;
+}
+
 /* Social Media */
 
 /* To include styling for social media fonts > font awesome */
