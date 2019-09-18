@@ -4,17 +4,17 @@
     <div class="col-sm-12 col-md-3">
         <div class="profile-container">
             <figure>
-                <img class="responsive-img profile-img" src="{{ url_for('static', filename="img/gravatar.png") }}">
+                <img class="responsive-img grav-profile" src="{{ url_for('static', filename="img/gravatar.png") }}">
             </figure>
-            <h4 class="heading">Name: {{ current_user['name'] }}</h4>
-            <p class="text">Recipes: {{ count }}</p>
+            <h4 class="name-heading">Name: {{ current_user['name'] }}</h4>
+            <p class="count-text">Recipes: {{ count }}</p>
         </div>
     </div>
 
 
     <div class="container">
     <div class="col-sm-12 col-md-9">
-        <h3 class="heading">Your Recipes</h3>
+        <h3 class="name-heading">Your Recipes</h3>
         {% for task in tasks %}
 
 
