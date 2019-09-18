@@ -1,26 +1,21 @@
 {% extends 'base.html' %} {% block content %}
-<main class="bg-img">
-    <a href=" {{ url_for('task', task_id=task._id) }}"><i class="fas fa-times"></i></a>
+
+<h2 class="title">Edit Recipe</h2>
+<main>
+    <a href=" {{ url_for('task', task_id=task._id) }}"><i class="cross fas fa-times float-right"></i></a>
     <div class="container">
-        <h2>{{ page_title }}</h2>
         <form method="POST" class="form-width">
             {{ form.csrf_token }}
-            <div class="row">
+            <div class="row divider-custom-icon-addrecipe">
                 <div class="input-field col-sm-12 col-md-6">
                     <i class="fas fa-tags"></i>
-                    <label for="category_name">Category Name</label>
-                    <select id="category" name="category_name" required>
-                  <option value="" disabled selected>Choose Category</option>
-                  {% for cat in categories %}
-                      <option value="{{ form.hidden_tag() }} {{ form.category_name }}"></option>
-                  {% endfor %}
-                </select>
+                    <label for="category_name">Food Genre</label> {{ form.hidden_tag() }} {{ form.category_name }}
                 </div>
                 <div class="input-field col-sm-12 col-md-6">
                     <i class="fas fa-graduation-cap"></i>
-                    <label for="complexity">Complexity</label> {{ form.hidden_tag() }} {{ form.recipe_name }}
+                    <label for="complexity">Complexity</label> {{ form.hidden_tag() }} {{ form.complexity }}
                 </div>
-                <div class="input-field col s12">
+                <div class="input-field col-sm-12 col-md-6">
                     <i class="fas fa-edit"></i>
                     <label for="recipe_name">Recipe Name</label> {{ form.hidden_tag() }} {{ form.recipe_name }}
                 </div>
@@ -44,6 +39,7 @@
                     <i class="fas fa-users"></i>
                     <label for="servings">Servings</label> {{ form.hidden_tag() }} {{ form.servings }}
                 </div>
+                <hr class="divider-editrecipe">
                 <div class="input-field col-sm-12">
                     <i class="far fa-file-alt"></i>
                     <label for="brief_description">Brief Description</label>
@@ -69,13 +65,15 @@
                     <i class="far fa-file-image"></i>
                     <label for="recipe_image">Recipe Image URL Address</label> {{ form.hidden_tag() }} {{ form.recipe_image(required=true) }}
                 </div>
+                <div class="container">
                 <h4 class="left-align">Favourite?</h4>
                 <label class="checkbox-list__item">
                 <input class="checkbox_buttons" type="checkbox" name="favourite" checked style="display: none;">
                   <span class="checkbox-list__check"></span>
                 </label>
-
-                <button class="btn-large btn-confirm-recipe" type="submit">Submit<i class="fas fa-greater-than">send</i></button>
+                <div class="spacer"></div>
+                <button class="btn-medium btn-confirm-recipe" type="submit">Submit</button>
+                </div>
             </div>
         </form>
 </main>
