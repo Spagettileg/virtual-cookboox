@@ -1,12 +1,12 @@
 import os
 import math
 import re
-from flask import (Flask, render_template, redirect, request, url_for, flash,
-                   session)
 from flask_pymongo import PyMongo, pymongo  # Flask connect to MongoDB Atlas
 from bson.objectid import ObjectId
 from forms import LoginForm, RegistrationForm, RecipeForm
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask import (Flask, render_template, redirect, request, url_for, flash,
+                   session)
 """
 MongoDB represents JSON documents in binary-encoded format called
 BSON behind the scenes. BSON extends the JSON model to provide
@@ -315,6 +315,8 @@ def profile_page(user_id):  # User profile page
         return redirect(url_for('index'))
 
     current_user = mongo.db.user.find_one({"_id": ObjectId(user_id)})
+    print("TEST")
+    print(current_user)
     task = mongo.db.tasks.find({
         'username': current_user['name']}).sort('_id', pymongo.ASCENDING)
     count = mongo.db.tasks.find({'username': current_user['name']}).count()
