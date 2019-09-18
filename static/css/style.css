@@ -291,7 +291,7 @@ nav ul a:hover {
     color: #61892F;
 }
 
-.heading { /*Personal profile page name heading*/
+.name-heading { /*Personal profile page name heading*/
   text-align: left;
   color: #61892F;
   padding: 1.25rem 0rem 0.625rem 0rem;
@@ -299,13 +299,17 @@ nav ul a:hover {
 
 .profile-container { /*Personbal profile container*/
   width: 15.625rem;
-  margin: auto; }
+  margin: auto;
+}
 
-.profile-img { /*Positioning of gravatar image*/
-  margin-top: 2em; }
+.grav-profile { /*Positioning of gravatar image*/
+  margin-top: 2em;
+}
 
-.text { /*Personal profile page recipe count*/
-  font-size: 1.25rem; }
+.count-text { /*Personal profile page recipe count*/
+  font-size: 1.25rem;
+  color: #61892F;
+}
 
 .footer {
     padding-top: 1.5rem;
