@@ -163,7 +163,6 @@ nav ul a:hover {
     text-transform: uppercase;
 }
 
-
 .sign-up:hover,
 .my-recipes:hover,
 .add-recipe:hover {
@@ -291,6 +290,22 @@ nav ul a:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
     color: #61892F;
 }
+
+/* Profile page styles */
+.heading {
+  text-align: left;
+  color: #61892F;
+  padding: 20px 0px 10px 0px; }
+
+.profile-container {
+  width: 250px;
+  margin: auto; }
+
+.profile-img {
+  margin-top: 2em; }
+
+.text {
+  font-size: 20px; }
 
 .footer {
     padding-top: 1.5rem;
