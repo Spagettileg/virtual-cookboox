@@ -379,7 +379,8 @@ nav ul a:hover {
 }
 
 .divider-recipe-detail,
-.divider-addrecipe {
+.divider-addrecipe,
+.divider-editrecipe {
     /*Recipe detail & Add recipe segregation with line breaks*/
     width: 6rem;
     height: 2px;
@@ -459,14 +460,11 @@ pre {
 
 /* Buttons & Checkboxes */
 
-.btn-add-recipe,
-/*Add recipe button found in top right of navbar*/
-
 .btn-confirm-recipe {
     /*Confirm recipe button found at bottom of edit recipe page*/
     margin-top: 0.2rem;
     margin: 0.2rem;
-    border-radius: 10%;
+    border-radius: 0.5rem;
     background-color: #61892F;
     /*Pea Green*/
     border-color: #61892F;
@@ -480,7 +478,6 @@ pre {
     text-align: center;
 }
 
-.btn-add-recipe:hover,
 .btn-confirm-recipe:hover {
     /* add & confirm recipe buttons change colour when hovered & clicked */
     background-color: #86C232;
@@ -613,7 +610,7 @@ pre {
     padding: 15px 0;
     display: block;
     cursor: pointer;
-    margin: 0 0 0 38px;
+    margin: 0 0 0 40px;
     border-bottom: 1px solid #61892F;
 }
 
@@ -659,7 +656,7 @@ pre {
 }
 
 input[type="checkbox"]:checked~.checkbox-list__check {
-    /*Checkbox chnages to lime green once clicked by the user*/
+    /*Checkbox changes to lime green once clicked by the user*/
     border-color: #86C232;
 }
 
@@ -667,7 +664,7 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
     background-color: #86C232;
 }
 
-.cross {
+.cross { /*Cross features in login, register, add recipe & edit recipe pages to take user back to homepage, when clicked*/
     font-size: 1.5rem;
     color: #86C232;
 }
@@ -730,6 +727,7 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
   font-weight: 500;
   border-radius: 0.5rem;
   border: 2px solid #222629;
+  cursor: none;
 }
 
 .author-cred img {
