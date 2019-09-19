@@ -28,6 +28,8 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
+    count_tasks = mongo.db.tasks.find().count()
+    favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     """
     Route allows users to view all the recipes within the database
     collection with pagination, logged in users can view profile and create
@@ -43,11 +45,13 @@ def index():
     if 'logged_in' in session:
         current_user = mongo.db.user.find_one({'name': session[
             'username'].title()})
-        return render_template('index.html', tasks=task,
+        return render_template('index.html', count_tasks=count_tasks,
+                               favourite_count=favourite_count, tasks=task,
                                title='Home', current_page=current_page,
                                pages=pages, current_user=current_user)
     else:
-        return render_template('index.html', tasks=task,
+        return render_template('index.html', count_tasks=count_tasks,
+                               favourite_count=favourite_count,tasks=task,
                                title='Home', current_page=current_page,
                                pages=pages)
 
@@ -142,7 +146,8 @@ def task(tasks_id):
                            task=a_recipe, current_user=current_user,
                            title=a_recipe['recipe_name'])
     else:
-        return render_template('recipe.html',
+        return render_template('recipe.html', count_tasks=count_tasks,
+                               favourite_count=favourite_count,
                                task=a_recipe, title=a_recipe['recipe_name'])
 
 
@@ -315,8 +320,6 @@ def profile_page(user_id):  # User profile page
         return redirect(url_for('index'))
 
     current_user = mongo.db.user.find_one({"_id": ObjectId(user_id)})
-    print("TEST")
-    print(current_user)
     task = mongo.db.tasks.find({
         'username': current_user['name']}).sort('_id', pymongo.ASCENDING)
     count = mongo.db.tasks.find({'username': current_user['name']}).count()
