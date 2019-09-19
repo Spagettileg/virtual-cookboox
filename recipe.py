@@ -313,13 +313,13 @@ def page_not_found(e):
                            title="Page Not Found!"), 404
 
 
-@app.route('/profile/<user_id>')
-def profile_page(user_id):  # User profile page
+@app.route('/profile')
+def profile_page():  # User profile page
     if 'logged_in' not in session:  # Check if its a logged in user
         flash('Apologies, this profile page viewed by logged in users only.')
         return redirect(url_for('index'))
 
-    current_user = mongo.db.user.find_one({"_id": ObjectId(user_id)})
+    current_user = mongo.db.user.find_one({"_id": ObjectId()})
     task = mongo.db.tasks.find({
         'username': current_user['name']}).sort('_id', pymongo.ASCENDING)
     count = mongo.db.tasks.find({'username': current_user['name']}).count()
