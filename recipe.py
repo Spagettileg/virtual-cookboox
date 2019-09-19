@@ -51,7 +51,7 @@ def index():
                                pages=pages, current_user=current_user)
     else:
         return render_template('index.html', count_tasks=count_tasks,
-                               favourite_count=favourite_count,tasks=task,
+                               favourite_count=favourite_count, tasks=task,
                                title='Home', current_page=current_page,
                                pages=pages)
 
@@ -136,15 +136,15 @@ def task(tasks_id):
     Route for viewing a single recipe in detail.
     """
     a_recipe = mongo.db.tasks.find_one_or_404({"_id": ObjectId(tasks_id)})
-    
+
     if 'logged_in' in session:
         current_user = mongo.db.user.find_one({
             'name': session['username'].title()})
         return render_template('recipe.html',
-                           count_tasks=count_tasks,
-                           favourite_count=favourite_count,
-                           task=a_recipe, current_user=current_user,
-                           title=a_recipe['recipe_name'])
+                               count_tasks=count_tasks,
+                               favourite_count=favourite_count,
+                               task=a_recipe, current_user=current_user,
+                               title=a_recipe['recipe_name'])
     else:
         return render_template('recipe.html', count_tasks=count_tasks,
                                favourite_count=favourite_count,
@@ -172,47 +172,35 @@ def add_tasks():
     if 'logged_in' not in session:  # Check for user logged in
         flash('Apologies, only logged in users can add recipes.')
         return redirect(url_for('index'))
-        
+
     form = RecipeForm(request.form)  # Initialise the form
     user = mongo.db.user.find_one({"name": session['username'].title()})
-    
+
     if form.validate_on_submit():  # Insert new recipe if form is submitted
         task = mongo.db.tasks
         task.insert_one({
-                            'category_name': request.form['category_name'],
-                            'complexity': request.form['complexity'],
-                            'recipe_name': request.form['recipe_name'],
-                            'author_name': request.form['author_name'],
-                            'prep_time_mins': int(request.form['prep_time_mins']),
-                            'cook_time_mins': int(request.form['cook_time_mins']),
-                            'calories': int(request.form['calories']),
-                            'servings': int(request.form['servings']),
-                            'brief_description': request.form['brief_description'],
-                            'ingredients': request.form['ingredients'],
-                            'instructions': request.form['instructions'],
-                            'recipe_image': request.form['recipe_image'],
-                            'favourite': 'favourite' in request.form,
-                            'username': session['username'].title(),
-                            'created_by': {
-                                '_id': user['_id'],
-                                'name': user['name']}})
+            'category_name': request.form['category_name'],
+            'complexity': request.form['complexity'],
+            'recipe_name': request.form['recipe_name'],
+            'author_name': request.form['author_name'],
+            'prep_time_mins': int(request.form['prep_time_mins']),
+            'cook_time_mins': int(request.form['cook_time_mins']),
+            'calories': int(request.form['calories']),
+            'servings': int(request.form['servings']),
+            'brief_description': request.form['brief_description'],
+            'ingredients': request.form['ingredients'],
+            'instructions': request.form['instructions'],
+            'recipe_image': request.form['recipe_image'],
+            'favourite': 'favourite' in request.form,
+            'username': session['username'].title(),
+            'created_by': {
+                '_id': user['_id'],
+                'name': user['name']}})
         flash('Recipe Added!')
         return redirect(url_for('index'))
     return render_template('addrecipe.html', count_tasks=count_tasks,
-                           favourite_count=favourite_count, 
+                           favourite_count=favourite_count,
                            form=form, title="Add New Recipe")
-    
-
-@app.route('/insert_tasks', methods=['POST'])
-def insert_tasks():
-    tasks = mongo.db.tasks  # This is the tasks collection
-    tasks.insert_one(request.form.to_dict())
-    # when submitting info to URI, its submmited in form of a request object
-    return redirect(url_for('index'))
-    """
-    We then grab the request object, show me the form & convert
-    form to dict for Mongo to understand.
-    """
 
 
 @app.route('/edit_task/<task_id>', methods=['GET', 'POST'])
@@ -222,7 +210,7 @@ def edit_task(task_id):
     if 'logged_in' not in session:  # Check if its a logged in user
         flash('Apologies, only logged in users can edit recipes.')
         return redirect(url_for('index'))
-        
+
     user = mongo.db.user.find_one({"name": session['username'].title()})
     task = mongo.db.tasks.find_one_or_404({"_id": ObjectId(task_id)})
     form = RecipeForm()
@@ -241,25 +229,25 @@ def edit_task(task_id):
                                    favourite_count=favourite_count,
                                    form=form, title="Edit Recipe")
         if form.validate_on_submit():
-            tasks = mongo.db.tasks  # Access to the tasks collection in mongo.db  
+            tasks = mongo.db.tasks  # Access to the tasks collection in mongo.db
             tasks.update_one({
                 '_id': ObjectId(task_id),
             }, {
                 '$set': {
-                            'category_name': request.form['category_name'],
-                            'complexity': request.form['complexity'],
-                            'recipe_name': request.form['recipe_name'],
-                            'author_name': request.form['author_name'],
-                            'prep_time_mins': int(request.form['prep_time_mins']),
-                            'cook_time_mins': int(request.form['cook_time_mins']),
-                            'calories': int(request.form['calories']),
-                            'servings': int(request.form['servings']),
-                            'brief_description': request.form['brief_description'],
-                            'ingredients': request.form['ingredients'],
-                            'instructions': request.form['instructions'],
-                            'recipe_image': request.form['recipe_image'],
-                            'favourite': 'favourite' in request.form
-                                                           }})
+                    'category_name': request.form['category_name'],
+                    'complexity': request.form['complexity'],
+                    'recipe_name': request.form['recipe_name'],
+                    'author_name': request.form['author_name'],
+                    'prep_time_mins': int(request.form['prep_time_mins']),
+                    'cook_time_mins': int(request.form['cook_time_mins']),
+                    'calories': int(request.form['calories']),
+                    'servings': int(request.form['servings']),
+                    'brief_description': request.form['brief_description'],
+                    'ingredients': request.form['ingredients'],
+                    'instructions': request.form['instructions'],
+                    'recipe_image': request.form['recipe_image'],
+                    'favourite': 'favourite' in request.form
+            }})
             flash('Your recipe has been updated!')
             return redirect(url_for('task', tasks_id=task_id))
     flash("Apologies, this is not your recipe to edit!")
@@ -273,9 +261,8 @@ def delete_task(task_id):
     """
     if session:
         user = mongo.db.user.find_one({"name": session['username'].title()})
-        task = mongo.db.tasks.find_one_or_404({
-                                                '_id': ObjectId(task_id)})
-    
+        task = mongo.db.tasks.find_one_or_404({'_id': ObjectId(task_id)})
+
         if user['name'].title() == task['username'].title():
             tasks = mongo.db.tasks
             tasks.delete_one({
@@ -283,7 +270,7 @@ def delete_task(task_id):
             })
             flash('Recipe now deleted')
             return redirect(url_for('index'))
-    
+
         flash("Apologies, this is not your recipe to edit!")
         return redirect(url_for('task', tasks_id=task_id))
     else:
@@ -303,10 +290,10 @@ def favourite_count():
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     return render_template("index.html",
                            favourite_count=favourite_count)
-                           
+
 
 @app.errorhandler(404)
-# 404 error message supports user when Virtual Cookbook incorrectly renders 
+# 404 error message supports user when Virtual Cookbook incorrectly renders
 def page_not_found(e):
     """Route for handling 404 errors"""
     return render_template('404.html',
@@ -363,7 +350,7 @@ def user_login():
     if form.validate_on_submit():
         user = mongo.db.user
         logged_in_user = user.find_one({
-                                'name': request.form['username'].title()})
+            'name': request.form['username'].title()})
 
         if logged_in_user:
             if check_password_hash(logged_in_user['pass'],
