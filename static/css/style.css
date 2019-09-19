@@ -735,10 +735,10 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
 .session-user {
   padding: 10px;
   margin: 10px;
-  color: #222629; /*Dark Slate*/
+  color: #fff; /*White*/
   font-weight: 500;
   border-radius: 0.5rem;
-  border: 2px solid #222629;
+  border: 2px solid #fff;
   cursor: none;
 }
 
