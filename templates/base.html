@@ -34,8 +34,9 @@
             <ul class="navbar-right">
                 {% if 'username' in session %}
                 <li><a class="no-hvr" href="{{ url_for('logout') }}">Logout</a></li>
-                <li><a class="my-recipes" href="{{ url_for('profile_page', user_id=current_user._id) }}">My Recipes</a></li>
                 <li><a class="add-recipe" href="{{ url_for('add_tasks') }}">Add recipe</a></li>
+                {% elif 'current_user' in session %}
+                <li><a class="my-recipes" href="{{ url_for('profile_page', user_id=current_user._id) }}">My Recipes</a></li>
                 {% else %}
                 <li><a class="no-hvr" href="{{ url_for('user_login') }}">Login</a></li>
                 <li><a class="sign-up" href="{{ url_for('register') }}">Sign Up</a></li>
