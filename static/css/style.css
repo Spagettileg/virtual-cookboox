@@ -297,7 +297,7 @@ nav ul a:hover {
   padding: 1.25rem 0rem 0.625rem 0rem;
 }
 
-.profile-container { /*Personbal profile container*/
+.profile-container { /*Personal profile container*/
   width: 15.625rem;
   margin: auto;
 }
@@ -309,6 +309,18 @@ nav ul a:hover {
 .count-text { /*Personal profile page recipe count*/
   font-size: 1.25rem;
   color: #61892F;
+}
+
+.recipe-edit-alert {
+    color: #fff;
+    background-color: #61892F;
+    border: 2px solid #61892F;
+    border-radius: 0.5rem;
+    width: 50%;
+    padding: 0.625rem; 
+    margin: 0.625rem;
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
 .footer {
@@ -380,7 +392,7 @@ nav ul a:hover {
 
 .divider-recipe-detail,
 .divider-addrecipe,
-.divider-editrecipe {
+.divider-editrecipe { 
     /*Recipe detail & Add recipe segregation with line breaks*/
     width: 6rem;
     height: 2px;
