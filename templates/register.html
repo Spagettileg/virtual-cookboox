@@ -4,9 +4,9 @@
     <div class="middle-container">
         <div class="inner-container">
             <h2 class="title">Register</h2>
+            <p class="text-center">Please complete to access all cookbook functions</p>
             <form method="POST" action="" class="form-width">
-                {{ form.csrf_token }}
-                {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+                {{ form.csrf_token }} {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
                 <p class="flashMessage">{{ message }}</p>
                 {% endfor %} {% endif %} {% endwith %}
                 <div class="input-field d-flex align-items-center justify-content-center">
@@ -20,5 +20,5 @@
             </form>
         </div>
     </div>
-    </main>
+</main>
 {% endblock %}
