@@ -15,6 +15,7 @@
                 <div class="input-field d-flex align-items-center justify-content-center">
                     {{ form.password(size=30, required=true, placeholder="Enter Password") }}
                 </div>
+                <p class="text-center"><small>Click X to return to homepage</small></p>
                 <div class="section">Already registered? Click <a href="{{ url_for('user_login') }}">here.</a></div>
                 <button class="btn-large btn-confirm-recipe" type="submit" name="action">Submit  <i class="fas fa-greater-than"></i></button>
             </form>
