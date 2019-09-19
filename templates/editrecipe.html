@@ -2,7 +2,7 @@
 
 <h2 class="title">Edit Recipe</h2>
 <main>
-    <a href=" {{ url_for('task', task_id=task._id) }}"><i class="cross fas fa-times float-right"></i></a>
+    <a href=" {{ url_for('task', tasks_id=task._id) }}"><i class="cross fas fa-times float-right"></i></a>
     <div class="container">
         <form method="POST" class="form-width">
             {{ form.csrf_token }}
