@@ -255,8 +255,8 @@ def edit_task(task_id):
                             'recipe_image': request.form['recipe_image'],
                             'favourite': 'favourite' in request.form
                                                            }})
-            flash('Recipe updated.')
-            return redirect(url_for('task', task_id=task_id))
+            flash('Your recipe has been updated!')
+            return redirect(url_for('task', tasks_id=task_id))
     flash("Apologies, this is not your recipe to edit!")
     return redirect(url_for('task', tasks_id=task_id))
 
