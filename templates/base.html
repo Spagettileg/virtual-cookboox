@@ -63,7 +63,14 @@
 
       <!-- Masthead Subheading -->
       <p class="masthead-subheading">Make Delicious Meals</p>
-
+      <div class="container d-flex align-items-center justify-content-center">
+    <div class="row">
+            {% if 'username' in session %}
+            <span class="session-user">A warm welcome to: {{ session['username'].title() }}</span>
+            {% else%}
+            {% endif %}
+    </div>
+  </div>
     </div>
   </header>
 
@@ -72,14 +79,6 @@
 
     {% block content %} {% endblock %}
 
-  </div>
-  <div class="container d-flex align-items-center justify-content-center">
-    <div class="row">
-            {% if 'username' in session %}
-            <span class="session-user">Current Logged In User: {{ session['username'].title() }}</span>
-            {% else%}
-            {% endif %}
-    </div>
   </div>
 
   <!-- Footer -->
