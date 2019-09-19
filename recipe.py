@@ -1,12 +1,12 @@
 import os
 import math
-import re
 from flask_pymongo import PyMongo, pymongo  # Flask connect to MongoDB Atlas
 from bson.objectid import ObjectId
-from forms import LoginForm, RegistrationForm, RecipeForm
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import (Flask, render_template, redirect, request, url_for, flash,
                    session)
+from forms import LoginForm, RegistrationForm, RecipeForm
+
 """
 MongoDB represents JSON documents in binary-encoded format called
 BSON behind the scenes. BSON extends the JSON model to provide
@@ -247,7 +247,7 @@ def edit_task(task_id):
                     'instructions': request.form['instructions'],
                     'recipe_image': request.form['recipe_image'],
                     'favourite': 'favourite' in request.form
-            }})
+                }})
             flash('Your recipe has been updated!')
             return redirect(url_for('task', tasks_id=task_id))
     flash("Apologies, this is not your recipe to edit!")
@@ -294,7 +294,7 @@ def favourite_count():
 
 @app.errorhandler(404)
 # 404 error message supports user when Virtual Cookbook incorrectly renders
-def page_not_found(e):
+def page_not_found():
     """Route for handling 404 errors"""
     return render_template('404.html',
                            title="Page Not Found!"), 404
