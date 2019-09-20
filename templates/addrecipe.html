@@ -2,7 +2,7 @@
 
 <h2 class="title">Add New Recipe</h2>
 <main>
-    <a href=" {{ url_for('index', user_id=user._id) }}"><i class="cross fas fa-times float-right"></i></a>
+    <a href=" {{ url_for('index') }}"><i class="cross fas fa-times float-right"></i></a>
     <div class="container ">
         <form method="POST" class="form-width">
             {{ form.csrf_token }}

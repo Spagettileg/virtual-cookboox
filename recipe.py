@@ -26,8 +26,8 @@ app.config["MONGO_DBNAME"] = "virtual_cookbook"
 mongo = PyMongo(app)
 
 
-@app.route('//<user_id>')
-def index(user_id):
+@app.route('/')
+def index():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     """
@@ -56,8 +56,8 @@ def index(user_id):
                                pages=pages)
 
 
-@app.route('/get_meat/<user_id>', methods=['GET'])
-def meat(user_id):
+@app.route('/get_meat', methods=['GET'])
+def meat():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     return render_template("meat.html",
@@ -68,8 +68,8 @@ def meat(user_id):
                            ({"category_name": "Meat"}))
 
 
-@app.route('/get_poultry/<user_id>', methods=['GET'])
-def poultry(user_id):
+@app.route('/get_poultry', methods=['GET'])
+def poultry():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     return render_template("poultry.html",
@@ -80,8 +80,8 @@ def poultry(user_id):
                            ({"category_name": "Poultry"}))
 
 
-@app.route('/get_fish/<user_id>', methods=['GET'])
-def fish(user_id):
+@app.route('/get_fish', methods=['GET'])
+def fish():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     return render_template("fish.html",
@@ -92,8 +92,8 @@ def fish(user_id):
                            ({"category_name": "Fish"}))
 
 
-@app.route('/get_veg/<user_id>', methods=['GET'])
-def veg(user_id):
+@app.route('/get_veg', methods=['GET'])
+def veg():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     return render_template("veg.html",
@@ -104,8 +104,8 @@ def veg(user_id):
                            ({"category_name": "Vegetables"}))
 
 
-@app.route('/get_grains/<user_id>', methods=['GET'])
-def grains(user_id):
+@app.route('/get_grains', methods=['GET'])
+def grains():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     return render_template("grains.html",
@@ -116,8 +116,8 @@ def grains(user_id):
                            ({"category_name": "Grains"}))
 
 
-@app.route('/get_pasta/<user_id>', methods=['GET'])
-def pasta(user_id):
+@app.route('/get_pasta', methods=['GET'])
+def pasta():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     return render_template("pasta.html",
@@ -151,8 +151,8 @@ def task(tasks_id):
                                task=a_recipe, title=a_recipe['recipe_name'])
 
 
-@app.route('/get_tasks/<user_id>')
-def get_tasks(user_id):
+@app.route('/get_tasks')
+def get_tasks():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     return render_template("tasks.html",
@@ -315,8 +315,8 @@ def profile_page(user_id):  # User profile page
                            tasks=task, count=count, title="Profile Page")
 
 
-@app.route('/register/<user_id>', methods=['GET', 'POST'])
-def register(user_id):
+@app.route('/register', methods=['GET', 'POST'])
+def register():
     """Function for handling the registration of users"""
     if 'logged_in' in session:  # Check is user already logged in
         return redirect(url_for('index'))
@@ -341,8 +341,8 @@ def register(user_id):
     return render_template('register.html', form=form, title="Register")
 
 
-@app.route('/login/<user_id>', methods=['GET', 'POST'])
-def user_login(user_id):
+@app.route('/login', methods=['GET', 'POST'])
+def user_login():
     """Function for User login to Virtual Cookbook"""
     if 'logged_in' in session:  # Check is already logged in
         return redirect(url_for('index'))
@@ -365,8 +365,8 @@ def user_login(user_id):
     return render_template('login.html', form=form, title='Login')
 
 
-@app.route('/logout/<user_id>')
-def logout(user_id):
+@app.route('/logout')
+def logout():
     """Logs the user out and redirects to home"""
     session.clear()  # End the session
     return redirect(url_for('index'))

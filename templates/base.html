@@ -28,17 +28,17 @@
 
   <nav class="navbar navbar-expand bg-color-dark-slate text-uppercase">
     <div class="container">
-      <a class="navbar-brand navbar-left" href="{{ url_for('index', user_id=user._id) }}">Virtual Cookbook</a>
+      <a class="navbar-brand navbar-left" href="{{ url_for('index')}}">Virtual Cookbook</a>
       <label class="navbar-count-all">Recipes {{count_tasks}} </label>
       <label class="navbar-count-all">Favourites {{favourite_count}} </label>
       <ul class="navbar-right">
         {% if 'username' in session %}
-        <li><a class="no-hvr" href="{{ url_for('logout', user_id=user._id) }}">Logout</a></li>
-        <li><a class="my-recipes" href="{{ url_for('profile_page', user_id=user._id) }}">My Recipes</a></li>
-        <li><a class="add-recipe" href="{{ url_for('add_tasks', user_id=user._id) }}">Add recipe</a></li>
+        <li><a class="no-hvr" href="{{ url_for('logout') }}">Logout</a></li>
+        <li><a class="my-recipes" href="{{ url_for('profile_page', user_id=session['user._id']) }}">My Recipes</a></li>
+        <li><a class="add-recipe" href="{{ url_for('add_tasks') }}">Add recipe</a></li>
         {% else %}
-        <li><a class="no-hvr" href="{{ url_for('user_login', user_id=user._id) }}">Login</a></li>
-        <li><a class="sign-up" href="{{ url_for('register', user_id=user._id) }}">Sign Up</a></li>
+        <li><a class="no-hvr" href="{{ url_for('user_login') }}">Login</a></li>
+        <li><a class="sign-up" href="{{ url_for('register') }}">Sign Up</a></li>
         {% endif %}
       </ul>
     </div>
