@@ -26,8 +26,8 @@ app.config["MONGO_DBNAME"] = "virtual_cookbook"
 mongo = PyMongo(app)
 
 
-@app.route('/')
-def index():
+@app.route('//<user_id>')
+def index(user_id):
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     """
@@ -56,8 +56,8 @@ def index():
                                pages=pages)
 
 
-@app.route('/get_meat', methods=['GET'])
-def meat():
+@app.route('/get_meat/<user_id>', methods=['GET'])
+def meat(user_id):
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     return render_template("meat.html",
@@ -68,8 +68,8 @@ def meat():
                            ({"category_name": "Meat"}))
 
 
-@app.route('/get_poultry', methods=['GET'])
-def poultry():
+@app.route('/get_poultry/<user_id>', methods=['GET'])
+def poultry(user_id):
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     return render_template("poultry.html",
@@ -80,8 +80,8 @@ def poultry():
                            ({"category_name": "Poultry"}))
 
 
-@app.route('/get_fish', methods=['GET'])
-def fish():
+@app.route('/get_fish/<user_id>', methods=['GET'])
+def fish(user_id):
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     return render_template("fish.html",
@@ -92,8 +92,8 @@ def fish():
                            ({"category_name": "Fish"}))
 
 
-@app.route('/get_veg', methods=['GET'])
-def veg():
+@app.route('/get_veg/<user_id>', methods=['GET'])
+def veg(user_id):
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     return render_template("veg.html",
@@ -104,8 +104,8 @@ def veg():
                            ({"category_name": "Vegetables"}))
 
 
-@app.route('/get_grains', methods=['GET'])
-def grains():
+@app.route('/get_grains/<user_id>', methods=['GET'])
+def grains(user_id):
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     return render_template("grains.html",
@@ -116,8 +116,8 @@ def grains():
                            ({"category_name": "Grains"}))
 
 
-@app.route('/get_pasta', methods=['GET'])
-def pasta():
+@app.route('/get_pasta/<user_id>', methods=['GET'])
+def pasta(user_id):
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     return render_template("pasta.html",
@@ -151,8 +151,8 @@ def task(tasks_id):
                                task=a_recipe, title=a_recipe['recipe_name'])
 
 
-@app.route('/get_tasks')
-def get_tasks():
+@app.route('/get_tasks/<user_id>')
+def get_tasks(user_id):
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     return render_template("tasks.html",
@@ -300,13 +300,13 @@ def page_not_found():
                            title="Page Not Found!"), 404
 
 
-@app.route('/profile')
-def profile_page():  # User profile page
+@app.route('/profile/<user_id>')
+def profile_page(user_id):  # User profile page
     if 'logged_in' not in session:  # Check if its a logged in user
         flash('Apologies, this profile page viewed by logged in users only.')
         return redirect(url_for('index'))
 
-    current_user = mongo.db.user.find_one({"_id": ObjectId()})
+    current_user = mongo.db.user.find_one({"_id": ObjectId(user_id)})
     task = mongo.db.tasks.find({
         'username': current_user['name']}).sort('_id', pymongo.ASCENDING)
     count = mongo.db.tasks.find({'username': current_user['name']}).count()
@@ -315,8 +315,8 @@ def profile_page():  # User profile page
                            tasks=task, count=count, title="Profile Page")
 
 
-@app.route('/register', methods=['GET', 'POST'])
-def register():
+@app.route('/register/<user_id>', methods=['GET', 'POST'])
+def register(user_id):
     """Function for handling the registration of users"""
     if 'logged_in' in session:  # Check is user already logged in
         return redirect(url_for('index'))
@@ -332,6 +332,7 @@ def register():
             user.insert_one({'name': request.form['username'].title(),
                              'pass': hash_pass})
             session['username'] = request.form['username']
+            session['user_id'] = logged_in_user._id
             session['logged_in'] = True
             return redirect(url_for('index'))
 
@@ -340,8 +341,8 @@ def register():
     return render_template('register.html', form=form, title="Register")
 
 
-@app.route('/login', methods=['GET', 'POST'])
-def user_login():
+@app.route('/login/<user_id>', methods=['GET', 'POST'])
+def user_login(user_id):
     """Function for User login to Virtual Cookbook"""
     if 'logged_in' in session:  # Check is already logged in
         return redirect(url_for('index'))
@@ -356,6 +357,7 @@ def user_login():
             if check_password_hash(logged_in_user['pass'],
                                    request.form['password']):
                 session['username'] = request.form['username']
+                session['user_id'] = logged_in_user._id
                 session['logged_in'] = True
                 return redirect(url_for('index'))
             flash('Apologies, password is incorrect!')
@@ -363,8 +365,8 @@ def user_login():
     return render_template('login.html', form=form, title='Login')
 
 
-@app.route('/logout')
-def logout():
+@app.route('/logout/<user_id>')
+def logout(user_id):
     """Logs the user out and redirects to home"""
     session.clear()  # End the session
     return redirect(url_for('index'))

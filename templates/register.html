@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 <main class="reg-container">
-    <a href=" {{ url_for('index') }}"><i class="cross fas fa-times float-right"></i></a>
+    <a href=" {{ url_for('index', user_id=user._id) }}"><i class="cross fas fa-times float-right"></i></a>
     <div class="middle-container">
         <div class="inner-container">
             <h2 class="title">Register</h2>
@@ -16,7 +16,7 @@
                     {{ form.password(size=30, required=true, placeholder="Enter Password") }}
                 </div>
                 <p class="text-center"><small>Click X to return to homepage</small></p>
-                <div class="section">Already registered? Click <a href="{{ url_for('user_login') }}">here.</a></div>
+                <div class="section">Already registered? Click <a href="{{ url_for('user_login', user_id=user._id) }}">here.</a></div>
                 <button class="btn-large btn-confirm-recipe" type="submit" name="action">Submit  <i class="fas fa-greater-than"></i></button>
             </form>
         </div>
