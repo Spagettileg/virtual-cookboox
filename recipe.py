@@ -151,16 +151,6 @@ def task(tasks_id):
                                task=a_recipe, title=a_recipe['recipe_name'])
 
 
-@app.route('/get_tasks')
-def get_tasks():
-    count_tasks = mongo.db.tasks.find().count()
-    favourite_count = mongo.db.tasks.find({'favourite': True}).count()
-    return render_template("tasks.html",
-                           count_tasks=count_tasks,
-                           favourite_count=favourite_count,
-                           tasks=mongo.db.tasks.find())
-
-
 @app.route('/add_task', methods=['GET', 'POST'])
 def add_tasks():
     """
@@ -294,7 +284,7 @@ def favourite_count():
 
 @app.errorhandler(404)
 # 404 error message supports user when Virtual Cookbook incorrectly renders
-def page_not_found():
+def page_not_found(e):
     """Route for handling 404 errors"""
     return render_template('404.html',
                            title="Page Not Found!"), 404
@@ -332,7 +322,6 @@ def register():
             user.insert_one({'name': request.form['username'].title(),
                              'pass': hash_pass})
             session['username'] = request.form['username']
-            session['user_id'] = logged_in_user._id
             session['logged_in'] = True
             return redirect(url_for('index'))
 
@@ -357,7 +346,6 @@ def user_login():
             if check_password_hash(logged_in_user['pass'],
                                    request.form['password']):
                 session['username'] = request.form['username']
-                session['user_id'] = logged_in_user._id
                 session['logged_in'] = True
                 return redirect(url_for('index'))
             flash('Apologies, password is incorrect!')
