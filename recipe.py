@@ -60,72 +60,127 @@ def index():
 def meat():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
-    return render_template("meat.html",
-                           count_tasks=count_tasks,
-                           favourite_count=favourite_count,
-                           page_title="Meat Recipes",
-                           tasks=mongo.db.tasks.find
-                           ({"category_name": "Meat"}))
+    if 'logged_in' in session:
+        current_user = mongo.db.user.find_one({'name': session[
+            'username'].title()})
+        return render_template('meat.html', count_tasks=count_tasks,
+                               favourite_count=favourite_count,
+                               page_title='Meat Recipes',
+                               current_user=current_user,
+                               tasks=mongo.db.tasks.find
+                               ({"category_name": "Meat"}))
+    else:
+        return render_template('meat.html',
+                               count_tasks=count_tasks,
+                               favourite_count=favourite_count,
+                               page_title="Meat Recipes",
+                               tasks=mongo.db.tasks.find
+                               ({"category_name": "Meat"}))
 
 
 @app.route('/get_poultry', methods=['GET'])
 def poultry():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
-    return render_template("poultry.html",
-                           count_tasks=count_tasks,
-                           favourite_count=favourite_count,
-                           page_title="Poultry Recipes",
-                           tasks=mongo.db.tasks.find
-                           ({"category_name": "Poultry"}))
+    if 'logged_in' in session:
+        current_user = mongo.db.user.find_one({'name': session[
+            'username'].title()})
+        return render_template('poultry.html', count_tasks=count_tasks,
+                               favourite_count=favourite_count,
+                               page_title='Poultry Recipes',
+                               current_user=current_user,
+                               tasks=mongo.db.tasks.find
+                               ({"category_name": "Poultry"}))
+    else:
+        return render_template("poultry.html", count_tasks=count_tasks,
+                               favourite_count=favourite_count,
+                               page_title="Poultry Recipes",
+                               tasks=mongo.db.tasks.find
+                               ({"category_name": "Poultry"}))
 
 
 @app.route('/get_fish', methods=['GET'])
 def fish():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
-    return render_template("fish.html",
-                           count_tasks=count_tasks,
-                           favourite_count=favourite_count,
-                           page_title="Fish Recipes",
-                           tasks=mongo.db.tasks.find
-                           ({"category_name": "Fish"}))
+    if 'logged_in' in session:
+        current_user = mongo.db.user.find_one({'name': session[
+            'username'].title()})
+        return render_template('fish.html', count_tasks=count_tasks,
+                               favourite_count=favourite_count,
+                               page_title='Fish Recipes',
+                               current_user=current_user,
+                               tasks=mongo.db.tasks.find
+                               ({"category_name": "Fish"}))
+    else:
+        return render_template("fish.html", count_tasks=count_tasks,
+                               favourite_count=favourite_count,
+                               page_title="Fish Recipes",
+                               tasks=mongo.db.tasks.find
+                               ({"category_name": "Fish"}))
 
 
 @app.route('/get_veg', methods=['GET'])
 def veg():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
-    return render_template("veg.html",
-                           count_tasks=count_tasks,
-                           favourite_count=favourite_count,
-                           page_title="Vegetable Recipes",
-                           tasks=mongo.db.tasks.find
-                           ({"category_name": "Vegetables"}))
+    if 'logged_in' in session:
+        current_user = mongo.db.user.find_one({'name': session[
+            'username'].title()})
+        return render_template('veg.html', count_tasks=count_tasks,
+                               favourite_count=favourite_count,
+                               page_title='Vegetable Recipes',
+                               current_user=current_user,
+                               tasks=mongo.db.tasks.find
+                               ({"category_name": "Vegetables"}))
+    else:
+        return render_template("veg.html", count_tasks=count_tasks,
+                               favourite_count=favourite_count,
+                               page_title="Vegetable Recipes",
+                               tasks=mongo.db.tasks.find
+                               ({"category_name": "Vegetables"}))
 
 
 @app.route('/get_grains', methods=['GET'])
 def grains():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
-    return render_template("grains.html",
-                           count_tasks=count_tasks,
-                           favourite_count=favourite_count,
-                           page_title="Grains Recipes",
-                           tasks=mongo.db.tasks.find
-                           ({"category_name": "Grains"}))
+    if 'logged_in' in session:
+        current_user = mongo.db.user.find_one({'name': session[
+            'username'].title()})
+        return render_template('grains.html', count_tasks=count_tasks,
+                               favourite_count=favourite_count,
+                               page_title='Grains Recipes',
+                               current_user=current_user,
+                               tasks=mongo.db.tasks.find
+                               ({"category_name": "Grains"}))
+    else:
+        return render_template('grains.html', count_tasks=count_tasks,
+                               favourite_count=favourite_count,
+                               page_title="Grains Recipes",
+                               tasks=mongo.db.tasks.find
+                               ({"category_name": "Grains"}))
 
 
 @app.route('/get_pasta', methods=['GET'])
 def pasta():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
-    return render_template("pasta.html",
-                           count_tasks=count_tasks,
-                           favourite_count=favourite_count,
-                           page_title="Pasta Recipes",
-                           tasks=mongo.db.tasks.find
-                           ({"category_name": "Pasta"}))
+    if 'logged_in' in session:
+        current_user = mongo.db.user.find_one({'name': session[
+            'username'].title()})
+        return render_template('pasta.html', count_tasks=count_tasks,
+                               favourite_count=favourite_count,
+                               page_title='Pasta Recipes',
+                               current_user=current_user,
+                               tasks=mongo.db.tasks.find
+                               ({"category_name": "Pasta"}))
+    else:
+        return render_template("pasta.html", count_tasks=count_tasks,
+                               favourite_count=favourite_count,
+                               page_title="Pasta Recipes",
+                               tasks=mongo.db.tasks.find
+                               ({"category_name": "Pasta"}))
 
 
 @app.route('/get_task/<tasks_id>', methods=['GET', 'POST'])
