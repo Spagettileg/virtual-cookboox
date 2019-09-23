@@ -34,7 +34,7 @@
       <ul class="navbar-right">
         {% if 'username' in session %}
         <li><a class="access-exit" href="{{ url_for('logout') }}">Logout</a></li> 
-        <li><a class="my-recipes" href="{{ url_for('profile_page', user_id=session['user._id']) }}">My Recipes</a></li>
+        <li><a class="my-recipes" href="{{ url_for('profile_page', user_id=current_user._id) }}">My Recipes</a></li>
         <li><a class="add-recipe" href="{{ url_for('add_tasks') }}">Add recipe</a></li>
         {% else %}
         <li><a class="access-exit" href="{{ url_for('user_login') }}">Login</a></li>
