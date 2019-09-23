@@ -6,12 +6,12 @@ from wtforms import StringField, TextAreaField, IntegerField, PasswordField
 from wtforms.validators import DataRequired, ValidationError, Optional
 from flask_pymongo import PyMongo, pymongo
 
-csrf = CSRFProtect()
+CSRF = CSRFProtect()
 
 def create_app():
-    csrf.init_app(app)
+    CSRF.init_app(app)
 
-app = Flask(__name__)    
+app = Flask(__name__)   
 """
 Environment variables SECRET and MONGO_URI set in Heroku
 dashboard in production.
