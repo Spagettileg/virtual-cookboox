@@ -171,13 +171,13 @@ nav ul a:hover {
     color: #000;
 }
 
-.no-hvr {
+.access-exit {
     font: 1.4rem;
     height: 1.4rem;
     padding: 0 0.2rem;
 }
 
-.no-hvr:hover {
+.access-exit:hover {
    background-color: transparent;
    color: #61892F; /*Pea Green*/
    text-decoration: none;
