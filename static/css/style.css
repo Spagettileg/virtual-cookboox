@@ -328,6 +328,10 @@ nav ul a:hover {
     font-weight: 500;
 }
 
+.icon-smart { /*Food icons moved to central position*/
+    padding-left: 4rem;
+}
+
 .footer {
     padding-top: 1.5rem;
     padding-bottom: 0.5rem;
