@@ -10,10 +10,10 @@
                 <p class="flashMessage warning-msg d-flex align-items-center justify-content-center">{{ message }}</p>
                 {% endfor %} {% endif %} {% endwith %}
                 <div class="input-field d-flex align-items-center justify-content-center">
-                    {{ form.hidden_tag() }} {{ form.username(size=30, autofocus=true, required=true, placeholder="New Username") }}
+                    {{ form.hidden_tag() }} {{ form.username(size=20, autofocus=true, required=true, placeholder="New Username") }}
                 </div>
                 <div class="input-field d-flex align-items-center justify-content-center">
-                    {{ form.password(size=30, required=true, placeholder="Enter Password") }}
+                    {{ form.password(size=20, required=true, placeholder="Enter Password") }}
                 </div>
                 <p class="text-center"><small>Click X to return to homepage</small></p>
                 <div class="section">Already registered? Click <a href="{{ url_for('user_login') }}">here.</a></div>
