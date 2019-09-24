@@ -276,7 +276,6 @@ def edit_task(task_id):
                                    count_tasks=count_tasks,
                                    favourite_count=favourite_count,
                                    form=form, title="Edit Recipe")
-                                   
         if form.validate_on_submit():
             tasks = mongo.db.tasks  # Access to the tasks collection in mongo.db
             tasks.update_one({
@@ -351,6 +350,8 @@ def page_not_found(e):
 
 @app.route('/profile/<user_id>')
 def profile_page(user_id):  # User profile page
+    count_tasks = mongo.db.tasks.find().count()
+    favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     if 'logged_in' not in session:  # Check if its a logged in user
         flash('Apologies, this profile page viewed by logged in users only.')
         return redirect(url_for('index'))
@@ -360,7 +361,9 @@ def profile_page(user_id):  # User profile page
         'username': current_user['name']}).sort('_id', pymongo.ASCENDING)
     count = mongo.db.tasks.find({'username': current_user['name']}).count()
 
-    return render_template('profile.html', current_user=current_user,
+    return render_template('profile.html',
+                           current_user=current_user, count_tasks=count_tasks,
+                           favourite_count=favourite_count,
                            tasks=task, count=count, title="Profile Page")
 
 
