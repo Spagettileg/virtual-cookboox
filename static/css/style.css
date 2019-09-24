@@ -35,6 +35,11 @@ input {
     font: 400 15px/18px montserrat, lato, sans-serif;
 }
 
+.warning-msg {
+    color: #ff0000; /*Red Warning colour to alert user*/
+    font-weight: 500;
+}
+
 /* Colours - 'Gorgeous Contrast' palette taken from visme.co */
 
 .bg-color-pea-green {
