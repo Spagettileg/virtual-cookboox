@@ -255,7 +255,7 @@ def edit_task(task_id):
     if 'logged_in' not in session:  # Check if its a logged in user
         flash('Apologies, only logged in users can edit recipes.')
         return redirect(url_for('index'))
-
+    
     user = mongo.db.user.find_one({"name": session['username'].title()})
     task = mongo.db.tasks.find_one_or_404({"_id": ObjectId(task_id)})
     form = RecipeForm()
@@ -269,10 +269,14 @@ def edit_task(task_id):
     if user['name'].title() == task['username'].title():
         if request.method == 'GET':
             form = RecipeForm(data=task)
+            current_user = mongo.db.user.find_one({'name': session[
+            'username'].title()})
             return render_template('editrecipe.html', task=task,
+                                   current_user=current_user,
                                    count_tasks=count_tasks,
                                    favourite_count=favourite_count,
                                    form=form, title="Edit Recipe")
+                                   
         if form.validate_on_submit():
             tasks = mongo.db.tasks  # Access to the tasks collection in mongo.db
             tasks.update_one({
