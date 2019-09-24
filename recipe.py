@@ -220,10 +220,18 @@ def add_tasks():
 
     form = RecipeForm(request.form)  # Initialise the form
     user = mongo.db.user.find_one({"name": session['username'].title()})
+    if 'logged_in' in session:
+        form = RecipeForm(request.form)
+        current_user = mongo.db.user.find_one({'name': session[
+            'username'].title()})
+        return render_template('addrecipe.html', count_tasks=count_tasks,
+                               favourite_count=favourite_count,
+                               page_title='Add New Recipe', form=form,
+                               current_user=current_user)
 
     if form.validate_on_submit():  # Insert new recipe if form is submitted
-        task = mongo.db.tasks
-        task.insert_one({
+        tasks = mongo.db.tasks
+        tasks.insert_one({
             'category_name': request.form['category_name'],
             'complexity': request.form['complexity'],
             'recipe_name': request.form['recipe_name'],
@@ -387,7 +395,7 @@ def register():
             session['logged_in'] = True
             return redirect(url_for('index'))
 
-        flash('Apologies, this username already taken. Please try another.')
+        flash('Attention: This username is already taken. Please try another.')
         return redirect(url_for('register'))
     return render_template('register.html', form=form, title="Register")
 
@@ -410,7 +418,7 @@ def user_login():
                 session['username'] = request.form['username']
                 session['logged_in'] = True
                 return redirect(url_for('index'))
-            flash('Apologies, password is incorrect!')
+            flash('Attention: Password is incorrect. Please try again.')
             return redirect(url_for('user_login'))
     return render_template('login.html', form=form, title='Login')
 
