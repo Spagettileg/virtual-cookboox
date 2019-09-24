@@ -7,7 +7,7 @@
             <p class="text-center">Please complete to access all cookbook functions</p>
             <form method="POST" action="" class="form-width">
                 {{ form.csrf_token }} {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
-                <p class="flashMessage">{{ message }}</p>
+                <p class="flashMessage warning-msg d-flex align-items-center justify-content-center">{{ message }}</p>
                 {% endfor %} {% endif %} {% endwith %}
                 <div class="input-field d-flex align-items-center justify-content-center">
                     {{ form.hidden_tag() }} {{ form.username(size=30, autofocus=true, required=true, placeholder="New Username") }}
@@ -17,7 +17,7 @@
                 </div>
                 <p class="text-center"><small>Click X to return to homepage</small></p>
                 <div class="section">Already registered? Click <a href="{{ url_for('user_login') }}">here.</a></div>
-                <button class="btn-large btn-confirm-recipe" type="submit" name="action">Submit  <i class="fas fa-greater-than"></i></button>
+                <button class="btn-large btn-confirm-recipe" type="submit" name="action">Submit</button>
             </form>
         </div>
     </div>
