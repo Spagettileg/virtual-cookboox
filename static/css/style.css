@@ -329,7 +329,7 @@ nav ul a:hover {
 }
 
 .icon-smart { /*Food icons moved to central position*/
-    padding-left: 4rem;
+    padding-left: 3.75rem;
 }
 
 .footer {
@@ -678,16 +678,30 @@ pre {
 
 input[type="checkbox"]:checked~.checkbox-list__check {
     /*Checkbox changes to lime green once clicked by the user*/
-    border-color: #86C232;
+    border-color: #86C232; /*lime green*/
 }
 
 input[type="checkbox"]:checked~.checkbox-list__check:before {
-    background-color: #86C232;
+    background-color: #86C232; /*lime green*/
 }
 
 .cross { /*Cross features in login, register, add recipe & edit recipe pages to take user back to homepage, when clicked*/
     font-size: 1.5rem;
-    color: #86C232;
+    color: #86C232; /*lime green*/
+}
+
+.cross:hover {
+    /* delete recipe button change colour when hovered & clicked */
+    color: #61892F;
+    /*Pea Green*/
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    /*Opera*/
+    -moz-transition: all 0.5s ease-in-out;
+    /*Windows*/
+    -webkit-transition: all 0.5s ease-in-out;
+    /*Apple*/
 }
 
 /* Social Media */
