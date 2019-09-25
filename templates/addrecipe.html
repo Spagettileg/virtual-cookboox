@@ -1,5 +1,26 @@
 {% extends 'base.html' %} {% block content %}
 
+{% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+<!-- Confirmation message to user that their recipe has been added -->
+<div class="row" id="alert_box">
+    <div class="col-sm-12 col-md-12 d-flex align-items-center justify-content-center">
+        <div class="recipe-edit-alert">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <a href=" {{ url_for('index') }}"><i class="cross fas fa-times float-right" id="alert_close" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-sm-12 col-md-12">
+                    <div class="card-content-alert white-text">
+                        <p class="alert text-center">{{ message }}
+                        <br><sup>click on X to return to homepage</sup></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %} {% endif %} {% endwith %}
+
 <h2 class="title">Add New Recipe</h2>
 <main>
     <a href=" {{ url_for('index') }}"><i class="cross far fa-times-circle float-right"></i></a>
