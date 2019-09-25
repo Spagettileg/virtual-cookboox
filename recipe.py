@@ -249,7 +249,6 @@ def add_tasks():
             'created_by': {
                 '_id': user['_id'],
                 'name': user['name']}})
-        flash('Recipe Added!')
         return redirect(url_for('index'))
     return render_template('addrecipe.html', count_tasks=count_tasks,
                            favourite_count=favourite_count,
@@ -325,7 +324,6 @@ def delete_task(task_id):
             tasks.delete_one({
                 '_id': ObjectId(task_id)
             })
-            flash('Recipe now deleted')
             return redirect(url_for('index'))
 
         flash("Apologies, this is not your recipe to edit!")
