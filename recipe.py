@@ -32,28 +32,19 @@ def index():
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
     """
     Route allows users to view all the recipes within the database
-    collection with pagination, logged in users can view profile and create
-    recipes.
+    collection. Logged in users can view own profile, create, edit
+    & delete recipes.
     """
-    page_limit = 6  # Logic for pagination
-    current_page = int(request.args.get('current_page', 1))
-    total = mongo.db.tasks.count()
-    pages = range(1, int(math.ceil(total / page_limit)) + 1)
-    task = mongo.db.tasks.find().sort('_id', pymongo.ASCENDING).skip(
-        (current_page - 1)*page_limit).limit(page_limit)
-
     if 'logged_in' in session:
         current_user = mongo.db.user.find_one({'name': session[
             'username'].title()})
         return render_template('index.html', count_tasks=count_tasks,
                                favourite_count=favourite_count, tasks=task,
-                               title='Home', current_page=current_page,
-                               pages=pages, current_user=current_user)
+                               title='Home', current_user=current_user)
     else:
         return render_template('index.html', count_tasks=count_tasks,
                                favourite_count=favourite_count, tasks=task,
-                               title='Home', current_page=current_page,
-                               pages=pages)
+                               title='Home')
 
 
 @app.route('/get_meat', methods=['GET'])
