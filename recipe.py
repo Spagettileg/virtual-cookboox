@@ -224,6 +224,7 @@ def add_tasks():
         form = RecipeForm(request.form)
         current_user = mongo.db.user.find_one({'name': session[
             'username'].title()})
+    else:
         return render_template('addrecipe.html', count_tasks=count_tasks,
                                favourite_count=favourite_count,
                                page_title='Add New Recipe', form=form,
@@ -252,6 +253,7 @@ def add_tasks():
         return redirect(url_for('index'))
     return render_template('addrecipe.html', count_tasks=count_tasks,
                            favourite_count=favourite_count,
+                           current_user=current_user,
                            form=form, title="Add New Recipe")
 
 
