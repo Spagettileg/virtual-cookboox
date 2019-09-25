@@ -1,42 +1,34 @@
 {% extends 'base.html' %} {% block content %}
-<!-- Page Layout here -->
+<!-- 'My Recipe' Page Layout here -->
 <main class="row">
+    <!-- Space for user to view gravatar, username and count of own recipes -->
     <div class="col-sm-12 col-md-3">
         <div class="profile-container">
             <figure>
-                <img class="responsive-img grav-profile" src="{{ url_for('static', filename="img/gravatar.png") }}">
+                <img class="responsive-img grav-profile" src="{{ url_for('static', filename=" img/gravatar.png ") }}">
             </figure>
             <h4 class="name-heading">Name: {{ current_user['name'] }}</h4>
             <p class="count-text">Recipes: {{ count }}</p>
         </div>
     </div>
-
-
-    
-    <div class="col-sm-12 col-md-9">
+    <!-- 'My recipe' image, recipe name, brief description & detail button to click -->
+    <div class="container-fluid col-sm-12 col-md-9">
         <h3 class="name-heading">Your Recipes</h3>
-        {% for task in tasks %}
-
-
-        <div class="col-md-6 col-lg-4">
-            <div class="card-deck d-flex align-items-center justify-content-center" style="width:300px">
-                <img class="card-img-top" src="{{ task.recipe_image }}" alt="Card image">
-                <div class="card-body">
-                    <h4 class="card-title">{{ task.recipe_name }}</h4>
-                    <p class="card-text">{{ task.brief_description }}</p>
-                    <div class="spacer"></div>
-                    <a href="{{ url_for('task', tasks_id=task._id) }}" class="btn-medium btn-recipe-detail bottomleft">Detail</a>
+        <div class="row">
+            {% for task in tasks %}
+            <div class="col-sm-12 col-md-6">
+                <div class="card-deck d-flex align-items-center justify-content-center" style="width:300px">
+                    <img class="card-img-top" src="{{ task.recipe_image }}" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ task.recipe_name }}</h4>
+                        <p class="card-text">{{ task.brief_description }}</p>
+                        <div class="spacer"></div>
+                        <a href="{{ url_for('task', tasks_id=task._id) }}" class="btn-medium btn-recipe-detail bottomleft">Detail</a>
+                    </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-
-
-        {% endfor %}
-
-        <!-- end of col-9 -->
     </div>
-    <!-- end of row -->
-   
 </main>
-
-{% endblock %} 
+{% endblock %}
