@@ -2,44 +2,54 @@
 
 <h2 class="title">Edit Recipe</h2>
 <main>
+     <!-- Anchor tag created to help user move to recipe detail page if they dont want to edit or delete an existing recipe -->
     <a href=" {{ url_for('task', tasks_id=task._id) }}"><i class="cross far fa-times-circle float-right"></i></a>
     <div class="container">
         <form method="POST" class="form-width">
             {{ form.csrf_token }}
             <div class="row divider-custom-icon-addrecipe">
+                <!-- Logged User can input a food genre from Meat, Poultry, Fish, Vegetables, Grains & Pasta -->
                 <div class="input-field icon-smart col-sm-12 col-md-6">
                     <i class="fas fa-tags"></i>
                     <label for="category_name">Food Genre</label> {{ form.hidden_tag() }} {{ form.category_name }}
                 </div>
+                <!-- Complexity of food recipe and recognition of cooking skills can be changed from Easy to Challenge for vice-versa -->
                 <div class="input-field icon-smart col-sm-12 col-md-6">
                     <i class="fas fa-graduation-cap"></i>
                     <label for="complexity">Complexity</label> {{ form.hidden_tag() }} {{ form.complexity }}
                 </div>
+                <!-- Recipe name can be customised by the logged user -->
                 <div class="input-field icon-smart col-sm-12 col-md-6">
                     <i class="fas fa-edit"></i>
                     <label for="recipe_name">Recipe Name</label> {{ form.hidden_tag() }} {{ form.recipe_name }}
                 </div>
+                <!-- Author of recipe --> 
                 <div class="input-field icon-smart col-sm-12 col-md-6">
                     <i class="fas fa-user"></i>
                     <label for="author_name">Author Name</label> {{ form.hidden_tag() }} {{ form.author_name }}
                 </div>
+                <!-- Food preparation time can be adjusted based upon logged users experience -->
                 <div class="input-field icon-smart col-sm-12 col-md-6">
                     <i class="far fa-clock"></i>
                     <label for="prep_time_mins">Prep Time</label> {{ form.hidden_tag() }} {{ form.prep_time_mins }}
                 </div>
+                <!-- Total expected cooking time can be adjusted based upon experience -->
                 <div class="input-field icon-smart col-sm-12 col-md-6">
                     <i class="far fa-clock"></i>
                     <label for="cook_time_mins">Cook Time</label> {{ form.hidden_tag() }} {{ form.cook_time_mins }}
                 </div>
+                <!-- Calories per serving can be adjusted based upon alternative ingredients used  -->
                 <div class="input-field icon-smart col-sm-12 col-md-6">
                     <i class="fas fa-weight"></i>
                     <label for="calories">Calories</label> {{ form.hidden_tag() }} {{ form.calories }}
                 </div>
+                <!-- Number of servings based upon the quantity of ingredients in recipe. Again, are subject to logged user adjustment -->
                 <div class="input-field icon-smart col-sm-12 col-md-6">
                     <i class="fas fa-users"></i>
                     <label for="servings">Servings</label> {{ form.hidden_tag() }} {{ form.servings }}
                 </div>
                 <hr class="divider-editrecipe">
+                 <!-- A brief description of the recipe can be updated to capture potential changes to recipe, etc -->
                 <div class="input-field col-sm-12">
                     <i class="far fa-file-alt"></i>
                     <label for="brief_description">Brief Description</label>
@@ -47,6 +57,7 @@
                         <pre><span></span><br></pre> {{ form.hidden_tag() }} {{ form.brief_description(class="textarea") }}
                     </div>
                 </div>
+                <!-- All recipe ingredients and treatment of ingredients can be updated to the logged users liking -->
                 <div class="input-field col-sm-12">
                     <i class="far fa-file-alt"></i>
                     <label for="ingredients">Ingredients</label>
@@ -54,6 +65,7 @@
                         <pre><span></span><br></pre> {{ form.hidden_tag() }} {{ form.ingredients(class="textarea") }}
                     </div>
                 </div>
+                <!-- Improvements to detailed instructions on how to cook the ingredients to be captured by the logged user -->
                 <div class="input-field col-sm-12">
                     <i class="far fa-file-alt"></i>
                     <label for="instructions">Instructions</label>
@@ -61,10 +73,12 @@
                         <pre><span></span><br></pre> {{ form.hidden_tag() }} {{ form.instructions(class="textarea") }}
                     </div>
                 </div>
+                <!-- A recipe image url web address can be updated by the logged user to create a different 'look & feel' --> 
                 <div class="input-field col-sm-12">
                     <i class="far fa-file-image"></i>
                     <label for="recipe_image">Recipe Image URL Address</label> {{ form.hidden_tag() }} {{ form.recipe_image(size=31, required=true) }}
                 </div>
+                <!-- Tickbox used to capture logged users favourite recipes. Box ticked = favourite -->
                 <div class="container">
                     <h4 class="left-align">Favourite?</h4>
                     <label class="checkbox-list__item">
@@ -72,6 +86,7 @@
                   <span class="checkbox-list__check"></span>
                 </label>
                     <div class="spacer"></div>
+                    <!-- Submit recipe button to enable registered users to complete recipe edit -->
                     <button class="btn-medium btn-confirm-recipe" type="submit">Submit</button>
                 </div>
                 <div class="spacer"></div>

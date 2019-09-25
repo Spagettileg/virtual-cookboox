@@ -1,17 +1,21 @@
 {% extends 'base.html' %} {% block content %}
+<!-- User login page -->
 <main class="log-container">
     <a href=" {{ url_for('index') }}"><i class="cross far fa-times-circle float-right"></i></a>
-    <div class="middle-container">
-        <div class="inner-container">
+    <div class="log-mid-container">
+        <div class="log-low-container">
             <h2 class="title">Login</h2>
             <p class="text-center">Only logged in users can access all cookbook functions</p>
             <form method="POST" action="" class="form-width">
+                <!-- Flashed warning message on non-compliance appears in red text -->
                 {{ form.csrf_token }} {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
                 <p class="flashMessage warning-msg d-flex align-items-center justify-content-center">{{ message }}</p>
                 {% endfor %} {% endif %} {% endwith %}
+                <!-- Username data entry -->
                 <div class="input-field d-flex align-items-center justify-content-center">
                     {{ form.hidden_tag() }} {{ form.username(size=20, autofocus=true, required=true, placeholder="Enter Username") }}
                 </div>
+                <!-- Password data entry -->
                 <div class="input-field d-flex align-items-center justify-content-center">
                     {{ form.password(size=20, required=true, placeholder="Enter Password") }}
                 </div>
