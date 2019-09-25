@@ -1,13 +1,9 @@
 {% extends 'base.html' %} {% block content %}
-
+<!-- Recipe list of a specific food genre held on secure mongodb cloud server -->
 <h2>{{ page_title }}</h2>
-
 <div class="container-fluid">
     <div class="row">
-
         {% for task in tasks %}
-
-
         <div class="col-md-6 col-lg-4">
             <div class="card-deck d-flex align-items-center justify-content-center" style="width:300px">
                 <img class="card-img-top" src="{{ task.recipe_image }}" alt="Card image">
@@ -19,11 +15,7 @@
                 </div>
             </div>
         </div>
-
-
         {% endfor %}
-
     </div>
 </div>
-
 {% endblock %}
