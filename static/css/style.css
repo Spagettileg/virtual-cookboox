@@ -36,7 +36,8 @@ input {
 }
 
 .warning-msg {
-    color: #ff0000; /*Red Warning colour to alert user*/
+    color: #ff0000;
+    /*Red Warning colour to alert user*/
     font-weight: 500;
 }
 
@@ -82,18 +83,19 @@ navbar {
 }
 
 nav ul a {
-  -webkit-transition: background-color .3s;
-  transition: background-color .3s;
-  font-size: 1rem;
-  color: #6a6d75;
-  display: block;
-  padding: 0 0.9375rem;
-  cursor: pointer;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+    font-size: 1rem;
+    color: #6a6d75;
+    display: block;
+    padding: 0 0.9375rem;
+    cursor: pointer;
 }
 
 nav ul a:hover {
-   background-color: #474B4F; /*Charcoal Grey*/
-   color: #fff;
+    background-color: #474B4F;
+    /*Charcoal Grey*/
+    color: #fff;
 }
 
 .navbar-count-all {
@@ -111,7 +113,8 @@ nav ul a:hover {
 
 .sign-up {
     border-radius: 0.5rem;
-    user-select: none; /*property specifies whether the text of an element can be selected*/
+    user-select: none;
+    /*property specifies whether the text of an element can be selected*/
     -moz-user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;
@@ -131,7 +134,8 @@ nav ul a:hover {
     border: 0px;
     font-weight: 500;
     color: #fff;
-    background-color: #61892F; /*Pea Green*/
+    background-color: #61892F;
+    /*Pea Green*/
     outline: none;
     cursor: pointer;
     position: relative;
@@ -141,7 +145,8 @@ nav ul a:hover {
 .add-recipe,
 .my-recipes {
     border-radius: 0.5rem;
-    user-select: none; /*property specifies whether the text of an element can be selected*/
+    user-select: none;
+    /*property specifies whether the text of an element can be selected*/
     -moz-user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;
@@ -161,7 +166,8 @@ nav ul a:hover {
     border: 0px;
     font-weight: 500;
     color: #fff;
-    background-color: #61892F; /*Pea Green*/
+    background-color: #61892F;
+    /*Pea Green*/
     outline: none;
     cursor: pointer;
     position: relative;
@@ -171,7 +177,8 @@ nav ul a:hover {
 .sign-up:hover,
 .my-recipes:hover,
 .add-recipe:hover {
-    background-color: #86C232; /*Lime Green*/
+    background-color: #86C232;
+    /*Lime Green*/
     text-decoration: none;
     color: #000;
 }
@@ -183,9 +190,10 @@ nav ul a:hover {
 }
 
 .access-exit:hover {
-   background-color: transparent;
-   color: #61892F; /*Pea Green*/
-   text-decoration: none;
+    background-color: transparent;
+    color: #61892F;
+    /*Pea Green*/
+    text-decoration: none;
 }
 
 /* Containers */
@@ -296,24 +304,28 @@ nav ul a:hover {
     color: #61892F;
 }
 
-.name-heading { /*Personal profile page name heading*/
-  text-align: left;
-  color: #61892F;
-  padding: 1.25rem 0rem 0.625rem 0rem;
+.name-heading {
+    /*Personal profile page name heading*/
+    text-align: left;
+    color: #61892F;
+    padding: 1.25rem 0rem 0.625rem 0rem;
 }
 
-.profile-container { /*Personal profile container*/
-  width: 15.625rem;
-  margin: auto;
+.profile-container {
+    /*Personal profile container*/
+    width: 15.625rem;
+    margin: auto;
 }
 
-.grav-profile { /*Positioning of gravatar image*/
-  margin-top: 2em;
+.grav-profile {
+    /*Positioning of gravatar image*/
+    margin-top: 2em;
 }
 
-.count-text { /*Personal profile page recipe count*/
-  font-size: 1.25rem;
-  color: #61892F;
+.count-text {
+    /*Personal profile page recipe count*/
+    font-size: 1.25rem;
+    color: #61892F;
 }
 
 .recipe-edit-alert {
@@ -322,13 +334,14 @@ nav ul a:hover {
     border: 2px solid #61892F;
     border-radius: 0.5rem;
     width: 50%;
-    padding: 0.625rem; 
+    padding: 0.625rem;
     margin: 0.625rem;
     font-size: 1.5rem;
     font-weight: 500;
 }
 
-.icon-smart { /*Food icons moved to central position*/
+.icon-smart {
+    /*Food icons moved to central position*/
     padding-left: 3.75rem;
 }
 
@@ -401,7 +414,7 @@ nav ul a:hover {
 
 .divider-recipe-detail,
 .divider-addrecipe,
-.divider-editrecipe { 
+.divider-editrecipe {
     /*Recipe detail & Add recipe segregation with line breaks*/
     width: 6rem;
     height: 2px;
@@ -678,22 +691,47 @@ pre {
 
 input[type="checkbox"]:checked~.checkbox-list__check {
     /*Checkbox changes to lime green once clicked by the user*/
-    border-color: #86C232; /*lime green*/
+    border-color: #86C232;
+    /*lime green*/
 }
 
 input[type="checkbox"]:checked~.checkbox-list__check:before {
-    background-color: #86C232; /*lime green*/
+    background-color: #86C232;
+    /*lime green*/
 }
 
-.cross { /*Cross features in login, register, add recipe & edit recipe pages to take user back to homepage, when clicked*/
+.cross {
+    /*Cross features in login & register pages to take user back to homepage, when clicked*/
     font-size: 1.5rem;
-    color: #86C232; /*lime green*/
+    color: #86C232;
+    /*lime green*/
 }
 
 .cross:hover {
-    /* delete recipe button change colour when hovered & clicked */
+    /* cross homepage button change colour when hovered & clicked */
     color: #61892F;
     /*Pea Green*/
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    /*Opera*/
+    -moz-transition: all 0.5s ease-in-out;
+    /*Windows*/
+    -webkit-transition: all 0.5s ease-in-out;
+    /*Apple*/
+}
+
+.cross-edit {
+    /*Cross-edit features in edit recipe page to take user back to homepage, when clicked*/
+    font-size: 1.5rem;
+    color: #fff;
+    /*White*/
+}
+
+.cross-edit:hover {
+    /* cross-edit homepage button change colour when hovered & clicked */
+    color: #86C232;
+    /*lime green*/
     text-decoration: none;
     transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
@@ -756,13 +794,14 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
 /* Footer */
 
 .session-user {
-  padding: 10px;
-  margin: 10px;
-  color: #fff; /*White*/
-  font-weight: 500;
-  border-radius: 0.5rem;
-  border: 2px solid #fff;
-  cursor: none;
+    padding: 10px;
+    margin: 10px;
+    color: #fff;
+    /*White*/
+    font-weight: 500;
+    border-radius: 0.5rem;
+    border: 2px solid #fff;
+    cursor: none;
 }
 
 .author-cred img {
@@ -803,8 +842,8 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
     /*Mobile - Add recipe & My Recipes button positions moved in from right side edge*/
     .add-recipe,
     .my-recipes {
-        padding: 0 -16px;
-        margin: 0 -16px;
+        padding: 0 -1rem;
+        margin: 0 -1rem;
         font-size: 0.8rem;
         height: 1.4rem;
     }
