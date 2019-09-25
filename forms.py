@@ -11,7 +11,7 @@ CSRF = CSRFProtect()
 def create_app():
     CSRF.init_app(app)
 
-app = Flask(__name__)   
+app = Flask(__name__)  
 """
 Environment variables SECRET and MONGO_URI set in Heroku
 dashboard in production.
