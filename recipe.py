@@ -228,7 +228,6 @@ def add_tasks():
                                favourite_count=favourite_count,
                                page_title='Add New Recipe', form=form,
                                current_user=current_user)
-
     if form.validate_on_submit():  # Insert new recipe if form is submitted
         tasks = mongo.db.tasks
         tasks.insert_one({
