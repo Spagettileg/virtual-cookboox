@@ -19,21 +19,28 @@
   <!-- Favicon -->
   <link href="{{ url_for('static', filename='img/dining.png') }}" rel="shortcut icon" type="image/png">
 
-
 </head>
 
 <body>
 
   <!-- Navigation Bar -->
-
   <nav class="navbar navbar-expand bg-color-dark-slate text-uppercase">
     <div class="container">
-      <a class="navbar-brand navbar-left" href="{{ url_for('index')}}">Virtual Cookbook</a>
+      <a class="flip-box navbar-brand navbar-left" href="{{ url_for('index')}}">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+      <h2>Virtual</h2>
+          </div>
+      <div class="flip-box-back">
+      <h2>Cookbook</h2>
+      </div>
+  </div>
+      </a>
       <label class="navbar-count-all">Recipes {{count_tasks}} </label>
       <label class="navbar-count-all">Favourites {{favourite_count}} </label>
       <ul class="navbar-right">
         {% if 'username' in session %}
-        <li><a class="access-exit" href="{{ url_for('logout') }}">Logout</a></li> 
+        <li><a class="access-exit" href="{{ url_for('logout') }}">Logout</a></li>
         <li><a class="my-recipes" href="{{ url_for('profile_page', user_id=current_user._id) }}">My Recipes</a></li>
         <li><a class="add-recipe" href="{{ url_for('add_tasks') }}">Add recipe</a></li>
         {% else %}
@@ -80,7 +87,6 @@
   </div>
 
   <!-- Footer -->
-
   <footer class="footer text-center text-white">
     <div class="container">
       <div class="row">
