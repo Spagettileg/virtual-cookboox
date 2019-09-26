@@ -7,7 +7,7 @@
             <h2 class="title">Register</h2>
             <p class="text-center">Please complete to access all cookbook functions</p>
             <form method="POST" action="" class="form-width">
-                <!-- Flashed warning message on non-compliance appears in red text --> 
+                <!-- Flashed warning message on non-compliance appears in red text -->
                 {{ form.csrf_token }} {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
                 <p class="flashMessage warning-msg d-flex align-items-center justify-content-center">{{ message }}</p>
                 {% endfor %} {% endif %} {% endwith %}

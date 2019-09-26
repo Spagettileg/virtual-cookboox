@@ -1,6 +1,4 @@
-{% extends 'base.html' %} {% block content %}
-
-{% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+{% extends 'base.html' %} {% block content %} {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
 <!-- Confirmation message to user that their recipe has been updated -->
 <div class="row" id="alert_box">
     <div class="col-sm-12 col-md-12 d-flex align-items-center justify-content-center">
@@ -12,7 +10,7 @@
                 <div class="col-sm-12 col-md-12">
                     <div class="card-content-alert white-text">
                         <p class="alert text-center">{{ message }}
-                        <br><sup>click on X to return to homepage</sup></p>
+                            <br><sup>click on X to return to homepage</sup></p>
                     </div>
                 </div>
             </div>
@@ -28,7 +26,7 @@
         <div class="col-md-5 recipe-image-container d-flex align-items-center justify-content-center">
             <img class="img-fluid" src="{{ task.recipe_image }}">
         </div>
-        <!-- Brief description of recipe -->  
+        <!-- Brief description of recipe -->
         <div class="col-md-7">
             <h3>{{ task.recipe_name }}</h3>
             <div class="row">
@@ -86,13 +84,12 @@
         <hr class="divider-recipe-detail"></hr>
         <!-- Edit and Delete recipe buttons only appear for logged on users -->
         <div class="container">
-                {% if 'logged_in' in session %} {% if session['username'].title() == task.username.title() %}
-                <span class="restrict-btn center-align"><a href="{{ url_for('edit_task', task_id=task._id) }}" class="btn-medium btn-edit-recipe">Edit Recipe</a></span>
-                <span class="restrict-btn"><a href="{{ url_for('delete_task', task_id=task._id) }}" class="btn-medium btn-delete-recipe">Delete Recipe</a></span>                
-                {% else %}
-                <div></div>
-                {% endif %} {% endif %}
-            </div>
+            {% if 'logged_in' in session %} {% if session['username'].title() == task.username.title() %}
+            <span class="restrict-btn center-align"><a href="{{ url_for('edit_task', task_id=task._id) }}" class="btn-medium btn-edit-recipe">Edit Recipe</a></span>
+            <span class="restrict-btn"><a href="{{ url_for('delete_task', task_id=task._id) }}" class="btn-medium btn-delete-recipe">Delete Recipe</a></span> {% else %}
+            <div></div>
+            {% endif %} {% endif %}
+        </div>
         <div class="spacer"></div>
     </div>
 </main>
