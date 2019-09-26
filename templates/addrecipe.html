@@ -11,42 +11,42 @@
                 <!-- User can input a food genre from Meat, Poultry, Fish, Vegetables, Grains & Pasta -->
                 <div class="input-field icon-smart col-sm-12 col-md-6">
                     <i class="fas fa-tags"></i>
-                    <label for="category_name">Food Genre</label> {{ form.hidden_tag() }} {{ form.category_name(placeholder="Meat, Poultry, etc") }}
+                    <label for="category_name">Food Genre</label> {{ form.hidden_tag() }} {{ form.category_name(type="text", placeholder="Meat, Poultry, etc") }}
                 </div>
                 <!-- Complexity of food recipe and recognition of cooking skills -->
                 <div class="input-field icon-smart col-sm-12 col-md-6">
                     <i class="fas fa-graduation-cap"></i>
-                    <label for="complexity">Complexity</label> {{ form.hidden_tag() }} {{ form.complexity(placeholder="Easy or Challenge") }}
+                    <label for="complexity">Complexity</label> {{ form.hidden_tag() }} {{ form.complexity(type="text", placeholder="Easy or Challenge") }}
                 </div>
                 <!-- User is required to complete the recipe name -->
                 <div class="input-field icon-smart col-sm-12 col-md-6">
                     <i class="fas fa-edit"></i>
-                    <label for="recipe_name">Recipe Name</label> {{ form.hidden_tag() }} {{ form.recipe_name(placeholder="Sausage Ragu") }}
+                    <label for="recipe_name">Recipe Name</label> {{ form.hidden_tag() }} {{ form.recipe_name(type="text", placeholder="Sausage Ragu") }}
                 </div>
                 <!-- Author of recipe --> 
                 <div class="input-field icon-smart col-sm-12 col-md-6">
                     <i class="fas fa-user"></i>
-                    <label for="author_name">Author Name</label> {{ form.hidden_tag() }} {{ form.author_name(placeholder="Esther Clark") }}
+                    <label for="author_name">Author Name</label> {{ form.hidden_tag() }} {{ form.author_name(type="text", placeholder="Esther Clark") }}
                 </div>
                 <!-- Food preparation time -->
                 <div class="input-field icon-smart col-sm-12 col-md-6">
                     <i class="far fa-clock"></i>
-                    <label for="prep_time_mins">Prep Time</label> {{ form.hidden_tag() }} {{ form.prep_time_mins(placeholder="5") }}
+                    <label for="prep_time_mins">Prep Time</label> {{ form.hidden_tag() }} {{ form.prep_time_mins(type="number", min="1", max="180", placeholder="5") }}
                 </div>
                 <!-- Total expected cooking time -->
                 <div class="input-field icon-smart col-sm-12 col-md-6">
                     <i class="far fa-clock"></i>
-                    <label for="cook_time_mins">Cook Time</label> {{ form.hidden_tag() }} {{ form.cook_time_mins(placeholder="45") }}
+                    <label for="cook_time_mins">Cook Time</label> {{ form.hidden_tag() }} {{ form.cook_time_mins(type="number", min="1", max="300",placeholder="45") }}
                 </div>
                 <!-- Calories per serving -->
                 <div class="input-field icon-smart col-sm-12 col-md-6">
                     <i class="fas fa-weight"></i>
-                    <label for="calories">Calories</label> {{ form.hidden_tag() }} {{ form.calories(placeholder="589") }}
+                    <label for="calories">Calories</label> {{ form.hidden_tag() }} {{ form.calories(type="number", min="100", max="800", placeholder="589") }}
                 </div>
                 <!-- Number of servings based upon the quantity of ingredients in recipe -->
                 <div class="input-field icon-smart col-sm-12 col-md-6">
                     <i class="fas fa-users"></i>
-                    <label for="servings">Servings</label> {{ form.hidden_tag() }} {{ form.servings(placeholder="4") }}
+                    <label for="servings">Servings</label> {{ form.hidden_tag() }} {{ form.servings(type="number", min="1", max="10", placeholder="4") }}
                 </div>
                 <hr class="divider-addrecipe">
                 <!-- A brief description of the recipe signposts the positive recipe attributes -->
