@@ -66,7 +66,7 @@ input {
 /* Navbar */
 
 .navbar-brand {
-    /*Virtual Cookbook*/
+    /*Virtual Cookbook brand narrative*/
     font-weight: 700;
     font-size: 1.4rem;
     text-transform: uppercase;
@@ -74,25 +74,66 @@ input {
     color: #61892F;
 }
 
-.navbar-brand:hover {
-    color: #86C232;
+/* Navbar brand 'Virtual' & 'CookBook' flip when user hovers the cursor*/
+.flip-box {
+  background-color: transparent;
+  padding-top: 1rem;
+  width: 9.375rem;
+  height: 6.25rem;
+  perspective: 62.5rem;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  background-color: #222629;
+  color: #61892F;
+}
+
+.flip-box-back {
+  background-color: #222629;
+  color: #61892F;
+  transform: rotateX(180deg);
 }
 
 navbar {
     border: 1px solid #222629;
 }
 
-nav ul a {
-    -webkit-transition: background-color .3s;
+nav ul a { /*Navbar buttons colour change managed through timing of .3 seconds*/
     transition: background-color .3s;
+    -o-transition: background-color .3s;
+    /*Opera*/
+    -moz-transition: background-color .3s;
+    /*Windows*/
+    -webkit-transition: background-color .3s;
+    /*Apple*/
     font-size: 1rem;
-    color: #6a6d75;
-    display: block;
+    color: #474B4F; /*Charcoal Grey*/
+    display: block; 
     padding: 0 0.9375rem;
     cursor: pointer;
 }
 
-nav ul a:hover {
+nav ul a:hover { /*Sign in & Add recipe button colour change upon hover*/
     background-color: #474B4F;
     /*Charcoal Grey*/
     color: #fff;
