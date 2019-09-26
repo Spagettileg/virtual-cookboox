@@ -89,7 +89,13 @@ input {
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s;
+    transition: transform 2s;
+    -o-transition: transform 2s;
+    /*Opera*/
+    -moz-transition: transform 2s;
+    /*Windows*/
+    -webkit-transition: transform 2s;
+    /*Apple*/
     transform-style: preserve-3d;
 }
 
@@ -103,6 +109,12 @@ input {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    /*Opera*/
+    -moz-backface-visibility: hidden;
+    /*Windows*/
+    -webkit-backface-visibility: hidden;
+    /*Apple*/
 }
 
 .flip-box-front {
