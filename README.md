@@ -1,11 +1,11 @@
-# *DRAFT* - 3rd Milestone Project | Virtual Cookbook
+# 3rd Milestone Project | Virtual Cookbook
 ###### Data-Centric Development - Code Institute 
 
 Virtual Cookbook has been designed for people of all cooking capabilities to help produce delicious and wholesome meals. This application provides quick and intuitive access to recipes borne out of selected food genres.
 
 If you are struggling for time to cook, notice on preparation and cooking time is made clear. Diet conscious consumers can view the calories per serving numbers to help plan for the right recipe.
 
-Finally, you can add new recipes to this application by simply clicking on 'Add Recipe' at the top of the screen. Favourite recipes can be recorded, existing recipes can be edited and unwanted recipes can be deleted. All at the users fingertips.
+Finally, logged in users can add new recipes to this application by simply clicking on 'Add Recipe' at the top of the screen. Favourite recipes can be recorded, existing recipes can be edited and unwanted recipes can be deleted. All at the users fingertips.
 
 
 ## Demo
@@ -16,7 +16,7 @@ A live demo can be found [here](https://pbf-third-milestone-project.herokuapp.co
 
 [Wireframes](#wireframes) || [User Stories](#user-stories) 
 
-[Design](#design) || [Schema](#schema) | [Application Framework](#application-framework) | [Database](#database) | [CSS Frameowrk](#css-framework) | [Colour Palette](#colour-palette) | [Typography](#typography) | [Icon Graphics](#icon-graphics)
+[Design](#design) || [Schema](#schema) | [Application Framework](#application-framework) | [Database](#database) | [CSS Framework](#css-framework) | [Colour Palette](#colour-palette) | [Typography](#typography) | [Icon Graphics](#icon-graphics)
 
 [Database inc Source Data](#database-inc-source-data)
 
@@ -38,7 +38,7 @@ A live demo can be found [here](https://pbf-third-milestone-project.herokuapp.co
 ### Ambition
 
 #### User
-A thorough registration process lies in waitng for the user to secure their personal credentials, prior to access the website home page. All data entry requests are mandatory, with controls to support integrity of data entry. This process will provide the user with an acceptable level of assurance that unauthorised access to their recipe data will not be tolerated.     
+A thorough registration process lies in waiting for the user to secure their personal credentials, prior to access the website home page. All data entry requests are mandatory, with controls to support integrity of data entry. This process will provide the user with an acceptable level of assurance that unauthorised access to their recipe data will not be tolerated.     
 
 The website design encourages the user to access both modern and traditional recipes via clear signposting of 6 food genres (Meat, Poultry, Fish, Vegetables, Grains & Pasta). The intention is for these sub-portals to take over from 'type & search' to reduce user thinking time on what to find and replaced by a seduction of great images and narrative.
 
@@ -73,6 +73,8 @@ My [wireframe mock up design](https://github.com/Spagettileg/pbf-third-milestone
 
 > I want to remove unwanted recipes from my collection [DELETE]
 
+> My recipes must be kept in a secure environment and protected from unauthorised edit & or deletion [UPDATE & DELETE]
+
 ## Design
 ### Schema
 My [schema](https://github.com/Spagettileg/pbf-third-milestone-project/blob/master/plans/schema/Schema%20Plan%20v1.pdf) was developed through de-engineering of the User Stories to then produce a conceptual design model. This model then formed the foundation to the project data requirements and ultimately the build of a database and the rules governing the use of the data. The schema design has evolved during the course of the project as better information and knowledge of database technology improved.
@@ -86,6 +88,7 @@ MongoDB Atlas NoSQL database was used for this project. Key reason supporting my
 The database consists of the following collections:
 1. Categories - Meat, Poultry, Fish, Vegetables, Grains & Pasta
 2. Tasks - List of key value pairs that are consistent per recipe record
+3. Users - Users name and password
 
 ### CSS Framework
 Bootstrap 4 was the chosen framework for styling my project. I used the bootstrap grid extensively to support responsiveness on mobile, tablet and desktop devices. Materializecss had featured as part of my earlier work in this project, but I lost valuable developer time with code conflicting with Bootstrap 4. The latter was dropped with Bootstrap 4 given sole exclusivity rights to the formatting of my project. 
@@ -107,6 +110,8 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 - cooking time - `far fa-clock`
 - calories - `fas fa-weight`
 - servings - `fas fa-users`
+- brief description, ingredients & instructions - `far fa-file-alt`
+- recipe image - `far fa-file-image`
 
 ## Database inc Source Data
 [BBC Good Food Guide](https://www.bbcgoodfood.com/recipes) was the source of the raw project data. I manually keyed the raw data into MongoDB database via Virtual Cookbook Tasks collection, adopting the key valuie pair approach. Both `MONGO_URI` and `MONGO_DBNAME` database were configured in the flask application and the import of PyMongo library enabled the injection of cloud server data into the Flask application. 
@@ -156,9 +161,11 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 
 •	User has a mandatory requirement to complete the registration & authentication form when clicking on the sites url address 
 
-•	Data entry requirements include firstname, lastname, email, phone number, birthday, username and password. Where appropriate, data entry governance exists in the form of required attributes meaning all requests for data must be completed prior to access the full Virtual Cookbook website   
+•	Register & Login data entry requirements include username and password. Where appropriate, data entry governance exists in the form of required attributes meaning all requests for data must be completed prior to access the full Virtual Cookbook website   
 
-•	The process to register is controlled by previous, next & submit buttons  
+•	All usernames and passwords will be unique to avoid unauthorised access to third party recipes
+
+•	Logged in users will have access to their own recipes with full rights to create, edit and delete recipes  
 
 ### Feature 2 - Navbar brand logo 
 
@@ -178,13 +185,13 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 
 ### Feature 5 - Add recipe 
 
-•	User can click on 'Add Recipe' button located at top right of the navbar. The navbar is present on all pages in the website, following completion of the registration process  
+•	Logged in users can click on 'Add Recipe' button located at top right of the navbar. The navbar is present on all pages in the website, following completion of the registration process  
 
-•	Once button has been clicked, the User is presented with a clear and intuitive data entry form with guidance provided by placeholder text &/or dropdown boxes. All input and dropdown are required to be completed, otherwise the User will receive a mandatory warning message to complete. Incomplete recipes cannot be added to Virtual Cookbook 
+•	Once button has been clicked, the User is presented with a clear and intuitive data entry form with guidance provided by placeholder text. All input boxes are required to be completed, otherwise the User will receive a mandatory warning message to complete. Incomplete recipes cannot be added to Virtual Cookbook 
 
-•	Information required from the User includes food genre dropdown box, recipe complexity dropdown box, recipe name, author name, recipe preparation time, recipe cooking time, calories per serving, brief description of the recipe, full list of ingredients, detailed instructions on how to cook, url web address for a recipe image & a tickbox for favourite recipes       
+•	Information required from the User includes food genre, recipe complexity, recipe name, author name, recipe preparation time, recipe cooking time, calories per serving, brief description of the recipe, full list of ingredients, detailed instructions on how to cook, url web address for a recipe image & a tickbox for favourite recipes       
 
-•	Once all required recipe information added, the User should click 'Confirm' button. User is then routed back to homepage  
+•	Once all required recipe information added, the User should click 'Submit' button. User is then routed back to homepage  
 
 •	New recipe can be viewed by clicking on food genre image relative to the recipe that has been added
 
@@ -194,11 +201,15 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 
 ### Feature 7 - Food genre image portal gateway
 
+•	Portal access for both logged and unlogged users  
+
 •	Six fully responsive images of different food genres on display for the User. Images of meat, poultry, fish, vegetables, grains & pasta are clickable and will migrate the User to the respective recipe collection  
 
 •	To save on any confusion, all images have been name tagged  
 
 ### Feature 8 - Food genre recipe collection 
+
+•	Portal access for both logged and unlogged users
 
 •	A Recipe image, recipe name, brief description and a recipe detail button are displayed in a card style. This structure is then repeated for all recipes 
 
@@ -208,6 +219,8 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 
 ### Feature 9 - Detailed recipe card 
 
+•	Portal access for both logged and unlogged users
+
 •	User will be presented with an individual recipe card containing a recipe image, recipe name, brief description of the recipe, icon graphic & authors name, icon graphic & complexity (Easy or Challenge), icon graphic & preparation time, icon graphic & cooking time, icon graphic & calories, icon graphic & servings, full list of Ingredients & detailed Instructions on how to cook
 
 •	Should the recipe content be fine with User, then User can follow next steps, as follows:
@@ -216,29 +229,29 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 2.  Click on the navbar brand logo 'Virtual Cookbook' to return to home page
 3.  Leave the application by using normal browser control
 
-•	User will have access to both [Edit](#edit-recipes) and [Delete](#delete-recipes) recipe material 
+•	Only logged in users will have access to both [Edit](#edit-recipes) and [Delete](#delete-recipes) recipe material 
 
 ### Feature 10 - Edit recipe 
 
-•	User can click on 'Edit Recipe' button located at the bottom of the recipe detail page   
+•	Logged in users can click on 'Edit Recipe' button located at the bottom of the recipe detail page   
 
 •	Once button has been clicked, the User is presented with all the recipe information in a series of dropdown and input boxes  
 
-•	Information to be updated by the User includes food genre dropdown box, recipe complexity dropdown box, recipe name, author name, recipe preparation time, recipe cooking time, calories per serving, brief description of the recipe, full list of ingredients, detailed instructions on how to cook, url web address for a recipe image & a tickbox for favourite recipes       
+•	Information to be updated by the User includes food genre, recipe complexity, recipe name, author name, recipe preparation time, recipe cooking time, calories per serving, brief description of the recipe, full list of ingredients, detailed instructions on how to cook, url web address for a recipe image & a tickbox for favourite recipes       
 
-•	Once all updated recipe information added, the User should click 'Confirm' button. User is then routed back to the recipe detail page showing an updated view of the recipe  
+•	Once all updated recipe information added, the User should click 'Submit' button. User is then routed back to the recipe detail page showing an updated view of the recipe  
 
 ### Feature 11 - Delete recipe 
 
-•	For unwanted recipes, the User can click on 'Delete Recipe' button located at the bottom of the recipe detail page  
+•	For unwanted recipes, the logged in user can click on 'Delete Recipe' button located at the bottom of the recipe detail page  
 
 •	Once button has been clicked, the User has committed to complete removal of the recipe record, with no reversal. Thereafter, the User is routed to the homepage  
 
 ### Feature 12 - Favourite recipe tickbox 
 
-•	User to navigate to either 'Edit Recipe' or 'Add Recipe' page to mark their given recipe as a favourite. A simple tickbox has been created to record the User actions in both the application and cloud database too. Tick for favourite and untick for non-favourite   
+•	Logged in user to navigate to either 'Edit Recipe' or 'Add Recipe' page to mark their given recipe as a favourite. A simple tickbox has been created to record the User actions in both the application and cloud database too. Tick for favourite and untick for non-favourite   
 
-•	Summary favourite count statistics can be viewed in the navbar. The cursor has been set to none as the data is only intended for read only purposes   
+•	Summary favourite count statistics can be viewed in the navbar by both logged in and non-logged in users. The cursor has been set to none as the data is only intended for read only purposes   
 
 ### Feature 13 - Footer 
 
@@ -250,14 +263,14 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 
 •	Provides a friendly sign post for the user in the event an incorrect link has been clicked and the user has the option to click back into a correct link
 
+### Feature 15 - My Recipes page
+
+•	Logged in users are allocated their own portal space to view their gravatar image, own recipe count and collection of recipes added by the user. The logged in user can also view the detail of each of their recipes and seek to edit or delete the same 
+
+•	All recipes added by the logged in user will appear in their respective portal space in addiiton to generic portal space that can be viewed only by other users  
+
 ### Features Left to Implement
 
-- The registration process can be further improved by leveraging the current Javascript code to improve data entry governance. For exmaple;
-    - Firstname & last name to beging with a capital letter
-    - Email structure to recognise HTTPS/, @gmail, @yahoo, etc
-    - Telephone numbers to be recognised with international prefixes for both landline and mobile telephony devices
-    - Passwords to be unique. auto-generated and include special characters. Also include a password reset capability  
-     
 - Breakfasts, Hors D'oeuvre's, Starters and Desert recipes to be included for a future release
 - Deleted recipes to be reversed by the user, in the event human error was responsible for the original recipe deletion 
 - A dedicated favourite recipes page that allows the user to view collectively and in detail
@@ -336,55 +349,48 @@ Hello World
 
 ### Manual Testing
 ##### Registration Testing
-###### •	Name (index.html)
+###### •	Username (register.html)
 - CRUD Operations tested = **CREATE, READ & UPDATE**
 1.	Key url address in web browser
-2.	Click in 'first name' field (placeholder text helps the user with data entry)
-3.	Key in first name (max character length = 40)
-4.	Click in 'last name' field (placeholder text helps the user with data entry)
-5.	Key in last name (max character length = 40)
-6.	Click 'Next' button to proceed to next screen
-7.	If empty fields exist when clicking 'Next', then user will get error message with request to complete missing data
+2.	Click in 'username' field (placeholder text helps the user with data entry)
+3.	Key in first name (max character length = 20)
+4.	If empty fields exist when clicking 'Submit', then user will get error message with request to complete missing data
+5.	If username already taken by another user, then warning message appears to invite user for a different username
+6.	If user has already registered then they can click on a link to move to login screen
 
-###### •	Contact Info
-- CRUD Operations tested = **CREATE, READ & UPDATE**
-1.	Circle dot at bottom of screen changes to green. Ok to proceed
-2.	Click 'Previous' button if user wants to update either first or last name
-3.	Click in 'email' field (placeholder text helps the user with data entry)
-4.	Key in email address
-5.	Click in 'Phone' field (placeholder text helps the user with data entry)
-6.	Key in phone number in the suggetsed xxxxx xxxxxx format
-7.	Click 'Next' button to proceed to next screen
-8.	If empty fields exist when clicking 'Next', then user will get error message with request to complete missing data
-	
-###### •	Birthday
-- CRUD Operations tested = **CREATE, READ & UPDATE**
-1.	Circle dot at bottom of screen changes to green. Ok to proceed
-2.	Click 'Previous' button if user wants to update either Contact Info or back again to first or last name
-3.  Click in 'dd' field (placeholder text helps the user with data entry)
-4.	Key in dd or day (Min value = 1, Max value = 31)
-5.	Click in 'mm' field (placeholder text helps the user with data entry)
-6.	Key in mm or month (Min value = 1, Max value = 12)
-7.	Click in 'yyyy' field (placeholder text helps the user with data entry)
-8.	Key in yyyy or year (Min value = 1900, Max value = 2020) 
-9.	Click 'Next' button to proceed to next screen
-10.	If empty fields exist when clicking 'Next', then user will get error message with request to complete missing data
 
-###### •	Login Info
+###### •	Password (register,html)
 - CRUD Operations tested = **CREATE, READ & UPDATE**
-1.	Circle dot at bottom of screen changes to green. Ok to proceed
-2.	Click 'Previous' button if user wants to update either Birthday or back again contact info or to first & last name
-3.  Click in 'Username' field (placeholder text helps the user with data entry)
-4.	Key in username
-5.	Click in 'Password' field (placeholder text helps the user with data entry)
-6.	Key in password (Characters show as an asterix with max 8 characters permitted) 
-7.  Click 'Submit' button to complete bothe the registration & authentication process
-8.	If empty fields exist when clicking 'Submit', then user will get error message with request to complete missing data
+1.  If user has already registered then they can click on a link to move to login screen
+2.  Click in 'Password' field (placeholder text helps the user with data entry)
+3.	Key in password (max character length = 20)
+4.	If empty fields exist when clicking 'Submit', then user will get error message with request to complete missing data
+5.  Click 'Submit' button to complete both the registration process
+
+
+###### •	Username (login.html)
+- CRUD Operations tested = **CREATE, READ & UPDATE**
+1.	Key url address in web browser
+2.	If user has selected login by mistake, they can click on a link to move to register screen
+3.	Click in 'username' field (placeholder text helps the user with data entry)
+4.	Key in first name (max character length = 20)
+5.	If empty fields exist when clicking 'Submit', then user will get error message with request to complete missing data
+6.	If username does not match registered user details, then warning message appears to invite user for a different username
+
+
+###### •	Password (login,html)
+- CRUD Operations tested = **CREATE, READ & UPDATE**
+1.	If user has selected login by mistake, they can click on a link to move to register screen 
+2.  Click in 'Password' field (placeholder text helps the user with data entry)
+3.	Key in password (max character length = 20)
+4.	If empty fields exist when clicking 'Submit', then user will get error message with request to complete missing data
+5.	If password does not match registered user details, then warning message appears to invite user for a different password
+6.  Click 'Submit' button to complete both the authentication process
 
 ##### Recipe Testing
 ###### •	Home Page (portfolio.html)
 - CRUD Operations tested = **READ**
-1.	User should see 6 different food genre recipe cards on the home page
+1.	All Users should see 6 different food genre recipe cards on the home page
     - Meat
     - Poultry
     - Fish
@@ -395,7 +401,7 @@ Hello World
 
 ###### •	Summary Recipe Selection Page (meat.html, poultry.html, fish.html, veg.html, grains.html & pasta.html)
 - CRUD Operations tested = **READ**
-1.	User will be presented with individual recipe cards that fall under the selected food genre
+1.	All Users will be presented with individual recipe cards that fall under the selected food genre
 2.	Each recipe card structure = Image, recipe name, brief description & 'Detail' button
 3.	Hover over the 'Detail' button to see colout change from pea green #61892F to lime green #86C232
 3.	User to click 'Detail' button to proceed to detailed view of the recipe
@@ -403,7 +409,7 @@ Hello World
 
 ###### •	Detailed Recipe View (recipe.html)
 - CRUD Operations tested = **READ**
-1.  User will be presented with an individual recipe card containing the following information:
+1.  All Users will be presented with an individual recipe card containing the following information:
     - Recipe image
     - Recipe name
     - Brief description of the recipe
@@ -419,31 +425,33 @@ Hello World
     - Click back page control to revisit summary recipe selection page
     - Click on the navbar brand logo 'Virtual Cookbook' to return to home page
     - Leave the application by using normal browser control
-3.	Options to [Edit](#edit-recipes) & [Delete](#delete-recipes) tested in their respective categories 
+3.	Logged in users have options to [Edit](#edit-recipes) & [Delete](#delete-recipes) tested in their respective categories 
 
 ##### Navigation Testing
 ###### •	Navbar tests
 - CRUD Operations tested = **READ**
-1.	Hover on 'Virtual Cookbook' navbar brand for text to change from pea green #61892F to lime green #86C232  
+1.	Hover on 'Virtual Cookbook' navbar brand for pea green (#61892F) text to flip from 'Virtual' to 'Cookbook'. There is a 2 second cycle time to complete this process  
 2.	Click on ‘Virtual Cookbook’ navbar brand from anywhere within the website
 3.	User will be routed back to home page
-4.	Hover on 'Add Recipe' button for colour to change from pea green #61892F to lime green #86C232
-5.	Click on 'Add Recipe' button to take user to [Add Recipe](#add-recipes) data entry template
+4.	Hover on 'My Recipes' button for colour to change from pea green #61892F to lime green #86C232 (Logged in users only)
+5.	Click on 'My Recipes' button to take user to profile.html page (Logged in users only)
+4.	Hover on 'Add Recipe' button for colour to change from pea green #61892F to lime green #86C232 (Logged in users only)
+5.	Click on 'Add Recipe' button to take user to [Add Recipe](#add-recipes) data entry template (Logged in users only)
 	
 ###### •	Homepage portfolio
 - CRUD Operations tested = **READ**
 1.	Go to home page
 2.	Click on food genre image
-3.	User is passed through to list of recipes, with summary information, that belong to the selected food genre 
+3.	All Users are passed through to list of recipes, with summary information, that belong to the selected food genre 
 4.	Click navbar brand logo 'Virtual Cookbook' to return to homepage in readiness to select a different food genre
 	
 ###### •	Footer links tests
 - CRUD Operations tested = **READ**
 1.	Go to footer section
 2.	Click social media icons (LinkedIn & GitHub)
-3.	User is passed through to website authors’ actual live pages
+3.	All Users are passed through to website authors’ actual live pages
 4.	Click on 'contact' link
-5.	User is passed through to website authors' personal linkedin live page
+5.	All Users are passed through to website authors' personal linkedin live page
 	
 ###### •	Other Buttons / Icon functionality tests
 *Social Media*
@@ -452,53 +460,59 @@ Hello World
 2.	Hover on social media icons
 3.	For LinkedIn, colour change from light grey to LinkedIn corporate colour (blue # 0077B5). Inner icon colour changes from black to white
 4.	For GitHub, colour change from light grey to GitHub corporate colour (purple # 6e5494). Inner icon colour changes from black to white
-5.	Both social media icons contain a fractional timing delay to help user understand icon is active, prior to being clicked 
+5.	Both social media icons contain a fractional timing delay to help all users understand icon is active, prior to being clicked 
 
 *Edit Button*
 - CRUD Operations tested = **READ & UPDATE**
-1.	Navigate to [Recipe detail](#detailed-recipe-view-(recipe.html))page
-2.	Hover on edit button and colour chamge fron yellow to green
-3.	Click on edit button to take user to edit recipe page
+1.  Logged in users only 
+2.	Navigate to [Recipe detail](#detailed-recipe-view-(recipe.html))page, via 'My Recipes' or recipe.html through main portal 
+3.	Hover on edit button and colour chamge fron yellow to green
+4.	Click on edit button to take user to edit recipe page
 
 *Delete Button*
 - CRUD Operations tested = **READ, UPDATE & DELETE**
-1.  Navigate to [Recipe detail](#detailed-recipe-view-(recipe.html)) page
-2.	Hover on delete button and colour chamge fron yellow to red
-3.	Click on delete button to take user to home page, following deletion of recipe
+1.  Logged in users only 
+2.  Navigate to [Recipe detail](#detailed-recipe-view-(recipe.html)) page via 'My Recipes' or recipe.html through main portal
+3.	Hover on delete button and colour chamge fron yellow to red
+4.	Click on delete button to take user to home page, following deletion of recipe
 
 *Favourites Tickbox*
 - CRUD Operations tested = **CREATE, READ & UPDATE**
-1.  Navigate to Edit Recipe page &/or Add Recipe page
-2.  Click on 'favourite' tickbox to uncheck = No favourite
-3.  Click on 'favourite' tickbox to check = favourite
-4.  Click 'Confirm' button to complete edit
-5.  User will return back to recipe detail page to view their recipe updates 
-6.  Navbar counter will increase by +1 for favourite and -1 for non-favourite
-7.  Navbar counter will not be less than zero
+1.  Logged in users only 
+2.  Navigate to Edit Recipe page &/or Add Recipe page via 'My Recipes' or recipe.html through main portal
+3.  Click on 'favourite' tickbox to uncheck = No favourite
+4.  Click on 'favourite' tickbox to check = favourite
+5.  Click 'Confirm' button to complete edit
+6.  User will return back to recipe detail page to view their recipe updates 
+7.  Navbar counter will increase by +1 for favourite and -1 for non-favourite
+8.  Navbar counter will not be less than zero
 
-*Confirm Edit Button*
+*Submit Edit Button*
 - CRUD Operations tested = **READ & UPDATE**
-1. Navigate to Edit Recipe page
-2. Hover on 'Confirm' button and colour chamge fron yellow to green
-3. Click on 'Confirm' button to complete edit
-4. User will return back to recipe detail page to view their recipe updates 
+1. Logged in users only 
+2. Navigate to Edit Recipe page via 'My Recipes' or recipe.html through main portal
+3. Hover on 'Submit' button and colour chamge fron yellow to green
+4. Click on 'Submit' button to complete edit
+5. User will return back to recipe detail page to view their recipe updates 
 
-*Confirm Add Recipe*
+*Submit Add Recipe*
 - CRUD Operations tested = **READ & UPDATE**
-1. Navigate to Add Recipe page
-2. Hover on 'Confirm' button and colour chamge from pea green #61892F to lime green #86C232
-3. Click on 'Confirm' button to complete add
-4. User will return back to home page. New recipe can be viewed upon clicking an appropriate food genre image 
+1. Logged in users only 
+2. Navigate to Add Recipe page via navbar
+3. Hover on 'Submit' button and colour chamge from pea green #61892F to lime green #86C232
+4. Click on 'Submit' button to complete add
+5. User will return back to home page. New recipe can be viewed upon clicking an appropriate food genre image 
 
 ##### Add Recipes
 - CRUD Operations tested = **CREATE, READ & UPDATE**
-1. Hover on the 'Add Recipe' button in the navbar to show user the button is active
-2. Click 'Add Recipe' button
-3. User will be presented with a blank recipe template, with placeholder guidance text and required data, containing the following data requests:
-    - Food genre - Dropdown box containing Meat, Poultry, Fish, Vegetables, Grains & Pasta options
-    - Complexity - Dropdown box containing 'Easy' or 'Challenge'
-    - Recipe Name  
-    - Authors name
+1. Logged in users only 
+2. Hover on the 'Add Recipe' button in the navbar to show user the button is active
+3. Click 'Add Recipe' button
+4. User will be presented with a blank recipe template, with placeholder guidance text and required data, containing the following data requests:
+    - Food genre - User is required to enter Meat, Poultry, Fish, Vegetables, Grains or Pasta as a genre
+    - Complexity - User is required to enter 'Easy' or 'Challenge'
+    - Recipe Name - Text data entry 
+    - Authors name - Text data entry
     - Preparation time - Numbers only data entry
     - Cooking time - Numbers only data entry
     - Calories - Numbers only data entry
@@ -508,21 +522,22 @@ Hello World
     - Detailed Instructions on how to cook
     - Recipe image - url web address required from User 
     - Tickbox for favourite recipe. Tick for yes or no tick for no
-4.  User must complete all data entry fields. Auto message appears to signal missing data entry 
-5.	Click 'Confirm' button for user to formally add their recipe to the application
-6.	User is then routed back to homepage
-7.	New recipe can be viewed by clicking on food genre image relative to the recipe that has been added 
+5.  User must complete all data entry fields. Auto message appears to signal missing data entry 
+6.	Click 'Submit' button for user to formally add their recipe to the application
+7.	User is then routed back to homepage
+8.	New recipe can be viewed by clicking on food genre image relative to the recipe that has been added 
 
 ##### Edit Recipes
 - CRUD Operations tested = **READ & UPDATE**
-1. Navigate to [Recipe detail](#detailed-recipe-view-(recipe.html)) page
-2. Hover on 'Edit' button and colour change fron yellow to green to show the button is active
-3. Click on 'Edit' button to complete edit
-4. User will be presented with a blank recipe template, containing the following recipe data fields:
-    - Food genre - Dropdown box containing Meat, Poultry, Fish, Vegetables, Grains & Pasta options
-    - Complexity - Dropdown box containing 'Easy' or 'Challenge'
-    - Recipe Name  
-    - Authors name
+1. Logged in users only 
+2. Navigate to [Recipe detail](#detailed-recipe-view-(recipe.html)) page via 'My Recipes' or recipe.html through main portal
+3. Hover on 'Edit' button and colour change fron yellow to green to show the button is active
+4. Click on 'Edit' button to complete edit
+5. User will be presented with a blank recipe template, containing the following recipe data fields:
+    - Food genre - User is required to enter Meat, Poultry, Fish, Vegetables, Grains or Pasta as a genre
+    - Complexity - User is required to enter 'Easy' or 'Challenge'
+    - Recipe Name - Text data entry  
+    - Authors name - Text data entry
     - Preparation time - Numbers only data entry
     - Cooking time - Numbers only data entry
     - Calories - Numbers only data entry
@@ -533,33 +548,34 @@ Hello World
     - Recipe image - url web address required from User 
     - Tickbox for favourite recipe. Tick for yes or no tick for no
 6.	Hover cursor over 'Confirm' button and colour change fron yellow to green to show the button is active
-7.	Click 'Confirm' button for user to formally edit their recipe in the application
+7.	Click 'Submit' button for user to formally edit their recipe in the application
 8.	User is then routed back to recipe detail page to view their respective changes
 
 ##### Delete Recipes
 - CRUD Operations tested = **READ, UPDATE & DELETE**
-1. Navigate to [Recipe detail](#detailed-recipe-view-(recipe.html)) page 
-2. Hover on 'Delete' button and colour change fron red to green to show the button is active
-3. Click on 'Delete' button to complete recipe delete
-4. User is then routed back to homepage
+1. Logged in users only 
+2. Navigate to [Recipe detail](#detailed-recipe-view-(recipe.html)) page via 'My Recipes' or recipe.html through main portal
+3. Hover on 'Delete' button and colour change fron red to green to show the button is active
+4. Click on 'Delete' button to complete recipe delete
+5. User is then routed back to homepage
 
 ##### Recipe Statistics
 *Favourites*
-- CRUD Operations tested = **READ**
-1.  Navigate to [Edit Recipe](#edit-recipes) page &/or [Add Recipe](#add-recipes) page
+- CRUD Operations tested = **CREATE, READ, UPODATE & DELETE**
+1.  Logged in user navigates to [Edit Recipe](#edit-recipes) page &/or [Add Recipe](#add-recipes) page via 'My Recipes' or recipe.html through main portal
 2.  Click on 'favourite' tickbox to uncheck = No favourite
 3.  Click on 'favourite' tickbox to check = favourite
 4.  Click 'Confirm' button to complete edit
 5.  User will return back to recipe detail page to view their recipe updates 
-6.  Navbar counter will increase by +1 for favourite and -1 for non-favourite
-7.  Navbar counter will not be less than zero
+6.  Navbar counter will increase by +1 for favourite and -1 for non-favourite (viewed by all users)
+7.  Navbar counter will not be less than zero (viewed by all users)
   
 *Recipes*
-- CRUD Operations tested = **READ**
-1. Complete [adding](#add-recipes) or [deleting](#delete-recipes) of a single recipe
-2. Navbar counter will show +1 for adding recipe
-3. Navbar counter will show -1 for recipe deletion
-4. Navbar counter will not be less than zero
+- CRUD Operations tested = **CREATE, READ, UPODATE & DELETE**
+1. Logged in users complete [adding](#add-recipes) or [deleting](#delete-recipes) of a single recipe
+2. Navbar counter will show +1 for adding recipe (viewed by all users)
+3. Navbar counter will show -1 for recipe deletion (viewed by all users)
+4. Navbar counter will not be less than zero (viewed by all users)
 
 ### Code Validation
 
@@ -568,22 +584,23 @@ Code       | Url Link                          | Filename      | Outcome | Comme
 HTML5      |https://validator.w3.org           |base.html      |Pass     |Style attribute for background-image used = ok. Jinja templating language used = ok
 HTML5      |https://validator.w3.org           |index.html     |Pass     |Jinja templating language used = ok        
 HTML5      |https://validator.w3.org           |register.html  |Pass     |Style attribute for background-image used = ok. Jinja templating language used = ok
+HTML5      |https://validator.w3.org           |login.html     |Pass     |Style attribute for background-image used = ok. Jinja templating language used = ok
+HTML5      |https://validator.w3.org           |profile.html   |Pass     |Style attribute for background-image used = ok. Jinja templating language used = ok
 HTML5      |https://validator.w3.org           |meat.html      |Pass     |Jinja templating language used = ok
 HTML5      |https://validator.w3.org           |poultry.html   |Pass     |Jinja templating language used = ok
 HTML5      |https://validator.w3.org           |fish.html      |Pass     |Jinja templating language used = ok
 HTML5      |https://validator.w3.org           |veg.html       |Pass     |Jinja templating language used = ok
 HTML5      |https://validator.w3.org           |grains.html    |Pass     |Jinja templating language used = ok
 HTML5      |https://validator.w3.org           |pasta.html     |Pass     |Jinja templating language used = ok
-HTML5      |https://validator.w3.org           |tasks.html     |Pass     |Jinja templating language used = ok
 HTML5      |https://validator.w3.org           |recipe.html    |Pass     |HR stray end tag reported,but all ok. Jinja templating language used = ok
-HTML5      |https://validator.w3.org           |portfolio.html |Pass     |Jinja templating language used = ok
-HTML5      |https://validator.w3.org           |addrecipe.html |Pass     |Option value empty on dropdown = ok. Jinja templating language used = ok  
+HTML5      |https://validator.w3.org           |addrecipe.html |Pass     |Jinja templating language used = ok  
 HTML5      |https://validator.w3.org           |editrecipe.html|Pass     |Jinja templating language used = ok
 HTML5      |https://validator.w3.org           |404.html       |Pass     |Jinja templating language used = ok
 CSS3       |https://jigsaw.w3.org/css-validator|style.css      |Pass     |W3C CSS Validator results - CSS level 3 + SVG - negative padding -1rem triggered a warning message = ok
 Javascript |https://jshint.com/                |index.html     |Pass     |Some instances of $ being undefined due to using jQuery. No errors found    
 Javascript |https://jshint.com/                |helper.js      |Pass     |No errors found
 Python3    |http://pep8online.com              |recipe.py      |Pass     |All convention errors corrected = ok
+Python3    |http://pep8online.com              |forms.py       |Pass     |All convention errors corrected = ok
 
 ### Responsiveness & Rendering
 Chrome DevTools together with a selection of mobile, table and desktop devices were relied upon through the entire software development cycle. A key objective was to test both the rendering and responsiveness of the software application against multiple screen resolutions and web browser platforms. Any bugs identified were debugged in real time with special observations noted in a [testing matrix control document](https://github.com/Spagettileg/pbf-third-milestone-project/blob/master/tests/User%20Testing_3rd%20Milestone%20Project_vfinal%20draft.xlsx).
