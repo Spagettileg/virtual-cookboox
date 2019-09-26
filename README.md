@@ -580,7 +580,7 @@ HTML5      |https://validator.w3.org           |portfolio.html |Pass     |Jinja 
 HTML5      |https://validator.w3.org           |addrecipe.html |Pass     |Option value empty on dropdown = ok. Jinja templating language used = ok  
 HTML5      |https://validator.w3.org           |editrecipe.html|Pass     |Jinja templating language used = ok
 HTML5      |https://validator.w3.org           |404.html       |Pass     |Jinja templating language used = ok
-CSS3       |https://jigsaw.w3.org/css-validator|style.css      |Pass     |W3C CSS Validator results - CSS level 3 + SVG - No errors found
+CSS3       |https://jigsaw.w3.org/css-validator|style.css      |Pass     |W3C CSS Validator results - CSS level 3 + SVG - negative padding -1rem triggered a warning message = ok
 Javascript |https://jshint.com/                |index.html     |Pass     |Some instances of $ being undefined due to using jQuery. No errors found    
 Javascript |https://jshint.com/                |helper.js      |Pass     |No errors found
 Python3    |http://pep8online.com              |recipe.py      |Pass     |All convention errors corrected = ok
