@@ -160,13 +160,14 @@ nav ul a:hover {
     /*Recipe count & Favourite count formatted to blend into navbar colour scheme*/
     padding: 0.3rem;
     margin: 0.2rem;
-    border: 2px solid #474B4F;
+    border: 2px solid rgba(134, 194, 50, 0.19); /*Cloud Grey*/
     border-radius: 0.5rem;
     font-weight: 700;
     font-size: 1.4rem;
     text-decoration: none;
-    cursor: none;
-    color: #474B4F;
+    cursor: default; 
+    color: rgba(134, 194, 50, 0.39); /*39% shade of lime green*/
+    box-shadow: 0 4px 8px 0 rgba(134, 194, 50, 0.2), 0 6px 20px 0 rgba(134, 194, 50, 0.19);
 }
 
 .sign-up {
@@ -245,6 +246,7 @@ nav ul a:hover {
     font: 1.4rem;
     height: 1.4rem;
     padding: 0 0.2rem;
+    color: #fafafa; /*Off White*/
 }
 
 .access-exit:hover {
@@ -252,6 +254,13 @@ nav ul a:hover {
     color: #61892F;
     /*Pea Green*/
     text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    /*Opera*/
+    -moz-transition: all 0.5s ease-in-out;
+    /*Windows*/
+    -webkit-transition: all 0.5s ease-in-out;
+    /*Apple*/
 }
 
 /* Containers */
