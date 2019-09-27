@@ -251,7 +251,7 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 
 •	Logged in user to navigate to either 'Edit Recipe' or 'Add Recipe' page to mark their given recipe as a favourite. A simple tickbox has been created to record the User actions in both the application and cloud database too. Tick for favourite and untick for non-favourite   
 
-•	Summary favourite count statistics can be viewed in the navbar by both logged in and non-logged in users. The cursor has been set to none as the data is only intended for read only purposes   
+•	Summary favourite count statistics can be viewed in the navbar by both logged in and non-logged in users. The cursor has been set to default as the data is only intended for read only purposes   
 
 ### Feature 13 - Footer 
 
