@@ -1,7 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 <!-- User registration page -->
 <main class="reg-container">
-    <a href=" {{ url_for('index') }}"><i class="cross far fa-times-circle float-right"></i></a>
     <div class="reg-mid-container">
         <div class="reg-low-container">
             <h2 class="title">Register</h2>
@@ -19,7 +18,6 @@
                 <div class="input-field d-flex align-items-center justify-content-center">
                     {{ form.password(size=20, required=true, placeholder="Enter Password") }}
                 </div>
-                <p class="text-center"><small>Click X to return to homepage</small></p>
                 <div class="section">Already registered? Click <a href="{{ url_for('user_login') }}">here.</a></div>
                 <button class="btn-large btn-confirm-recipe" type="submit" name="action">Submit</button>
             </form>
