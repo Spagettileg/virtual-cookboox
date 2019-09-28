@@ -404,8 +404,9 @@ Hello World
 1.	All Users will be presented with individual recipe cards that fall under the selected food genre
 2.	Each recipe card structure = Image, recipe name, brief description & 'Detail' button
 3.	Hover over the 'Detail' button to see colout change from pea green #61892F to lime green #86C232
-3.	User to click 'Detail' button to proceed to detailed view of the recipe
+4.	User to click 'Detail' button to proceed to detailed view of the recipe
 
+*Observation*: A tablet device landscape view appears to have compressed all padding & margin around each recipe card on show. This has the effect of merging the cards together. As a fix, a media query was written to set the screen orientation to portrait view and preserve padding and margin, per recipe card. 	
 
 ###### •	Detailed Recipe View (recipe.html)
 - CRUD Operations tested = **READ**
@@ -421,6 +422,8 @@ Hello World
     - Icon graphic & servings
     - Full list of Ingredients
     - Detailed Instructions on how to cook
+
+*Observation*: The recipe image was too large and disproportionate to remainder of recipe detail data, specific to desktop & larger devices. Media query created for desktop and larger devices to set height to auto and image max-width to 18.75rem.     
 2.	Should the recipe content be fine with User, then User can follow next steps, as follows:
     - Click back page control to revisit summary recipe selection page
     - Click on the navbar brand logo 'Virtual Cookbook' to return to home page
@@ -433,10 +436,17 @@ Hello World
 1.	Hover on 'Virtual Cookbook' navbar brand for pea green (#61892F) text to flip from 'Virtual' to 'Cookbook'. There is a 2 second cycle time to complete this process  
 2.	Click on ‘Virtual Cookbook’ navbar brand from anywhere within the website
 3.	User will be routed back to home page
-4.	Hover on 'My Recipes' button for colour to change from pea green #61892F to lime green #86C232 (Logged in users only)
-5.	Click on 'My Recipes' button to take user to profile.html page (Logged in users only)
-4.	Hover on 'Add Recipe' button for colour to change from pea green #61892F to lime green #86C232 (Logged in users only)
-5.	Click on 'Add Recipe' button to take user to [Add Recipe](#add-recipes) data entry template (Logged in users only)
+4.	Recipe Count & Favourite Count pulls through both all and favourite recipes held in mongodb atlas cloud server. Backend code (python3) then ensures this data is injected into the flask application
+
+*Observation*: The presence of both recipe and favourite counters in the navbar occupies considerable screen space. Therefore, a decision was made to hide these counters in mobile device view via a media query   
+5.	Hover on 'My Recipes' button for colour to change from pea green #61892F to lime green #86C232 (Logged in users only)
+6.	Click on 'My Recipes' button to take user to profile.html page (Logged in users only)
+	
+*Observation*: My recipe button were positioned to extreme right of the navbar, in mobile device view. Media query was written to add -1rem padding & margin, font-size 0.8rem and height 1.4rem to fix
+7.	Hover on 'Add Recipe' button for colour to change from pea green #61892F to lime green #86C232 (Logged in users only)
+8.	Click on 'Add Recipe' button to take user to [Add Recipe](#add-recipes) data entry template (Logged in users only)
+	
+*Observation*: Add recipe button were positioned to extreme right of the navbar, in mobile device view. Media query was written to add -1rem padding & margin, font-size 0.8rem and height 1.4rem to fix
 	
 ###### •	Homepage portfolio
 - CRUD Operations tested = **READ**
