@@ -42,7 +42,7 @@ oauthlib==2.0.6
 olefile==0.45.1
 passlib==1.7.1
 pbr==5.4.1
-Pillow==5.1.0
+Pillow==6.2.0
 pyasn1==0.4.5
 pyasn1-modules==0.2.1
 Pygments==2.2.0
