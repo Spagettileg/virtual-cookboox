@@ -19,7 +19,7 @@ Flask==1.1.1
 flask-pymongo==2.3.0
 Flask-WTF==0.14.2
 heroku==0.1.4
-httplib2==0.9.2
+httplib2==0.18.0
 hyperlink==17.3.1
 idna==2.6
 ikp3db==1.1.4
