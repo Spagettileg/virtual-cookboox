@@ -1,16 +1,16 @@
-# Virtual Cookbook
+# Virtual Cookboox
 
-Virtual Cookbook has been designed for people of all cooking capabilities to help produce delicious and wholesome meals. This application provides quick and intuitive access to recipes borne out of selected food genres.
+Virtual Cookboox has been designed for people of all cooking capabilities to help produce delicious and wholesome meals. This application provides quick and intuitive access to recipes borne out of selected food genres.
 
 If you are struggling for time to cook, notice on preparation and cooking time is made clear. Diet conscious consumers can view the calories per serving numbers to help plan for the right recipe.
 
 Finally, logged in users can add new recipes to this application by simply clicking on 'Add Recipe' at the top of the screen. Favourite recipes can be recorded, existing recipes can be edited and unwanted recipes can be deleted. All at the users fingertips.
 
 ## Demo
-A live demo can be found [here](https://Virtual-Cookbook.herokuapp.com/).
+A live demo can be found [here](https://virtual-cookboox.herokuapp.com/).
 
 ## Navigate to detail
-[UXD Considerations](#uxd-considerations) || [User](#user) | [Virtual Cookbook](#virtual-cookbook) 
+[UXD Considerations](#uxd-considerations) || [User](#user) | [Virtual Cookboox](#virtual-cookboox) 
 
 [Wireframes](#wireframes) || [User Stories](#user-stories) 
 
@@ -20,7 +20,7 @@ A live demo can be found [here](https://Virtual-Cookbook.herokuapp.com/).
 
 [Technologies Applied](#technologies-applied) || [Languages](#languages) | [Libraries](#libraries) | [Tools](#tools) | [Hosting](#hosting)
 
-[Virtual Cookbook Summary Functions](#virtual-cookbook-summary-functions) ||
+[Virtual Cookboox Summary Functions](#virtual-cookboox-summary-functions) ||
 
 [Features](#features) || [Features Left to Implement](#features-left-to-implement)
 
@@ -50,15 +50,15 @@ Imagery and recipe narrative selected throughout the site design has been mostly
 
 A summary of total recipes and total favourite recipes is on view in the navbar, irrespective of where the user finds themself in the website.
 
-Finally, the 'Virtual Cookbook' navbar brand is configured to move the user back to the home page and should be used upon completion of a recipe edit or when the user wants to view all 6 food genre categories. 
+Finally, the 'Virtual Cookboox' navbar brand is configured to move the user back to the home page and should be used upon completion of a recipe edit or when the user wants to view all 6 food genre categories. 
 
-#### Virtual Cookbook
+#### Virtual Cookboox
 - Provide a simple and intuitive site for the user to click, search, add & delete both modern & traditional cooking recipes, where age is no barrier to entry. 
 - On a personal note, creating a multi-layered learning and practice experience in frontend and backend programming. Substantial effort and desire to integrate the use of HTML5, CSS3, Bootstrap4, JavaScript, Python3, MongoDB Atlas, Flask and Jinja.
 - Nest stage generation is to move on from a personal recipe application to enterprise scale where professional kitchens and learning institutions leverage the power of code in the cloud to access quality recipes to create industry best practice and blue print models for recipe innovation.  
 
 ## Wireframes
-My [wireframe mock up design](https://github.com/Spagettileg/pbf-third-milestone-project/tree/master/plans/wireframes) has been developed as a fully responsive application capable of running on mobile, tablet & desktop devices. All mock up material was created in Balsamiq and has been appended as .bmpr file on GitHub. The mock up design has stayed consistent with the original planning. 
+My [wireframe mock up design](https://github.com/Spagettileg/virtual-cookboox/tree/master/plans/wireframes) has been developed as a fully responsive application capable of running on mobile, tablet & desktop devices. All mock up material was created in Balsamiq and has been appended as .bmpr file on GitHub. The mock up design has stayed consistent with the original planning. 
 
 ## User Stories
 > I need an app that provides quick and intuitive access to recipes across the globe [READ]
@@ -75,7 +75,7 @@ My [wireframe mock up design](https://github.com/Spagettileg/pbf-third-milestone
 
 ## Design
 ### Schema
-My [schema](https://github.com/Spagettileg/pbf-third-milestone-project/blob/master/plans/schema/Schema%20Plan%20v1.pdf) was developed through de-engineering of the User Stories to then produce a conceptual design model. This model then formed the foundation to the project data requirements and ultimately the build of a database and the rules governing the use of the data. The schema design has evolved during the course of the project as better information and knowledge of database technology improved.
+My [schema](https://github.com/Spagettileg/virtual-cookboox/blob/master/plans/schema/Schema%20Plan%20v1.pdf) was developed through de-engineering of the User Stories to then produce a conceptual design model. This model then formed the foundation to the project data requirements and ultimately the build of a database and the rules governing the use of the data. The schema design has evolved during the course of the project as better information and knowledge of database technology improved.
 
 ### Application Framework
 Flask application framework was a prerequisite in the design of this project, according to the project brief.
@@ -95,7 +95,7 @@ Bootstrap 4 was the chosen framework for styling my project. I used the bootstra
 Colours used in this project were sourced from [Gorgeous Contrast](https://visme.co/blog/website-color-schemes/) palette in visme.com. Essentially, various shades of green and black worked well with the multiple array of colours that were present in the food recipe imagery.
 
 ### Typography
-Monserrat & Lato fonts were used throughout this project. H1 header was used in the home page to announce Virtual Cookbook brand to the user. Thereafter, H2 & H3 was used for sub-heading narrative, with H6 being used user information guide purposes to understand the function of both edit recipe & delete recipe buttons.
+Monserrat & Lato fonts were used throughout this project. H1 header was used in the home page to announce Virtual Cookboox brand to the user. Thereafter, H2 & H3 was used for sub-heading narrative, with H6 being used user information guide purposes to understand the function of both edit recipe & delete recipe buttons.
 
 Font-weight of 500 & 700 was used to help draw attention to the user for both branding and instruction too.
 
@@ -152,14 +152,14 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 ### Hosting
 •	[Heroku](https://heroku.com) is used to host the deployed application - 'virtual cookbook'
 
-## Virtual Cookbook Summary Functions
+## Virtual Cookboox Summary Functions
 
 ## Features
 ### Feature 1 - Registration & Authentication 
 
 •	User has a mandatory requirement to complete the registration & authentication form when clicking on the sites url address 
 
-•	Register & Login data entry requirements include username and password. Where appropriate, data entry governance exists in the form of required attributes meaning all requests for data must be completed prior to access the full Virtual Cookbook website   
+•	Register & Login data entry requirements include username and password. Where appropriate, data entry governance exists in the form of required attributes meaning all requests for data must be completed prior to access the full Virtual Cookboox website   
 
 •	All usernames and passwords will be unique to avoid unauthorised access to third party recipes
 
@@ -167,17 +167,17 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 
 ### Feature 2 - Navbar brand logo 
 
-•	Normal html convention rules followed by placing the navbar brand logo 'Virtual Cookbook' in the navbar, at the top left corner. The User has unhindered access to this logo and when clicked, will always return the user to the homepage.  
+•	Normal html convention rules followed by placing the navbar brand logo 'Virtual Cookboox' in the navbar, at the top left corner. The User has unhindered access to this logo and when clicked, will always return the user to the homepage.  
 
 ### Feature 3 - Recipe counter
 
-•	A read only view created to show a count of all recipes that have been added to the Virtual Cookbook . The cursor has been set to none when the User hovers over the counter
+•	A read only view created to show a count of all recipes that have been added to the Virtual Cookboox . The cursor has been set to none when the User hovers over the counter
 
 •	The counter will be activated by the User should they add a recipe (+1) or delete a recipe (-1). The counter will not fall below zero 
 
 ### Feature 4 - Favourite recipe counter
 
-•	A read only view created to show a count of all favourite recipes that have been added to the Virtual Cookbook The cursor has been set to none when the User hovers over the counter    
+•	A read only view created to show a count of all favourite recipes that have been added to the Virtual Cookboox The cursor has been set to none when the User hovers over the counter    
 
 •	The counter will be activated by the User should they elect to tick the 'favourites box' contained in either the 'add recipe' or 'edit recipe' pages. The counter will increment (+1) if the box is ticked or reduce (-1) if the box is unticked. The counter will not fall below zero 
 
@@ -185,7 +185,7 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 
 •	Logged in users can click on 'Add Recipe' button located at top right of the navbar. The navbar is present on all pages in the website, following completion of the registration process  
 
-•	Once button has been clicked, the User is presented with a clear and intuitive data entry form with guidance provided by placeholder text. All input boxes are required to be completed, otherwise the User will receive a mandatory warning message to complete. Incomplete recipes cannot be added to Virtual Cookbook 
+•	Once button has been clicked, the User is presented with a clear and intuitive data entry form with guidance provided by placeholder text. All input boxes are required to be completed, otherwise the User will receive a mandatory warning message to complete. Incomplete recipes cannot be added to Virtual Cookboox 
 
 •	Information required from the User includes food genre, recipe complexity, recipe name, author name, recipe preparation time, recipe cooking time, calories per serving, brief description of the recipe, full list of ingredients, detailed instructions on how to cook, url web address for a recipe image & a tickbox for favourite recipes       
 
@@ -193,9 +193,9 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 
 •	New recipe can be viewed by clicking on food genre image relative to the recipe that has been added
 
-### Feature 6 - Overview of Virtual Cookbook 
+### Feature 6 - Overview of Virtual Cookboox 
 
-•	An elevation statement has been created to promote Virtual Cookbook to the User to set out its purpose, value generators, responsive to user stories and reference to key features  
+•	An elevation statement has been created to promote Virtual Cookboox to the User to set out its purpose, value generators, responsive to user stories and reference to key features  
 
 ### Feature 7 - Food genre image portal gateway
 
@@ -224,7 +224,7 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 •	Should the recipe content be fine with User, then User can follow next steps, as follows:
 
 1.	Click back page control to revisit summary recipe selection page
-2.  Click on the navbar brand logo 'Virtual Cookbook' to return to home page
+2.  Click on the navbar brand logo 'Virtual Cookboox' to return to home page
 3.  Leave the application by using normal browser control
 
 •	Only logged in users will have access to both [Edit](#edit-recipes) and [Delete](#delete-recipes) recipe material 
@@ -293,7 +293,7 @@ All possible user actions were mimicked to put the tester in the shoes of the us
 
 ### Systems Based Testing 
 - CRUD Operations tested = **READ**
-- Mongo Shell was used to test the cloud database link to the Flask application. The virtual cookbook recipe database holds 41 recipes at present, with each recipe containing numerous key value pairings. 
+- Mongo Shell was used to test the cloud database link to the Flask application. The virtual cookboox recipe database holds 41 recipes at present, with each recipe containing numerous key value pairings. 
 - Current keys, per record, as follows: (the values doe vary by record due to the differing nature of the food recipe)
     - `category_name`, `recipe_name`, `author_name`, `prep_time_mins`, `cook_time_mins`, `complexity`, `favourite`, `servings`, `brief_description`, `calories`, `ingredients`, `instructions` and `recipe_image`.
 
@@ -424,24 +424,24 @@ Hello World
 *Observation*: The recipe image was too large and disproportionate to remainder of recipe detail data, specific to desktop & larger devices. Media query created for desktop and larger devices to set height to auto and image max-width to 18.75rem.     
 2.	Should the recipe content be fine with User, then User can follow next steps, as follows:
     - Click back page control to revisit summary recipe selection page
-    - Click on the navbar brand logo 'Virtual Cookbook' to return to home page
+    - Click on the navbar brand logo 'Virtual Cookboox' to return to home page
     - Leave the application by using normal browser control
 3.	Logged in users have options to [Edit](#edit-recipes) & [Delete](#delete-recipes) tested in their respective categories 
 
 ##### Navigation Testing
 ###### •	Navbar tests
 - CRUD Operations tested = **READ**
-1.	Hover on 'Virtual Cookbook' navbar brand for pea green (#61892F) text to flip from 'Virtual' to 'Cookbook'. There is a 2 second cycle time to complete this process  
-2.	Click on ‘Virtual Cookbook’ navbar brand from anywhere within the website
+1.	Hover on 'Virtual Cookboox' navbar brand for pea green (#61892F) text to flip from 'Virtual' to 'Cookboox'. There is a 2 second cycle time to complete this process  
+2.	Click on ‘Virtual Cookboox’ navbar brand from anywhere within the website
 3.	User will be routed back to home page
 4.	Recipe Count & Favourite Count pulls through both all and favourite recipes held in mongodb atlas cloud server. Backend code (python3) then ensures this data is injected into the flask application
 
 *Observation*: The presence of both recipe and favourite counters in the navbar occupies considerable screen space. Therefore, a decision was made to hide these counters in mobile device view via a media query   
-5.	Hover on 'My Recipes' button for colour to change from pea green #61892F to lime green #86C232 (Logged in users only)
+5.	Hover on 'My Recipes' button for colour to change from pea green `#61892F` to lime green `#86C232` (Logged in users only)
 6.	Click on 'My Recipes' button to take user to profile.html page (Logged in users only)
 	
 *Observation*: My recipe button were positioned to extreme right of the navbar, in mobile device view. Media query was written to add -1rem padding & margin, font-size 0.8rem and height 1.4rem to fix
-7.	Hover on 'Add Recipe' button for colour to change from pea green #61892F to lime green #86C232 (Logged in users only)
+7.	Hover on 'Add Recipe' button for colour to change from pea green `#61892F` to lime green #86C232 (Logged in users only)
 8.	Click on 'Add Recipe' button to take user to [Add Recipe](#add-recipes) data entry template (Logged in users only)
 	
 *Observation*: Add recipe button were positioned to extreme right of the navbar, in mobile device view. Media query was written to add -1rem padding & margin, font-size 0.8rem and height 1.4rem to fix
@@ -466,8 +466,8 @@ Hello World
 - CRUD Operations tested = **READ**
 1.	Scroll to footer
 2.	Hover on social media icons
-3.	For LinkedIn, colour change from light grey to LinkedIn corporate colour (blue # 0077B5). Inner icon colour changes from black to white
-4.	For GitHub, colour change from light grey to GitHub corporate colour (purple # 6e5494). Inner icon colour changes from black to white
+3.	For LinkedIn, colour change from light grey to LinkedIn corporate colour (blue `#0077B5`). Inner icon colour changes from black to white
+4.	For GitHub, colour change from light grey to GitHub corporate colour (purple `#6e5494`). Inner icon colour changes from black to white
 5.	Both social media icons contain a fractional timing delay to help all users understand icon is active, prior to being clicked 
 
 *Edit Button*
@@ -507,7 +507,7 @@ Hello World
 - CRUD Operations tested = **READ & UPDATE**
 1. Logged in users only 
 2. Navigate to Add Recipe page via navbar
-3. Hover on 'Submit' button and colour chamge from pea green #61892F to lime green #86C232
+3. Hover on 'Submit' button and colour chamge from pea green `#61892F` to lime green `#86C232`
 4. Click on 'Submit' button to complete add
 5. User will return back to home page. New recipe can be viewed upon clicking an appropriate food genre image 
 
@@ -611,9 +611,9 @@ Python3    |http://pep8online.com              |recipe.py      |Pass     |All co
 Python3    |http://pep8online.com              |forms.py       |Pass     |All convention errors corrected = ok
 
 ### Responsiveness & Rendering
-Chrome DevTools together with a selection of mobile, table and desktop devices were relied upon through the entire software development cycle. A key objective was to test both the rendering and responsiveness of the software application against multiple screen resolutions and web browser platforms. Any bugs identified were debugged in real time with special observations noted in a [testing matrix control document](https://github.com/Spagettileg/pbf-third-milestone-project/blob/master/tests/User%20Testing_3rd%20Milestone%20Project_vfinal%20draft.xlsx).
+Chrome DevTools together with a selection of mobile, table and desktop devices were relied upon through the entire software development cycle. A key objective was to test both the rendering and responsiveness of the software application against multiple screen resolutions and web browser platforms. Any bugs identified were debugged in real time with special observations noted in a [testing matrix control document](https://github.com/Spagettileg/virtual-cookboox/blob/master/tests/User%20Testing_3rd%20Milestone%20Project_vfinal%20draft.xlsx).
 
-The Virtual Cookbook application has been tested by students from the Slack community, together with friends and family members. Feedback on what worked well and what did not was recorded and suitable corrections to the code were keyed.
+The Virtual Cookboox application has been tested by students from the Slack community, together with friends and family members. Feedback on what worked well and what did not was recorded and suitable corrections to the code were keyed.
 
 In the final analysis, this application can be passed as fully responsive across all devices that participated in testing.
 
@@ -632,7 +632,7 @@ Opera    |63.0.3368.71
 ## Deployment
 
 ### Deployment to Heroku
-The site has been formally deployed to [Heroku](https://pbf-third-milestone-project.herokuapp.com/) and the latest version of my application can be found here. The following steps were taken in order to deploy:
+The site has been formally deployed to [Heroku](https://virtual-cookboox.herokuapp.com/) and the latest version of my application can be found here. The following steps were taken in order to deploy:
 
 #### AWS Cloud 9 IDE
 - I created a secret_key within .bashrc and heroku so I could still run the project from my own IDE and the security of the password be preserved
@@ -658,16 +658,16 @@ The site has been formally deployed to [Heroku](https://pbf-third-milestone-proj
 - A few environment variables need to be updated before you can run the app:
     - `app.secret_key = os.getenv("SECRET")` 
     - `app.config["MONGO_URI"] = os.getenv("MONGO_URI")`
-    - `app.config["MONGO_DBNAME"] = "virtual_cookbook"`
+    - `app.config["MONGO_DBNAME"] = "virtual_cookboox"`
 - Once the above steps are complete you can try run the application using `python3 recipe.py`
 
 ##### Via the CLI
-- Clone my repo via Git using the following command `https://github.com/Spagettileg/pbf-third-milestone-project.git`
+- Clone my repo via Git using the following command `https://github.com/Spagettileg/virtual-cookboox`
 - Install the projects requirements.txt using `pip3 install -r requirements.txt`
 - A few environment variables need to be updated before you can run the app:
     - `app.secret_key = os.getenv("SECRET")` 
     - `app.config["MONGO_URI"] = os.getenv("MONGO_URI")`
-    - `app.config["MONGO_DBNAME"] = "virtual_cookbook"`
+    - `app.config["MONGO_DBNAME"] = "virtual_cookboox"`
 - Once the above steps are complete you can try run the application using `python3 recipe.py` 
 
 ## Credits
