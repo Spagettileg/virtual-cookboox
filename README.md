@@ -1,5 +1,4 @@
-# 3rd Milestone Project | Virtual Cookbook
-###### Data-Centric Development - Code Institute 
+# Virtual Cookbook
 
 Virtual Cookbook has been designed for people of all cooking capabilities to help produce delicious and wholesome meals. This application provides quick and intuitive access to recipes borne out of selected food genres.
 
@@ -7,9 +6,8 @@ If you are struggling for time to cook, notice on preparation and cooking time i
 
 Finally, logged in users can add new recipes to this application by simply clicking on 'Add Recipe' at the top of the screen. Favourite recipes can be recorded, existing recipes can be edited and unwanted recipes can be deleted. All at the users fingertips.
 
-
 ## Demo
-A live demo can be found [here](https://pbf-third-milestone-project.herokuapp.com/).
+A live demo can be found [here](https://Virtual-Cookbook.herokuapp.com/).
 
 ## Navigate to detail
 [UXD Considerations](#uxd-considerations) || [User](#user) | [Virtual Cookbook](#virtual-cookbook) 
