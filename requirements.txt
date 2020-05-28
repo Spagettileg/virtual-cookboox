@@ -14,7 +14,7 @@ colorama==0.4.3
 cookiecutter==1.6.0
 dateparser==0.7.2
 decorator==4.4.2
-Django==2.0.2
+Django==2.2.10
 dnspython==1.16.0
 docker==4.2.0
 docutils==0.15.2
