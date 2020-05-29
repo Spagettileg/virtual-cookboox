@@ -25,9 +25,6 @@ app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 app.config["MONGO_DBNAME"] = "virtual_cookbook"
 mongo = PyMongo(app)
 
-if os.path.exists('env.py'):
-    import env
-
 @app.route('/')
 def index():
     count_tasks = mongo.db.tasks.find().count()
