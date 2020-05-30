@@ -14,13 +14,13 @@ colorama==0.4.3
 cookiecutter==1.6.0
 dateparser==0.7.2
 decorator==4.4.2
-Django==2.0.2
 dnspython==1.16.0
 docker==4.2.0
 docutils==0.15.2
+django==2.2.10
 Flask==1.1.2
-Flask-PyMongo==2.3.0
-Flask-WTF==0.14.3
+flask-pymongo==2.3.0
+flask-wtf==0.14.3
 future==0.18.2
 git-remote-codecommit==1.13
 heroku==0.1.4
@@ -42,7 +42,7 @@ parso==0.1.1
 pbr==5.4.5
 pexpect==4.8.0
 pickleshare==0.7.5
-Pillow==7.1.2
+Pillow==6.2.2
 poyo==0.5.0
 prompt-toolkit==3.0.5
 ptyprocess==0.6.0
