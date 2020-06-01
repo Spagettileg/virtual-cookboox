@@ -14,13 +14,16 @@ additional data types, ordered fields, and to be efficient
 for encoding and decoding within different languages.
 """
 
+if os.path.exists("env.py"):
+    import env
+
 app = Flask(__name__)
 
 """
 Environment variables SECRET and MONGO_URI set in Heroku
 dashboard in production.
 """
-app.secret_key = os.getenv("SECRET")
+app.config['secret_key'] = os.getenv("SECRET")
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 app.config["MONGO_DBNAME"] = "virtual_cookbook"
 mongo = PyMongo(app)
