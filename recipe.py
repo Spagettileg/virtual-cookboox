@@ -1,7 +1,5 @@
 import os
 import math
-from config import Config
-from pymongo import MongoClient
 from flask_pymongo import PyMongo, pymongo  # Flask connect to MongoDB Atlas
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
