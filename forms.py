@@ -1,6 +1,4 @@
 import os
-from config import Config
-from pymongo import MongoClient
 from flask import Flask
 from flask_wtf import FlaskForm
 from flask_wtf.csrf import CSRFProtect
