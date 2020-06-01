@@ -6,6 +6,9 @@ from wtforms import StringField, TextAreaField, IntegerField, PasswordField
 from wtforms.validators import DataRequired, ValidationError, Optional
 from flask_pymongo import PyMongo, pymongo
 
+if os.path.exists("env.py"):
+    import env
+
 CSRF = CSRFProtect()
 
 def create_app():
