@@ -18,9 +18,11 @@ app = Flask(__name__)
 Environment variables SECRET and MONGO_URI set in Heroku
 dashboard in production.
 """
-app.config.from_object(Config)
-client = MongoClient(Config.MONGO_URI)
-db = client.virtual_cookbook
+app.secret_key = os.getenv("SECRET")
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+app.config["MONGO_DBNAME"] = "virtual_cookbook"
+mongo = PyMongo(app)
+
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
