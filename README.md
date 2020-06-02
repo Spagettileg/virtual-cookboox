@@ -324,7 +324,7 @@ The site has been formally deployed to [Heroku](https://virtual-cookboox.herokua
 - Once the above steps are complete you can try run the application using `python3 recipe.py`
 
 ##### Via the CLI
-- Clone my repo via Git using the following command `https://github.com/Spagettileg/virtual-cookboox`
+- Clone my repo via Git using the following command `https://github.com/Spagettileg/virtual-cookboox.git`
 - Install the projects requirements.txt using `pip3 install -r requirements.txt`
 - A few environment variables need to be updated before you can run the app:
     - `app.secret_key = os.getenv("SECRET")` 
