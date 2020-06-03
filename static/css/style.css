@@ -893,6 +893,11 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
     font-weight: 500;
 }
 
+.author-cred {
+    color: #86C232;
+    /*Lime Green*/
+}
+
 /* Media Queries */
 
 @media (max-width: 767px) {
