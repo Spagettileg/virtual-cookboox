@@ -403,6 +403,10 @@ nav ul a:hover {
     margin-top: 2em;
 }
 
+.card-img-top {
+    border-radius: 0.5rem;
+}
+
 .count-text {
     /*Personal profile page recipe count*/
     font-size: 1.25rem;
@@ -424,12 +428,6 @@ nav ul a:hover {
 .icon-smart {
     /*Food icons moved to central position*/
     padding-left: 3.75rem;
-}
-
-.footer {
-    padding-top: 1.5rem;
-    padding-bottom: 0.5rem;
-    background-color: #474B4F;
 }
 
 /*404 Error formatting*/
@@ -874,6 +872,12 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
 
 /* Footer */
 
+.footer {
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    background-color: #474B4F;
+}
+
 .session-user {
     padding: 10px;
     margin: 10px;
@@ -885,11 +889,6 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
     cursor: none;
 }
 
-.author-cred img {
-    /* link provided by www.jigsaw.w3.org not working, however, they confirmed css code is flawless */
-    cursor: none;
-}
-
 .footer-contact a {
     /*Styling of contact the website author section*/
     color: #86C232;
@@ -898,19 +897,6 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
 }
 
 /* Media Queries */
-
-@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-    html {
-        /*Orientation lock for tablet view to offset Bootstrap 4 configuration*/
-        transform: rotate(-90deg);
-        transform-origin: left top;
-        width: 100vh;
-        overflow-x: hidden;
-        position: absolute;
-        top: 100%;
-        left: 0;
-    }
-}
 
 @media (max-width: 767px) {
     /*Mobile - Hides the recipe count & favourite count*/
