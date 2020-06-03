@@ -858,6 +858,8 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
     background: #6e5494;
     /*GitHub Purple*/
     color: #fff;
+    transform: scale(1.15);
+    opacity: 0.9;
 }
 
 .fa-linkedin:hover {
@@ -865,6 +867,8 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
     background: #0077B5;
     /*LinkedIn Blue*/
     color: #fff;
+    transform: scale(1.15);
+    opacity: 0.9;
 }
 
 /* Footer */
