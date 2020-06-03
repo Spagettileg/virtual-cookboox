@@ -68,7 +68,7 @@ Finally, the 'Virtual Cookboox' navbar brand is configured to move the user back
 - Nest stage generation is to move on from a personal recipe application to enterprise scale where professional kitchens and learning institutions leverage the power of code in the cloud to access quality recipes to create industry best practice and blue print models for recipe innovation.  
 
 ## Wireframes
-My [wireframe mock up design](https://github.com/Spagettileg/virtual-cookboox/tree/master/plans/wireframes) has been developed as a fully responsive application capable of running on mobile, tablet & desktop devices. All mock up material was created in Balsamiq and has been appended as .bmpr file on GitHub. The mock up design has stayed consistent with the original planning. 
+My [wireframe mock up design](https://github.com/Spagettileg/virtual-cookboox/blob/master/wireframes/virtual-cookboox-vfinal.pdf) has been developed as a fully responsive application capable of running on mobile, tablet & desktop devices. All mock up material was created in Balsamiq and has been appended as .bmpr file on GitHub. The mock up design has stayed consistent with the original planning. 
 
 ## User Stories
 > I need an app that provides quick and intuitive access to recipes across the globe [READ]
@@ -85,7 +85,7 @@ My [wireframe mock up design](https://github.com/Spagettileg/virtual-cookboox/tr
 
 ## Design
 ### Schema
-My [schema](https://github.com/Spagettileg/virtual-cookboox/blob/master/plans/schema/Schema%20Plan%20v1.pdf) was developed through de-engineering of the User Stories to then produce a conceptual design model. This model then formed the foundation to the project data requirements and ultimately the build of a database and the rules governing the use of the data. The schema design has evolved during the course of the project as better information and knowledge of database technology improved.
+My [schema](https://github.com/Spagettileg/virtual-cookboox/blob/master/schema/schema-plan-v1.pdf) was developed through de-engineering of the User Stories to then produce a conceptual design model. This model then formed the foundation to the project data requirements and ultimately the build of a database and the rules governing the use of the data. The schema design has evolved during the course of the project as better information and knowledge of database technology improved.
 
 ### Application Framework
 Flask application framework was a prerequisite in the design of this project, according to the project brief.
