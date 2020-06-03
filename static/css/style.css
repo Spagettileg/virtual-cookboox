@@ -401,6 +401,7 @@ nav ul a:hover {
 .grav-profile {
     /*Positioning of gravatar image*/
     margin-top: 2em;
+    border-radius: 0.5rem;
 }
 
 .card-img-top {
