@@ -405,6 +405,7 @@ nav ul a:hover {
 
 .card-img-top {
     border-radius: 0.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .count-text {
@@ -589,6 +590,7 @@ pre {
     text-decoration: none;
     width: 6.25rem;
     text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .btn-confirm-recipe:hover {
@@ -624,6 +626,7 @@ pre {
     text-decoration: none;
     width: 6rem;
     text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .btn-recipe-detail:hover,
@@ -646,9 +649,9 @@ pre {
 
 .btn-edit-recipe {
     /*Edit recipe button found at the bottom of the recipe detail page - recipe.html*/
-    padding: 0.2rem;
-    margin: 0.2rem;
-    border-radius: 10%;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
     background-color: #FFC107;
     /*Amber Warning*/
     border-color: #FFC107;
@@ -656,10 +659,11 @@ pre {
     color: #222629;
     /*Dark Slate*/
     font-weight: 500;
-    font-size: 1.3rem;
+    font-size: 1rem;
     text-decoration: none;
-    width: 7rem;
+    width: 8rem;
     text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .btn-edit-recipe:hover {
@@ -681,9 +685,9 @@ pre {
 
 .btn-delete-recipe {
     /*Delete recipe button found at the bottom of the recipe detail page - recipe.html*/
-    padding: 0.2rem;
-    margin: 0.2rem;
-    border-radius: 10%;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
     background-color: #DC3545;
     /*Red Danger*/
     border-color: #DC3545;
@@ -691,10 +695,11 @@ pre {
     color: #fafafa;
     /*Off white*/
     font-weight: 500;
-    font-size: 1.3rem;
+    font-size: 1rem;
     text-decoration: none;
-    width: 7rem;
+    width: 8rem;
     text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .btn-delete-recipe:hover {
