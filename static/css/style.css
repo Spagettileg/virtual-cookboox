@@ -610,12 +610,9 @@ pre {
 
 .btn-recipe-detail,
 /*Recipe detail button found in pages headed 'Meat Recipes', 'Poutltry Recipes', etc*/
-
 .btn-register {
     /*Previous, Next & Submit buttons found in index.html in support of User Registration process*/
-    padding: 0.2rem;
-    margin: 0.2rem;
-    border-radius: 10%;
+    border-radius: 0.5rem;
     background-color: #61892F;
     /*Pea Green*/
     border-color: #61892F;
@@ -625,7 +622,7 @@ pre {
     font-weight: 500;
     font-size: 1rem;
     text-decoration: none;
-    width: 6.25rem;
+    width: 6rem;
     text-align: center;
 }
 
