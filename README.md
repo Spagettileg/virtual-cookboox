@@ -309,7 +309,7 @@ The site has been formally deployed to [Heroku](https://virtual-cookboox.herokua
 - Push all my latest production ready code to GitHub ready for deployment via Heroku's GitHub function where you can deploy from GitHub the production ready app
 
 #### Heroku
-- From the Heroku dashboard I created a new app, using the name cheers-drinksdb and set the region to Europe
+- From the Heroku dashboard I created a new app, using the name virtual-cookboox and set the region to Europe
 - In the settings tab I clicked reveal config vars and entered the required environment variables, which in this case were:
     - Key = `IP`: Value = `0.0.0.0`
     - Key = `PORT`: Value = `5000`
