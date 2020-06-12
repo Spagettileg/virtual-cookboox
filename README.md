@@ -9,6 +9,10 @@ Finally, logged in users can add new recipes to this application by simply click
 ## Demo
 A live demo can be found [here](https://virtual-cookboox.herokuapp.com/).
 
+***
+
+![](static/img/frontpage.png)
+
 ## Table of Contents
 1. [UXD Considerations](#uxd-considerations)
     * [User](#user)
