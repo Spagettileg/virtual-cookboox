@@ -649,7 +649,8 @@ pre {
     /*Apple*/
 }
 
-.btn-edit-recipe {
+.btn-edit-recipe,
+.btn-back {
     /*Edit recipe button found at the bottom of the recipe detail page - recipe.html*/
     padding: 0.5rem;
     margin: 0.5rem;
@@ -668,7 +669,8 @@ pre {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.btn-edit-recipe:hover {
+.btn-edit-recipe:hover,
+.btn-back:hover {
     /* edit recipe button change colour when hovered & clicked */
     background-color: #86C232;
     /*lime green*/
