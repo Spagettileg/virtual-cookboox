@@ -1,7 +1,35 @@
 {% extends 'base.html' %} {% block content %}
 <!-- Recipe list of a specific food genre held on secure mongodb cloud server -->
-<h2>{{ page_title }}</h2>
-<div class="container-fluid">
+
+<!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/grains-collection.jpg') }}')">
+    <div class="overlay"></div>
+    <div class="container d-flex align-items-center flex-column text-white text-center">
+
+      <!-- Masthead Heading -->
+      <h1 class="masthead-heading text-uppercase mb-0">Virtual Cookboox</h1>
+
+      <!-- Icon Divider -->
+      <div class="divider-custom">
+        <div class="row"></div>
+        <div class="divider-custom-icon">
+          <i class="fa fa-star"></i>
+        </div>
+        <div class="row"></div>
+      </div>
+
+      <!-- Masthead Subheading -->
+      <p class="masthead-subheading">{{ page_title }}</p>
+      <div class="container d-flex align-items-center justify-content-center">
+        <div class="row">
+          {% if 'username' in session %}
+          <span class="session-user">A warm welcome to: {{ session['username'].title() }}</span> {% else%} {% endif %}
+        </div>
+      </div>
+    </div>
+  </header>
+
+<div class="container-fluid pt-4">
     <div class="row col-sm-12">
         {% for task in tasks %}
         <div class="mb-3 col-sm-6 col-md-6 col-lg-4">
