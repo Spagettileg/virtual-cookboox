@@ -95,7 +95,7 @@
     <!-- Button to help user navigate back to home page --> 
     <div class="container">
         <div class="row pl-2 pb-3">
-            <a class="btn btn-back float-right" aria-hidden="true" href="{{ url_for('profile_page') }}">My Recipes &rarr;</a>
+            <a class="btn btn-back float-right" aria-hidden="true" href="{{ url_for('profile_page', user_id=user._id) }}">My Recipes &rarr;</a>
         </div>
     </div>
 </main>
