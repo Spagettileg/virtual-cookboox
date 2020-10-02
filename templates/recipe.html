@@ -32,9 +32,9 @@
             <div class="row">
                 <p class="recipe-description">{{ task.brief_description }}</p>
             </div>
+            <hr class="divider-recipe-detail"></hr>
         </div>
-
-        <hr class="divider-recipe-detail"></hr>
+        
         <div class="container">
             <div class="row recipe-icons">
                 <!-- Author of recipe -->
@@ -68,20 +68,21 @@
                     <p class="clear text-center">{{ task.servings }} servings</p>
                 </div>
             </div>
+            <hr class="divider-recipe-detail"></hr>
         </div>
-        <hr class="divider-recipe-detail"></hr>
         <!-- All recipe ingredients and treatment of ingredients set out here -->
         <div class="container col-xs-12">
             <h4 class="left-align ingredients-section">Ingredients</h4>
-            <p class="section recipe-ingredients" style="white-space: pre-wrap;">{{ task.ingredients }}</p>
+                <p class="section recipe-ingredients" style="white-space: pre-wrap;">{{ task.ingredients }}</p>
+            <hr class="divider-recipe-detail"></hr>
         </div>
-        <hr class="divider-recipe-detail"></hr>
         <!-- Detailed instructions on how to cook the ingredients -->
         <div class="container col-xs-12">
             <h4 class="left-align instructions-section">Instructions</h4>
-            <p class="section recipe-instructions" style="white-space: pre-wrap;">{{ task.instructions }}</p>
+                <p class="section recipe-instructions" style="white-space: pre-wrap;">{{ task.instructions }}</p>
+            <hr class="divider-recipe-detail"></hr
         </div>
-        <hr class="divider-recipe-detail"></hr>
+        
         <!-- Edit and Delete recipe buttons only appear for logged on users -->
         <div class="container pb-3">
             {% if 'logged_in' in session %} {% if session['username'].title() == task.username.title() %}
