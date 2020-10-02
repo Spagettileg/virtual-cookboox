@@ -497,10 +497,8 @@ nav ul a:hover {
 .divider-addrecipe,
 .divider-editrecipe {
     /*Recipe detail & Add recipe segregation with line breaks*/
+    border: 1px solid #61892F;
     width: 6rem;
-    height: 2px;
-    border: 0;
-    background-color: #61892F;
 }
 
 .divider-custom-icon-addrecipe i {
