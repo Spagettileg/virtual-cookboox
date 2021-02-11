@@ -415,6 +415,54 @@ def user_login():
             return redirect(url_for('user_login'))
     return render_template('login.html', form=form, title='Login')
 
+@app.route("/search")
+def search():
+	    """
+	    A function that finds recipes on query
+	    The query is the user's input
+	    Recipes are a list of user queries
+	    Render user's list recipes on search.html
+	    """
+	
+
+	    limit_per_page = 8
+	    current_page = int(request.args.get('current_page', 1))
+	
+
+	    query = request.args.get('query')
+	    a_recipe = mongo.db.tasks
+	
+
+	    #  create the index
+	    a_recipe.create_index( [("$**", 'text')] )
+	
+
+	    #  Search results
+	    results = \
+	        a_recipe.find({'$text': {'$search': str(query)}},
+	                          {'score': {'$meta': 'textScore'}}).sort('_id'
+	            , pymongo.ASCENDING).skip((current_page - 1)
+	            * limit_per_page).limit(limit_per_page)
+	
+
+	    # Pagination
+	    number_of_recipes_found = a_recipe.find({'$text': {'$search': str(query)}}).count()
+	    
+	    results_pages = range(1, int(math.ceil(number_of_recipes_found / limit_per_page)) + 1)
+	    total_pages = int(math.ceil(number_of_recipes_found / limit_per_page))
+	
+
+	    return render_template("search.html",
+	                            title='Search',
+	                            limit_per_page=limit_per_page,
+	                            number_of_recipes_found = number_of_recipes_found,
+	                            current_page=current_page,
+	                            query=query,
+	                            results=results,
+	                            results_pages=results_pages,
+	                            total_pages=total_pages)
+
+
 
 @app.route('/logout')
 def logout():
@@ -425,4 +473,4 @@ def logout():
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP', "0.0.0.0"),
             port=int(os.environ.get('PORT', "5000")),
-            debug=False)
+            debug=True)
