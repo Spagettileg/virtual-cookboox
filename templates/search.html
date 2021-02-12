@@ -59,7 +59,7 @@
 	<div class="search-img-container">
 	    <img src="{{ url_for('static', filename='img/search.png') }}" class="img-search" alt="chef preparation">
 	    <div>
-	        <h1 class="search-img-title uppercasetext-white">Search Recipes</h1>   
+	        <h1 class="search-img-title">Search Recipes</h1>   
 	    </div>
 	</div>
 	
@@ -69,7 +69,7 @@
 	    <form action="{{ url_for('search', query=query, current_page=current_page) }}" class="search">
 	      <input type="text" class="search-input" id="query" name="query" placeholder="Search recipes...">
 	      <button class="search-button">
-	        <i class="fas fa-search search-icon"></i>
+	        <i class="fas fa-search"></i>
 	      </button>
 	  </form>
 	</div>
@@ -104,7 +104,7 @@
 	           <!-- more than 1 result-->
 	         {% else %}
 	            <h2 class="sub-heading">Your search for "<span class="text-green">{{ query }}</span>" produced 
-	                <span class="text-red">{{ number_of_recipes_found }}</span> search results
+	                <span class="text-green-count">{{ number_of_recipes_found }}</span> search results
 	            </h2>
 	         {% endif %} 
 	     {% else %}
@@ -113,7 +113,7 @@
 	          <a href="{{ url_for('all_recipes')}}"
 	          class="waves-effect waves-light btn btn-coral uppercase z-depth-3 btn-main"
 	          id="btn-home">
-	          Back to all recipes
+	          Back to home page >>
 	        </a>
 	     </div>
 	     {% endif %}
