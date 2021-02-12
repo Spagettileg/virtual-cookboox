@@ -1,4 +1,58 @@
-{% extends 'base.html' %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta property='og:title' content='Virtual Cookboox'/>
+  <meta property='og:image' content='{{ url_for('static', filename='img/food.png') }}'/>
+  <meta property='og:description' content='Virtual Cookboox allows the user to create, read, update and delete recipe records. Built in Python.'/>
+  <meta property='og:url' href='https://virtual-cookboox.herokuapp.com/'/>
+  
+  <title>Virtual Cookboox | Make Delicious Meals</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Personalised CSS -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" />
+
+  <!-- Favicon -->
+  <link href="{{ url_for('static', filename='img/dining.png') }}" rel="shortcut icon" type="image/png">
+
+</head>
+
+<body>
+  
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand bg-color-dark-slate text-uppercase">
+    <div class="container">
+      <a class="flip-box navbar-brand navbar-left" href="{{ url_for('index')}}">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+      <h2>Virtual</h2>
+          </div>
+      <div class="flip-box-back">
+      <h2>Cookboox</h2>
+      </div>
+  </div>
+      </a>
+      <ul class="navbar-right">
+        {% if 'username' in session %}
+        <li><a class="access-exit" href="{{ url_for('logout') }}">Logout</a></li>
+        <li><a class="my-recipes" href="{{ url_for('profile_page', user_id=current_user._id) }}">My Recipes</a></li>
+        <li><a class="add-recipe" href="{{ url_for('add_tasks') }}">Add recipe</a></li>
+        {% else %}
+        <li><a class="access-exit" href="{{ url_for('user_login') }}">Login</a></li>
+        <li><a class="sign-up" href="{{ url_for('register') }}">Sign Up</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
 	
 
 	<!--Banner Image-->
@@ -27,7 +81,7 @@
 	     {% if query %}
 	         <!-- 0 Results -->
 	         {% if number_of_recipes_found == 0 %}
-	            <h2 class="sub-heading">Sorry, no results found for <span class="text-red">{{ query }}</span></h2>
+	            <h2 class="sub-heading">Sorry, no results found for <span class="text-green">{{ query }}</span></h2>
 	            <p>Please, try a more general term, check the spelling or look up a specific ingredient</p>
 	
 
@@ -42,14 +96,14 @@
 
 	          <!-- 1 result -->
 	         {% elif number_of_recipes_found==1 %}
-	            <h2 class="sub-heading">Your search for "<span class="text-red">{{ query }}</span>" produced 
+	            <h2 class="sub-heading">Your search for "<span class="text-green">{{ query }}</span>" produced 
 	                <span class="text-red">1</span> search result
 	            </h2>
 	
 
 	           <!-- more than 1 result-->
 	         {% else %}
-	            <h2 class="sub-heading">Your search for "<span class="text-red">{{ query }}</span>" produced 
+	            <h2 class="sub-heading">Your search for "<span class="text-green">{{ query }}</span>" produced 
 	                <span class="text-red">{{ number_of_recipes_found }}</span> search results
 	            </h2>
 	         {% endif %} 
@@ -71,7 +125,7 @@
 	<div class="container-recipes">
 	  <div class="row margin-top-med">
 	    {% for recipe in results %} 
-	        {% include "partials/recipecards.html" %} 
+	        {% include "allrecipes.html" %} 
 	    {% endfor %}
 	  </div>
 	    <!--Pagination-->
@@ -87,4 +141,50 @@
 	    {% endfor %}
 	  </ul>
 	</div>
-	{% endblock %}
+
+<!-- Footer -->
+  <footer class="footer text-center text-white">
+    <div class="container">
+      <div class="row">
+
+        <!-- Footer Location -->
+        <div class="col-xs-12 col-lg-4 text-center">
+          <h4 class="text-uppercase text-center">Location</h4>
+          <p>Andover
+            <br>United Kingdom</p>
+        </div>
+
+        <!-- Footer Social Icons -->
+        <div class="col-xs-12 col-lg-4 text-center">
+          <h4 class="text-uppercase text-center">Stay Connected</h4>
+          <div class="social-links-footer">
+            <a href="https://github.com/Spagettileg" target="_blank"><i class="fab fa-github fa-github"></i></a><span> GitHub  </span>
+            <a href="https://www.linkedin.com/in/paul-friel-mbcs-a0821b43/" target="_blank"><i class="fab fa-linkedin fa-linkedin"></i></a><span> LinkedIn  </span>
+          </div>
+        </div>
+
+        <!-- Footer About Text -->
+        <div class="col-xs-12 col-lg-4 text-center footer-contact">
+          <h4 class="text-uppercase text-center">Contact</h4>
+          <p>Paul Friel is a freelance software developer, with expertise in both front & backend design through to production.
+            <a href="https://www.linkedin.com/in/paul-friel-mbcs-a0821b43/" target="_blank">Contact</a> Paul to register your interest for support on a business or personal software development project opportunity.</p>
+        </div>
+
+        <!-- Footer Author Text -->
+        <div class="container author-cred">
+          <p>Virtual Cookboox | <span id="developer-years"></span><br>  Website design | Paul Friel | Full Stack Developer</p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- Personal JS -->
+  <script src="{{ url_for('static', filename='js/helper.js') }}"></script>
+    
+</body>	
