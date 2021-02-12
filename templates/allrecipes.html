@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block content}
+<!-- Access to all CookBoox recipes held within Mongo Database -->
+
+<div class="container-fluid pt-4">
+    <div class="row col-sm-12">
+        {% for task in tasks %}
+        <div class="mb-3 col-sm-6 col-md-6 col-lg-4">
+            <div class="card-deck d-flex align-items-center justify-content-center" style="width:100%">
+                <img class="card-img-top" src="{{ task.recipe_image }}" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">{{ task.recipe_name }}</h4>
+                    <p class="card-text">{{ task.brief_description }}</p>
+                    <div class="spacer"></div>
+                    <a href="{{ url_for('task', tasks_id=task._id) }}" class="btn-medium btn-recipe-detail bottomleft">Detail</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- Button to help user navigate back to home page --> 
+<div class="container">
+    <div class="row pl-2 pb-3">
+        <a class="btn btn-back float-right" aria-hidden="true" href="{{ url_for('index') }}">Main Menu &rarr;</a>
+    </div>
+</div>
+{% endblock %}
