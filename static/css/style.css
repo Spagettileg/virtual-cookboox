@@ -520,6 +520,10 @@ nav ul a:hover {
     align-items: center;
 }
 
+.text-green {
+    color: #61892F;
+}
+
 /*------------ 404 Error formatting --------------*/
 
 .error-container {
