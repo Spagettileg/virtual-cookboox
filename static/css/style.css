@@ -432,7 +432,12 @@ nav ul a:hover {
     padding-left: 3.75rem;
 }
 
-/*404 Error formatting*/
+/*------------ Search Recipe Function ------------*/
+
+
+
+
+/*------------ 404 Error formatting --------------*/
 
 .error-container {
     display: flex;
