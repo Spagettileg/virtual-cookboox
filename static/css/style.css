@@ -445,6 +445,80 @@ nav ul a:hover {
     margin: 2rem auto;
 }
 
+.search-input {
+    padding: 0.7rem 2rem;
+    font-family: inherit;
+    font-size: 1.3rem;
+    color: #F2F2F2;
+    background-color: #474B4F;
+    border: 1px solid #61892F;
+    border-radius: 10rem;
+    width: 70%;
+    transition: all 0.2s;
+    margin-right: -3.25rem;
+}
+
+.search-input:focus {
+    outline: none;
+    width: 72%;
+    background-color: #474B4F;
+    border-bottom: none;
+    box-shadow: none;
+}
+
+.search-input::-webkit-input-placeholder {
+    font-weight: 100;
+    color: #F2F2F2;
+}
+
+.search-button {
+    border: 1px solid #61892F;
+    background-color: #474B4F;
+    cursor: pointer;
+}
+
+.search-button:focus {
+    outline: none;
+    background-color: #474B4F;
+}
+
+.search-button:active {
+    transform: translateY(2px);
+}
+
+.search-icon {
+    height: 2rem;
+    width: 2rem;
+}
+
+.search-img-container {
+    position: relative;
+}
+
+.img-search {
+    width: 100%;
+    object-fit: cover;
+}
+
+.search-img-title {
+    background-color: #474B4F;
+    color: #FFF;
+    border-radius: .5rem;
+    font-size: 3.3rem;
+    padding: 1rem;
+    position: absolute;
+    bottom: .5rem;
+    left: 1.5rem;
+}
+
+.search-results {
+    padding: .5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 
 /*------------ 404 Error formatting --------------*/
 
