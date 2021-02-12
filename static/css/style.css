@@ -434,7 +434,16 @@ nav ul a:hover {
 
 /*------------ Search Recipe Function ------------*/
 
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.search-container {
+    width: 75%;
+    margin: 2rem auto;
+}
 
 
 /*------------ 404 Error formatting --------------*/
