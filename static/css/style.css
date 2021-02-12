@@ -447,11 +447,12 @@ nav ul a:hover {
 
 .search-input {
     padding: 0.7rem 2rem;
+    text-transform: capitalize;
     font-family: inherit;
     font-size: 1.3rem;
     color: #F2F2F2;
     background-color: #474B4F;
-    border: 1px solid #61892F;
+    border: none;
     border-radius: 10rem;
     width: 70%;
     transition: all 0.2s;
@@ -469,10 +470,11 @@ nav ul a:hover {
 .search-input::-webkit-input-placeholder {
     font-weight: 100;
     color: #F2F2F2;
+    text-transform: uppercase;
 }
 
 .search-button {
-    border: 1px solid #61892F;
+    border: none;
     background-color: #474B4F;
     cursor: pointer;
 }
@@ -491,8 +493,17 @@ nav ul a:hover {
     width: 2rem;
 }
 
+.fa-search {
+    font-size: 1.8rem;
+    color: #86C232;
+}
+
 .search-img-container {
     position: relative;
+}
+
+.search-img-container img {
+    height: 63vh;
 }
 
 .img-search {
@@ -502,6 +513,7 @@ nav ul a:hover {
 
 .search-img-title {
     background-color: #474B4F;
+    opacity: 0.5;
     color: #FFF;
     border-radius: .5rem;
     font-size: 3.3rem;
@@ -521,6 +533,11 @@ nav ul a:hover {
 }
 
 .text-green {
+    text-transform: capitalize;
+}
+
+.text-green,
+.text-green-count {
     color: #61892F;
 }
 
