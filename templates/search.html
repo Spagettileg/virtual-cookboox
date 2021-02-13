@@ -86,10 +86,10 @@
 	
 
 	            <div class="margin-top-med">
-	                <a href="{{ url_for('all_recipes')}}"
-	                    class="waves-effect waves-light btn btn-coral uppercase z-depth-3 btn-main"
+	                <a href="{{ url_for('index')}}"
+	                    class="btn btn-back float-right"
 	                    id="btn-home">
-	                    Back to all recipes
+	                    &larr; Main Menu
 	                </a>
 	            </div>
 	
@@ -97,7 +97,7 @@
 	          <!-- 1 result -->
 	         {% elif number_of_recipes_found==1 %}
 	            <h2 class="sub-heading">Your search for "<span class="text-green">{{ query }}</span>" produced 
-	                <span class="text-red">1</span> search result
+	                <span class="text-green-count">1</span> search result
 	            </h2>
 	
 
@@ -110,10 +110,10 @@
 	     {% else %}
 	     <h2 class="sub-heading">You didn't enter any search key words. Please, try again.</h2>
 	     <div class="margin-top-med">
-	          <a href="{{ url_for('all_recipes')}}"
-	          class="waves-effect waves-light btn btn-coral uppercase z-depth-3 btn-main"
+	          <a href="{{ url_for('index')}}"
+	          class="btn btn-back float-right"
 	          id="btn-home">
-	          Back to home page >>
+	          &larr; Main Menu
 	        </a>
 	     </div>
 	     {% endif %}
