@@ -51,7 +51,7 @@ def index():
 
 
 @app.route('/all_recipes', methods=['GET'])
-def all_recipes():
+def all_recipes(tasks_id):
     '''
     Note:
     All the recipes displayed from the database using pagination.
@@ -68,7 +68,7 @@ def all_recipes():
     recipes = all_recipes.find().sort('_id', pymongo.ASCENDING).skip(
         (current_page - 1)*limit_per_page).limit(limit_per_page)
 
-    return render_template("index.html", recipes=recipes,
+    return render_template("allrecipes.html", recipes=recipes,
                            title='All Recipes', current_page=current_page,
                            pages=pages, number_of_all_rec=number_of_all_rec)
 
