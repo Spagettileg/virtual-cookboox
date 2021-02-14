@@ -415,52 +415,21 @@ def user_login():
             return redirect(url_for('user_login'))
     return render_template('login.html', form=form, title='Login')
 
-@app.route("/search")
+@ app.route('/search', methods=["GET", "POST"])
 def search():
-	    """
-	    A function that finds recipes on query
-	    The query is the user's input
-	    Recipes are a list of user queries
-	    Render user's list recipes on search.html
-	    """
-	
-
-	    limit_per_page = 6
-	    current_page = int(request.args.get('current_page', 1))
-	
-
-	    query = request.args.get('query')
-	    a_recipe = mongo.db.tasks
-	
-
-	    #  create the index
-	    a_recipe.create_index( [("$**", 'text')] )
-	
-
-	    #  Search results
-	    results = \
-	        a_recipe.find({'$text': {'$search': str(query)}},
-	                          {'score': {'$meta': 'textScore'}}).sort('_id'
-	            , pymongo.ASCENDING).skip((current_page - 1)
-	            * limit_per_page).limit(limit_per_page)
-	
-
-	    # Pagination
-	    number_of_recipes_found = a_recipe.find({'$text': {'$search': str(query)}}).count()
-	    
-	    results_pages = range(1, int(math.ceil(number_of_recipes_found / limit_per_page)) + 1)
-	    total_pages = int(math.ceil(number_of_recipes_found / limit_per_page))
-
-	    return render_template("search.html",
-	                            title='Search',
-	                            limit_per_page=limit_per_page,
-	                            number_of_recipes_found = number_of_recipes_found,
-	                            current_page=current_page,
-	                            query=query,
-	                            results=results,
-	                            results_pages=results_pages,
-	                            total_pages=total_pages)
-
+    query = request.form.get("query")
+    results = mongo.db.tasks.find({'$text': {'$search': str(query)}}).limit(10)
+    result_num = mongo.db.tasks.find({'$text': {'$search': query}}).count()
+    if result_num > 0:
+        return render_template(
+            "search.html", results=results, query=query,
+            page_title="Search Results",
+            message="Your search criteria produced the following results:")
+    else:
+        return render_template(
+            "search.html", results=results,
+            query=query, page_title="Search Results",
+            message="Please, try a more general term, check the spelling or look up a specific ingredient")
 
 
 @app.route('/logout')
