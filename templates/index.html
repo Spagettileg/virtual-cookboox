@@ -47,7 +47,7 @@
         <!-- Search -->
         
         <div class="search-container">
-            <form action="{{ url_for('search', query=query, current_page=current_page)}}" class="search">
+            <form action="{{ url_for('search') }}" method="POST" class="search">
                 <input type="text" class="search-input" id="query" name="query" placeholder="Search Recipes...">
                 <button class="search-button">
                     <i class="fas fa-search search-icon"></i>
