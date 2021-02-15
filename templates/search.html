@@ -65,22 +65,56 @@
 	
 	<!-- Search -->
         
-        <div class="search-container">
-            <form action="{{ url_for('search') }}" method="POST" class="search">
-                <input type="text" class="search-input" id="query" name="query" placeholder="Search Recipes...">
-                <button class="search-button">
-                    <i class="fas fa-search search-icon"></i>
-                </button>
-            </form>
-        </div>
+  <div class="search-container">
+      <form action="{{ url_for('search') }}" method="POST" class="search">
+          <input type="text" class="search-input" id="query" name="query" placeholder="Search Recipes...">
+          <button class="search-button">
+              <i class="fas fa-search search-icon"></i>
+          </button>
+      </form>
+  </div>
         
-    <div class="container">
-      <div class="row">
-          <div class="col s12">
-              <p class="center-align mb-5">{{ message }}</p>
-          </div>
-      </div>
-    </div>
+  <!--Search results-->
+<div class="search-results">
+     <!-- Search Results Count -->
+     {% if query %}
+         <!-- 0 Results -->
+         {% if result_num == 0 %}
+            <h2 class="sub-heading">Sorry, no results found for <span class="text-green">{{ query }}</span></h2>
+            <p>Please, try a more general term, check the spelling or look up a specific ingredient</p>
+
+            <div class="margin-top-med">
+                <a href="{{ url_for('index')}}"
+                    class="btn btn-back"
+                    id="btn-home">
+                    &larr; Main Menu
+                </a>
+            </div>
+
+          <!-- 1 result -->
+         {% elif result_num == 1 %}
+            <h2 class="sub-heading">Your search for "<span class="text-green">{{ query }}</span>" produced 
+                <span class="text-green-count">1</span> search result
+            </h2>
+
+           <!-- more than 1 result-->
+         {% else %}
+            <h2 class="sub-heading">Your search for "<span class="text-green">{{ query }}</span>" produced 
+                <span class="text-green-count">{{ result_num }}</span> search results
+            </h2>
+         {% endif %} 
+     {% else %}
+     <h2 class="sub-heading">You didn't enter any search key words. Please, try again.</h2>
+     <div class="margin-top-med">
+          <a href="{{ url_for('index')}}"
+          class="btn btn-back"
+          id="btn-home">
+          &larr; Main Menu
+        </a>
+     </div>
+     {% endif %}
+
+</div>    
 
 	<!--Search Page Card-->
 <div class="container-fluid pt-4">
