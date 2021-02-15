@@ -419,17 +419,17 @@ def user_login():
 def search():
     query = request.form.get("query")
     results = mongo.db.tasks.find({'$text': {'$search': str(query)}}).limit(20)
-    result_num = mongo.db.tasks.find({'$text': {'$search': query}}).count()
+    result_count = mongo.db.tasks.find({'$text': {'$search': query}}).count()
     
-    if result_num > 0:
+    if result_count > 0:
         return render_template(
             "search.html", results=results, query=query,
-            page_title="Search Results", result_num=result_num,
+            page_title="Search Results", result_count=result_count,
             message="Your search criteria produced the following results:")
     else:
         return render_template(
             "search.html", results=results, query=query,
-            page_title="Search Results", result_num=result_num,
+            page_title="Search Results", result_count=result_count,
             message="Please, try a more general term, check the spelling or look up a specific ingredient")
 
 
