@@ -541,6 +541,13 @@ nav ul a:hover {
     color: #61892F;
 }
 
+.main-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 /*------------ 404 Error formatting --------------*/
 
 .error-container {
