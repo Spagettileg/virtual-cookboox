@@ -52,20 +52,18 @@ def index():
 
 @app.route('/get_meat', methods=['GET'])
 def meat():
-    count_tasks = mongo.db.tasks.find().count()
-    favourite_count = mongo.db.tasks.find({'favourite': True}).count()
+    count_meat_tasks = mongo.db.tasks.find({"category_name": "Meat"}).count()
     if 'logged_in' in session:
         current_user = mongo.db.user.find_one({'name': session[
             'username'].title()})
-        return render_template('meat.html', count_tasks=count_tasks,
-                               favourite_count=favourite_count,
+        return render_template('meat.html', count_meat_tasks=count_meat_tasks,
                                page_title='Meat Recipes',
                                current_user=current_user,
                                tasks=mongo.db.tasks.find
                                ({"category_name": "Meat"}))
     else:
         return render_template('meat.html',
-                               count_tasks=count_tasks,
+                               count_meat_tasks=count_meat_tasks,
                                favourite_count=favourite_count,
                                page_title="Meat Recipes",
                                tasks=mongo.db.tasks.find
@@ -424,13 +422,11 @@ def search():
     if result_count > 0:
         return render_template(
             "search.html", results=results, query=query,
-            page_title="Search Results", result_count=result_count,
-            message="Your search criteria produced the following results:")
+            page_title="Search Results", result_count=result_count)
     else:
         return render_template(
             "search.html", results=results, query=query,
-            page_title="Search Results", result_count=result_count,
-            message="Please, try a more general term, check the spelling or look up a specific ingredient")
+            page_title="Search Results", result_count=result_count)
 
 
 @app.route('/logout')
