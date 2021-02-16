@@ -50,7 +50,7 @@ def index():
                                title='Home')
 
 
-@app.route('/get_meat', methods=['GET'])
+@app.route('/meat', methods=['GET'])
 def meat():
     count_meat_tasks = mongo.db.tasks.find({"category_name": "Meat"}).count()
     if 'logged_in' in session:
@@ -62,15 +62,13 @@ def meat():
                                tasks=mongo.db.tasks.find
                                ({"category_name": "Meat"}))
     else:
-        return render_template('meat.html',
-                               count_meat_tasks=count_meat_tasks,
-                               favourite_count=favourite_count,
+        return render_template('meat.html', count_meat_tasks=count_meat_tasks,
                                page_title="Meat Recipes",
                                tasks=mongo.db.tasks.find
                                ({"category_name": "Meat"}))
 
 
-@app.route('/get_poultry', methods=['GET'])
+@app.route('/poultry', methods=['GET'])
 def poultry():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
@@ -91,7 +89,7 @@ def poultry():
                                ({"category_name": "Poultry"}))
 
 
-@app.route('/get_fish', methods=['GET'])
+@app.route('/fish', methods=['GET'])
 def fish():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
@@ -112,7 +110,7 @@ def fish():
                                ({"category_name": "Fish"}))
 
 
-@app.route('/get_veg', methods=['GET'])
+@app.route('/veg', methods=['GET'])
 def veg():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
@@ -133,7 +131,7 @@ def veg():
                                ({"category_name": "Vegetables"}))
 
 
-@app.route('/get_grains', methods=['GET'])
+@app.route('/grains', methods=['GET'])
 def grains():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
@@ -154,7 +152,7 @@ def grains():
                                ({"category_name": "Grains"}))
 
 
-@app.route('/get_pasta', methods=['GET'])
+@app.route('/pasta', methods=['GET'])
 def pasta():
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
@@ -175,7 +173,7 @@ def pasta():
                                ({"category_name": "Pasta"}))
 
 
-@app.route('/get_task/<tasks_id>', methods=['GET', 'POST'])
+@app.route('/task/<tasks_id>', methods=['GET', 'POST'])
 def task(tasks_id):
     count_tasks = mongo.db.tasks.find().count()
     favourite_count = mongo.db.tasks.find({'favourite': True}).count()
