@@ -70,20 +70,19 @@ def meat():
 
 @app.route('/poultry', methods=['GET'])
 def poultry():
-    count_tasks = mongo.db.tasks.find().count()
-    favourite_count = mongo.db.tasks.find({'favourite': True}).count()
+    count_poultry_tasks = mongo.db.tasks.find({"category_name": "Poultry"}).count()
     if 'logged_in' in session:
         current_user = mongo.db.user.find_one({'name': session[
             'username'].title()})
-        return render_template('poultry.html', count_tasks=count_tasks,
-                               favourite_count=favourite_count,
+        return render_template('poultry.html',
+                               count_poultry_tasks=count_poultry_tasks,
                                page_title='Poultry Recipes',
                                current_user=current_user,
                                tasks=mongo.db.tasks.find
                                ({"category_name": "Poultry"}))
     else:
-        return render_template("poultry.html", count_tasks=count_tasks,
-                               favourite_count=favourite_count,
+        return render_template("poultry.html",
+                               count_poultry_tasks=count_poultry_tasks,
                                page_title="Poultry Recipes",
                                tasks=mongo.db.tasks.find
                                ({"category_name": "Poultry"}))
@@ -91,20 +90,17 @@ def poultry():
 
 @app.route('/fish', methods=['GET'])
 def fish():
-    count_tasks = mongo.db.tasks.find().count()
-    favourite_count = mongo.db.tasks.find({'favourite': True}).count()
+    count_fish_tasks = mongo.db.tasks.find({"category_name": "Fish"}).count()
     if 'logged_in' in session:
         current_user = mongo.db.user.find_one({'name': session[
             'username'].title()})
-        return render_template('fish.html', count_tasks=count_tasks,
-                               favourite_count=favourite_count,
+        return render_template('fish.html', count_fish_tasks=count_fish_tasks,
                                page_title='Fish Recipes',
                                current_user=current_user,
                                tasks=mongo.db.tasks.find
                                ({"category_name": "Fish"}))
     else:
-        return render_template("fish.html", count_tasks=count_tasks,
-                               favourite_count=favourite_count,
+        return render_template("fish.html", count_fish_tasks=count_fish_tasks,
                                page_title="Fish Recipes",
                                tasks=mongo.db.tasks.find
                                ({"category_name": "Fish"}))
@@ -112,20 +108,17 @@ def fish():
 
 @app.route('/veg', methods=['GET'])
 def veg():
-    count_tasks = mongo.db.tasks.find().count()
-    favourite_count = mongo.db.tasks.find({'favourite': True}).count()
+    count_veg_tasks = mongo.db.tasks.find({"category_name": "Vegetables"}).count()
     if 'logged_in' in session:
         current_user = mongo.db.user.find_one({'name': session[
             'username'].title()})
-        return render_template('veg.html', count_tasks=count_tasks,
-                               favourite_count=favourite_count,
+        return render_template('veg.html', count_veg_tasks=count_veg_tasks,
                                page_title='Vegetable Recipes',
                                current_user=current_user,
                                tasks=mongo.db.tasks.find
                                ({"category_name": "Vegetables"}))
     else:
-        return render_template("veg.html", count_tasks=count_tasks,
-                               favourite_count=favourite_count,
+        return render_template("veg.html", count_veg_tasks=count_veg_tasks,
                                page_title="Vegetable Recipes",
                                tasks=mongo.db.tasks.find
                                ({"category_name": "Vegetables"}))
@@ -133,20 +126,19 @@ def veg():
 
 @app.route('/grains', methods=['GET'])
 def grains():
-    count_tasks = mongo.db.tasks.find().count()
-    favourite_count = mongo.db.tasks.find({'favourite': True}).count()
+    count_grains_tasks = mongo.db.tasks.find({"category_name": "Grains"}).count()
     if 'logged_in' in session:
         current_user = mongo.db.user.find_one({'name': session[
             'username'].title()})
-        return render_template('grains.html', count_tasks=count_tasks,
-                               favourite_count=favourite_count,
+        return render_template('grains.html',
+                               count_grains_tasks=count_grains_tasks,
                                page_title='Grains Recipes',
                                current_user=current_user,
                                tasks=mongo.db.tasks.find
                                ({"category_name": "Grains"}))
     else:
-        return render_template('grains.html', count_tasks=count_tasks,
-                               favourite_count=favourite_count,
+        return render_template('grains.html',
+                               count_grains_tasks=count_grains_tasks,
                                page_title="Grains Recipes",
                                tasks=mongo.db.tasks.find
                                ({"category_name": "Grains"}))
@@ -154,20 +146,19 @@ def grains():
 
 @app.route('/pasta', methods=['GET'])
 def pasta():
-    count_tasks = mongo.db.tasks.find().count()
-    favourite_count = mongo.db.tasks.find({'favourite': True}).count()
+    count_pasta_tasks = mongo.db.tasks.find({"category_name": "Pasta"}).count()
     if 'logged_in' in session:
         current_user = mongo.db.user.find_one({'name': session[
             'username'].title()})
-        return render_template('pasta.html', count_tasks=count_tasks,
-                               favourite_count=favourite_count,
+        return render_template('pasta.html',
+                               count_pasta_tasks=count_pasta_tasks,
                                page_title='Pasta Recipes',
                                current_user=current_user,
                                tasks=mongo.db.tasks.find
                                ({"category_name": "Pasta"}))
     else:
-        return render_template("pasta.html", count_tasks=count_tasks,
-                               favourite_count=favourite_count,
+        return render_template("pasta.html",
+                               count_pasta_tasks=count_pasta_tasks,
                                page_title="Pasta Recipes",
                                tasks=mongo.db.tasks.find
                                ({"category_name": "Pasta"}))
