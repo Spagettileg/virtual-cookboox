@@ -320,10 +320,10 @@ nav ul a:hover {
     position: relative;
     display: block;
     text-align: center;
-    color: white;
-    max-width: 20rem;
-    margin-bottom: 1.875rem;
+    color: #FFF;
+    width: auto;
     overflow: hidden;
+    border-radius: 1rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
@@ -338,8 +338,14 @@ nav ul a:hover {
     color: #61892F;
 }
 
-.portfolio-item img {
-    padding-top: 0.5rem;
+.portfolio-brand {
+    font-size: 3rem;
+    font-weight: 500;
+    color: #FFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .recipe-description {
