@@ -290,9 +290,16 @@ nav ul a:hover {
     margin-bottom: -2.5rem;
 }
 
+.portfolio-section {
+    padding-top: 3rem;
+}
+
 .page-section {
     /*Styling for front page portfolio*/
-    padding-top: 3rem;
+    padding-top: 1rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .page-section-heading {
@@ -305,7 +312,8 @@ nav ul a:hover {
 
 .page-section-about {
     padding-bottom: 2rem;
-    width: 100%;
+    width: 90%;
+    border-radius: 1rem; 
     background-color: #86C232;
 }
 
