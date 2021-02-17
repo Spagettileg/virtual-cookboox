@@ -814,6 +814,12 @@ pre {
     /*Apple*/
 }
 
+.btn-back,
+input[value="&larr;"] {
+    /* Format back button */ 
+    font-weight: 600;
+}
+
 .btn-delete-recipe {
     /*Delete recipe button found at the bottom of the recipe detail page - recipe.html*/
     padding: 0.5rem;
