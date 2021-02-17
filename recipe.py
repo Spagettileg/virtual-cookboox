@@ -408,10 +408,15 @@ def search():
     results = mongo.db.tasks.find({'$text': {'$search': str(query)}}).limit(20)
     result_count = mongo.db.tasks.find({'$text': {'$search': query}}).count()
     
-    if result_count > 0:
-        return render_template(
-            "search.html", results=results, query=query,
-            page_title="Search Results", result_count=result_count)
+    if 'logged_in' in session:
+        current_user = mongo.db.user.find_one({'name': session[
+            'username'].title()})
+    
+        if result_count > 0:
+            return render_template(
+                "search.html", results=results, query=query,
+                current_user = current_user,
+                page_title="Search Results", result_count=result_count)
     else:
         return render_template(
             "search.html", results=results, query=query,
