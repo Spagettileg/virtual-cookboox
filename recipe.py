@@ -417,6 +417,19 @@ def search():
                 "search.html", results=results, query=query,
                 current_user = current_user,
                 page_title="Search Results", result_count=result_count)
+    
+        if result_count == 0:
+            return render_template(
+                "search.html", results=results, query=query,
+                current_user = current_user,
+                page_title="Search Results", result_count=result_count)
+    
+        if result_count == 1:
+            return render_template(
+                "search.html", results=results, query=query,
+                current_user = current_user,
+                page_title="Search Results", result_count=result_count)
+    
     else:
         return render_template(
             "search.html", results=results, query=query,
