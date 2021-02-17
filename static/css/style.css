@@ -912,48 +912,6 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
     /*lime green*/
 }
 
-.cross {
-    /*Cross features in login & register pages to take user back to homepage, when clicked*/
-    font-size: 1.5rem;
-    color: #86C232;
-    /*lime green*/
-}
-
-.cross:hover {
-    /* cross homepage button change colour when hovered & clicked */
-    color: #61892F;
-    /*Pea Green*/
-    text-decoration: none;
-    transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    /*Opera*/
-    -moz-transition: all 0.5s ease-in-out;
-    /*Windows*/
-    -webkit-transition: all 0.5s ease-in-out;
-    /*Apple*/
-}
-
-.cross-edit {
-    /*Cross-edit features in edit recipe page to take user back to homepage, when clicked*/
-    font-size: 1.5rem;
-    color: #fff;
-    /*White*/
-}
-
-.cross-edit:hover {
-    /* cross-edit homepage button change colour when hovered & clicked */
-    color: #86C232;
-    /*lime green*/
-    text-decoration: none;
-    transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    /*Opera*/
-    -moz-transition: all 0.5s ease-in-out;
-    /*Windows*/
-    -webkit-transition: all 0.5s ease-in-out;
-    /*Apple*/
-}
-
 /* Social Media */
 
 /* To include styling for social media fonts > font awesome */
