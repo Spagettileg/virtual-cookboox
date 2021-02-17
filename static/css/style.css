@@ -489,7 +489,7 @@ nav ul a:hover {
 
 .search-button {
     border: none;
-    background-color: #474B4F;
+    background-color: transparent;
     cursor: pointer;
 }
 
@@ -997,6 +997,42 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
 }
 
 /* Media Queries */
+
+@media (max-width: 375px) {
+    /*Mobile - Portrait*/
+    .search {
+        padding-right: 1rem;
+    }
+    .search-input,
+    .search-input:focus {
+        width: auto;
+        font-size: 1rem;
+    }
+    .fa-search {
+        font-size: 1.5rem;
+    }
+    .search-icon {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+}
+
+@media (max-width: 667px) {
+    /*Mobile - Landscape*/
+    .search {
+        padding-right: 1rem; 
+    }
+    .search-input {
+        font-size: 1rem;
+    }
+    .fa-search {
+        font-size: 1.5rem;
+    }
+    .search-icon {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+}
 
 @media (max-width: 767px) {
     /*Mobile - Hides the recipe count & favourite count*/
