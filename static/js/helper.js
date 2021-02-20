@@ -31,5 +31,18 @@ $(document).ready(function () {
     
 });
 
+// Scroll to top of page function
 
+    $("a[href='#move-up']").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, 800);
+        return false;
+    });
 
+    // If position of vertical scroll is above 600px, to top button will disappear.
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 575) {
+            $('.move-top').fadeIn();
+        } else {
+            $('.move-top').fadeOut();
+        }
+    });
