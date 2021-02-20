@@ -38,7 +38,9 @@ $(document).ready(function () {
         return false;
     });
 
-    // If position of vertical scroll is above 600px, to top button will disappear.
+    // If position of vertical scroll is above 575px, for 
+    // return to top button to disappear.
+    
     $(window).scroll(function () {
         if ($(this).scrollTop() > 575) {
             $('.move-top').fadeIn();
