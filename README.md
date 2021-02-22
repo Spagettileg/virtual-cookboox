@@ -202,7 +202,7 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 •	Search results will provide a count of the recipes found
 
 
-### Feature 5 - Add recipe 
+### Feature 6 - Add recipe 
 
 •	Logged in users can click on 'Add Recipe' button located at top right of the navbar. The navbar is present on all pages in the website, following completion of the registration process  
 
@@ -214,11 +214,11 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 
 •	New recipe can be viewed by clicking on food genre image relative to the recipe that has been added
 
-### Feature 6 - Overview of Virtual Cookboox 
+### Feature 7 - Overview of Virtual Cookboox 
 
 •	An elevation statement has been created to promote Virtual Cookboox to the User to set out its purpose, value generators, responsive to user stories and reference to key features  
 
-### Feature 7 - Food genre image portal gateway
+### Feature 8 - Food genre image portal gateway
 
 •	Portal access for both logged and unlogged users  
 
@@ -226,7 +226,7 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 
 •	To save on any confusion, all images have been name tagged  
 
-### Feature 8 - Food genre recipe collection 
+### Feature 9 - Food genre recipe collection 
 
 •	Portal access for both logged and unlogged users
 
@@ -236,7 +236,7 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 
 •	There is every chance the User does not find the recipe they're looking for. In this instance, the User can elect to add a recipe of their own or exit the Virtual Cookbook  
 
-### Feature 9 - Detailed recipe card 
+### Feature 10 - Detailed recipe card 
 
 •	Portal access for both logged and unlogged users
 
@@ -250,7 +250,7 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 
 •	Only logged in users will have access to both [Edit](#edit-recipes) and [Delete](#delete-recipes) recipe material 
 
-### Feature 10 - Edit recipe 
+### Feature 11 - Edit recipe 
 
 •	Logged in users can click on 'Edit Recipe' button located at the bottom of the recipe detail page   
 
@@ -260,29 +260,29 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 
 •	Once all updated recipe information added, the User should click 'Submit' button. User is then routed back to the recipe detail page showing an updated view of the recipe  
 
-### Feature 11 - Delete recipe 
+### Feature 12 - Delete recipe 
 
 •	For unwanted recipes, the logged in user can click on 'Delete Recipe' button located at the bottom of the recipe detail page  
 
 •	Once button has been clicked, the User has committed to complete removal of the recipe record, with no reversal. Thereafter, the User is routed to the homepage  
 
-### Feature 12 - Favourite recipe tickbox 
+### Feature 13 - Favourite recipe tickbox 
 
 •	Logged in user to navigate to either 'Edit Recipe' or 'Add Recipe' page to mark their given recipe as a favourite. A simple tickbox has been created to record the User actions in both the application and cloud database too. Tick for favourite and untick for non-favourite   
 
 •	Summary favourite count statistics can be viewed in the navbar by both logged in and non-logged in users. The cursor has been set to default as the data is only intended for read only purposes   
 
-### Feature 13 - Footer 
+### Feature 14 - Footer 
 
 •	Provides a social media link to LinkedIn and a link to my GitHub page. Fonts (icons) secured from bootstrap 4 / font awesome 5. The links are wired to the website designers’ respective social media sites. A .hover pseudo class has been used to provide a background colour change (light grey to corporate colour code) and font colour change too.   
 
 •	Contact link embedded into the conatact section that enables the user to send requests for software development support direct to website authors LinkedIn account 
 
-### Feature 14 - 404 alert page
+### Feature 15 - 404 alert page
 
 •	Provides a friendly sign post for the user in the event an incorrect link has been clicked and the user has the option to click back into a correct link
 
-### Feature 15 - My Recipes page
+### Feature 16 - My Recipes page
 
 •	Logged in users are allocated their own portal space to view their gravatar image, own recipe count and collection of recipes added by the user. The logged in user can also view the detail of each of their recipes and seek to edit or delete the same 
 
