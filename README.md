@@ -11,7 +11,7 @@ A live demo can be found [here](https://virtual-cookboox.herokuapp.com/).
 
 ***
 
-![](static/img/frontpage.png)
+![](static/img/intropage.png)
 
 ## Table of Contents
 1. [UXD Considerations](#uxd-considerations)
@@ -194,6 +194,13 @@ Font Awesome 5 icon graphics were used in conjunction with Bootstrap 4, primaril
 •	A read only view created to show a count of all favourite recipes that have been added to the Virtual Cookboox The cursor has been set to none when the User hovers over the counter    
 
 •	The counter will be activated by the User should they elect to tick the 'favourites box' contained in either the 'add recipe' or 'edit recipe' pages. The counter will increment (+1) if the box is ticked or reduce (-1) if the box is unticked. The counter will not fall below zero 
+
+### Feature 5 - Search recipe 
+
+•	All users will have access to Virtual Cookboox recipes via use of a free text key in from the user
+
+•	Search results will provide a count of the recipes found
+
 
 ### Feature 5 - Add recipe 
 
