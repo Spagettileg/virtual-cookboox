@@ -27,12 +27,16 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css" integrity="sha512-cKoGpmS4czjv58PNt1YTHxg0wUDlctZyp9KUxQpdbAft+XqnyKvDvcGX0QYCgCohQenOuyGSl8l1f7/+axAqyg==" crossorigin="anonymous" />
 
   <!-- Personalised CSS -->
   <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" />
 
   <!-- Favicon -->
   <link href="{{ url_for('static', filename='img/dining.png') }}" rel="shortcut icon" type="image/png">
+  
+  <!-- AOS > Animation on Script -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" type="text/css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" />
 
 </head>
 
@@ -72,7 +76,9 @@
     <div class="container d-flex align-items-center flex-column text-white text-center">
 
       <!-- Masthead Heading -->
-      <h1 class="masthead-heading text-uppercase mb-0">Virtual Cookboox</h1>
+      <div class="masthead-heading text-uppercase mb-0">
+      <h1 data-aos="zoom-in-up">Virtual Cookboox</h1>
+      </div>
 
       <!-- Icon Divider -->
       <div class="divider-custom">
@@ -125,7 +131,7 @@
         <div class="row pb-4">
 
             <!-- Portfolio Item 1 -->
-            <div class="col-md-6 col-lg-4 col-xl-4 pb-3">
+            <div class="col-md-6 col-lg-4 col-xl-4 pb-3" data-aos="fade-down">
                 <div class="portfolio-item mx-1 my-1">
                     <div class="align-items-center justify-content-center">
                     <a href="{{ url_for('meat') }}"><img src="{{ url_for('static', filename='img/meat.jpg') }}" style='width:100%;' border="0" alt="Meat">
@@ -135,7 +141,7 @@
             </div>
 
             <!-- Portfolio Item 2 -->
-            <div class="col-md-6 col-lg-4 col-xl-4 pb-3">
+            <div class="col-md-6 col-lg-4 col-xl-4 pb-3" data-aos="fade-down">
                 <div class="portfolio-item mx-1 my-1">
                     <div class="align-items-center justify-content-center">
                     <a href="{{ url_for('poultry') }}"><img src="{{ url_for('static', filename='img/poultry.jpg') }}" style='width:100%;' border="0" alt="Poultry">
@@ -145,7 +151,7 @@
             </div>
 
             <!-- Portfolio Item 3 -->
-            <div class="col-md-6 col-lg-4 col-xl-4 pb-3">
+            <div class="col-md-6 col-lg-4 col-xl-4 pb-3" data-aos="fade-down">
                 <div class="portfolio-item mx-1 my-1">
                     <div class="align-items-center justify-content-center">
                     <a href="{{ url_for('fish') }}"><img src="{{ url_for('static', filename='img/fish.jpg') }}" style='width:100%;' border="0" alt="Fish">
@@ -155,7 +161,7 @@
             </div>
 
             <!-- Portfolio Item 4 -->
-            <div class="col-md-6 col-lg-4 col-xl-4 pb-3">
+            <div class="col-md-6 col-lg-4 col-xl-4 pb-3" data-aos="fade-down">
                 <div class="portfolio-item mx-1 my-1">
                     <div class="align-items-center justify-content-center">
                     <a href="{{ url_for('veg') }}"><img src="{{ url_for('static', filename='img/veg.jpg') }}" style='width:100%;' border="0" alt="Vegetables">
@@ -165,7 +171,7 @@
             </div>
 
             <!-- Portfolio Item 5 -->
-            <div class="col-md-6 col-lg-4 col-xl-4 pb-3">
+            <div class="col-md-6 col-lg-4 col-xl-4 pb-3" data-aos="fade-down">
                 <div class="portfolio-item mx-1 my-1">
                     <div class="align-items-center justify-content-center">
                     <a href="{{ url_for('grains') }}"><img src="{{ url_for('static', filename='img/grains.jpg') }}" style='width:100%;' border="0" alt="Grains">
@@ -175,7 +181,7 @@
             </div>
 
             <!-- Portfolio Item 6 -->
-            <div class="col-md-6 col-lg-4 col-xl-4 pb-3">
+            <div class="col-md-6 col-lg-4 col-xl-4 pb-3" data-aos="fade-down">
                 <div class="portfolio-item mx-1 my-1">
                     <div class="align-items-center justify-content-center">
                     <a href="{{ url_for('pasta') }}"><img src="{{ url_for('static', filename='img/pasta.jpg') }}" style='width:100%;' border="0" alt="Pasta">
@@ -269,8 +275,18 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous"></script>
 
   <!-- Personal JS -->
   <script src="{{ url_for('static', filename='js/helper.js') }}"></script>
+  
+  <script>
+    AOS.init({
+      duration: 1000,
+      offset: 120,
+      easing: 'ease-in-out'
+      });
+  </script>
     
 </body>
