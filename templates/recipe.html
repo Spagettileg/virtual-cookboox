@@ -20,10 +20,10 @@
     <!-- Food recipe image -->
     <div class="row">
         <div class="col-md-5 recipe-image-container d-flex align-items-center justify-content-center">
-            <img class="img-fluid card-img-top" src="{{ task.recipe_image }}">
+            <img data-aos="fade-right" class="img-fluid card-img-top" src="{{ task.recipe_image }}">
         </div>
         <!-- Brief description of recipe -->
-        <div class="col-md-7">
+        <div class="col-md-7" data-aos="fade-left">
             <h3>{{ task.recipe_name }}</h3>
             <div class="row">
                 <p class="recipe-description">{{ task.brief_description }}</p>
@@ -32,7 +32,7 @@
         </div>
         
         <div class="container">
-            <div class="row recipe-icons">
+            <div class="row recipe-icons" data-aos="fade-down"
                 <!-- Author of recipe -->
                 <div class="col-6 col-sm-6 col-md-2 food-icons">
                     <div><i class="divider-custom-icon-recipe fas fa-user"></i></div>
@@ -64,19 +64,19 @@
                     <p class="clear text-center">{{ task.servings }} servings</p>
                 </div>
             </div>
-            <hr class="divider-recipe-detail"></hr>
+            <hr class="divider-recipe-detail" data-aos="fade-left"></hr>
         </div>
         <!-- All recipe ingredients and treatment of ingredients set out here -->
         <div class="container col-xs-12">
-            <h4 class="left-align ingredients-section">Ingredients</h4>
-                <p class="section recipe-ingredients" style="white-space: pre-wrap;">{{ task.ingredients }}</p>
-            <hr class="divider-recipe-detail"></hr>
+            <h4 class="left-align ingredients-section" data-aos="fade-right">Ingredients</h4>
+                <p class="section recipe-ingredients" data-aos="fade-down" style="white-space: pre-wrap;">{{ task.ingredients }}</p>
+            <hr class="divider-recipe-detail" data-aos="fade-left"></hr>
         </div>
         <!-- Detailed instructions on how to cook the ingredients -->
         <div class="container col-xs-12">
-            <h4 class="left-align instructions-section">Instructions</h4>
-                <p class="section recipe-instructions" style="white-space: pre-wrap;">{{ task.instructions }}</p>
-            <hr class="divider-recipe-detail"></hr
+            <h4 class="left-align instructions-section" data-aos="fade-right">Instructions</h4>
+                <p class="section recipe-instructions" data-aos="fade-down" style="white-space: pre-wrap;">{{ task.instructions }}</p>
+            <hr class="divider-recipe-detail" data-aos="fade-left"></hr
         </div>
         
         <!-- Edit and Delete recipe buttons only appear for logged on users -->
