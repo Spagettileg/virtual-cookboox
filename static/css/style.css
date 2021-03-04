@@ -384,15 +384,22 @@ nav ul a:hover {
 }
 
 .log-title,
-.log-narrative
+.log-narrative,
 .log-narrative a {
     color: #FFF;
 }
 
+.log-narrative a {
+    color: #FFFF00;
+    /* Yellow */
+}
+
 .log-narrative a:hover {
     text-decoration: none;
-    color: #FFF;
+    color: #FFFF00;
+    /* Yellow */
     font-weight: 600;
+    cursor: pointer;
 }
 
 .reg-container {
@@ -575,7 +582,8 @@ nav ul a:hover {
     color: #61892F;
 }
 
-.main-menu-btn {
+.main-menu-btn,
+.log-submit {
     display: flex;
     align-items: center;
     justify-content: center;
