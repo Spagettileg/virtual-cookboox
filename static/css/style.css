@@ -375,7 +375,8 @@ nav ul a:hover {
     background-position: center;
 }
 
-.loghead {
+.loghead,
+.reghead {
     /*Homepage food graphic*/
     padding-top: calc(5rem + 74px);
     padding-bottom: 5rem;
@@ -385,31 +386,26 @@ nav ul a:hover {
 
 .log-title,
 .log-narrative,
-.log-narrative a {
+.log-narrative a,
+.reg-title,
+.reg-narrative,
+.reg-narrative a {
     color: #FFF;
 }
 
-.log-narrative a {
+.log-narrative a,
+.reg-narrative a {
     color: #FFFF00;
     /* Yellow */
 }
 
-.log-narrative a:hover {
+.log-narrative a:hover,
+.reg-narrative a:hover {
     text-decoration: none;
     color: #FFFF00;
     /* Yellow */
     font-weight: 600;
     cursor: pointer;
-}
-
-.reg-container {
-    /*Border & shadow creation for both login & register containers*/
-    padding: 0.625rem;
-    margin: 0.625rem;
-    border: 2px solid #61892F;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
-    color: #61892F;
 }
 
 .log-mid-container,
@@ -583,7 +579,8 @@ nav ul a:hover {
 }
 
 .main-menu-btn,
-.log-submit {
+.log-submit,
+.reg-submit {
     display: flex;
     align-items: center;
     justify-content: center;
