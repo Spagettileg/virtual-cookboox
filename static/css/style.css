@@ -375,8 +375,27 @@ nav ul a:hover {
     background-position: center;
 }
 
-.reg-container,
-.log-container {
+.loghead {
+    /*Homepage food graphic*/
+    padding-top: calc(5rem + 74px);
+    padding-bottom: 5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.log-title,
+.log-narrative
+.log-narrative a {
+    color: #FFF;
+}
+
+.log-narrative a:hover {
+    text-decoration: none;
+    color: #FFF;
+    font-weight: 600;
+}
+
+.reg-container {
     /*Border & shadow creation for both login & register containers*/
     padding: 0.625rem;
     margin: 0.625rem;
