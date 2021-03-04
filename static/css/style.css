@@ -378,11 +378,6 @@ nav ul a:hover {
 .reg-container,
 .log-container {
     /*Border & shadow creation for both login & register containers*/
-    padding: 0.625rem;
-    margin: 0.625rem;
-    border: 2px solid #61892F;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
     color: #61892F;
 }
 
