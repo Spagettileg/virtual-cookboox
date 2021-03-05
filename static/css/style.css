@@ -1094,6 +1094,10 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
         height: 1.5rem;
         width: 1.5rem;
     }
+    .reghead {
+        padding-top: calc(1.5rem + 35px);
+        padding-bottom: 3rem;
+    }
 }
 
 @media (max-width: 667px) {
@@ -1110,6 +1114,20 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
     .search-icon {
         height: 1.5rem;
         width: 1.5rem;
+    }
+    .loghead,
+    .reghead {
+        padding-top: calc(0.5rem + 35px);
+        padding-bottom: 3rem;
+    }
+}
+
+@media (min-width: 700px) {
+    /*Deskop - Portrait view*/
+    .loghead,
+    .reghead {
+        padding-top: calc(11rem + 74px);
+        padding-bottom: 11rem;
     }
 }
 
@@ -1136,6 +1154,11 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
     .btn-add-recipe {
         margin-top: 0.3rem;
     }
+    .loghead,
+    .reghead {
+        padding-top: calc(6rem + 74px);
+        padding-bottom: 6rem;
+    }
 }
 
 @media screen and (max-width: 1200px) {
@@ -1152,6 +1175,10 @@ input[type="checkbox"]:checked~.checkbox-list__check:before {
     .recipe-image-container img {
         height: auto;
         max-width: 18.75rem;
-
+    }
+    .loghead,
+    .reghead {
+        padding-top: calc(8rem + 74px);
+        padding-bottom: 8rem;
     }
 }
