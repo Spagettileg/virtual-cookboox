@@ -2,7 +2,7 @@ astroid==1.6.6
 click==7.1.2
 colorama==0.4.3
 dnspython==1.16.0
-Flask==1.1.2
+Flask>=2.2.5
 flask-pymongo==2.3.0
 flask-wtf==0.14.3
 heroku==0.1.4
